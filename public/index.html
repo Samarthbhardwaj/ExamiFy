@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Paper Simulator — AI-powered mock exam generator and performance analyzer. Upload question banks, take timed exams, and get detailed performance reports.">
+  <title>Paper Simulator — Mock Exam Generator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+  <!-- Highlight.js for Code Snippet Syntax Highlighting -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <link rel="stylesheet" href="/styles.css?v=1.5">
+</head>
+<body>
+  <!-- ========== LOADING OVERLAY ========== -->
+  <div id="loading-overlay" class="loading-overlay hidden">
+    <div class="loader-ring">
+      <div></div><div></div><div></div><div></div>
+    </div>
+    <p class="loader-text">Processing...</p>
+  </div>
+
+  <!-- ========== TOAST CONTAINER ========== -->
+  <div id="toast-container" class="toast-container"></div>
+
+  <!-- ========== HEADER ========== -->
+  <header class="app-header">
+    <div class="header-inner">
+      <div class="logo" id="logo-home">
+        <span class="logo-icon">📝</span>
+        <h1>Paper<span class="accent">Simulator</span></h1>
+      </div>
+      <nav class="header-nav">
+        <button class="nav-btn" id="nav-home" data-view="upload">Home</button>
+        <button class="nav-btn" id="nav-history" data-view="history">History</button>
+        <button class="nav-btn nav-resume-btn pulse-glow hidden" id="nav-resume-btn" title="Return to your running test">
+          ⚡ Resume Test (<span id="nav-resume-timer">--:--</span>)
+        </button>
+      </nav>
+      <div class="user-auth-area">
+        <div id="user-badge" class="user-badge hidden">
+          <span class="user-avatar" id="user-avatar">👤</span>
+          <span class="user-name" id="user-display-name">User</span>
+          <span id="user-role-badge" class="admin-badge hidden">👑 Admin</span>
+          <button class="btn btn-xs btn-outline" id="logout-btn">Logout</button>
+        </div>
+        <button class="btn btn-sm btn-primary" id="login-modal-btn">👤 Login / Register</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========== VIEW: UPLOAD ========== -->
+  <main id="view-upload" class="view active">
+    <div class="container">
+      <div class="hero-section">
+        <div class="hero-glow"></div>
+        <div class="network-badge" id="network-badge">
+          <span class="pulse-dot"></span>
+          <span>LAN Hosted: <strong id="network-ip-display">Detecting...</strong></span>
+        </div>
+        <h2 class="hero-title">Generate Your <span class="accent">Mock Exam</span></h2>
+        <p class="hero-subtitle">Multi-agent mock paper generator with deep behavioral performance analytics. Take timed exams on this PC or any device on your Wi-Fi.</p>
+      </div>
+
+      <!-- ========== GUEST AUTH REQUIRED BANNER ========== -->
+      <div id="auth-required-banner" class="auth-required-banner glass hidden">
+        <div class="auth-banner-left">
+          <div class="auth-banner-icon">🔒</div>
+          <div class="auth-banner-text">
+            <h4>Sign In Required to Take Exams</h4>
+            <p>Please sign in or create an account to generate AI quizzes, upload questions, or take mock exams. Your scores and history will be saved to your private profile.</p>
+          </div>
+        </div>
+        <div class="auth-banner-actions">
+          <button type="button" class="btn btn-primary" id="banner-login-btn">Sign In</button>
+          <button type="button" class="btn btn-outline" id="banner-register-btn">Create Free Account</button>
+        </div>
+      </div>
+
+      <!-- ========== TEST SESSIONS HUB (RUNNING & ENDED TESTS) ========== -->
+      <section id="test-sessions-hub" class="test-sessions-hub glass">
+        <div class="sessions-hub-header">
+          <div class="sessions-hub-tabs">
+            <button type="button" class="hub-tab-btn active" id="hub-tab-running">
+              <span>🏃 Running Test</span>
+              <span class="hub-pill" id="hub-running-pill">0</span>
+            </button>
+            <button type="button" class="hub-tab-btn" id="hub-tab-ended">
+              <span>📋 Completed Tests</span>
+              <span class="hub-pill" id="hub-ended-pill">0</span>
+            </button>
+          </div>
+          <div class="sessions-hub-status" id="sessions-hub-status-text">
+            No active test session
+          </div>
+        </div>
+
+        <!-- Tab 1: Running Test Pane -->
+        <div id="hub-pane-running" class="hub-tab-pane">
+          <div id="active-test-container">
+            <!-- Dynamically populated: Active test card or empty state -->
+          </div>
+        </div>
+
+        <!-- Tab 2: Ended Tests Pane -->
+        <div id="hub-pane-ended" class="hub-tab-pane hidden">
+          <div id="ended-tests-container" class="ended-tests-list">
+            <!-- Dynamically populated: List of completed tests -->
+          </div>
+        </div>
+      </section>
+
+      <div class="upload-area">
+        <div class="upload-methods">
+          <!-- AI Exam Generator (Google Gemini) -->
+          <div class="upload-card glass ai-upload-card" id="ai-generator-card">
+            <div class="upload-card-icon ai-glow-icon">✨</div>
+            <span class="ai-badge-header">Google Gemini AI</span>
+            <h3>Generate by Prompt</h3>
+            <p>Generate custom mock exams instantly from any topic, prompt, or syllabus</p>
+            <button class="btn btn-ai" id="open-ai-modal-btn" style="width: 100%;">
+              <span>✨ Create AI Quiz</span>
+            </button>
+          </div>
+
+          <!-- File Upload -->
+          <div class="upload-card glass" id="upload-drop-zone">
+            <div class="upload-card-icon">📁</div>
+            <h3>Upload JSON File</h3>
+            <p>Drag & drop or click to browse</p>
+            <input type="file" id="file-input" accept=".json" hidden>
+            <button class="btn btn-outline" id="browse-btn">Browse Files</button>
+          </div>
+
+          <!-- Paste JSON -->
+          <div class="upload-card glass">
+            <div class="upload-card-icon">📋</div>
+            <h3>Paste JSON</h3>
+            <p>Paste your question bank directly</p>
+            <textarea id="json-textarea" placeholder='{"questions": [...]}'></textarea>
+            <button class="btn btn-primary" id="paste-upload-btn">Validate & Upload</button>
+          </div>
+
+          <!-- Sample Data -->
+          <div class="upload-card glass">
+            <div class="upload-card-icon">🧪</div>
+            <h3>Sample Banks</h3>
+            <p>Pre-configured mock exams</p>
+            <div style="display: flex; flex-direction: column; gap: 0.6rem; width: 100%;">
+              <button class="btn btn-accent" id="sample-btn" style="width: 100%;">💻 CS Theory (82 Qs)</button>
+              <button class="btn btn-primary" id="sample-code-btn" style="width: 100%;">⚡ Code Snippets (44 Qs)</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Global Shared Banks Section (Accessible to ALL users & guests) -->
+        <div id="shared-banks-section" class="shared-banks-section glass">
+          <div class="shared-banks-header">
+            <div class="shared-banks-title-wrap">
+              <h3>🌐 Shared Question Banks</h3>
+              <span class="badge-pill">Global • All Devices</span>
+            </div>
+            <div style="display:flex; align-items:center; gap:0.6rem;">
+              <span class="text-muted" style="font-size:0.85rem;" id="shared-banks-count">0 banks</span>
+              <button class="btn btn-xs btn-outline" id="refresh-shared-btn" title="Refresh">🔄</button>
+            </div>
+          </div>
+          <div id="shared-banks-list" class="shared-banks-grid">
+            <p class="text-muted" style="font-size:0.9rem;">Loading shared question banks...</p>
+          </div>
+        </div>
+
+        <!-- My Saved Banks Section (shown when user is logged in) -->
+        <div id="saved-banks-section" class="saved-banks-section glass hidden">
+          <div class="saved-banks-header">
+            <h3>📂 My Saved Question Banks (Stored on PC)</h3>
+            <span class="text-muted" style="font-size:0.85rem;" id="saved-banks-count">0 banks</span>
+          </div>
+          <div id="saved-banks-list" class="saved-banks-grid">
+            <p class="text-muted" style="font-size:0.9rem;">No saved banks yet. Upload any bank and save it to your profile!</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Schema Reference (collapsed) -->
+      <details class="schema-reference glass">
+        <summary>📐 Question Schema Reference</summary>
+        <pre><code>{
+  "id": "string (required, unique)",
+  "topic": "string (required)",
+  "subtopic": "string (required)",
+  "difficulty": "easy | medium | hard (required)",
+  "question_text": "string (required)",
+  "options": ["string[]  (required, ≥ 2 items)"],
+  "correct_option": "number (required, 0-indexed)",
+  "explanation": "string (required)",
+  "tags": ["string[] (optional)"],
+  "recommended_time_sec": "number (required, > 0)"
+}</code></pre>
+      </details>
+    </div>
+  </main>
+
+  <!-- ========== VIEW: VALIDATION REPORT ========== -->
+  <main id="view-validation" class="view">
+    <div class="container">
+      <div class="section-header">
+        <h2>📊 Validation Report</h2>
+      </div>
+
+      <div class="validation-stats" id="validation-stats"></div>
+      <div class="validation-details" id="validation-details"></div>
+
+      <div class="action-bar">
+        <button class="btn btn-primary btn-lg" id="generate-paper-btn">
+          <span class="btn-icon">🚀</span> Generate Mock Paper
+        </button>
+        <button class="btn btn-accent btn-lg" id="save-bank-btn">
+          <span class="btn-icon">💾</span> Save to My Banks
+        </button>
+        <button class="btn btn-warning btn-lg hidden" id="publish-global-btn">
+          <span class="btn-icon">👑</span> Publish to Global Banks
+        </button>
+        <button class="btn btn-outline" id="re-upload-btn">Re-upload</button>
+      </div>
+    </div>
+  </main>
+
+  <!-- ========== VIEW: EXAM ========== -->
+  <main id="view-exam" class="view">
+    <div class="exam-layout">
+      <!-- Sidebar: Timer + Question Palette -->
+      <aside class="exam-sidebar glass">
+        <div class="timer-display" id="timer-display">
+          <div class="timer-ring" id="timer-ring">
+            <svg viewBox="0 0 120 120">
+              <circle class="timer-bg" cx="60" cy="60" r="54" />
+              <circle class="timer-progress" id="timer-progress" cx="60" cy="60" r="54" />
+            </svg>
+            <div class="timer-text" id="timer-text">60:00</div>
+          </div>
+          <p class="timer-label">Time Remaining</p>
+        </div>
+
+        <div class="exam-stats-mini">
+          <div class="stat-mini"><span id="stat-answered">0</span> Answered</div>
+          <div class="stat-mini"><span id="stat-flagged">0</span> Flagged</div>
+          <div class="stat-mini"><span id="stat-remaining">40</span> Remaining</div>
+        </div>
+
+        <div class="question-palette" id="question-palette"></div>
+
+        <button class="btn btn-danger btn-lg" id="submit-exam-btn">
+          <span class="btn-icon">✅</span> Submit Exam
+        </button>
+      </aside>
+
+      <!-- Main: Question Area -->
+      <section class="exam-main">
+        <!-- Interactive Mode Live Status Bar -->
+        <div id="interactive-live-pill" class="interactive-live-bar glass hidden">
+          <div class="interactive-live-left">
+            <span class="interactive-mode-tag">⚡ Interactive Practice</span>
+            <span class="interactive-stats-text" id="interactive-stats-text"><strong>0/0</strong> Correct</span>
+          </div>
+          <div class="interactive-live-right">
+            <span class="interactive-streak-tag" id="interactive-streak-tag">🔥 0 streak</span>
+          </div>
+        </div>
+
+        <div class="question-header">
+          <div class="question-meta" id="question-meta"></div>
+          <button class="btn btn-sm btn-flag" id="flag-btn">🏳️ Flag</button>
+        </div>
+
+        <div class="question-body" id="question-body">
+          <p class="question-text" id="question-text"></p>
+          <div class="options-list" id="options-list"></div>
+        </div>
+
+        <div class="question-nav">
+          <button class="btn btn-outline" id="prev-btn">← Previous</button>
+          <span class="question-counter" id="question-counter">1 / 40</span>
+          <button class="btn btn-primary" id="next-btn">Next →</button>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- ========== VIEW: RESULTS ========== -->
+  <main id="view-results" class="view">
+    <div class="container">
+      <!-- Score Hero -->
+      <div class="results-hero" id="results-hero"></div>
+
+      <!-- Charts Row -->
+      <div class="charts-grid">
+        <div class="chart-card glass">
+          <h3>Topic Accuracy</h3>
+          <canvas id="chart-radar"></canvas>
+        </div>
+        <div class="chart-card glass">
+          <h3>Difficulty Breakdown</h3>
+          <canvas id="chart-difficulty"></canvas>
+        </div>
+      </div>
+
+      <div class="charts-grid single">
+        <div class="chart-card glass wide">
+          <h3>Time Distribution (Actual vs Recommended)</h3>
+          <canvas id="chart-time"></canvas>
+        </div>
+      </div>
+
+      <!-- Weak Areas -->
+      <div class="report-section glass" id="weak-areas-section"></div>
+
+      <!-- Recommendations -->
+      <div class="report-section glass" id="recommendations-section"></div>
+
+      <!-- Patterns & Insights -->
+      <div class="report-section glass" id="patterns-section"></div>
+
+      <!-- Question Review -->
+      <div class="report-section glass">
+        <h3>📝 Question Review</h3>
+        <div id="question-review-list"></div>
+      </div>
+
+      <!-- Actions -->
+      <div class="action-bar">
+        <button class="btn btn-primary btn-lg" id="retake-btn">
+          <span class="btn-icon">🔄</span> Generate New Paper
+        </button>
+        <button class="btn btn-outline" id="new-upload-btn">Upload New Bank</button>
+      </div>
+    </div>
+  </main>
+
+  <!-- ========== VIEW: HISTORY ========== -->
+  <main id="view-history" class="view">
+    <div class="container">
+      <div class="section-header">
+        <h2>📚 Attempt History</h2>
+        <p>Track your progress over time</p>
+      </div>
+
+      <div class="history-chart-area glass" id="history-chart-area">
+        <canvas id="chart-history"></canvas>
+      </div>
+
+      <div class="history-list" id="history-list"></div>
+
+      <div class="empty-state" id="history-empty">
+        <div class="empty-icon">📭</div>
+        <h3>No attempts yet</h3>
+        <p>Take your first mock exam to see your progress here.</p>
+        <button class="btn btn-primary" id="history-start-btn">Start Now</button>
+      </div>
+    </div>
+  </main>
+
+  <!-- ========== AUTH MODAL ========== -->
+  <div id="auth-modal" class="auth-modal-overlay hidden">
+    <div class="auth-modal-card glass">
+      <div class="auth-modal-header">
+        <h3 id="auth-modal-title">Sign In</h3>
+        <button class="close-modal-btn" id="auth-modal-close">&times;</button>
+      </div>
+
+      <div class="auth-tabs">
+        <button class="auth-tab-btn active" id="tab-login-btn">Sign In</button>
+        <button class="auth-tab-btn" id="tab-register-btn">Register</button>
+      </div>
+
+      <form id="auth-form" class="auth-form" onsubmit="return false;">
+        <div class="form-group" id="display-name-group" style="display: none;">
+          <label for="auth-display-name">Display Name</label>
+          <input type="text" id="auth-display-name" placeholder="e.g. Alex Turing">
+        </div>
+
+        <div class="form-group">
+          <label for="auth-username">Username</label>
+          <input type="text" id="auth-username" placeholder="Alphanumeric, e.g. student42" required autocomplete="username">
+        </div>
+
+        <div class="form-group">
+          <label for="auth-password">Password</label>
+          <input type="password" id="auth-password" placeholder="At least 4 characters" required autocomplete="current-password">
+        </div>
+
+        <div id="auth-error-msg" class="auth-error-msg hidden"></div>
+
+        <button type="submit" class="btn btn-primary" id="auth-submit-btn" style="width: 100%; margin-top: 1rem;">
+          Sign In
+        </button>
+      </form>
+      <p class="auth-modal-footer text-muted">
+        Your question banks and exam history will be securely stored in your personal folder on this PC.
+      </p>
+    </div>
+  </div>
+
+  <!-- ========== SAVE BANK MODAL ========== -->
+  <div id="save-bank-modal" class="auth-modal-overlay hidden">
+    <div class="auth-modal-card glass">
+      <div class="auth-modal-header">
+        <h3>Save Bank to Your PC</h3>
+        <button class="close-modal-btn" id="save-bank-close">&times;</button>
+      </div>
+      <div class="auth-form">
+        <div class="form-group">
+          <label for="save-bank-name">Question Bank Name</label>
+          <input type="text" id="save-bank-name" placeholder="e.g. Midterm Practice 2026">
+        </div>
+        <p class="text-muted" style="font-size:0.85rem; margin-bottom: 1rem;">
+          This will save the validated question bank into your personal <code>data/users/&lt;you&gt;/banks/</code> folder on this machine.
+        </p>
+        <button class="btn btn-primary" id="confirm-save-bank-btn" style="width: 100%;">Save to My PC</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== EXAM CONFIGURATION MODAL ========== -->
+  <div id="exam-config-modal" class="auth-modal-overlay hidden">
+    <div class="auth-modal-card glass config-modal-card">
+      <div class="auth-modal-header">
+        <div>
+          <h3>⚙️ Configure Your Mock Exam</h3>
+          <p class="text-muted" style="font-size:0.85rem; margin-top: 0.2rem;">Choose your question count, target topics, and timer limit</p>
+        </div>
+        <button class="close-modal-btn" id="config-modal-close">&times;</button>
+      </div>
+
+      <div class="config-modal-body">
+        <!-- Mode Selection: Standard Exam vs Interactive Quiz -->
+        <div class="config-section mode-selection-section">
+          <div class="config-section-title">
+            <span>🎮 Choose Quiz Mode</span>
+            <span class="config-badge" id="config-mode-badge">🎯 Standard Exam</span>
+          </div>
+          <div class="mode-selector-grid">
+            <label class="mode-card active" id="mode-card-exam">
+              <input type="radio" name="exam-mode" value="exam" checked>
+              <div class="mode-card-content">
+                <div class="mode-card-icon">🎯</div>
+                <div class="mode-card-text">
+                  <div class="mode-card-title">Standard Exam</div>
+                  <div class="mode-card-desc">Formal timed test. Real exam conditions with comprehensive performance report at submission.</div>
+                </div>
+              </div>
+            </label>
+            <label class="mode-card" id="mode-card-interactive">
+              <input type="radio" name="exam-mode" value="interactive">
+              <div class="mode-card-content">
+                <div class="mode-card-icon">⚡</div>
+                <div class="mode-card-text">
+                  <div class="mode-card-title">Interactive Practice</div>
+                  <div class="mode-card-desc">Gemini Quiz style! Instant correct/wrong reveal and full explanations the moment you click.</div>
+                </div>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <!-- Topic Selection -->
+        <div class="config-section">
+          <div class="config-section-title">
+            <span>📚 Select Topics</span>
+            <div class="config-topic-actions">
+              <button type="button" class="btn-text" id="topic-select-all">Select All</button>
+              <span class="text-muted">·</span>
+              <button type="button" class="btn-text" id="topic-deselect-all">Clear All</button>
+            </div>
+          </div>
+          <div id="config-topics-list" class="config-topics-grid">
+            <!-- Dynamically populated checkboxes -->
+          </div>
+          <div class="config-pool-info text-muted" id="config-pool-info">
+            Available in selected topics: <strong id="config-available-count">0</strong> questions
+          </div>
+        </div>
+
+        <!-- Question Count -->
+        <div class="config-section">
+          <div class="config-section-title">
+            <span>🔢 Number of Questions</span>
+            <span class="config-badge" id="config-q-badge">40 Questions</span>
+          </div>
+          <div class="config-presets-row" id="q-presets-row">
+            <button type="button" class="preset-btn" data-q="10">10</button>
+            <button type="button" class="preset-btn" data-q="20">20</button>
+            <button type="button" class="preset-btn" data-q="30">30</button>
+            <button type="button" class="preset-btn active" data-q="40">40</button>
+            <button type="button" class="preset-btn" data-q="max" id="preset-max-q">Max Available</button>
+          </div>
+          <div class="form-group" style="margin-top: 0.6rem;">
+            <input type="number" id="config-q-input" min="1" max="200" value="40" placeholder="Custom question count">
+          </div>
+        </div>
+
+        <!-- Duration / Time -->
+        <div class="config-section">
+          <div class="config-section-title">
+            <span>⏱️ Exam Duration (Minutes)</span>
+            <span class="config-badge" id="config-time-badge">60 Mins</span>
+          </div>
+          <div class="config-presets-row" id="time-presets-row">
+            <button type="button" class="preset-btn" data-time="15">15 min</button>
+            <button type="button" class="preset-btn" data-time="30">30 min</button>
+            <button type="button" class="preset-btn" data-time="45">45 min</button>
+            <button type="button" class="preset-btn active" data-time="60">60 min</button>
+            <button type="button" class="preset-btn" data-time="90">90 min</button>
+          </div>
+          <div class="form-group" style="margin-top: 0.6rem;">
+            <input type="number" id="config-time-input" min="1" max="300" value="60" placeholder="Custom minutes">
+          </div>
+          <div class="config-pacing-info text-muted" id="config-pacing-info">
+            Pacing: ~90 seconds per question
+          </div>
+        </div>
+
+        <!-- Smart Mastery Mode: Exclude Only Past Correct Questions -->
+        <div class="config-section" style="background: rgba(52, 211, 153, 0.05); border-color: rgba(52, 211, 153, 0.2);">
+          <label class="checkbox-label" style="font-weight:600; color:var(--emerald); cursor:pointer;">
+            <input type="checkbox" id="config-avoid-repeats" checked>
+            <span>🎯 Smart Non-Repeating (Exclude only past correct questions)</span>
+          </label>
+          <p class="text-muted" style="font-size:0.78rem; margin-top:0.3rem; margin-left:1.5rem; line-height:1.45;">
+            Only excludes questions you already answered <strong>correctly</strong>. Questions that were <strong>skipped, unanswered, or answered wrong</strong> in previous tests will still be given so you never lose them!
+          </p>
+        </div>
+      </div>
+
+      <div class="config-modal-footer">
+        <button class="btn btn-outline" id="config-modal-cancel">Cancel</button>
+        <button class="btn btn-primary btn-lg" id="config-modal-start" style="flex: 2;">
+          🚀 Start Exam (40 Qs · 60m)
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== ADMIN PUBLISH BANK MODAL ========== -->
+  <div id="publish-bank-modal" class="auth-modal-overlay hidden">
+    <div class="auth-modal-card glass">
+      <div class="auth-modal-header">
+        <div>
+          <h3 style="display:flex; align-items:center; gap:0.4rem;">👑 Publish to Global Banks</h3>
+          <p class="text-muted" style="font-size:0.8rem; margin-top:0.2rem;">Will be accessible to all connected users and devices</p>
+        </div>
+        <button class="close-modal-btn" id="publish-bank-close">&times;</button>
+      </div>
+      <div class="auth-form">
+        <div class="form-group">
+          <label for="publish-bank-name">Question Bank Name</label>
+          <input type="text" id="publish-bank-name" placeholder="e.g. Master CS Final Practice 2026">
+        </div>
+        <div class="form-group">
+          <label for="publish-bank-desc">Description (Optional)</label>
+          <input type="text" id="publish-bank-desc" placeholder="e.g. Comprehensive 80+ question mock for all branches">
+        </div>
+        <p class="text-muted" style="font-size:0.82rem; margin-bottom: 0.5rem;">
+          This stores the bank in the server's shared folder <code>data/global-banks/</code> so all students/users on LAN can take this paper.
+        </p>
+        <button class="btn btn-warning" id="confirm-publish-bank-btn" style="width: 100%;">🚀 Publish to Global</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== AI GENERATOR MODAL ========== -->
+  <div id="ai-generator-modal" class="auth-modal-overlay hidden">
+    <div class="auth-modal-card glass ai-modal-card">
+      <div class="auth-modal-header">
+        <div>
+          <h3 style="display:flex; align-items:center; gap:0.5rem;">
+            <span class="ai-sparkle">✨</span> Generate Quiz with Gemini AI
+          </h3>
+          <p class="text-muted" style="font-size:0.82rem; margin-top:0.2rem;">Describe any topic, syllabus, or concept for dynamic question crafting</p>
+        </div>
+        <button class="close-modal-btn" id="ai-modal-close">&times;</button>
+      </div>
+
+      <div class="ai-modal-body">
+        <!-- Prompt / Syllabus -->
+        <div class="form-group">
+          <label for="ai-prompt-input">Topic, Concepts, or Syllabus Prompt</label>
+          <textarea id="ai-prompt-input" rows="3" placeholder="e.g. Operating Systems: Process synchronization, mutexes, semaphores, and classic deadlock problems with C code snippets"></textarea>
+        </div>
+
+        <!-- Quick Prompt Chips -->
+        <div class="ai-chips-wrap">
+          <span class="ai-chips-label">Quick Ideas:</span>
+          <button type="button" class="ai-chip" data-prompt="Python Asynchronous Programming (asyncio, tasks, coroutines, event loop) with code snippets">🐍 Python Asyncio</button>
+          <button type="button" class="ai-chip" data-prompt="Full-Stack JavaScript: React Hooks, Event Loop, Closures, and Node.js Streams with code snippets">⚡ JS & React</button>
+          <button type="button" class="ai-chip" data-prompt="SQL & Database Internals: Indexing, ACID transactions, Normalization, Query optimization with complex queries">💾 SQL & DBs</button>
+          <button type="button" class="ai-chip" data-prompt="Data Structures & Algorithms: Binary Trees, Graph BFS/DFS, Dynamic Programming with edge cases">🧠 DSA</button>
+          <button type="button" class="ai-chip" data-prompt="Computer Networks: TCP handshake, Subnetting, DNS, TLS, HTTP/2 & HTTP/3">🌐 Networks</button>
+        </div>
+
+        <!-- Row: Count & Difficulty -->
+        <div class="ai-controls-row">
+          <div class="form-group" style="flex: 1;">
+            <label for="ai-count-input">Number of Questions</label>
+            <div class="config-presets-row" id="ai-count-presets">
+              <button type="button" class="preset-btn" data-count="5">5</button>
+              <button type="button" class="preset-btn active" data-count="10">10</button>
+              <button type="button" class="preset-btn" data-count="15">15</button>
+              <button type="button" class="preset-btn" data-count="20">20</button>
+            </div>
+            <input type="number" id="ai-count-input" min="1" max="50" value="10" style="margin-top:0.4rem;">
+          </div>
+
+          <div class="form-group" style="flex: 1;">
+            <label for="ai-difficulty-select">Difficulty Distribution</label>
+            <select id="ai-difficulty-select" class="custom-select">
+              <option value="mixed" selected>🎯 Mixed (Balanced)</option>
+              <option value="easy">🟢 Easy (Foundational)</option>
+              <option value="medium">🟡 Medium (Application)</option>
+              <option value="hard">🔴 Hard (Advanced / Tricky)</option>
+            </select>
+            <label class="checkbox-label" style="margin-top:0.6rem;">
+              <input type="checkbox" id="ai-include-code" checked>
+              <span>Include code snippets in questions</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- AI Model & Embedded Key Settings -->
+        <div class="ai-api-settings glass" style="margin-top: 1rem; padding: 0.9rem 1.1rem; border-radius: var(--radius-md); border: 1px solid rgba(120, 130, 255, 0.15);">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.5rem;">
+            <label for="ai-model-select" style="font-weight:600; font-size:0.85rem; margin-bottom:0;">AI Engine Model</label>
+            <span class="status-pill status-ready" style="font-size:0.75rem; background:rgba(16,185,129,0.15); color:#34d399; border:1px solid rgba(16,185,129,0.3); padding:0.15rem 0.55rem; border-radius:var(--radius-full);">⚡ Embedded Server Key Active</span>
+          </div>
+          <select id="ai-model-select" class="custom-select" style="width:100%;">
+            <option value="gemini-3.5-flash-lite" selected>gemini-3.5-flash-lite (Ultra-Fast 1.1s • High Availability • Recommended)</option>
+            <option value="gemini-3.6-flash">gemini-3.6-flash (Fast & Highly Accurate)</option>
+            <option value="gemini-3.5-flash">gemini-3.5-flash (Standard Flash)</option>
+            <option value="gemini-3.8-flash">gemini-3.8-flash (Deep Reasoning • May Experience Demand Spikes)</option>
+          </select>
+          <p class="text-muted" style="font-size:0.78rem; margin-top:0.4rem; margin-bottom:0;">Google Gemini API key is securely embedded on the backend with automatic multi-tier model failover.</p>
+        </div>
+      </div>
+
+      <div class="ai-modal-footer">
+        <button class="btn btn-outline" id="ai-modal-cancel">Cancel</button>
+        <button class="btn btn-ai btn-lg" id="ai-submit-generate-btn" style="flex: 2;">
+          ✨ Generate Exam with Gemini
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== FLOATING ACTION BUTTON (FAB) ========== -->
+  <div id="fab-container" class="fab-container">
+    <button class="fab-main" id="fab-main" title="Quick Actions">
+      <span class="fab-icon">⚡</span>
+    </button>
+    <div class="fab-actions-tray">
+      <button class="fab-action" id="fab-scroll-top" title="Scroll to Top">
+        <span>⬆️</span>
+        <span class="fab-tooltip">Scroll to Top</span>
+      </button>
+      <button class="fab-action" id="fab-history" title="Exam History">
+        <span>📚</span>
+        <span class="fab-tooltip">Attempt History</span>
+      </button>
+      <button class="fab-action" id="fab-shared" title="Shared Banks">
+        <span>🌐</span>
+        <span class="fab-tooltip">Global Banks</span>
+      </button>
+      <button class="fab-action" id="fab-ai" title="AI Quiz Generator">
+        <span>✨</span>
+        <span class="fab-tooltip">AI Generator</span>
+      </button>
+      <button class="fab-action" id="fab-home" title="New Exam / Home">
+        <span>🏠</span>
+        <span class="fab-tooltip">Exam Home</span>
+      </button>
+    </div>
+  </div>
+
+  <script src="/app.js?v=1.5"></script>
+</body>
+</html>

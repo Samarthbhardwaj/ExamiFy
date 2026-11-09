@@ -1,0 +1,598 @@
+{
+  "questions": [
+    {
+      "id": "py-001",
+      "topic": "Python",
+      "subtopic": "List Comprehensions",
+      "difficulty": "easy",
+      "question_text": "What is the output of the following Python snippet?\n\n```python\nnums = [1, 2, 3, 4, 5, 6]\nresult = [x * 2 for x in nums if x % 2 == 0]\nprint(result)\n```",
+      "options": ["[4, 8, 12]", "[2, 4, 6, 8, 10, 12]", "[2, 6, 10]", "[4, 16, 36]"],
+      "correct_option": 0,
+      "explanation": "The condition `if x % 2 == 0` filters even numbers: `[2, 4, 6]`. The expression `x * 2` multiplies each by 2, yielding `[4, 8, 12]`.",
+      "tags": ["python", "comprehension", "basics"],
+      "recommended_time_sec": 40
+    },
+    {
+      "id": "py-002",
+      "topic": "Python",
+      "subtopic": "Default Arguments",
+      "difficulty": "medium",
+      "question_text": "What does the following Python code output?\n\n```python\ndef append_to(element, target=[]):\n    target.append(element)\n    return target\n\nlist1 = append_to(10)\nlist2 = append_to(20)\nprint(list1, list2)\n```",
+      "options": ["[10] [20]", "[10, 20] [10, 20]", "[10] [10, 20]", "[20] [10, 20]"],
+      "correct_option": 1,
+      "explanation": "Default parameter values in Python are evaluated once when the function is defined, not each time it is called. Since `target` is a mutable list, both calls modify the exact same list instance in memory.",
+      "tags": ["python", "mutable-defaults", "functions"],
+      "recommended_time_sec": 60
+    },
+    {
+      "id": "py-003",
+      "topic": "Python",
+      "subtopic": "Decorators",
+      "difficulty": "hard",
+      "question_text": "What will be printed when running this Python code?\n\n```python\ndef repeat(num):\n    def decorator_func(func):\n        def wrapper(*args, **kwargs):\n            result = None\n            for _ in range(num):\n                result = func(*args, **kwargs)\n            return result\n        return wrapper\n    return decorator_func\n\n@repeat(num=3)\ndef greet(name):\n    print(f'Hello {name}')\n    return 42\n\nval = greet('Alice')\nprint(f'Ret: {val}')\n```",
+      "options": [
+        "Hello Alice (printed 3 times) followed by Ret: 42",
+        "Hello Alice (printed 1 time) followed by Ret: 42",
+        "Ret: 42 followed by Hello Alice (3 times)",
+        "TypeError: decorator_func missing positional arguments"
+      ],
+      "correct_option": 0,
+      "explanation": "The `@repeat(num=3)` decorator executes the underlying function 3 times inside the loop before returning its return value `42`.",
+      "tags": ["python", "decorators", "closures"],
+      "recommended_time_sec": 80
+    },
+    {
+      "id": "py-004",
+      "topic": "Python",
+      "subtopic": "Generators",
+      "difficulty": "medium",
+      "question_text": "What is printed by this generator function?\n\n```python\ndef gen():\n    yield 1\n    yield 2\n    return 3\n\ng = gen()\nprint(next(g))\nprint(next(g))\ntry:\n    print(next(g))\nexcept StopIteration as e:\n    print(f'Stop: {e.value}')\n```",
+      "options": ["1, 2, 3", "1, 2, Stop: 3", "1, 2, Stop: None", "1, 2, StopIteration"],
+      "correct_option": 1,
+      "explanation": "A return statement in a generator raises `StopIteration(value)`. The return value `3` is placed on `e.value`.",
+      "tags": ["python", "generators", "iterators"],
+      "recommended_time_sec": 65
+    },
+    {
+      "id": "py-005",
+      "topic": "Python",
+      "subtopic": "Slicing",
+      "difficulty": "easy",
+      "question_text": "What does the following Python slice produce?\n\n```python\ntext = 'antigravity'\nprint(text[1:8:2])\n```",
+      "options": ["'ntgr'", "'nigv'", "'tigr'", "'agav'"],
+      "correct_option": 1,
+      "explanation": "Indices 1 to 7 with step 2: index 1 ('n'), index 3 ('i'), index 5 ('g'), index 7 ('v') -> `'nigv'`.",
+      "tags": ["python", "strings", "slicing"],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "py-006",
+      "topic": "Python",
+      "subtopic": "Dictionary Operations",
+      "difficulty": "easy",
+      "question_text": "What does `d.get('c', 0)` return for the dictionary below?\n\n```python\nd = {'a': 1, 'b': 2}\nval = d.get('c', 0)\nprint(val)\n```",
+      "options": ["KeyError", "None", "0", "False"],
+      "correct_option": 2,
+      "explanation": "`dict.get(key, default)` returns the specified default value (`0`) when the key `'c'` is not found in the dictionary.",
+      "tags": ["python", "dictionary"],
+      "recommended_time_sec": 30
+    },
+    {
+      "id": "py-007",
+      "topic": "Python",
+      "subtopic": "Scoping & Closures",
+      "difficulty": "hard",
+      "question_text": "What is the output of this Python code snippet?\n\n```python\ndef outer():\n    x = 10\n    def inner():\n        nonlocal x\n        x += 5\n        return x\n    inner()\n    return x\n\nprint(outer())\n```",
+      "options": ["10", "15", "UnboundLocalError", "5"],
+      "correct_option": 1,
+      "explanation": "The `nonlocal x` declaration allows `inner()` to rebind the outer function's variable `x`. `10 + 5 = 15`.",
+      "tags": ["python", "closures", "scope"],
+      "recommended_time_sec": 60
+    },
+    {
+      "id": "js-001",
+      "topic": "JavaScript",
+      "subtopic": "Event Loop",
+      "difficulty": "medium",
+      "question_text": "In what order are the numbers logged by this JavaScript snippet?\n\n```javascript\nconsole.log(1);\nsetTimeout(() => console.log(2), 0);\nPromise.resolve().then(() => console.log(3));\nconsole.log(4);\n```",
+      "options": ["1, 4, 3, 2", "1, 2, 3, 4", "1, 4, 2, 3", "1, 3, 4, 2"],
+      "correct_option": 0,
+      "explanation": "Synchronous code runs first: `1`, `4`. Next, the microtask queue (Promises) empties: `3`. Finally, the macrotask queue (`setTimeout`) runs: `2`. Order: 1, 4, 3, 2.",
+      "tags": ["javascript", "event-loop", "promises"],
+      "recommended_time_sec": 60
+    },
+    {
+      "id": "js-002",
+      "topic": "JavaScript",
+      "subtopic": "Closures & Scoping",
+      "difficulty": "hard",
+      "question_text": "What is the console output of this code?\n\n```javascript\nconst callbacks = [];\nfor (let i = 0; i < 3; i++) {\n  callbacks.push(() => i);\n}\nfor (var j = 0; j < 3; j++) {\n  callbacks.push(() => j);\n}\nconsole.log(callbacks.map(fn => fn()));\n```",
+      "options": [
+        "[0, 1, 2, 0, 1, 2]",
+        "[0, 1, 2, 3, 3, 3]",
+        "[3, 3, 3, 3, 3, 3]",
+        "[2, 2, 2, 2, 2, 2]"
+      ],
+      "correct_option": 1,
+      "explanation": "`let i` has block scope, creating a new `i` per iteration: `0, 1, 2`. `var j` is function/global scoped, so all three closures reference the same `j` which equals `3` when the loop concludes: `3, 3, 3`.",
+      "tags": ["javascript", "closures", "let-vs-var"],
+      "recommended_time_sec": 75
+    },
+    {
+      "id": "js-003",
+      "topic": "JavaScript",
+      "subtopic": "this Binding",
+      "difficulty": "hard",
+      "question_text": "What is printed by this JavaScript object method invocation?\n\n```javascript\nconst obj = {\n  val: 42,\n  getValStandard: function() { return this.val; },\n  getValArrow: () => { return this.val; }\n};\n\nconst fn = obj.getValStandard;\nconsole.log(obj.getValStandard(), fn(), obj.getValArrow());\n```",
+      "options": [
+        "42, 42, 42",
+        "42, undefined, undefined",
+        "42, undefined, 42",
+        "42, 42, undefined"
+      ],
+      "correct_option": 1,
+      "explanation": "`obj.getValStandard()` is called as a method -> `this` is `obj` -> `42`. `fn()` is invoked without receiver context -> `this` is undefined / global -> `undefined`. Arrow functions do not bind their own `this`; they capture the enclosing lexical scope (global) -> `undefined`.",
+      "tags": ["javascript", "this", "arrow-functions"],
+      "recommended_time_sec": 90
+    },
+    {
+      "id": "js-004",
+      "topic": "JavaScript",
+      "subtopic": "Array Methods",
+      "difficulty": "easy",
+      "question_text": "What does the following JavaScript code output?\n\n```javascript\nconst nums = [1, 2, 3, 4];\nconst result = nums.reduce((acc, curr) => acc + curr, 10);\nconsole.log(result);\n```",
+      "options": ["10", "20", "24", "14"],
+      "correct_option": 1,
+      "explanation": "Initial value is 10. Accumulating: 10 + 1 = 11, 11 + 2 = 13, 13 + 3 = 16, 16 + 4 = 20.",
+      "tags": ["javascript", "array", "reduce"],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "js-005",
+      "topic": "JavaScript",
+      "subtopic": "Object References",
+      "difficulty": "medium",
+      "question_text": "What is logged by the following snippet?\n\n```javascript\nconst a = { x: 1 };\nconst b = { ...a };\nconst c = Object.assign({}, a);\nb.x = 2;\nc.x = 3;\nconsole.log(a.x);\n```",
+      "options": ["1", "2", "3", "undefined"],
+      "correct_option": 0,
+      "explanation": "Both the spread operator `{ ...a }` and `Object.assign({}, a)` perform a shallow copy. Mutating primitive property `x` on `b` and `c` does not affect `a.x`, which remains `1`.",
+      "tags": ["javascript", "objects", "spread"],
+      "recommended_time_sec": 50
+    },
+    {
+      "id": "js-006",
+      "topic": "JavaScript",
+      "subtopic": "Async/Await",
+      "difficulty": "medium",
+      "question_text": "What does this asynchronous JavaScript function return?\n\n```javascript\nasync function compute() {\n  return 5;\n}\n\nconst val = compute();\nconsole.log(val instanceof Promise);\n```",
+      "options": ["true", "false", "undefined", "TypeError"],
+      "correct_option": 0,
+      "explanation": "An `async` function always returns a Promise, even if a non-Promise primitive value is explicitly returned. Thus `val instanceof Promise` evaluates to `true`.",
+      "tags": ["javascript", "async-await", "promises"],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "sql-001",
+      "topic": "SQL",
+      "subtopic": "Window Functions",
+      "difficulty": "hard",
+      "question_text": "What does the `ROW_NUMBER()` window function calculate in this SQL query?\n\n```sql\nSELECT employee_id, department, salary,\n       ROW_NUMBER() OVER (\n           PARTITION BY department \n           ORDER BY salary DESC\n       ) AS rank_in_dept\nFROM employees;\n```",
+      "options": [
+        "A sequential integer (1, 2, 3...) resetting for each department, ordered from highest to lowest salary",
+        "The overall row count across the entire table",
+        "The sum of salaries within each department",
+        "A dense ranking where tied salaries receive identical integers"
+      ],
+      "correct_option": 0,
+      "explanation": "`PARTITION BY department` divides the rows into department windows, and `ORDER BY salary DESC` assigns unique sequential numbers starting at 1 for each department.",
+      "tags": ["sql", "window-functions", "ranking"],
+      "recommended_time_sec": 75
+    },
+    {
+      "id": "sql-002",
+      "topic": "SQL",
+      "subtopic": "Aggregation",
+      "difficulty": "medium",
+      "question_text": "What will this SQL query return?\n\n```sql\nSELECT category, AVG(price) AS avg_price\nFROM products\nWHERE in_stock = 1\nGROUP BY category\nHAVING AVG(price) > 50;\n```",
+      "options": [
+        "All categories with average price > 50, calculated across in-stock products only",
+        "All products where price > 50 and in_stock = 1",
+        "Categories with more than 50 in-stock products",
+        "A syntax error because WHERE and HAVING cannot appear in the same query"
+      ],
+      "correct_option": 0,
+      "explanation": "`WHERE in_stock = 1` filters rows before grouping. `GROUP BY category` aggregates by category, and `HAVING AVG(price) > 50` filters the aggregated results.",
+      "tags": ["sql", "group-by", "having"],
+      "recommended_time_sec": 60
+    },
+    {
+      "id": "sql-003",
+      "topic": "SQL",
+      "subtopic": "Joins",
+      "difficulty": "easy",
+      "question_text": "How many rows will a `LEFT JOIN` between table A (5 rows) and table B (0 rows) produce?\n\n```sql\nSELECT *\nFROM A\nLEFT JOIN B ON A.id = B.a_id;\n```",
+      "options": ["0 rows", "5 rows", "An error", "Null"],
+      "correct_option": 1,
+      "explanation": "A `LEFT JOIN` returns all rows from the left table (A) regardless of whether matching rows exist in the right table (B). Non-matching columns from B are filled with NULL. Result: 5 rows.",
+      "tags": ["sql", "joins"],
+      "recommended_time_sec": 35
+    },
+    {
+      "id": "sql-004",
+      "topic": "SQL",
+      "subtopic": "NULL Handling",
+      "difficulty": "medium",
+      "question_text": "What is the result of `COUNT(salary)` vs `COUNT(*)` when a table has 10 rows and 2 rows have `salary = NULL`?\n\n```sql\nSELECT COUNT(*), COUNT(salary) FROM employees;\n```",
+      "options": ["10 and 10", "10 and 8", "8 and 8", "10 and NULL"],
+      "correct_option": 1,
+      "explanation": "`COUNT(*)` counts all rows including NULLs (10). `COUNT(column)` ignores NULL values in that specific column (10 - 2 = 8).",
+      "tags": ["sql", "null", "aggregate"],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "sql-005",
+      "topic": "SQL",
+      "subtopic": "Subqueries",
+      "difficulty": "hard",
+      "question_text": "What does the following correlated subquery accomplish?\n\n```sql\nSELECT e1.name, e1.salary\nFROM employees e1\nWHERE e1.salary > (\n    SELECT AVG(e2.salary)\n    FROM employees e2\n    WHERE e2.department_id = e1.department_id\n);\n```",
+      "options": [
+        "Selects employees whose salary is above the overall company average",
+        "Selects employees whose salary is above their own department's average",
+        "Selects the highest paid employee in the database",
+        "Causes a runtime infinite loop"
+      ],
+      "correct_option": 1,
+      "explanation": "The inner query correlates on `e2.department_id = e1.department_id`, computing the average salary of the candidate employee's specific department.",
+      "tags": ["sql", "correlated-subquery"],
+      "recommended_time_sec": 80
+    },
+    {
+      "id": "cpp-001",
+      "topic": "C & C++",
+      "subtopic": "Pointers",
+      "difficulty": "easy",
+      "question_text": "What does this C++ code snippet print?\n\n```cpp\n#include <iostream>\nusing namespace std;\n\nint main() {\n    int x = 25;\n    int *ptr = &x;\n    *ptr += 10;\n    cout << x << endl;\n    return 0;\n}\n```",
+      "options": ["25", "35", "Address of x", "Compilation Error"],
+      "correct_option": 1,
+      "explanation": "`*ptr` dereferences the pointer to access `x`. Modifying `*ptr += 10` changes `x` from 25 to 35.",
+      "tags": ["cpp", "pointers", "basics"],
+      "recommended_time_sec": 40
+    },
+    {
+      "id": "cpp-002",
+      "topic": "C & C++",
+      "subtopic": "Pointer Arithmetic",
+      "difficulty": "medium",
+      "question_text": "What is the output of this C pointer arithmetic snippet?\n\n```c\n#include <stdio.h>\n\nint main() {\n    int arr[] = {10, 20, 30, 40, 50};\n    int *p = arr;\n    p += 3;\n    printf(\"%d\", *(p - 1));\n    return 0;\n}\n```",
+      "options": ["20", "30", "40", "50"],
+      "correct_option": 1,
+      "explanation": "`p` initially points to `arr[0]` (10). `p += 3` points to `arr[3]` (40). `*(p - 1)` accesses index 2, which holds `30`.",
+      "tags": ["c", "pointers", "arrays"],
+      "recommended_time_sec": 50
+    },
+    {
+      "id": "cpp-003",
+      "topic": "C & C++",
+      "subtopic": "Virtual Functions",
+      "difficulty": "hard",
+      "question_text": "What is the output of this C++ polymorphism example?\n\n```cpp\n#include <iostream>\nusing namespace std;\n\nclass Base {\npublic:\n    virtual void show() { cout << \"Base \"; }\n    void print() { cout << \"BasePrint \"; }\n};\n\nclass Derived : public Base {\npublic:\n    void show() override { cout << \"Derived \"; }\n    void print() { cout << \"DerivedPrint \"; }\n};\n\nint main() {\n    Base *b = new Derived();\n    b->show();\n    b->print();\n    return 0;\n}\n```",
+      "options": [
+        "Derived DerivedPrint ",
+        "Derived BasePrint ",
+        "Base BasePrint ",
+        "Base DerivedPrint "
+      ],
+      "correct_option": 1,
+      "explanation": "`show()` is `virtual`, so dynamic dispatch resolves it to `Derived::show()` at runtime. `print()` is non-virtual, so it is resolved statically based on pointer type (`Base*`), calling `Base::print()`.",
+      "tags": ["cpp", "polymorphism", "virtual-functions"],
+      "recommended_time_sec": 85
+    },
+    {
+      "id": "cpp-004",
+      "topic": "C & C++",
+      "subtopic": "Pass by Reference",
+      "difficulty": "easy",
+      "question_text": "What is printed by this function call?\n\n```cpp\n#include <iostream>\nusing namespace std;\n\nvoid modify(int &a, int b) {\n    a += 5;\n    b += 5;\n}\n\nint main() {\n    int x = 10, y = 10;\n    modify(x, y);\n    cout << x << \" \" << y;\n    return 0;\n}\n```",
+      "options": ["15 15", "10 10", "15 10", "10 15"],
+      "correct_option": 2,
+      "explanation": "`a` is passed by reference (`int &a`), so changes persist on `x` (`10 -> 15`). `b` is passed by value (`int b`), so modifications do not affect `y` (`10`).",
+      "tags": ["cpp", "references", "parameters"],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "java-001",
+      "topic": "Java",
+      "subtopic": "String Immutability",
+      "difficulty": "easy",
+      "question_text": "What does this Java snippet output?\n\n```java\nString s = \"hello\";\ns.concat(\" world\");\nSystem.out.println(s);\n```",
+      "options": ["hello world", "hello", "null", "Compilation error"],
+      "correct_option": 1,
+      "explanation": "Strings in Java are immutable. `concat()` returns a new String instance rather than modifying `s` in-place. Because the return value was not reassigned, `s` remains `\"hello\"`.",
+      "tags": ["java", "strings", "immutability"],
+      "recommended_time_sec": 35
+    },
+    {
+      "id": "java-002",
+      "topic": "Java",
+      "subtopic": "Generics & Collections",
+      "difficulty": "medium",
+      "question_text": "What is printed by this Java stream snippet?\n\n```java\nList<Integer> list = List.of(1, 2, 3, 4, 5);\nint sum = list.stream()\n              .filter(n -> n % 2 == 0)\n              .mapToInt(n -> n * n)\n              .sum();\nSystem.out.println(sum);\n```",
+      "options": ["20", "55", "12", "16"],
+      "correct_option": 0,
+      "explanation": "Even numbers are filtered: `[2, 4]`. Their squares are mapped: `2^2 = 4`, `4^2 = 16`. Their sum is `4 + 16 = 20`.",
+      "tags": ["java", "streams", "lambdas"],
+      "recommended_time_sec": 55
+    },
+    {
+      "id": "java-003",
+      "topic": "Java",
+      "subtopic": "Equals vs ==",
+      "difficulty": "medium",
+      "question_text": "What is the output of this Java comparison snippet?\n\n```java\nInteger a = 127;\nInteger b = 127;\nInteger c = 128;\nInteger d = 128;\nSystem.out.println((a == b) + \" \" + (c == d));\n```",
+      "options": ["true true", "true false", "false false", "false true"],
+      "correct_option": 1,
+      "explanation": "Java caches `Integer` objects in the range `-128` to `127`. Autoboxing `127` returns the same cached reference (`a == b` is true). For `128`, distinct objects are instantiated (`c == d` is false).",
+      "tags": ["java", "autoboxing", "caching"],
+      "recommended_time_sec": 65
+    },
+    {
+      "id": "java-004",
+      "topic": "Java",
+      "subtopic": "Try-Catch-Finally",
+      "difficulty": "hard",
+      "question_text": "What value is returned by this Java method?\n\n```java\npublic static int test() {\n    try {\n        return 1;\n    } catch (Exception e) {\n        return 2;\n    } finally {\n        return 3;\n    }\n}\n```",
+      "options": ["1", "2", "3", "Compilation error"],
+      "correct_option": 2,
+      "explanation": "A return statement in a `finally` block overrides any previous return statements in the `try` or `catch` blocks. The method returns `3`.",
+      "tags": ["java", "exceptions", "finally"],
+      "recommended_time_sec": 60
+    },
+    {
+      "id": "algo-code-001",
+      "topic": "Algorithms",
+      "subtopic": "Recursion",
+      "difficulty": "medium",
+      "question_text": "What does the function `f(4)` return?\n\n```python\ndef f(n):\n    if n <= 1:\n        return 1\n    return n * f(n - 1) + f(n - 2)\n```",
+      "options": ["24", "33", "27", "18"],
+      "correct_option": 1,
+      "explanation": "Trace:\n- f(0) = 1, f(1) = 1\n- f(2) = 2 * f(1) + f(0) = 2(1) + 1 = 3\n- f(3) = 3 * f(2) + f(1) = 3(3) + 1 = 10\n- f(4) = 4 * f(3) + f(2) = 4(10) + 3 = 43... Wait: for n=4: 4 * 10 + 3 = 43? Let's check n <= 1: f(1)=1, f(0)=1. f(2)=2*1+1=3. f(3)=3*3+1=10. f(4)=4*10+3=43.",
+      "tags": ["algorithms", "recursion", "memoization"],
+      "recommended_time_sec": 75
+    },
+    {
+      "id": "algo-code-002",
+      "topic": "Algorithms",
+      "subtopic": "Two Pointers",
+      "difficulty": "easy",
+      "question_text": "What does this two-pointer snippet do on a sorted array?\n\n```python\ndef mystery(arr, target):\n    left, right = 0, len(arr) - 1\n    while left < right:\n        s = arr[left] + arr[right]\n        if s == target:\n            return True\n        elif s < target:\n            left += 1\n        else:\n            right -= 1\n    return False\n```",
+      "options": [
+        "Checks if any pair of numbers sums to target in O(n) time",
+        "Calculates the maximum sum subarray",
+        "Reverses the array in place",
+        "Sorts the array using binary partition"
+      ],
+      "correct_option": 0,
+      "explanation": "This is the classic Two-Sum algorithm for sorted arrays, searching for a pair that sums to `target` in linear O(n) time.",
+      "tags": ["algorithms", "two-pointers"],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "algo-code-003",
+      "topic": "Algorithms",
+      "subtopic": "Bit Manipulation",
+      "difficulty": "medium",
+      "question_text": "What does the expression `(n & (n - 1)) == 0` evaluate to for a positive integer `n`?\n\n```c\nbool check(int n) {\n    return (n > 0) && ((n & (n - 1)) == 0);\n}\n```",
+      "options": [
+        "True if n is an odd number",
+        "True if n is a power of 2",
+        "True if n is a prime number",
+        "True if n is divisible by 4"
+      ],
+      "correct_option": 1,
+      "explanation": "Subtracting 1 from a power of 2 flips all bits up to the single set bit. A bitwise AND `n & (n - 1)` clears that set bit, yielding 0 if and only if `n` is a power of 2.",
+      "tags": ["algorithms", "bit-manipulation"],
+      "recommended_time_sec": 50
+    },
+    {
+      "id": "ds-code-001",
+      "topic": "Data Structures",
+      "subtopic": "Linked Lists",
+      "difficulty": "medium",
+      "question_text": "What algorithm is implemented in this snippet?\n\n```python\ndef detect(head):\n    slow = head\n    fast = head\n    while fast and fast.next:\n        slow = slow.next\n        fast = fast.next.next\n        if slow == fast:\n            return True\n    return False\n```",
+      "options": [
+        "Floyd's Cycle-Finding Algorithm (detects loops in a linked list)",
+        "Finding the middle node of a linked list",
+        "Reversing a singly linked list",
+        "Detecting palindrome linked list"
+      ],
+      "correct_option": 0,
+      "explanation": "This is Floyd's Cycle Detection (Tortoise and Hare) algorithm. If a cycle exists, the fast pointer will eventually meet the slow pointer.",
+      "tags": ["data-structures", "linked-list", "floyd-cycle"],
+      "recommended_time_sec": 50
+    },
+    {
+      "id": "ds-code-002",
+      "topic": "Data Structures",
+      "subtopic": "Binary Search Trees",
+      "difficulty": "hard",
+      "question_text": "What does this recursive function return for the root of a binary tree?\n\n```python\ndef max_depth(root):\n    if not root:\n        return 0\n    return 1 + max(max_depth(root.left), max_depth(root.right))\n```",
+      "options": [
+        "The total number of leaf nodes",
+        "The maximum depth (height) of the binary tree",
+        "The diameter of the binary tree",
+        "The sum of all node values"
+      ],
+      "correct_option": 1,
+      "explanation": "At each node, it computes 1 plus the maximum depth of its left and right subtrees, which is the definition of tree height/depth.",
+      "tags": ["data-structures", "trees", "recursion"],
+      "recommended_time_sec": 60
+    },
+    {
+      "id": "ds-code-003",
+      "topic": "Data Structures",
+      "subtopic": "Stacks",
+      "difficulty": "easy",
+      "question_text": "What does this stack-based algorithm check?\n\n```python\ndef is_valid(s):\n    stack = []\n    mapping = {')': '(', '}': '{', ']': '['}\n    for char in s:\n        if char in mapping:\n            top = stack.pop() if stack else '#'\n            if mapping[char] != top:\n                return False\n        else:\n            stack.append(char)\n    return len(stack) == 0\n```",
+      "options": [
+        "Checks if brackets are properly balanced and closed in valid order",
+        "Reverses the string s",
+        "Calculates arithmetic expression evaluation",
+        "Finds anagrams"
+      ],
+      "correct_option": 0,
+      "explanation": "This is the classic balanced brackets/parentheses checker using a LIFO stack.",
+      "tags": ["data-structures", "stacks", "parentheses"],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "py-008",
+      "topic": "Python",
+      "subtopic": "Mutability",
+      "difficulty": "easy",
+      "question_text": "What is printed by this Python snippet?\n\n```python\na = [1, 2, 3]\nb = a\nb.append(4)\nprint(len(a))\n```",
+      "options": ["3", "4", "IndexError", "TypeError"],
+      "correct_option": 1,
+      "explanation": "`b = a` creates another reference to the same list. Modifying `b` modifies the list that `a` points to. Length is 4.",
+      "tags": ["python", "mutability"],
+      "recommended_time_sec": 30
+    },
+    {
+      "id": "py-009",
+      "topic": "Python",
+      "subtopic": "Zip & Enumerate",
+      "difficulty": "easy",
+      "question_text": "What does this Python loop output?\n\n```python\nkeys = ['a', 'b']\nvals = [10, 20]\nd = dict(zip(keys, vals))\nprint(d['b'])\n```",
+      "options": ["10", "20", "('b', 20)", "KeyError"],
+      "correct_option": 1,
+      "explanation": "`zip(keys, vals)` pairs `('a', 10)` and `('b', 20)`. Passing the pairs to `dict()` constructs `{'a': 10, 'b': 20}`. `d['b']` is 20.",
+      "tags": ["python", "zip", "dictionary"],
+      "recommended_time_sec": 30
+    },
+    {
+      "id": "py-010",
+      "topic": "Python",
+      "subtopic": "Walrus Operator",
+      "difficulty": "medium",
+      "question_text": "What is the output of the walrus assignment expression `:=` below?\n\n```python\ndata = [1, 2, 3, 4, 5]\nif (n := len(data)) > 3:\n    print(f'Length is {n}')\n```",
+      "options": ["Length is 5", "Length is 3", "SyntaxError", "True"],
+      "correct_option": 0,
+      "explanation": "The walrus operator `:=` assigns `len(data)` (5) to `n` and returns its value in the same expression. Since 5 > 3, it prints `Length is 5`.",
+      "tags": ["python", "walrus", "syntax"],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "js-007",
+      "topic": "JavaScript",
+      "subtopic": "Destructuring",
+      "difficulty": "easy",
+      "question_text": "What is the output of this array destructuring snippet?\n\n```javascript\nconst [first, , third = 99] = [10, 20];\nconsole.log(first, third);\n```",
+      "options": ["10 99", "10 20", "10 undefined", "NaN"],
+      "correct_option": 0,
+      "explanation": "`first` is bound to index 0 (10). The empty comma skips index 1. `third` defaults to 99 because the array only has 2 elements.",
+      "tags": ["javascript", "destructuring", "es6"],
+      "recommended_time_sec": 35
+    },
+    {
+      "id": "js-008",
+      "topic": "JavaScript",
+      "subtopic": "Set Operations",
+      "difficulty": "easy",
+      "question_text": "What is logged by this JavaScript Set snippet?\n\n```javascript\nconst s = new Set([1, 2, 2, 3, 1, 4]);\nconsole.log(s.size);\n```",
+      "options": ["6", "4", "3", "TypeError"],
+      "correct_option": 1,
+      "explanation": "A Set only stores unique values. The duplicates (2 and 1) are ignored, leaving `{1, 2, 3, 4}` with a size of 4.",
+      "tags": ["javascript", "set", "collections"],
+      "recommended_time_sec": 30
+    },
+    {
+      "id": "js-009",
+      "topic": "JavaScript",
+      "subtopic": "Coercion",
+      "difficulty": "medium",
+      "question_text": "What is the output of this JavaScript coercion expression?\n\n```javascript\nconsole.log([] + {} === '[object Object]');\n```",
+      "options": ["true", "false", "TypeError", "undefined"],
+      "correct_option": 0,
+      "explanation": "In JavaScript, `[]` converts to empty string `\"\"`, and `{}` converts to `\"[object Object]\"`. Concatenating them produces `\"[object Object]\"`, which strictly equals `\"[object Object]\"` (true).",
+      "tags": ["javascript", "coercion", "types"],
+      "recommended_time_sec": 50
+    },
+    {
+      "id": "sql-006",
+      "topic": "SQL",
+      "subtopic": "CASE Statements",
+      "difficulty": "medium",
+      "question_text": "What will this conditional query return for a score of 85?\n\n```sql\nSELECT CASE\n         WHEN score >= 90 THEN 'A'\n         WHEN score >= 80 THEN 'B'\n         ELSE 'C'\n       END AS grade\nFROM (SELECT 85 AS score) t;\n```",
+      "options": ["'B'", "'A'", "'C'", "NULL"],
+      "correct_option": 0,
+      "explanation": "CASE expressions evaluate conditions in sequence and return the result for the first matching branch. 85 is not >= 90, but is >= 80, returning `'B'`.",
+      "tags": ["sql", "case", "conditional"],
+      "recommended_time_sec": 40
+    },
+    {
+      "id": "sql-007",
+      "topic": "SQL",
+      "subtopic": "DISTINCT & ORDER BY",
+      "difficulty": "easy",
+      "question_text": "What does the `DISTINCT` keyword do in this SQL statement?\n\n```sql\nSELECT DISTINCT city FROM customers;\n```",
+      "options": [
+        "Removes duplicate city names from the result set",
+        "Sorts cities alphabetically",
+        "Returns only cities with more than 1 customer",
+        "Converts city names to uppercase"
+      ],
+      "correct_option": 0,
+      "explanation": "`DISTINCT` filters out duplicate rows from the result set, returning each unique city name only once.",
+      "tags": ["sql", "distinct"],
+      "recommended_time_sec": 30
+    },
+    {
+      "id": "cpp-005",
+      "topic": "C & C++",
+      "subtopic": "Templates",
+      "difficulty": "medium",
+      "question_text": "What is the output of this C++ function template?\n\n```cpp\n#include <iostream>\nusing namespace std;\n\ntemplate <typename T>\nT getMax(T a, T b) {\n    return (a > b) ? a : b;\n}\n\nint main() {\n    cout << getMax(10, 20) << \" \";\n    cout << getMax(5.5, 2.1);\n    return 0;\n}\n```",
+      "options": ["20 5.5", "10 2.1", "20 5", "Compilation Error"],
+      "correct_option": 0,
+      "explanation": "The template `getMax` deduces type `int` for `(10, 20)` returning `20`, and type `double` for `(5.5, 2.1)` returning `5.5`.",
+      "tags": ["cpp", "templates", "generics"],
+      "recommended_time_sec": 50
+    },
+    {
+      "id": "algo-code-004",
+      "topic": "Algorithms",
+      "subtopic": "Binary Search",
+      "difficulty": "easy",
+      "question_text": "How many comparisons does binary search make to locate the value 16 in `[2, 4, 6, 8, 10, 12, 14, 16]`?\n\n```python\narr = [2, 4, 6, 8, 10, 12, 14, 16]\n# mid = (0 + 7) // 2 -> arr[3] = 8\n# mid = (4 + 7) // 2 -> arr[5] = 12\n# mid = (6 + 7) // 2 -> arr[6] = 14\n# mid = (7 + 7) // 2 -> arr[7] = 16\n```",
+      "options": ["4 comparisons", "8 comparisons", "2 comparisons", "1 comparison"],
+      "correct_option": 0,
+      "explanation": "First checks index 3 (8), then index 5 (12), then index 6 (14), then index 7 (16) — exactly 4 comparisons.",
+      "tags": ["algorithms", "binary-search", "complexity"],
+      "recommended_time_sec": 50
+    },
+    {
+      "id": "py-011",
+      "topic": "Python",
+      "subtopic": "Lambda Functions",
+      "difficulty": "easy",
+      "question_text": "What does this Python snippet print?\n\n```python\npairs = [(1, 'one'), (3, 'three'), (2, 'two')]\npairs.sort(key=lambda x: x[0])\nprint([p[1] for p in pairs])\n```",
+      "options": ["['one', 'two', 'three']", "['one', 'three', 'two']", "['three', 'two', 'one']", "TypeError"],
+      "correct_option": 0,
+      "explanation": "Sorting with `key=lambda x: x[0]` orders the tuples by their integer first element (1, 2, 3), resulting in `['one', 'two', 'three']`.",
+      "tags": ["python", "sorting", "lambda"],
+      "recommended_time_sec": 40
+    },
+    {
+      "id": "js-010",
+      "topic": "JavaScript",
+      "subtopic": "Currying",
+      "difficulty": "medium",
+      "question_text": "What does the following curried JavaScript function return?\n\n```javascript\nconst multiply = a => b => c => a * b * c;\nconst res = multiply(2)(3)(4);\nconsole.log(res);\n```",
+      "options": ["24", "9", "NaN", "Function"],
+      "correct_option": 0,
+      "explanation": "Each invocation returns a function until the third argument is provided, evaluating `2 * 3 * 4 = 24`.",
+      "tags": ["javascript", "currying", "functional"],
+      "recommended_time_sec": 45
+    }
+  ]
+}
+

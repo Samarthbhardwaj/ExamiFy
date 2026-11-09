@@ -1,0 +1,3186 @@
+{
+  "id": "shared-1793814908591-mix-of-pyhton-linux-and-nosql",
+  "name": "mix of pyhton linux and nosql",
+  "description": "Created by Admin",
+  "publishedAt": "2026-11-04T17:55:08.591Z",
+  "publishedBy": "Samar Admin",
+  "questions": [
+    {
+      "id": "py-001",
+      "topic": "Python",
+      "subtopic": "List Comprehensions",
+      "difficulty": "easy",
+      "question_text": "What is the output of the following Python snippet?\n\n```python\nnums = [1, 2, 3, 4, 5, 6]\nresult = [x * 2 for x in nums if x % 2 == 0]\nprint(result)\n```",
+      "options": [
+        "[2, 4, 6]",
+        "[4, 16, 36]",
+        "[4, 8, 12]",
+        "[2, 6, 10]"
+      ],
+      "correct_option": 2,
+      "explanation": "The condition `if x % 2 == 0` keeps only the even numbers 2, 4 and 6. The expression `x * 2` is then applied to each survivor, giving [4, 8, 12]. [2, 4, 6] would appear if the multiplication were missing, while the other two come from filtering odd numbers or squaring.",
+      "tags": [
+        "python",
+        "comprehension",
+        "basics"
+      ],
+      "recommended_time_sec": 40
+    },
+    {
+      "id": "py-002",
+      "topic": "Python",
+      "subtopic": "Default Arguments",
+      "difficulty": "medium",
+      "question_text": "What does the following Python code output?\n\n```python\ndef append_to(element, target=[]):\n    target.append(element)\n    return target\n\nlist1 = append_to(10)\nlist2 = append_to(20)\nprint(list1, list2)\n```",
+      "options": [
+        "[10, 20] [10, 20]",
+        "[20] [10, 20]",
+        "[10] [10, 20]",
+        "[10] [20]"
+      ],
+      "correct_option": 0,
+      "explanation": "Default parameter values are evaluated once, when the function is defined, not on every call. Because `target` is a mutable list, both calls modify the same list object, and list1 and list2 are two names for it. The usual fix is `target=None` and creating a new list inside the function.",
+      "tags": [
+        "python",
+        "mutable-defaults",
+        "functions"
+      ],
+      "recommended_time_sec": 60
+    },
+    {
+      "id": "py-003",
+      "topic": "Python",
+      "subtopic": "Aliasing",
+      "difficulty": "medium",
+      "question_text": "What is printed by the following code?\n\n```python\na = [1, 2, 3]\nb = a\nb += [4]\nprint(a)\n```",
+      "options": [
+        "[1, 2, 3]",
+        "[4, 1, 2, 3]",
+        "[1, 2, 3, [4]]",
+        "[1, 2, 3, 4]"
+      ],
+      "correct_option": 3,
+      "explanation": "For lists, `+=` calls `__iadd__`, which extends the existing list in place instead of creating a new one. Since `a` and `b` reference the same object, the change is visible through both names.",
+      "tags": [
+        "python",
+        "aliasing",
+        "mutability"
+      ],
+      "recommended_time_sec": 60
+    },
+    {
+      "id": "py-004",
+      "topic": "Python",
+      "subtopic": "Aliasing",
+      "difficulty": "medium",
+      "question_text": "What is printed by the following code?\n\n```python\nx = [1, 2, 3]\ny = x\ny = y + [4]\nprint(x, y)\n```",
+      "options": [
+        "[1, 2, 3, 4] [1, 2, 3, 4]",
+        "[1, 2, 3] [1, 2, 3, 4]",
+        "[1, 2, 3, 4] [1, 2, 3]",
+        "[1, 2, 3] [1, 2, 3]"
+      ],
+      "correct_option": 1,
+      "explanation": "`y + [4]` builds a brand-new list and rebinds `y` to it, so `x` still points to the original list. Compare this with `y += [4]`, which mutates in place and would change `x` as well.",
+      "tags": [
+        "python",
+        "aliasing",
+        "operators"
+      ],
+      "recommended_time_sec": 60
+    },
+    {
+      "id": "py-005",
+      "topic": "Python",
+      "subtopic": "Tuples",
+      "difficulty": "hard",
+      "question_text": "What is the output of this snippet?\n\n```python\nt = (1, 2, [3, 4])\ntry:\n    t[2] += [5]\nexcept TypeError:\n    pass\nprint(t)\n```",
+      "options": [
+        "(1, 2, [3, 4, 5])",
+        "(1, 2, [5])",
+        "(1, 2, [3, 4], 5)",
+        "(1, 2, [3, 4])"
+      ],
+      "correct_option": 0,
+      "explanation": "`t[2] += [5]` first runs `list.__iadd__`, which extends the inner list in place. Python then tries to assign the result back to `t[2]`, and since tuples are immutable that assignment raises TypeError. The exception is caught, but the list has already been modified.",
+      "tags": [
+        "python",
+        "tuples",
+        "immutability"
+      ],
+      "recommended_time_sec": 90
+    },
+    {
+      "id": "py-006",
+      "topic": "Python",
+      "subtopic": "Integer Caching",
+      "difficulty": "hard",
+      "question_text": "What does this code print in CPython?\n\n```python\na = 256\nb = 256\nc = int(\"257\")\nd = int(\"257\")\nprint(a is b, c is d)\n```",
+      "options": [
+        "True True",
+        "False True",
+        "False False",
+        "True False"
+      ],
+      "correct_option": 3,
+      "explanation": "CPython pre-allocates and reuses small integers from -5 to 256, so `a` and `b` are the same object. 257 lies outside that range, and each `int(\"257\")` call creates a separate object, so `c is d` is False. Use `==` for value comparison, never `is`.",
+      "tags": [
+        "python",
+        "memory",
+        "identity"
+      ],
+      "recommended_time_sec": 75
+    },
+    {
+      "id": "py-007",
+      "topic": "Python",
+      "subtopic": "Copying",
+      "difficulty": "medium",
+      "question_text": "What is the output of this code?\n\n```python\nimport copy\na = [[1, 2], [3, 4]]\nb = copy.copy(a)\nb[0].append(99)\nprint(a)\n```",
+      "options": [
+        "[[99], [3, 4]]",
+        "[[1, 2, 99], [3, 4]]",
+        "[[1, 2], [3, 4, 99]]",
+        "[[1, 2], [3, 4]]"
+      ],
+      "correct_option": 1,
+      "explanation": "`copy.copy` makes a shallow copy: the outer list is new, but the inner lists are shared between `a` and `b`. Appending through `b[0]` therefore changes the inner list that `a[0]` also references.",
+      "tags": [
+        "python",
+        "shallow-copy",
+        "memory"
+      ],
+      "recommended_time_sec": 60
+    },
+    {
+      "id": "py-008",
+      "topic": "Python",
+      "subtopic": "Copying",
+      "difficulty": "medium",
+      "question_text": "What is the output of this code?\n\n```python\nimport copy\na = [[1, 2], [3, 4]]\nb = copy.deepcopy(a)\nb[0].append(99)\nprint(a, b)\n```",
+      "options": [
+        "[[1, 2], [3, 4]] [[1, 2], [3, 4]]",
+        "[[1, 2, 99], [3, 4]] [[1, 2, 99], [3, 4]]",
+        "[[1, 2, 99], [3, 4]] [[1, 2], [3, 4]]",
+        "[[1, 2], [3, 4]] [[1, 2, 99], [3, 4]]"
+      ],
+      "correct_option": 3,
+      "explanation": "`deepcopy` recursively copies nested objects, so `b` owns completely independent inner lists. Modifying `b[0]` leaves `a` untouched.",
+      "tags": [
+        "python",
+        "deep-copy",
+        "memory"
+      ],
+      "recommended_time_sec": 60
+    },
+    {
+      "id": "py-009",
+      "topic": "Python",
+      "subtopic": "Floating Point",
+      "difficulty": "easy",
+      "question_text": "What is printed by the following code?\n\n```python\nprint(0.1 + 0.2 == 0.3, round(0.1 + 0.2, 2) == 0.3)\n```",
+      "options": [
+        "False True",
+        "False False",
+        "True True",
+        "True False"
+      ],
+      "correct_option": 0,
+      "explanation": "0.1 and 0.2 cannot be represented exactly in binary floating point, so their sum is 0.30000000000000004 and the direct comparison fails. Rounding to 2 places produces 0.3, which does match. For tolerant comparisons use `math.isclose` or `decimal.Decimal`.",
+      "tags": [
+        "python",
+        "float",
+        "precision"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "py-010",
+      "topic": "Python",
+      "subtopic": "Truthiness",
+      "difficulty": "easy",
+      "question_text": "What is the output of the following snippet?\n\n```python\nprint(bool([]), bool([0]), bool(\"0\"), bool(0.0))\n```",
+      "options": [
+        "True True True False",
+        "False True False False",
+        "False False False True",
+        "False True True False"
+      ],
+      "correct_option": 3,
+      "explanation": "Empty containers and numeric zeros are falsy. `[0]` is a non-empty list and `\"0\"` is a non-empty string, so both are truthy, even though their contents look like zero.",
+      "tags": [
+        "python",
+        "truthiness",
+        "basics"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "py-011",
+      "topic": "Python",
+      "subtopic": "Operators",
+      "difficulty": "easy",
+      "question_text": "What does this expression print?\n\n```python\nprint(2 ** 3 ** 2)\n```",
+      "options": [
+        "81",
+        "256",
+        "512",
+        "64"
+      ],
+      "correct_option": 2,
+      "explanation": "The exponent operator is right-associative, so the expression is evaluated as 2 ** (3 ** 2) = 2 ** 9 = 512. A left-to-right reading, (2 ** 3) ** 2, would give 64.",
+      "tags": [
+        "python",
+        "operators",
+        "precedence"
+      ],
+      "recommended_time_sec": 40
+    },
+    {
+      "id": "py-012",
+      "topic": "Python",
+      "subtopic": "Operators",
+      "difficulty": "medium",
+      "question_text": "What is the output?\n\n```python\nprint(-7 // 2, -7 % 2)\n```",
+      "options": [
+        "-4 -1",
+        "-3 1",
+        "-4 1",
+        "-3 -1"
+      ],
+      "correct_option": 2,
+      "explanation": "Floor division rounds toward negative infinity, so -7 // 2 is -4. Python guarantees `a == (a // b) * b + a % b`, so the remainder must be -7 - (-4 * 2) = 1. The remainder takes the sign of the divisor.",
+      "tags": [
+        "python",
+        "operators",
+        "floor-division"
+      ],
+      "recommended_time_sec": 60
+    },
+    {
+      "id": "py-013",
+      "topic": "Python",
+      "subtopic": "Scope",
+      "difficulty": "hard",
+      "question_text": "What is the output of this code?\n\n```python\nx = 10\ndef outer():\n    x = 20\n    def inner():\n        nonlocal x\n        x = 30\n    inner()\n    return x\nprint(outer(), x)\n```",
+      "options": [
+        "20 10",
+        "30 30",
+        "20 30",
+        "30 10"
+      ],
+      "correct_option": 3,
+      "explanation": "`nonlocal x` binds the name to the nearest enclosing function scope, so `inner` overwrites outer's local `x` with 30. The module-level `x` is never touched and stays 10. Using `global x` instead would have changed the module variable.",
+      "tags": [
+        "python",
+        "scope",
+        "nonlocal"
+      ],
+      "recommended_time_sec": 90
+    },
+    {
+      "id": "py-014",
+      "topic": "Python",
+      "subtopic": "Closures",
+      "difficulty": "hard",
+      "question_text": "What does the following code print?\n\n```python\nfuncs = [lambda: i for i in range(3)]\nprint([f() for f in funcs])\n```",
+      "options": [
+        "[0, 0, 0]",
+        "[0, 1, 2]",
+        "[2, 2, 2]",
+        "[3, 3, 3]"
+      ],
+      "correct_option": 2,
+      "explanation": "Closures capture variables, not values (late binding). All three lambdas refer to the same `i`, which holds 2 after the loop ends. Writing `lambda i=i: i` freezes the current value at definition time and would give [0, 1, 2].",
+      "tags": [
+        "python",
+        "closures",
+        "late-binding"
+      ],
+      "recommended_time_sec": 90
+    },
+    {
+      "id": "py-015",
+      "topic": "Python",
+      "subtopic": "Closures",
+      "difficulty": "medium",
+      "question_text": "What is the output of this code?\n\n```python\ndef counter():\n    n = 0\n    def inc():\n        nonlocal n\n        n += 1\n        return n\n    return inc\n\nc = counter()\nprint(c(), c(), counter()())\n```",
+      "options": [
+        "1 1 1",
+        "1 2 3",
+        "1 2 1",
+        "1 2 2"
+      ],
+      "correct_option": 2,
+      "explanation": "Each call to `counter()` creates a fresh closure with its own `n`. The first closure `c` keeps its state across calls (1, then 2), while the new closure created in the last call starts again from 0 and returns 1.",
+      "tags": [
+        "python",
+        "closures",
+        "nonlocal"
+      ],
+      "recommended_time_sec": 75
+    },
+    {
+      "id": "py-016",
+      "topic": "Python",
+      "subtopic": "Decorators",
+      "difficulty": "medium",
+      "question_text": "What is printed by the following code?\n\n```python\ndef dec(fn):\n    def wrap(*a, **k):\n        return fn(*a, **k) * 2\n    return wrap\n\n@dec\ndef add(a, b):\n    return a + b\n\nprint(add(2, 3))\n```",
+      "options": [
+        "5",
+        "25",
+        "10",
+        "6"
+      ],
+      "correct_option": 2,
+      "explanation": "`@dec` replaces `add` with `wrap`. Calling `add(2, 3)` runs the original function (5) and the wrapper doubles the result to 10.",
+      "tags": [
+        "python",
+        "decorators",
+        "functions"
+      ],
+      "recommended_time_sec": 60
+    },
+    {
+      "id": "py-017",
+      "topic": "Python",
+      "subtopic": "Decorators",
+      "difficulty": "hard",
+      "question_text": "What is the output of this code?\n\n```python\ndef dec(fn):\n    print(\"A\", end=\" \")\n    def wrap():\n        print(\"B\", end=\" \")\n        return fn()\n    return wrap\n\n@dec\ndef f():\n    print(\"C\", end=\" \")\n\nf()\n```",
+      "options": [
+        "A B C",
+        "C B A",
+        "B C A",
+        "A C B"
+      ],
+      "correct_option": 0,
+      "explanation": "The decorator body runs once at definition time, so \"A\" is printed immediately when `@dec` is applied. Calling `f()` then runs `wrap`, which prints \"B\" and calls the original function that prints \"C\".",
+      "tags": [
+        "python",
+        "decorators",
+        "execution-order"
+      ],
+      "recommended_time_sec": 90
+    },
+    {
+      "id": "py-018",
+      "topic": "Python",
+      "subtopic": "Generators",
+      "difficulty": "medium",
+      "question_text": "What does this snippet print?\n\n```python\ng = (x for x in range(3))\nprint(list(g), list(g))\n```",
+      "options": [
+        "[0, 1, 2] []",
+        "[0, 1, 2] [0, 1, 2]",
+        "[] [0, 1, 2]",
+        "[0, 1] [2]"
+      ],
+      "correct_option": 0,
+      "explanation": "A generator is a one-shot iterator. The first `list(g)` consumes every value, so the second call finds the generator already exhausted and returns an empty list.",
+      "tags": [
+        "python",
+        "generators",
+        "iterators"
+      ],
+      "recommended_time_sec": 60
+    },
+    {
+      "id": "py-019",
+      "topic": "Python",
+      "subtopic": "Iterators",
+      "difficulty": "easy",
+      "question_text": "What is the output of the following code?\n\n```python\nit = iter([1, 2])\nprint(next(it), next(it), next(it, \"done\"))\n```",
+      "options": [
+        "1 2 0",
+        "1 2 done",
+        "1 2 None",
+        "1 2 2"
+      ],
+      "correct_option": 1,
+      "explanation": "`next()` accepts an optional default that is returned instead of raising StopIteration when the iterator is exhausted. The third call therefore returns \"done\".",
+      "tags": [
+        "python",
+        "iterators",
+        "next"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "py-020",
+      "topic": "Python",
+      "subtopic": "Functions",
+      "difficulty": "medium",
+      "question_text": "What does this code print?\n\n```python\ndef f(*args, **kwargs):\n    return len(args), len(kwargs)\n\nprint(f(1, 2, a=3))\n```",
+      "options": [
+        "(2, 3)",
+        "(3, 0)",
+        "(1, 2)",
+        "(2, 1)"
+      ],
+      "correct_option": 3,
+      "explanation": "Positional arguments 1 and 2 are collected into the tuple `args`, and the keyword argument `a=3` goes into the dict `kwargs`. The lengths are therefore 2 and 1.",
+      "tags": [
+        "python",
+        "functions",
+        "args-kwargs"
+      ],
+      "recommended_time_sec": 60
+    },
+    {
+      "id": "py-021",
+      "topic": "Python",
+      "subtopic": "Functions",
+      "difficulty": "hard",
+      "question_text": "What is the output of this code?\n\n```python\ndef f(a, b=2, *args, c, **kw):\n    return a, b, args, c\n\nprint(f(1, 3, 4, c=5))\n```",
+      "options": [
+        "(1, 3, (4,), 5)",
+        "(1, 3, (4, 5))",
+        "(1, 3, 4, 5)",
+        "(1, 2, (3, 4), 5)"
+      ],
+      "correct_option": 0,
+      "explanation": "Positional values fill `a`, `b`, then the extras go to `*args`, giving a=1, b=3 and args=(4,). Any parameter after `*args` is keyword-only, so `c` receives 5 only through `c=5`.",
+      "tags": [
+        "python",
+        "functions",
+        "keyword-only"
+      ],
+      "recommended_time_sec": 90
+    },
+    {
+      "id": "py-022",
+      "topic": "Python",
+      "subtopic": "Functional Tools",
+      "difficulty": "medium",
+      "question_text": "What is the output of the following code?\n\n```python\nfrom functools import reduce\nprint(reduce(lambda a, b: a * b, [1, 2, 3, 4], 2))\n```",
+      "options": [
+        "12",
+        "10",
+        "48",
+        "24"
+      ],
+      "correct_option": 2,
+      "explanation": "The third argument of `reduce` is the initial value, so the computation is 2 * 1 * 2 * 3 * 4 = 48. Without the initial value the result would be 24.",
+      "tags": [
+        "python",
+        "functools",
+        "reduce"
+      ],
+      "recommended_time_sec": 60
+    },
+    {
+      "id": "py-023",
+      "topic": "Python",
+      "subtopic": "Functional Tools",
+      "difficulty": "medium",
+      "question_text": "What does this code print?\n\n```python\nprint(list(map(lambda x, y: x + y, [1, 2, 3], [10, 20])))\n```",
+      "options": [
+        "[11, 22, 3]",
+        "[11, 22]",
+        "[11, 22, 33]",
+        "[1, 2, 3]"
+      ],
+      "correct_option": 1,
+      "explanation": "When `map` receives several iterables it stops at the shortest one, just like `zip`. Only the pairs (1, 10) and (2, 20) are processed, and the unmatched 3 is ignored.",
+      "tags": [
+        "python",
+        "map",
+        "iterables"
+      ],
+      "recommended_time_sec": 60
+    },
+    {
+      "id": "py-024",
+      "topic": "Python",
+      "subtopic": "Functional Tools",
+      "difficulty": "medium",
+      "question_text": "What is the output of this snippet?\n\n```python\nprint(list(filter(None, [0, 1, '', 'a', [], [0]])))\n```",
+      "options": [
+        "[1, 'a']",
+        "[0, 1, 'a', [0]]",
+        "[1, 'a', [0]]",
+        "[1, 'a', []]"
+      ],
+      "correct_option": 2,
+      "explanation": "Passing `None` as the function makes `filter` keep only truthy items. Zero, the empty string and the empty list are removed, while `[0]` survives because a non-empty list is truthy.",
+      "tags": [
+        "python",
+        "filter",
+        "truthiness"
+      ],
+      "recommended_time_sec": 60
+    },
+    {
+      "id": "py-025",
+      "topic": "Python",
+      "subtopic": "Functional Tools",
+      "difficulty": "medium",
+      "question_text": "What does the following code print?\n\n```python\nfrom functools import partial\np = partial(pow, 2)\nprint(p(10))\n```",
+      "options": [
+        "20",
+        "1000",
+        "1024",
+        "100"
+      ],
+      "correct_option": 2,
+      "explanation": "`partial(pow, 2)` pre-fills the first argument, so `p(10)` calls `pow(2, 10)`, which is 1024. The bound value becomes the base, not the exponent.",
+      "tags": [
+        "python",
+        "functools",
+        "partial"
+      ],
+      "recommended_time_sec": 60
+    },
+    {
+      "id": "py-026",
+      "topic": "Python",
+      "subtopic": "Classes",
+      "difficulty": "easy",
+      "question_text": "What is the output of this code?\n\n```python\nclass A:\n    x = 1\n\na1, a2 = A(), A()\na1.x = 5\nprint(a1.x, a2.x, A.x)\n```",
+      "options": [
+        "5 1 1",
+        "1 1 1",
+        "5 5 5",
+        "5 1 5"
+      ],
+      "correct_option": 0,
+      "explanation": "Assigning `a1.x = 5` creates a new instance attribute that shadows the class attribute for `a1` only. `a2` and the class itself still see the original value 1.",
+      "tags": [
+        "python",
+        "oop",
+        "class-attributes"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "py-027",
+      "topic": "Python",
+      "subtopic": "Classes",
+      "difficulty": "medium",
+      "question_text": "What does this code print?\n\n```python\nclass A:\n    items = []\n\na1, a2 = A(), A()\na1.items.append(1)\nprint(a2.items, A.items)\n```",
+      "options": [
+        "[1] []",
+        "[] [1]",
+        "[1] [1]",
+        "[] []"
+      ],
+      "correct_option": 2,
+      "explanation": "`append` mutates the shared class-level list rather than assigning a new attribute, so every instance and the class see the change. Mutable class attributes are shared state, so initialise lists in `__init__` instead.",
+      "tags": [
+        "python",
+        "oop",
+        "class-attributes",
+        "mutability"
+      ],
+      "recommended_time_sec": 60
+    },
+    {
+      "id": "py-028",
+      "topic": "Python",
+      "subtopic": "Inheritance",
+      "difficulty": "medium",
+      "question_text": "What is the output of the following code?\n\n```python\nclass A: pass\nclass B(A): pass\nclass C(A): pass\nclass D(B, C): pass\nprint([c.__name__ for c in D.__mro__])\n```",
+      "options": [
+        "['D', 'B', 'C', 'object', 'A']",
+        "['D', 'C', 'B', 'A', 'object']",
+        "['D', 'B', 'A', 'C', 'object']",
+        "['D', 'B', 'C', 'A', 'object']"
+      ],
+      "correct_option": 3,
+      "explanation": "Python uses C3 linearization, which keeps the order of base classes and ensures a class always appears before its parents. B and C both come before their shared parent A, and `object` is always last.",
+      "tags": [
+        "python",
+        "oop",
+        "mro"
+      ],
+      "recommended_time_sec": 75
+    },
+    {
+      "id": "py-029",
+      "topic": "Python",
+      "subtopic": "Inheritance",
+      "difficulty": "hard",
+      "question_text": "What does this code print?\n\n```python\nclass A:\n    def hi(self): return \"A\"\nclass B(A):\n    def hi(self): return \"B\" + super().hi()\nclass C(A):\n    def hi(self): return \"C\" + super().hi()\nclass D(B, C): pass\nprint(D().hi())\n```",
+      "options": [
+        "BC",
+        "CBA",
+        "BA",
+        "BCA"
+      ],
+      "correct_option": 3,
+      "explanation": "`super()` follows the MRO of the instance's class, not just the direct parent. For D the order is D, B, C, A, so B's `super()` call reaches C, and C's reaches A, giving \"B\" + \"C\" + \"A\".",
+      "tags": [
+        "python",
+        "oop",
+        "super",
+        "mro"
+      ],
+      "recommended_time_sec": 90
+    },
+    {
+      "id": "py-030",
+      "topic": "Python",
+      "subtopic": "Magic Methods",
+      "difficulty": "medium",
+      "question_text": "What is the output of this code?\n\n```python\nclass A:\n    def __str__(self): return \"str\"\n    def __repr__(self): return \"repr\"\n\na = A()\nprint(a, [a])\n```",
+      "options": [
+        "str [str]",
+        "repr [str]",
+        "repr [repr]",
+        "str [repr]"
+      ],
+      "correct_option": 3,
+      "explanation": "`print(a)` uses `__str__`, but a list formats its elements with `repr()`, so the element is shown using `__repr__`. The result is `str [repr]`.",
+      "tags": [
+        "python",
+        "oop",
+        "str-repr"
+      ],
+      "recommended_time_sec": 60
+    },
+    {
+      "id": "py-031",
+      "topic": "Python",
+      "subtopic": "Magic Methods",
+      "difficulty": "hard",
+      "question_text": "What happens when the following code is executed?\n\n```python\nclass A:\n    def __eq__(self, other):\n        return True\n\ns = {A(), A()}\nprint(len(s))\n```",
+      "options": [
+        "Prints 2 because the ids differ",
+        "TypeError: unhashable type: 'A'",
+        "Prints 1 because the objects are equal",
+        "AttributeError: __hash__ is missing"
+      ],
+      "correct_option": 1,
+      "explanation": "When a class defines `__eq__` without `__hash__`, Python sets `__hash__` to None, making its instances unhashable. Adding them to a set therefore raises TypeError before `len` is even called.",
+      "tags": [
+        "python",
+        "oop",
+        "hashing",
+        "eq"
+      ],
+      "recommended_time_sec": 90
+    },
+    {
+      "id": "py-032",
+      "topic": "Python",
+      "subtopic": "Slots",
+      "difficulty": "medium",
+      "question_text": "What happens when this code runs?\n\n```python\nclass A:\n    __slots__ = ('x',)\n\na = A()\na.x = 1\na.y = 2\n```",
+      "options": [
+        "KeyError: 'y' not in slots",
+        "Silently creates the attribute y",
+        "AttributeError: no attribute 'y'",
+        "TypeError: slots are read-only"
+      ],
+      "correct_option": 2,
+      "explanation": "`__slots__` removes the per-instance `__dict__`, so only the listed attributes can be assigned. Setting `a.y` raises AttributeError, which is also why slotted objects use less memory.",
+      "tags": [
+        "python",
+        "oop",
+        "slots"
+      ],
+      "recommended_time_sec": 60
+    },
+    {
+      "id": "py-033",
+      "topic": "Python",
+      "subtopic": "Name Mangling",
+      "difficulty": "hard",
+      "question_text": "What is printed by the following code?\n\n```python\nclass A:\n    def __init__(self):\n        self.__x = 1\n\nprint(A().__dict__)\n```",
+      "options": [
+        "{'A__x': 1}",
+        "{'_x': 1}",
+        "{'__x': 1}",
+        "{'_A__x': 1}"
+      ],
+      "correct_option": 3,
+      "explanation": "Attributes starting with two underscores are mangled to `_ClassName__name`, so `__x` inside class A is stored as `_A__x`. This avoids accidental clashes in subclasses; it is not true privacy.",
+      "tags": [
+        "python",
+        "oop",
+        "name-mangling"
+      ],
+      "recommended_time_sec": 75
+    },
+    {
+      "id": "py-034",
+      "topic": "Python",
+      "subtopic": "Class Methods",
+      "difficulty": "medium",
+      "question_text": "What does this code print?\n\n```python\nclass A:\n    @classmethod\n    def create(cls):\n        return cls()\n\nclass B(A):\n    pass\n\nprint(type(B.create()).__name__)\n```",
+      "options": [
+        "B",
+        "A",
+        "cls",
+        "type"
+      ],
+      "correct_option": 0,
+      "explanation": "A classmethod receives the class it was called on, not the class where it was defined. `B.create()` passes `B` as `cls`, so the new object is an instance of B.",
+      "tags": [
+        "python",
+        "oop",
+        "classmethod"
+      ],
+      "recommended_time_sec": 60
+    },
+    {
+      "id": "py-035",
+      "topic": "Python",
+      "subtopic": "Context Managers",
+      "difficulty": "medium",
+      "question_text": "What is the output of this code?\n\n```python\nclass Res:\n    def __enter__(self):\n        print(\"in\", end=\" \")\n        return self\n    def __exit__(self, *args):\n        print(\"out\", end=\" \")\n        return False\n\nwith Res():\n    print(\"body\", end=\" \")\n```",
+      "options": [
+        "out in body",
+        "in out body",
+        "in body out",
+        "body in out"
+      ],
+      "correct_option": 2,
+      "explanation": "The `with` statement calls `__enter__`, runs the block, and then always calls `__exit__`, even if the block raises. The order is therefore enter, body, exit.",
+      "tags": [
+        "python",
+        "oop",
+        "context-manager"
+      ],
+      "recommended_time_sec": 60
+    },
+    {
+      "id": "py-036",
+      "topic": "Python",
+      "subtopic": "Dataclasses",
+      "difficulty": "medium",
+      "question_text": "What does this code print?\n\n```python\nfrom dataclasses import dataclass\n\n@dataclass\nclass P:\n    x: int\n    y: int = 0\n\nprint(P(1) == P(1, 0), P(1) is P(1, 0))\n```",
+      "options": [
+        "False True",
+        "True False",
+        "True True",
+        "False False"
+      ],
+      "correct_option": 1,
+      "explanation": "`@dataclass` generates `__eq__`, which compares fields, so the two instances are equal (y defaults to 0). They are still two separate objects, so `is` returns False.",
+      "tags": [
+        "python",
+        "dataclass",
+        "equality"
+      ],
+      "recommended_time_sec": 60
+    },
+    {
+      "id": "py-037",
+      "topic": "Python",
+      "subtopic": "Exceptions",
+      "difficulty": "medium",
+      "question_text": "What is the output of the following code?\n\n```python\ntry:\n    print(1, end=\" \")\n    raise ValueError\nexcept ValueError:\n    print(2, end=\" \")\nelse:\n    print(3, end=\" \")\nfinally:\n    print(4, end=\" \")\n```",
+      "options": [
+        "1 2 4",
+        "1 2 3",
+        "1 2 3 4",
+        "1 3 4"
+      ],
+      "correct_option": 0,
+      "explanation": "The exception skips the rest of the try block and runs the matching `except`. The `else` block runs only when no exception occurs, while `finally` always runs.",
+      "tags": [
+        "python",
+        "exceptions",
+        "control-flow"
+      ],
+      "recommended_time_sec": 60
+    },
+    {
+      "id": "py-038",
+      "topic": "Python",
+      "subtopic": "Exceptions",
+      "difficulty": "hard",
+      "question_text": "What does this function return?\n\n```python\ndef f():\n    try:\n        return 1\n    finally:\n        return 2\n\nprint(f())\n```",
+      "options": [
+        "2",
+        "None",
+        "(1, 2)",
+        "1"
+      ],
+      "correct_option": 0,
+      "explanation": "A `return` inside `finally` overrides the value returned from the `try` block. The `finally` clause executes just before the function exits, so its `return 2` wins.",
+      "tags": [
+        "python",
+        "exceptions",
+        "finally"
+      ],
+      "recommended_time_sec": 75
+    },
+    {
+      "id": "py-039",
+      "topic": "Python",
+      "subtopic": "Loops",
+      "difficulty": "medium",
+      "question_text": "What is the output of this code?\n\n```python\nfor i in range(3):\n    if i == 1:\n        break\nelse:\n    print(\"else\", end=\" \")\nprint(\"after\")\n```",
+      "options": [
+        "after else",
+        "else after",
+        "else",
+        "after"
+      ],
+      "correct_option": 3,
+      "explanation": "The `else` clause of a loop runs only when the loop finishes without hitting `break`. Here `break` fires at i == 1, so only the final print executes.",
+      "tags": [
+        "python",
+        "loops",
+        "for-else"
+      ],
+      "recommended_time_sec": 60
+    },
+    {
+      "id": "py-040",
+      "topic": "Python",
+      "subtopic": "Loops",
+      "difficulty": "medium",
+      "question_text": "What does this code print?\n\n```python\nfor i in range(3):\n    pass\nelse:\n    print(\"else\", end=\" \")\nprint(i)\n```",
+      "options": [
+        "else 3",
+        "else None",
+        "else 0",
+        "else 2"
+      ],
+      "correct_option": 3,
+      "explanation": "With no `break`, the loop's `else` block runs. The loop variable stays in scope after the loop and keeps its last value, 2, because range(3) yields 0, 1 and 2.",
+      "tags": [
+        "python",
+        "loops",
+        "for-else"
+      ],
+      "recommended_time_sec": 60
+    },
+    {
+      "id": "py-041",
+      "topic": "Python",
+      "subtopic": "Slicing",
+      "difficulty": "medium",
+      "question_text": "What is the output of the following code?\n\n```python\ns = \"PGDBDA\"\nprint(s[::-1], s[2:], s[::2])\n```",
+      "options": [
+        "ADBDGP DBDA PGD",
+        "ADBDGP BDA PDD",
+        "ADBDG DBDA PDD",
+        "ADBDGP DBDA PDD"
+      ],
+      "correct_option": 3,
+      "explanation": "`[::-1]` reverses the string, `[2:]` starts from index 2 (DBDA), and `[::2]` takes every second character starting at index 0 (P, D, D).",
+      "tags": [
+        "python",
+        "strings",
+        "slicing"
+      ],
+      "recommended_time_sec": 60
+    },
+    {
+      "id": "py-042",
+      "topic": "Python",
+      "subtopic": "Slicing",
+      "difficulty": "medium",
+      "question_text": "What does this code print?\n\n```python\ns = \"hello\"\nprint(len(s[10:20]), len(s[1:20]))\n```",
+      "options": [
+        "4 0",
+        "0 4",
+        "5 4",
+        "0 5"
+      ],
+      "correct_option": 1,
+      "explanation": "Slices are forgiving: out-of-range bounds are clipped instead of raising IndexError. `s[10:20]` is empty (length 0) and `s[1:20]` becomes `s[1:5]`, which has 4 characters.",
+      "tags": [
+        "python",
+        "strings",
+        "slicing"
+      ],
+      "recommended_time_sec": 60
+    },
+    {
+      "id": "py-043",
+      "topic": "Python",
+      "subtopic": "String Methods",
+      "difficulty": "easy",
+      "question_text": "What is the output of this snippet?\n\n```python\ns = \"a,b,,c\"\nprint(s.split(\",\"), len(s.split(\",\")))\n```",
+      "options": [
+        "['a', 'b', ' ', 'c'] 4",
+        "['a', 'b', 'c'] 3",
+        "['a', 'b', 'c', ''] 4",
+        "['a', 'b', '', 'c'] 4"
+      ],
+      "correct_option": 3,
+      "explanation": "`split(\",\")` keeps empty fields between consecutive separators, so the double comma produces an empty string. That gives four items in total.",
+      "tags": [
+        "python",
+        "strings",
+        "split"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "py-044",
+      "topic": "Python",
+      "subtopic": "String Methods",
+      "difficulty": "easy",
+      "question_text": "What does this code print?\n\n```python\nprint(repr(\"  a b  \".strip()), \"  a b  \".split())\n```",
+      "options": [
+        "'ab' ['a', 'b']",
+        "'  a b  ' ['a', 'b']",
+        "'a b' ['a', 'b']",
+        "'a b' ['', 'a', 'b', '']"
+      ],
+      "correct_option": 2,
+      "explanation": "`strip()` removes only the outer whitespace and keeps the space inside. `split()` without arguments splits on runs of whitespace and discards empty strings.",
+      "tags": [
+        "python",
+        "strings",
+        "strip"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "py-045",
+      "topic": "Python",
+      "subtopic": "String Formatting",
+      "difficulty": "medium",
+      "question_text": "What is printed by the following code?\n\n```python\nprint(\"%.2f\" % 3.14159, \"{:.3f}\".format(2.5), f\"{7/3:.1f}\")\n```",
+      "options": [
+        "3.142 2.500 2.3",
+        "3.14 2.500 2.33",
+        "3.14 2.5 2.3",
+        "3.14 2.500 2.3"
+      ],
+      "correct_option": 3,
+      "explanation": "All three styles use fixed-point precision: `%.2f` gives 3.14, `{:.3f}` pads 2.5 to 2.500, and `:.1f` rounds 2.333... to 2.3.",
+      "tags": [
+        "python",
+        "strings",
+        "formatting"
+      ],
+      "recommended_time_sec": 60
+    },
+    {
+      "id": "py-046",
+      "topic": "Python",
+      "subtopic": "String Comparison",
+      "difficulty": "medium",
+      "question_text": "What is the output?\n\n```python\nprint(\"abc\" < \"abd\", \"ABC\" < \"abc\", \"10\" < \"9\")\n```",
+      "options": [
+        "False True True",
+        "True False True",
+        "True True False",
+        "True True True"
+      ],
+      "correct_option": 3,
+      "explanation": "Strings compare lexicographically by Unicode code point. 'c' < 'd', uppercase letters (65-90) come before lowercase (97-122), and '1' < '9' so \"10\" < \"9\".",
+      "tags": [
+        "python",
+        "strings",
+        "comparison"
+      ],
+      "recommended_time_sec": 60
+    },
+    {
+      "id": "py-047",
+      "topic": "Python",
+      "subtopic": "String Methods",
+      "difficulty": "medium",
+      "question_text": "What does this code print?\n\n```python\nprint(\"banana\".count(\"ana\"))\n```",
+      "options": [
+        "1",
+        "0",
+        "2",
+        "3"
+      ],
+      "correct_option": 0,
+      "explanation": "`str.count` counts non-overlapping occurrences. The first \"ana\" occupies indexes 1-3, and the next search starts at index 4, leaving only \"na\", so the count is 1.",
+      "tags": [
+        "python",
+        "strings",
+        "count"
+      ],
+      "recommended_time_sec": 60
+    },
+    {
+      "id": "py-048",
+      "topic": "Python",
+      "subtopic": "Encoding",
+      "difficulty": "hard",
+      "question_text": "What is the output of this code?\n\n```python\nprint(len(\"café\".encode(\"utf-8\")), len(\"café\"))\n```",
+      "options": [
+        "5 5",
+        "5 4",
+        "4 5",
+        "4 4"
+      ],
+      "correct_option": 1,
+      "explanation": "The string has 4 characters, but `é` needs two bytes in UTF-8, so the encoded form is 5 bytes long. `len` on a str counts code points, while `len` on bytes counts bytes.",
+      "tags": [
+        "python",
+        "strings",
+        "encoding"
+      ],
+      "recommended_time_sec": 75
+    },
+    {
+      "id": "py-049",
+      "topic": "Python",
+      "subtopic": "Lists",
+      "difficulty": "hard",
+      "question_text": "What is printed by the following code?\n\n```python\na = [1, 2, 3, 2]\na.remove(2)\nprint(a, a.pop(), a)\n```",
+      "options": [
+        "[1, 3, 2] 2 [1, 3]",
+        "[1, 3, 2] 3 [1, 2]",
+        "[1, 3] 3 [1, 3]",
+        "[1, 3] 2 [1, 3]"
+      ],
+      "correct_option": 3,
+      "explanation": "`remove(2)` deletes only the first 2, leaving [1, 3, 2]. Arguments are evaluated left to right, but the first and last `a` are the same list object, so by the time `print` runs it shows the final state [1, 3] twice, while `pop()` returned 2.",
+      "tags": [
+        "python",
+        "lists",
+        "evaluation-order"
+      ],
+      "recommended_time_sec": 100
+    },
+    {
+      "id": "py-050",
+      "topic": "Python",
+      "subtopic": "Lists",
+      "difficulty": "easy",
+      "question_text": "What does this code print?\n\n```python\na = [3, 1, 2]\nb = a.sort()\nprint(a, b)\n```",
+      "options": [
+        "[3, 1, 2] [1, 2, 3]",
+        "[1, 2, 3] None",
+        "[1, 2, 3] [1, 2, 3]",
+        "[3, 1, 2] None"
+      ],
+      "correct_option": 1,
+      "explanation": "`list.sort()` sorts in place and returns None. Use `sorted(a)` if you need a new sorted list while keeping the original.",
+      "tags": [
+        "python",
+        "lists",
+        "sort"
+      ],
+      "recommended_time_sec": 40
+    },
+    {
+      "id": "py-051",
+      "topic": "Python",
+      "subtopic": "Lists",
+      "difficulty": "medium",
+      "question_text": "What is the output of this code?\n\n```python\nm = [[0] * 3] * 2\nm[0][0] = 1\nprint(m)\n```",
+      "options": [
+        "[[1, 1, 1], [0, 0, 0]]",
+        "[[1, 0, 0], [1, 0, 0]]",
+        "[[1, 0, 0], [0, 0, 0]]",
+        "[[0, 0, 0], [1, 0, 0]]"
+      ],
+      "correct_option": 1,
+      "explanation": "Multiplying a list repeats references to the same inner list, so both rows are the same object. A change through `m[0]` is visible in `m[1]`. Use `[[0] * 3 for _ in range(2)]` to create independent rows.",
+      "tags": [
+        "python",
+        "lists",
+        "references"
+      ],
+      "recommended_time_sec": 75
+    },
+    {
+      "id": "py-052",
+      "topic": "Python",
+      "subtopic": "Lists",
+      "difficulty": "hard",
+      "question_text": "What does this code print?\n\n```python\na = [1, 2, 3, 4]\nfor x in a:\n    if x % 2 == 0:\n        a.remove(x)\nprint(a)\n```",
+      "options": [
+        "[1, 2, 3, 4]",
+        "[1, 4]",
+        "[1, 3]",
+        "[1, 3, 4]"
+      ],
+      "correct_option": 2,
+      "explanation": "Removing items while iterating shifts later elements left, and the iterator's internal index moves on regardless. After 2 is removed, the loop lands on 4 (not 3) and removes it too, leaving [1, 3]. Iterate over a copy or use a comprehension instead.",
+      "tags": [
+        "python",
+        "lists",
+        "iteration"
+      ],
+      "recommended_time_sec": 90
+    },
+    {
+      "id": "py-053",
+      "topic": "Python",
+      "subtopic": "Sets",
+      "difficulty": "medium",
+      "question_text": "What is the output of the following code?\n\n```python\na = {1, 2, 3}\nb = {3, 4}\nprint(sorted(a | b), sorted(a & b), sorted(a - b), sorted(a ^ b))\n```",
+      "options": [
+        "[1, 2, 3, 4] [3] [1, 2] [1, 2, 3, 4]",
+        "[1, 2, 3, 4] [3] [1, 2] [1, 2, 4]",
+        "[3] [1, 2, 3, 4] [1, 2] [1, 2, 4]",
+        "[1, 2, 3, 4] [3] [4] [1, 2, 4]"
+      ],
+      "correct_option": 1,
+      "explanation": "`|` is union, `&` is intersection, `-` is difference (items only in a) and `^` is symmetric difference (items in exactly one set).",
+      "tags": [
+        "python",
+        "sets",
+        "operators"
+      ],
+      "recommended_time_sec": 75
+    },
+    {
+      "id": "py-054",
+      "topic": "Python",
+      "subtopic": "Dictionaries",
+      "difficulty": "easy",
+      "question_text": "What does this code print?\n\n```python\nd = {'a': 1, 'b': 2}\nprint(d.get('c'), d.get('c', 0))\n```",
+      "options": [
+        "None 0",
+        "0 None",
+        "0 0",
+        "None None"
+      ],
+      "correct_option": 0,
+      "explanation": "`dict.get` never raises KeyError. It returns None for a missing key, or the supplied default when one is given.",
+      "tags": [
+        "python",
+        "dictionaries",
+        "get"
+      ],
+      "recommended_time_sec": 40
+    },
+    {
+      "id": "py-055",
+      "topic": "Python",
+      "subtopic": "Dictionaries",
+      "difficulty": "medium",
+      "question_text": "What is the output of this code?\n\n```python\nd = {}\nd.setdefault('k', []).append(1)\nd.setdefault('k', []).append(2)\nprint(d)\n```",
+      "options": [
+        "{'k': [2]}",
+        "{'k': [1]}",
+        "{'k': [1, 2]}",
+        "{'k': [[1], [2]]}"
+      ],
+      "correct_option": 2,
+      "explanation": "`setdefault` inserts the default only if the key is missing and then returns the value stored. The second call reuses the existing list, so both appends go to the same list.",
+      "tags": [
+        "python",
+        "dictionaries",
+        "setdefault"
+      ],
+      "recommended_time_sec": 60
+    },
+    {
+      "id": "py-056",
+      "topic": "Python",
+      "subtopic": "Dictionaries",
+      "difficulty": "hard",
+      "question_text": "What does this snippet print?\n\n```python\nd = {1: 'a', True: 'b', 1.0: 'c'}\nprint(d, len(d))\n```",
+      "options": [
+        "{1: 'a'} 1",
+        "{1: 'c'} 1",
+        "{1: 'b'} 1",
+        "{True: 'c'} 1"
+      ],
+      "correct_option": 1,
+      "explanation": "1, True and 1.0 are equal and have the same hash, so they are the same dictionary key. The key object stays as the first inserted one (1), while the value is overwritten by the last assignment ('c').",
+      "tags": [
+        "python",
+        "dictionaries",
+        "hashing"
+      ],
+      "recommended_time_sec": 90
+    },
+    {
+      "id": "py-057",
+      "topic": "Python",
+      "subtopic": "Collections",
+      "difficulty": "medium",
+      "question_text": "What is the output of this code?\n\n```python\nfrom collections import Counter\nprint(Counter(\"mississippi\").most_common(2))\n```",
+      "options": [
+        "[('i', 4), ('p', 2)]",
+        "[('m', 1), ('i', 4)]",
+        "[('i', 4), ('s', 4)]",
+        "[('s', 4), ('i', 4)]"
+      ],
+      "correct_option": 2,
+      "explanation": "Both 'i' and 's' appear four times. `most_common` sorts by count and keeps insertion order for ties, and 'i' was seen before 's', so it comes first.",
+      "tags": [
+        "python",
+        "collections",
+        "counter"
+      ],
+      "recommended_time_sec": 75
+    },
+    {
+      "id": "py-058",
+      "topic": "Python",
+      "subtopic": "Unpacking",
+      "difficulty": "medium",
+      "question_text": "What is printed by the following code?\n\n```python\nx, *y, z = [1, 2, 3, 4, 5]\nprint(x, y, z)\n```",
+      "options": [
+        "1 [2, 3, 4] 5",
+        "1 [2, 3, 4, 5] 5",
+        "1 (2, 3, 4) 5",
+        "1 2 5"
+      ],
+      "correct_option": 0,
+      "explanation": "Starred assignment collects the leftover items into a list, so `y` is always a list. `x` takes the first element and `z` takes the last.",
+      "tags": [
+        "python",
+        "unpacking",
+        "basics"
+      ],
+      "recommended_time_sec": 60
+    },
+    {
+      "id": "py-059",
+      "topic": "Python",
+      "subtopic": "Built-in Functions",
+      "difficulty": "hard",
+      "question_text": "What does this code print?\n\n```python\nprint(round(2.5), round(3.5), round(-0.5))\n```",
+      "options": [
+        "3 4 -1",
+        "2 4 0",
+        "2 4 -1",
+        "3 4 0"
+      ],
+      "correct_option": 1,
+      "explanation": "Python 3 uses banker's rounding (round half to even): 2.5 goes to 2, 3.5 goes to 4, and -0.5 goes to 0. It does not always round halves away from zero.",
+      "tags": [
+        "python",
+        "builtins",
+        "round"
+      ],
+      "recommended_time_sec": 75
+    },
+    {
+      "id": "py-060",
+      "topic": "Python",
+      "subtopic": "Dictionaries",
+      "difficulty": "hard",
+      "question_text": "What happens when the following code runs?\n\n```python\nd = {'a': 1, 'b': 2}\nfor k in d:\n    d[k + 'x'] = 0\n```",
+      "options": [
+        "Infinite loop until memory ends",
+        "KeyError on the first key",
+        "Adds ax and bx, then stops",
+        "RuntimeError during iteration"
+      ],
+      "correct_option": 3,
+      "explanation": "Changing a dictionary's size while iterating over it raises `RuntimeError: dictionary changed size during iteration`. Iterate over `list(d)` if you need to add or remove keys.",
+      "tags": [
+        "python",
+        "dictionaries",
+        "iteration"
+      ],
+      "recommended_time_sec": 75
+    },
+    {
+      "id": "lx-001",
+      "topic": "Linux",
+      "subtopic": "File Permissions",
+      "difficulty": "medium",
+      "question_text": "What does the final command print?\n\n```bash\n$ umask 022\n$ touch report.txt\n$ stat -c %a report.txt\n```",
+      "options": [
+        "664",
+        "666",
+        "644",
+        "755"
+      ],
+      "correct_option": 2,
+      "explanation": "New files start from 666 (files are not given execute by default) and the umask bits are removed: 666 minus 022 gives 644. Directories start from 777, so they would end up as 755.",
+      "tags": [
+        "linux",
+        "permissions",
+        "umask"
+      ],
+      "recommended_time_sec": 60
+    },
+    {
+      "id": "lx-002",
+      "topic": "Linux",
+      "subtopic": "File Permissions",
+      "difficulty": "medium",
+      "question_text": "What are the permissions of the directory after these commands?\n\n```bash\n$ umask 027\n$ mkdir proj\n$ stat -c %a proj\n```",
+      "options": [
+        "755",
+        "705",
+        "770",
+        "750"
+      ],
+      "correct_option": 3,
+      "explanation": "Directories start from 777. Subtracting the umask 027 removes write for the group and all permissions for others, leaving 750 (rwxr-x---).",
+      "tags": [
+        "linux",
+        "permissions",
+        "umask"
+      ],
+      "recommended_time_sec": 60
+    },
+    {
+      "id": "lx-003",
+      "topic": "Linux",
+      "subtopic": "File Permissions",
+      "difficulty": "hard",
+      "question_text": "What is the final permission string of `f`?\n\n```bash\n$ touch f\n$ chmod 664 f\n$ chmod u+x,g-w,o= f\n$ stat -c %A f\n```",
+      "options": [
+        "-rwxrw----",
+        "-rwx-w----",
+        "-rwxr-----",
+        "-rwxr--r--"
+      ],
+      "correct_option": 2,
+      "explanation": "Starting at rw-rw-r--: `u+x` makes the owner rwx, `g-w` leaves the group with r--, and `o=` clears every bit for others. The result is rwxr----- (octal 740).",
+      "tags": [
+        "linux",
+        "permissions",
+        "chmod"
+      ],
+      "recommended_time_sec": 90
+    },
+    {
+      "id": "lx-004",
+      "topic": "Linux",
+      "subtopic": "Special Permissions",
+      "difficulty": "medium",
+      "question_text": "In the output `drwxrwxrwt` shown by `ls -ld /tmp`, what does the final `t` indicate?",
+      "options": [
+        "Sticky bit set, and others have execute",
+        "Directory is a mount point",
+        "Others lack the execute bit",
+        "SGID bit set on the directory"
+      ],
+      "correct_option": 0,
+      "explanation": "A lowercase `t` in the last position means the sticky bit is set together with execute for others. In a sticky directory, only a file's owner, the directory owner or root may delete or rename that file.",
+      "tags": [
+        "linux",
+        "permissions",
+        "sticky-bit"
+      ],
+      "recommended_time_sec": 60
+    },
+    {
+      "id": "lx-005",
+      "topic": "Linux",
+      "subtopic": "Special Permissions",
+      "difficulty": "hard",
+      "question_text": "What does the owner triad show after these commands?\n\n```bash\n$ touch f\n$ chmod 644 f\n$ chmod u+s f\n$ stat -c %A f\n```",
+      "options": [
+        "-rwSr--r--",
+        "-r-sr--r--",
+        "-rwxr--r--",
+        "-rwsr--r--"
+      ],
+      "correct_option": 0,
+      "explanation": "SUID is set but the owner has no execute bit, so the permission string uses an uppercase `S`. A lowercase `s` would appear only if execute were also set.",
+      "tags": [
+        "linux",
+        "permissions",
+        "suid"
+      ],
+      "recommended_time_sec": 75
+    },
+    {
+      "id": "lx-006",
+      "topic": "Linux",
+      "subtopic": "Directory Permissions",
+      "difficulty": "hard",
+      "question_text": "A user has only `r--` on a directory `d` that contains a file `f`. Which statement is true?",
+      "options": [
+        "Names can be listed, but files cannot be opened",
+        "Names can be listed and files can be opened",
+        "Files can be opened, but names cannot be listed",
+        "Neither listing nor opening is possible"
+      ],
+      "correct_option": 0,
+      "explanation": "On a directory, `r` allows reading the list of names, while `x` is what allows traversing into it to reach the files. Without `x`, `ls d` can show the names, but `cat d/f` fails with permission denied.",
+      "tags": [
+        "linux",
+        "permissions",
+        "directories"
+      ],
+      "recommended_time_sec": 90
+    },
+    {
+      "id": "lx-007",
+      "topic": "Linux",
+      "subtopic": "Redirection",
+      "difficulty": "hard",
+      "question_text": "What appears on the terminal after running this command, assuming /nonexistent does not exist?\n\n```bash\n$ ls /nonexistent /etc/hostname 2>&1 > out.txt\n```",
+      "options": [
+        "Both the error and the listing",
+        "Nothing, as everything goes to out.txt",
+        "Only the listing of hostname",
+        "Only the ls error message"
+      ],
+      "correct_option": 3,
+      "explanation": "Redirections are processed left to right. `2>&1` first points stderr at the terminal (where stdout currently points), and only afterwards `> out.txt` redirects stdout to the file. The normal output lands in the file, while the error still shows on screen.",
+      "tags": [
+        "linux",
+        "redirection",
+        "file-descriptors"
+      ],
+      "recommended_time_sec": 90
+    },
+    {
+      "id": "lx-008",
+      "topic": "Linux",
+      "subtopic": "Text Processing",
+      "difficulty": "medium",
+      "question_text": "What does the final pipeline print?\n\n```bash\n$ printf 'x\\ny\\nx\\n' | sort | uniq -c | head -1\n```",
+      "options": [
+        "2 x",
+        "1 x",
+        "2 y",
+        "3 x"
+      ],
+      "correct_option": 0,
+      "explanation": "`sort` groups identical lines together, then `uniq -c` prefixes each distinct line with its count. After sorting, the lines are x, x, y, so the first output line reports 2 for x.",
+      "tags": [
+        "linux",
+        "text-processing",
+        "uniq"
+      ],
+      "recommended_time_sec": 60
+    },
+    {
+      "id": "lx-009",
+      "topic": "Linux",
+      "subtopic": "Text Processing",
+      "difficulty": "hard",
+      "question_text": "What is printed by this command?\n\n```bash\n$ printf 'a\\nb\\nc' | wc -l\n```",
+      "options": [
+        "3",
+        "1",
+        "2",
+        "0"
+      ],
+      "correct_option": 2,
+      "explanation": "`wc -l` counts newline characters, not lines of text. The input has only two `\\n` characters, because the last line has no trailing newline, so the count is 2.",
+      "tags": [
+        "linux",
+        "text-processing",
+        "wc"
+      ],
+      "recommended_time_sec": 75
+    },
+    {
+      "id": "lx-010",
+      "topic": "Linux",
+      "subtopic": "Text Processing",
+      "difficulty": "easy",
+      "question_text": "What does this command output?\n\n```bash\n$ echo 'a,b,c,d' | cut -d, -f2,4\n```",
+      "options": [
+        "a,d",
+        "b,d",
+        "b,c",
+        "c,d"
+      ],
+      "correct_option": 1,
+      "explanation": "`-d,` sets the delimiter to a comma and `-f2,4` selects the second and fourth fields. The selected fields are printed joined with the same delimiter.",
+      "tags": [
+        "linux",
+        "text-processing",
+        "cut"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "lx-011",
+      "topic": "Linux",
+      "subtopic": "Text Processing",
+      "difficulty": "hard",
+      "question_text": "What does this command print?\n\n```bash\n$ echo banana | sed 's/a/X/2'\n```",
+      "options": [
+        "bXnXnX",
+        "bXnana",
+        "banXna",
+        "banaXa"
+      ],
+      "correct_option": 2,
+      "explanation": "A number after the replacement acts as a flag that replaces only the Nth match on each line. The second `a` in banana is at index 3, giving banXna. Without a number only the first match is replaced, and `g` replaces all of them.",
+      "tags": [
+        "linux",
+        "sed",
+        "text-processing"
+      ],
+      "recommended_time_sec": 75
+    },
+    {
+      "id": "lx-012",
+      "topic": "Linux",
+      "subtopic": "Text Processing",
+      "difficulty": "medium",
+      "question_text": "Which lines does this command print?\n\n```bash\n$ printf '1\\n2\\n3\\n4\\n' | sed -n '2,3p'\n```",
+      "options": [
+        "Lines 1 to 3",
+        "Lines 2 and 3",
+        "Lines 1 and 4",
+        "Lines 3 and 4"
+      ],
+      "correct_option": 1,
+      "explanation": "`-n` suppresses sed's automatic printing, and the `p` command prints only the lines in the address range 2,3. Both ends of the range are inclusive.",
+      "tags": [
+        "linux",
+        "sed",
+        "text-processing"
+      ],
+      "recommended_time_sec": 60
+    },
+    {
+      "id": "lx-013",
+      "topic": "Linux",
+      "subtopic": "Text Processing",
+      "difficulty": "medium",
+      "question_text": "What is the output of this command?\n\n```bash\n$ echo \"10 20 30\" | awk '{print $NF, NF}'\n```",
+      "options": [
+        "10 3",
+        "3 30",
+        "30 3",
+        "30 1"
+      ],
+      "correct_option": 2,
+      "explanation": "`NF` is the number of fields in the current record, so it is 3. `$NF` therefore refers to the last field, which is 30.",
+      "tags": [
+        "linux",
+        "awk",
+        "text-processing"
+      ],
+      "recommended_time_sec": 60
+    },
+    {
+      "id": "lx-014",
+      "topic": "Linux",
+      "subtopic": "Text Processing",
+      "difficulty": "medium",
+      "question_text": "What does this command print?\n\n```bash\n$ printf 'a 5\\nb 7\\nc 2\\n' | awk '{s += $2} END {print s}'\n```",
+      "options": [
+        "7",
+        "3",
+        "14",
+        "12"
+      ],
+      "correct_option": 2,
+      "explanation": "The main action runs for every line and accumulates the second field into `s`. The `END` block runs once after all input has been read and prints the total 5 + 7 + 2 = 14.",
+      "tags": [
+        "linux",
+        "awk",
+        "text-processing"
+      ],
+      "recommended_time_sec": 60
+    },
+    {
+      "id": "lx-015",
+      "topic": "Linux",
+      "subtopic": "Text Processing",
+      "difficulty": "medium",
+      "question_text": "How many lines does this command report?\n\n```bash\n$ printf 'ab\\nabc\\nb\\nAB\\n' | grep -c ab\n```",
+      "options": [
+        "2",
+        "1",
+        "3",
+        "4"
+      ],
+      "correct_option": 0,
+      "explanation": "`grep -c` prints the number of matching lines. By default grep is case-sensitive, so \"ab\" and \"abc\" match, while \"AB\" and \"b\" do not.",
+      "tags": [
+        "linux",
+        "grep",
+        "text-processing"
+      ],
+      "recommended_time_sec": 60
+    },
+    {
+      "id": "lx-016",
+      "topic": "Linux",
+      "subtopic": "Text Processing",
+      "difficulty": "medium",
+      "question_text": "Which line does this command print?\n\n```bash\n$ printf 'Err\\nok\\nerr\\n' | grep -vi err\n```",
+      "options": [
+        "err",
+        "Err",
+        "Err and ok",
+        "ok"
+      ],
+      "correct_option": 3,
+      "explanation": "`-i` makes the match case-insensitive and `-v` inverts it, so lines containing any case of \"err\" are removed. Only \"ok\" remains.",
+      "tags": [
+        "linux",
+        "grep",
+        "text-processing"
+      ],
+      "recommended_time_sec": 60
+    },
+    {
+      "id": "lx-017",
+      "topic": "Linux",
+      "subtopic": "Shell Scripting",
+      "difficulty": "hard",
+      "question_text": "What does the final command print?\n\n```bash\n$ set -- a 'b c' d\n$ n=0; for i in $*; do n=$((n+1)); done; echo $n\n```",
+      "options": [
+        "2",
+        "3",
+        "4",
+        "1"
+      ],
+      "correct_option": 2,
+      "explanation": "An unquoted `$*` is subject to word splitting, so the argument \"b c\" is broken into two words and the loop runs 4 times. Using `\"$@\"` would preserve each argument and give 3.",
+      "tags": [
+        "linux",
+        "shell",
+        "positional-parameters"
+      ],
+      "recommended_time_sec": 90
+    },
+    {
+      "id": "lx-018",
+      "topic": "Linux",
+      "subtopic": "Shell Scripting",
+      "difficulty": "medium",
+      "question_text": "What is the output of this command?\n\n```bash\n$ x=5; echo \"$x\" '$x' ${x}0\n```",
+      "options": [
+        "5 5 50",
+        "5 $x 5 0",
+        "$x $x 50",
+        "5 $x 50"
+      ],
+      "correct_option": 3,
+      "explanation": "Double quotes allow variable expansion, single quotes keep the text literal, and `${x}0` expands x and appends a 0 without a space. The output is `5 $x 50`.",
+      "tags": [
+        "linux",
+        "shell",
+        "quoting"
+      ],
+      "recommended_time_sec": 60
+    },
+    {
+      "id": "lx-019",
+      "topic": "Linux",
+      "subtopic": "Shell Scripting",
+      "difficulty": "medium",
+      "question_text": "What does this command print?\n\n```bash\n$ var=hello; echo ${#var} ${var:1:3}\n```",
+      "options": [
+        "4 ell",
+        "5 hel",
+        "5 ell",
+        "5 llo"
+      ],
+      "correct_option": 2,
+      "explanation": "`${#var}` is the string length, 5. `${var:1:3}` extracts 3 characters starting at offset 1 (zero-based), which gives \"ell\".",
+      "tags": [
+        "linux",
+        "shell",
+        "parameter-expansion"
+      ],
+      "recommended_time_sec": 60
+    },
+    {
+      "id": "lx-020",
+      "topic": "Linux",
+      "subtopic": "Shell Scripting",
+      "difficulty": "medium",
+      "question_text": "What is the output of this command?\n\n```bash\n$ unset y; echo \"${y:-def}-${y}-\" \n```",
+      "options": [
+        "-def--",
+        "def-y-",
+        "def-def",
+        "def--"
+      ],
+      "correct_option": 3,
+      "explanation": "`${y:-def}` expands to the default value when y is unset or empty, but it does not assign it. The plain `${y}` is therefore still empty, giving `def-` followed by an empty value and a final dash.",
+      "tags": [
+        "linux",
+        "shell",
+        "default-values"
+      ],
+      "recommended_time_sec": 75
+    },
+    {
+      "id": "lx-021",
+      "topic": "Linux",
+      "subtopic": "Shell Scripting",
+      "difficulty": "medium",
+      "question_text": "What is printed by the final command?\n\n```bash\n$ a=1; (a=2); { a=3; }; echo $a\n```",
+      "options": [
+        "2",
+        "1",
+        "0",
+        "3"
+      ],
+      "correct_option": 3,
+      "explanation": "Parentheses start a subshell, so the change to 2 is lost when it exits. Curly braces group commands in the current shell, so the assignment of 3 persists.",
+      "tags": [
+        "linux",
+        "shell",
+        "subshell"
+      ],
+      "recommended_time_sec": 60
+    },
+    {
+      "id": "lx-022",
+      "topic": "Linux",
+      "subtopic": "Shell Scripting",
+      "difficulty": "hard",
+      "question_text": "What does this command sequence print?\n\n```bash\n$ [ 5 -gt 10 ] && echo A || echo B; [ \"5\" \\> \"10\" ] && echo C || echo D\n```",
+      "options": [
+        "A C",
+        "B C",
+        "B D",
+        "A D"
+      ],
+      "correct_option": 1,
+      "explanation": "`-gt` compares numbers, so 5 > 10 is false and B is printed. Inside `[ ]`, `\\>` compares strings lexicographically, and \"5\" sorts after \"10\", so that test is true and C is printed.",
+      "tags": [
+        "linux",
+        "shell",
+        "test-operators"
+      ],
+      "recommended_time_sec": 90
+    },
+    {
+      "id": "lx-023",
+      "topic": "Linux",
+      "subtopic": "Shell Scripting",
+      "difficulty": "hard",
+      "question_text": "What does this command print?\n\n```bash\n$ false && echo X || echo Y && echo Z\n```",
+      "options": [
+        "Y Z",
+        "X Z",
+        "X Y",
+        "Y"
+      ],
+      "correct_option": 0,
+      "explanation": "`&&` and `||` have equal precedence and are evaluated left to right. `false && echo X` skips X with status 1, so `|| echo Y` runs and succeeds, and the following `&& echo Z` then runs as well.",
+      "tags": [
+        "linux",
+        "shell",
+        "logical-operators"
+      ],
+      "recommended_time_sec": 90
+    },
+    {
+      "id": "lx-024",
+      "topic": "Linux",
+      "subtopic": "Exit Status",
+      "difficulty": "medium",
+      "question_text": "What is printed by the final command on a typical GNU/Linux system?\n\n```bash\n$ ls /nonexistent 2>/dev/null; echo $?\n```",
+      "options": [
+        "127",
+        "2",
+        "1",
+        "0"
+      ],
+      "correct_option": 1,
+      "explanation": "GNU `ls` exits with 2 for a serious problem such as an inaccessible command-line argument. Status 127 would mean command not found, and 0 means success.",
+      "tags": [
+        "linux",
+        "shell",
+        "exit-status"
+      ],
+      "recommended_time_sec": 60
+    },
+    {
+      "id": "lx-025",
+      "topic": "Linux",
+      "subtopic": "Links",
+      "difficulty": "hard",
+      "question_text": "A file `a`, a hard link `h` and a symbolic link `s` are created, then `a` is removed. What happens on `cat h` and `cat s`?\n\n```bash\n$ echo hi > a\n$ ln a h\n$ ln -s a s\n$ rm a\n$ cat h; cat s\n```",
+      "options": [
+        "h prints hi; s gives no such file",
+        "Both print hi",
+        "s prints hi; h gives no such file",
+        "Both give no such file"
+      ],
+      "correct_option": 0,
+      "explanation": "A hard link is another name for the same inode, so the data survives until the last name is removed. A symbolic link stores only the path \"a\", so it dangles once that name is gone.",
+      "tags": [
+        "linux",
+        "links",
+        "inodes"
+      ],
+      "recommended_time_sec": 90
+    },
+    {
+      "id": "lx-026",
+      "topic": "Linux",
+      "subtopic": "Archiving",
+      "difficulty": "easy",
+      "question_text": "In the command below, what is the purpose of the `z` option?\n\n```bash\n$ tar -czvf bk.tar.gz data/\n```",
+      "options": [
+        "Extracts files from the archive",
+        "Filters the archive through gzip",
+        "Compresses using zip format",
+        "Lists files while processing"
+      ],
+      "correct_option": 1,
+      "explanation": "`c` creates, `z` compresses through gzip, `v` is verbose and `f` names the archive file. Extraction would use `x`, and listing would use `t`.",
+      "tags": [
+        "linux",
+        "tar",
+        "compression"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "lx-027",
+      "topic": "Linux",
+      "subtopic": "Processes",
+      "difficulty": "easy",
+      "question_text": "Which signal can never be caught, blocked or ignored by a process?",
+      "options": [
+        "SIGKILL (9)",
+        "SIGTERM (15)",
+        "SIGINT (2)",
+        "SIGHUP (1)"
+      ],
+      "correct_option": 0,
+      "explanation": "SIGKILL is handled directly by the kernel and cannot be intercepted, which is why it works as a last resort. SIGTERM, SIGINT and SIGHUP can all be caught so a program can clean up first.",
+      "tags": [
+        "linux",
+        "processes",
+        "signals"
+      ],
+      "recommended_time_sec": 40
+    },
+    {
+      "id": "lx-028",
+      "topic": "Linux",
+      "subtopic": "Filesystem",
+      "difficulty": "medium",
+      "question_text": "What is the hard link count shown for a newly created empty directory?\n\n```bash\n$ mkdir d\n$ stat -c %h d\n```",
+      "options": [
+        "2",
+        "0",
+        "1",
+        "3"
+      ],
+      "correct_option": 0,
+      "explanation": "An empty directory has two links: its entry in the parent directory and its own `.` entry. Each subdirectory adds one more through its `..` entry.",
+      "tags": [
+        "linux",
+        "filesystem",
+        "inodes"
+      ],
+      "recommended_time_sec": 60
+    },
+    {
+      "id": "lx-029",
+      "topic": "Linux",
+      "subtopic": "Users and Groups",
+      "difficulty": "medium",
+      "question_text": "What does this command print on a typical system?\n\n```bash\n$ cut -d: -f3 /etc/passwd | head -1\n```",
+      "options": [
+        "0",
+        "999",
+        "100",
+        "1"
+      ],
+      "correct_option": 0,
+      "explanation": "The third field of /etc/passwd is the numeric UID. The first entry is conventionally root, whose UID is 0.",
+      "tags": [
+        "linux",
+        "users",
+        "passwd"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "lx-030",
+      "topic": "Linux",
+      "subtopic": "Process Priority",
+      "difficulty": "medium",
+      "question_text": "Which command lets a non-root user start a program with a lower priority?",
+      "options": [
+        "chrt -r 99 cmd",
+        "nice -n 10 cmd",
+        "renice -n -5 -p PID",
+        "nice -n -10 cmd"
+      ],
+      "correct_option": 1,
+      "explanation": "A positive niceness lowers priority and any user may increase it. Negative nice values, lowering an existing niceness with renice, and real-time policies via `chrt` all require root privileges.",
+      "tags": [
+        "linux",
+        "processes",
+        "nice"
+      ],
+      "recommended_time_sec": 60
+    },
+    {
+      "id": "sql-001",
+      "topic": "SQL",
+      "subtopic": "NULL Handling",
+      "difficulty": "easy",
+      "question_text": "What does the final query return for this data?\n\n```sql\nCREATE TABLE t (x INT);\nINSERT INTO t VALUES (1), (NULL), (3);\nSELECT COUNT(*), COUNT(x) FROM t;\n```",
+      "options": [
+        "2 3",
+        "3 3",
+        "2 2",
+        "3 2"
+      ],
+      "correct_option": 3,
+      "explanation": "`COUNT(*)` counts rows, so it returns 3. `COUNT(x)` counts only non-NULL values of x, so it returns 2.",
+      "tags": [
+        "sql",
+        "null",
+        "aggregates"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "sql-002",
+      "topic": "SQL",
+      "subtopic": "NULL Handling",
+      "difficulty": "medium",
+      "question_text": "How many rows does the final query return?\n\n```sql\nCREATE TABLE t (x INT);\nINSERT INTO t VALUES (1), (NULL), (3);\nSELECT COUNT(*) FROM t WHERE x <> 1;\n```",
+      "options": [
+        "2",
+        "1",
+        "3",
+        "0"
+      ],
+      "correct_option": 1,
+      "explanation": "Comparing NULL with anything yields UNKNOWN, and WHERE keeps only rows that evaluate to TRUE. Only the row with x = 3 satisfies `x <> 1`, so the NULL row is excluded as well.",
+      "tags": [
+        "sql",
+        "null",
+        "three-valued-logic"
+      ],
+      "recommended_time_sec": 60
+    },
+    {
+      "id": "sql-003",
+      "topic": "SQL",
+      "subtopic": "NULL Handling",
+      "difficulty": "hard",
+      "question_text": "What does the final query return?\n\n```sql\nCREATE TABLE a (x INT);\nINSERT INTO a VALUES (1), (2), (3);\nCREATE TABLE b (y INT);\nINSERT INTO b VALUES (1), (NULL);\nSELECT COUNT(*) FROM a WHERE x NOT IN (SELECT y FROM b);\n```",
+      "options": [
+        "1",
+        "0",
+        "3",
+        "2"
+      ],
+      "correct_option": 1,
+      "explanation": "`x NOT IN (1, NULL)` expands to `x <> 1 AND x <> NULL`. The second part is UNKNOWN for every row, so no row can evaluate to TRUE. Using `NOT EXISTS` or filtering out NULLs avoids this trap.",
+      "tags": [
+        "sql",
+        "null",
+        "not-in"
+      ],
+      "recommended_time_sec": 90
+    },
+    {
+      "id": "sql-004",
+      "topic": "SQL",
+      "subtopic": "Aggregates",
+      "difficulty": "medium",
+      "question_text": "What does the final query return when no row satisfies the filter?\n\n```sql\nCREATE TABLE t (x INT);\nINSERT INTO t VALUES (1), (NULL), (3);\nSELECT SUM(x), COUNT(x) FROM t WHERE x > 100;\n```",
+      "options": [
+        "0 NULL",
+        "0 0",
+        "NULL NULL",
+        "NULL 0"
+      ],
+      "correct_option": 3,
+      "explanation": "`SUM` over an empty set returns NULL, not 0, whereas `COUNT` always returns a number and gives 0. Wrap the sum in `COALESCE(SUM(x), 0)` if a zero is needed.",
+      "tags": [
+        "sql",
+        "aggregates",
+        "null"
+      ],
+      "recommended_time_sec": 60
+    },
+    {
+      "id": "sql-005",
+      "topic": "SQL",
+      "subtopic": "Joins",
+      "difficulty": "medium",
+      "question_text": "What does the final query return?\n\n```sql\nCREATE TABLE dept (id INT, name TEXT);\nINSERT INTO dept VALUES (1, 'IT'), (2, 'HR'), (3, 'Ops');\nCREATE TABLE emp (id INT, dept_id INT);\nINSERT INTO emp VALUES (1, 1), (2, 1), (3, 2);\nSELECT d.name, COUNT(e.id)\nFROM dept d LEFT JOIN emp e ON e.dept_id = d.id\nGROUP BY d.name ORDER BY d.name;\n```",
+      "options": [
+        "HR 1, IT 2, Ops NULL",
+        "HR 1, IT 2, Ops 1",
+        "HR 1, IT 2, Ops 0",
+        "HR 1, IT 2"
+      ],
+      "correct_option": 2,
+      "explanation": "The LEFT JOIN keeps Ops even though it has no employees, and its `e.id` is NULL. `COUNT(e.id)` ignores NULLs, so Ops gets 0.",
+      "tags": [
+        "sql",
+        "joins",
+        "left-join"
+      ],
+      "recommended_time_sec": 75
+    },
+    {
+      "id": "sql-006",
+      "topic": "SQL",
+      "subtopic": "Joins",
+      "difficulty": "hard",
+      "question_text": "What does the final query return?\n\n```sql\nCREATE TABLE dept (id INT, name TEXT);\nINSERT INTO dept VALUES (1, 'IT'), (2, 'HR'), (3, 'Ops');\nCREATE TABLE emp (id INT, dept_id INT);\nINSERT INTO emp VALUES (1, 1), (2, 1), (3, 2);\nSELECT d.name, COUNT(*)\nFROM dept d LEFT JOIN emp e ON e.dept_id = d.id\nGROUP BY d.name ORDER BY d.name;\n```",
+      "options": [
+        "HR 1, IT 2, Ops 0",
+        "HR 1, IT 2, Ops 1",
+        "HR 1, IT 2, Ops NULL",
+        "HR 1, IT 2"
+      ],
+      "correct_option": 1,
+      "explanation": "`COUNT(*)` counts rows, and the unmatched department still produces one joined row padded with NULLs. That is why Ops shows 1 here, unlike `COUNT(e.id)`.",
+      "tags": [
+        "sql",
+        "joins",
+        "count"
+      ],
+      "recommended_time_sec": 90
+    },
+    {
+      "id": "sql-007",
+      "topic": "SQL",
+      "subtopic": "Joins",
+      "difficulty": "hard",
+      "question_text": "How many rows do the two queries return, in order?\n\n```sql\nCREATE TABLE dept (id INT, name TEXT);\nINSERT INTO dept VALUES (1, 'IT'), (2, 'HR'), (3, 'Ops');\nCREATE TABLE emp (id INT, dept_id INT);\nINSERT INTO emp VALUES (1, 1), (2, 1), (3, 2);\nSELECT d.name FROM dept d\nLEFT JOIN emp e ON e.dept_id = d.id AND e.id = 1;\nSELECT d.name FROM dept d\nLEFT JOIN emp e ON e.dept_id = d.id\nWHERE e.id = 1;\n```",
+      "options": [
+        "1 and 1",
+        "3 and 1",
+        "3 and 3",
+        "1 and 3"
+      ],
+      "correct_option": 1,
+      "explanation": "A condition in the ON clause only controls matching, so every department is still returned. A condition on the right table in WHERE discards the NULL-padded rows, which turns the LEFT JOIN into an inner join and leaves one row.",
+      "tags": [
+        "sql",
+        "joins",
+        "on-vs-where"
+      ],
+      "recommended_time_sec": 100
+    },
+    {
+      "id": "sql-008",
+      "topic": "SQL",
+      "subtopic": "Joins",
+      "difficulty": "medium",
+      "question_text": "How many rows does the final query return?\n\n```sql\nCREATE TABLE p (k INT);\nINSERT INTO p VALUES (1), (1);\nCREATE TABLE q (k INT);\nINSERT INTO q VALUES (1), (1), (1);\nSELECT COUNT(*) FROM p JOIN q ON p.k = q.k;\n```",
+      "options": [
+        "5",
+        "6",
+        "2",
+        "3"
+      ],
+      "correct_option": 1,
+      "explanation": "With duplicate keys on both sides, every row on the left matches every row on the right, so the result is 2 x 3 = 6 rows. Joining on non-unique keys can multiply row counts.",
+      "tags": [
+        "sql",
+        "joins",
+        "cardinality"
+      ],
+      "recommended_time_sec": 60
+    },
+    {
+      "id": "sql-009",
+      "topic": "SQL",
+      "subtopic": "Set Operations",
+      "difficulty": "medium",
+      "question_text": "How many rows do the two queries return, in order?\n\n```sql\nCREATE TABLE m (v INT);\nINSERT INTO m VALUES (1), (2), (2);\nCREATE TABLE n (v INT);\nINSERT INTO n VALUES (2), (3);\nSELECT COUNT(*) FROM (SELECT v FROM m UNION SELECT v FROM n);\nSELECT COUNT(*) FROM (SELECT v FROM m UNION ALL SELECT v FROM n);\n```",
+      "options": [
+        "3 and 5",
+        "4 and 5",
+        "5 and 3",
+        "3 and 4"
+      ],
+      "correct_option": 0,
+      "explanation": "`UNION` removes duplicates and leaves the distinct values 1, 2 and 3. `UNION ALL` keeps every row from both inputs, giving 3 + 2 = 5 rows.",
+      "tags": [
+        "sql",
+        "set-operations",
+        "union"
+      ],
+      "recommended_time_sec": 75
+    },
+    {
+      "id": "sql-010",
+      "topic": "SQL",
+      "subtopic": "Set Operations",
+      "difficulty": "medium",
+      "question_text": "What does the final query return?\n\n```sql\nCREATE TABLE m (v INT);\nINSERT INTO m VALUES (1), (2), (2);\nCREATE TABLE n (v INT);\nINSERT INTO n VALUES (2), (3);\nSELECT v FROM m EXCEPT SELECT v FROM n;\n```",
+      "options": [
+        "1",
+        "3",
+        "2, 3",
+        "1, 2"
+      ],
+      "correct_option": 0,
+      "explanation": "`EXCEPT` returns distinct rows from the first query that do not appear in the second. Since 2 exists in both tables, only 1 remains (Oracle calls this operator MINUS).",
+      "tags": [
+        "sql",
+        "set-operations",
+        "except"
+      ],
+      "recommended_time_sec": 60
+    },
+    {
+      "id": "sql-011",
+      "topic": "SQL",
+      "subtopic": "GROUP BY",
+      "difficulty": "medium",
+      "question_text": "What does the final query return?\n\n```sql\nCREATE TABLE s (region TEXT, amt INT);\nINSERT INTO s VALUES ('A', 10), ('A', 20), ('B', 5), ('C', 50), ('C', 1);\nSELECT region, SUM(amt) FROM s\nGROUP BY region HAVING SUM(amt) > 20 ORDER BY region;\n```",
+      "options": [
+        "C 51",
+        "A 30, C 51",
+        "A 30, C 50",
+        "A 30, B 5"
+      ],
+      "correct_option": 1,
+      "explanation": "The groups are A = 30, B = 5 and C = 51. `HAVING` filters the aggregated groups, so only totals above 20 remain: A and C.",
+      "tags": [
+        "sql",
+        "group-by",
+        "having"
+      ],
+      "recommended_time_sec": 75
+    },
+    {
+      "id": "sql-012",
+      "topic": "SQL",
+      "subtopic": "GROUP BY",
+      "difficulty": "medium",
+      "question_text": "Which of the following queries is valid in standard SQL?",
+      "options": [
+        "SELECT dept, name FROM emp GROUP BY dept HAVING COUNT(*) > 2;",
+        "SELECT dept FROM emp HAVING dept = 'IT' GROUP BY dept;",
+        "SELECT dept FROM emp GROUP BY dept HAVING COUNT(*) > 2;",
+        "SELECT dept FROM emp WHERE COUNT(*) > 2 GROUP BY dept;"
+      ],
+      "correct_option": 2,
+      "explanation": "Aggregate conditions belong in HAVING, never in WHERE, and HAVING must come after GROUP BY. The last option is also invalid in strict SQL because `name` is neither grouped nor aggregated.",
+      "tags": [
+        "sql",
+        "group-by",
+        "having",
+        "syntax"
+      ],
+      "recommended_time_sec": 75
+    },
+    {
+      "id": "sql-013",
+      "topic": "SQL",
+      "subtopic": "Subqueries",
+      "difficulty": "hard",
+      "question_text": "What does the final query return?\n\n```sql\nCREATE TABLE e (name TEXT, dept TEXT, sal INT);\nINSERT INTO e VALUES ('A','IT',100), ('B','IT',300), ('C','HR',200), ('D','HR',200);\nSELECT name FROM e x\nWHERE sal > (SELECT AVG(sal) FROM e y WHERE y.dept = x.dept)\nORDER BY name;\n```",
+      "options": [
+        "B",
+        "B, C",
+        "A, C",
+        "B, D"
+      ],
+      "correct_option": 0,
+      "explanation": "The subquery is correlated, so each row is compared with the average of its own department. IT averages 200, so only B (300) is above it. HR averages exactly 200, and no row is strictly greater.",
+      "tags": [
+        "sql",
+        "subqueries",
+        "correlated"
+      ],
+      "recommended_time_sec": 90
+    },
+    {
+      "id": "sql-014",
+      "topic": "SQL",
+      "subtopic": "Subqueries",
+      "difficulty": "medium",
+      "question_text": "What does the final query return?\n\n```sql\nCREATE TABLE emp (salary INT);\nINSERT INTO emp VALUES (100), (300), (300), (200);\nSELECT MAX(salary) FROM emp\nWHERE salary < (SELECT MAX(salary) FROM emp);\n```",
+      "options": [
+        "300",
+        "200",
+        "250",
+        "100"
+      ],
+      "correct_option": 1,
+      "explanation": "The inner query returns 300. The outer query then takes the maximum among salaries strictly below 300, which is the second-highest distinct salary, 200.",
+      "tags": [
+        "sql",
+        "subqueries",
+        "nth-highest"
+      ],
+      "recommended_time_sec": 75
+    },
+    {
+      "id": "sql-015",
+      "topic": "SQL",
+      "subtopic": "Window Functions",
+      "difficulty": "hard",
+      "question_text": "What does the final query return, as rank and dense rank for salary 200?\n\n```sql\nCREATE TABLE p (s INT);\nINSERT INTO p VALUES (300), (300), (200);\nSELECT r, d FROM (\n  SELECT s,\n         RANK() OVER (ORDER BY s DESC) AS r,\n         DENSE_RANK() OVER (ORDER BY s DESC) AS d\n  FROM p\n) WHERE s = 200;\n```",
+      "options": [
+        "2 2",
+        "2 3",
+        "3 3",
+        "3 2"
+      ],
+      "correct_option": 3,
+      "explanation": "After the tie at 300, `RANK` skips a position and gives 3, while `DENSE_RANK` continues without gaps and gives 2. The filter is applied in an outer query because a WHERE in the inner query would run before the window function.",
+      "tags": [
+        "sql",
+        "window-functions",
+        "rank"
+      ],
+      "recommended_time_sec": 100
+    },
+    {
+      "id": "sql-016",
+      "topic": "SQL",
+      "subtopic": "Window Functions",
+      "difficulty": "medium",
+      "question_text": "What does the final query return?\n\n```sql\nCREATE TABLE p (s INT);\nINSERT INTO p VALUES (10), (20), (30);\nSELECT SUM(s) OVER (ORDER BY s) AS rt FROM p\nORDER BY s DESC LIMIT 1;\n```",
+      "options": [
+        "60",
+        "90",
+        "30",
+        "40"
+      ],
+      "correct_option": 0,
+      "explanation": "With `ORDER BY` inside OVER, the default frame runs from the first row to the current one, so `SUM` becomes a running total. At the last row (s = 30) it equals 10 + 20 + 30 = 60.",
+      "tags": [
+        "sql",
+        "window-functions",
+        "running-total"
+      ],
+      "recommended_time_sec": 75
+    },
+    {
+      "id": "sql-017",
+      "topic": "SQL",
+      "subtopic": "Functions",
+      "difficulty": "medium",
+      "question_text": "What does this query return?\n\n```sql\nSELECT COALESCE(NULLIF(0, 0), 9);\n```",
+      "options": [
+        "1",
+        "9",
+        "0",
+        "NULL"
+      ],
+      "correct_option": 1,
+      "explanation": "`NULLIF(0, 0)` returns NULL because both arguments are equal. `COALESCE` then returns its first non-NULL argument, which is 9.",
+      "tags": [
+        "sql",
+        "functions",
+        "coalesce"
+      ],
+      "recommended_time_sec": 60
+    },
+    {
+      "id": "sql-018",
+      "topic": "SQL",
+      "subtopic": "Functions",
+      "difficulty": "easy",
+      "question_text": "What does this query return?\n\n```sql\nSELECT CASE\n  WHEN 5 > 3 THEN 'A'\n  WHEN 5 > 1 THEN 'B'\n  ELSE 'C'\nEND;\n```",
+      "options": [
+        "AB",
+        "C",
+        "A",
+        "B"
+      ],
+      "correct_option": 2,
+      "explanation": "`CASE` evaluates the conditions in order and returns the result of the first one that is true. Later branches are not considered even if they would also be true.",
+      "tags": [
+        "sql",
+        "functions",
+        "case"
+      ],
+      "recommended_time_sec": 40
+    },
+    {
+      "id": "sql-019",
+      "topic": "SQL",
+      "subtopic": "Functions",
+      "difficulty": "medium",
+      "question_text": "What does this query return?\n\n```sql\nSELECT SUBSTR('CDAC-PGDBDA', 6, 5);\n```",
+      "options": [
+        "PGDBD",
+        "-PGDB",
+        "GDBDA",
+        "PGDBDA"
+      ],
+      "correct_option": 0,
+      "explanation": "String positions start at 1. Starting at position 6 skips \"CDAC-\" and then 5 characters are taken, giving PGDBD. (MySQL's `SUBSTRING(str, 6, 5)` behaves the same.)",
+      "tags": [
+        "sql",
+        "functions",
+        "string"
+      ],
+      "recommended_time_sec": 60
+    },
+    {
+      "id": "sql-020",
+      "topic": "SQL",
+      "subtopic": "Pattern Matching",
+      "difficulty": "medium",
+      "question_text": "How many names match in the final query?\n\n```sql\nCREATE TABLE s (name TEXT);\nINSERT INTO s VALUES ('Asha'), ('Ravi'), ('Aman'), ('Karan');\nSELECT COUNT(*) FROM s WHERE name LIKE '_a%';\n```",
+      "options": [
+        "3",
+        "2",
+        "4",
+        "1"
+      ],
+      "correct_option": 1,
+      "explanation": "`_` matches exactly one character and `%` matches any sequence. The pattern requires the second character to be `a`, which fits Ravi and Karan only.",
+      "tags": [
+        "sql",
+        "like",
+        "pattern-matching"
+      ],
+      "recommended_time_sec": 60
+    },
+    {
+      "id": "sql-021",
+      "topic": "SQL",
+      "subtopic": "DDL",
+      "difficulty": "medium",
+      "question_text": "Which statement about TRUNCATE TABLE is correct?",
+      "options": [
+        "It is DDL and removes all rows without a WHERE clause",
+        "It supports a WHERE clause for selective deletion",
+        "It can be rolled back in every database",
+        "It always fires row-level DELETE triggers"
+      ],
+      "correct_option": 0,
+      "explanation": "TRUNCATE is a DDL command that removes all rows quickly and cannot take a WHERE clause. It typically does not fire row-level delete triggers, and in many systems (for example MySQL and Oracle) it commits implicitly and cannot be rolled back.",
+      "tags": [
+        "sql",
+        "ddl",
+        "truncate"
+      ],
+      "recommended_time_sec": 60
+    },
+    {
+      "id": "sql-022",
+      "topic": "SQL",
+      "subtopic": "Constraints",
+      "difficulty": "medium",
+      "question_text": "In MySQL or PostgreSQL, what does the final query return?\n\n```sql\nCREATE TABLE u (e TEXT UNIQUE);\nINSERT INTO u VALUES (NULL), (NULL), ('a');\nSELECT COUNT(*) FROM u;\n```",
+      "options": [
+        "3",
+        "0",
+        "2",
+        "1"
+      ],
+      "correct_option": 0,
+      "explanation": "A UNIQUE constraint treats each NULL as distinct, so multiple NULLs are allowed in MySQL and PostgreSQL. All three inserts succeed. (SQL Server is the notable exception and permits only one NULL.)",
+      "tags": [
+        "sql",
+        "constraints",
+        "unique",
+        "null"
+      ],
+      "recommended_time_sec": 75
+    },
+    {
+      "id": "sql-023",
+      "topic": "SQL",
+      "subtopic": "Constraints",
+      "difficulty": "medium",
+      "question_text": "What does the final query return after the delete?\n\n```sql\nCREATE TABLE dept (id INT PRIMARY KEY);\nINSERT INTO dept VALUES (1), (2);\nCREATE TABLE emp (id INT, dept_id INT REFERENCES dept(id) ON DELETE CASCADE);\nINSERT INTO emp VALUES (1, 1), (2, 1), (3, 2);\nDELETE FROM dept WHERE id = 1;\nSELECT COUNT(*) FROM emp;\n```",
+      "options": [
+        "1",
+        "3",
+        "2",
+        "0"
+      ],
+      "correct_option": 0,
+      "explanation": "`ON DELETE CASCADE` removes the child rows automatically when the parent row is deleted. Both employees of department 1 disappear, leaving only employee 3.",
+      "tags": [
+        "sql",
+        "constraints",
+        "foreign-key",
+        "cascade"
+      ],
+      "recommended_time_sec": 75
+    },
+    {
+      "id": "sql-024",
+      "topic": "SQL",
+      "subtopic": "Constraints",
+      "difficulty": "medium",
+      "question_text": "What does the final query return after the delete?\n\n```sql\nCREATE TABLE dept (id INT PRIMARY KEY);\nINSERT INTO dept VALUES (1), (2);\nCREATE TABLE emp (id INT, dept_id INT REFERENCES dept(id) ON DELETE SET NULL);\nINSERT INTO emp VALUES (1, 1), (2, 1), (3, 2);\nDELETE FROM dept WHERE id = 1;\nSELECT COUNT(*) FROM emp WHERE dept_id IS NULL;\n```",
+      "options": [
+        "3",
+        "0",
+        "2",
+        "1"
+      ],
+      "correct_option": 2,
+      "explanation": "`ON DELETE SET NULL` keeps the child rows but clears their foreign key. The two employees of department 1 now have a NULL dept_id, so two rows match.",
+      "tags": [
+        "sql",
+        "constraints",
+        "foreign-key",
+        "set-null"
+      ],
+      "recommended_time_sec": 75
+    },
+    {
+      "id": "sql-025",
+      "topic": "SQL",
+      "subtopic": "Transactions",
+      "difficulty": "hard",
+      "question_text": "What does the final query return?\n\n```sql\nCREATE TABLE acc (id INT, v INT);\nINSERT INTO acc VALUES (1, 0);\nBEGIN;\nUPDATE acc SET v = v + 1;\nSAVEPOINT s1;\nUPDATE acc SET v = v + 10;\nROLLBACK TO s1;\nCOMMIT;\nSELECT v FROM acc;\n```",
+      "options": [
+        "10",
+        "0",
+        "1",
+        "11"
+      ],
+      "correct_option": 2,
+      "explanation": "`ROLLBACK TO s1` undoes only the work done after the savepoint, which is the +10 update. The earlier +1 update stays part of the transaction and is made permanent by COMMIT.",
+      "tags": [
+        "sql",
+        "transactions",
+        "savepoint"
+      ],
+      "recommended_time_sec": 90
+    },
+    {
+      "id": "sql-026",
+      "topic": "SQL",
+      "subtopic": "ACID",
+      "difficulty": "easy",
+      "question_text": "A transfer debits one account and then the server crashes before the credit and COMMIT. After recovery, neither account has changed. Which ACID property does this show?",
+      "options": [
+        "Durability",
+        "Isolation",
+        "Consistency",
+        "Atomicity"
+      ],
+      "correct_option": 3,
+      "explanation": "Atomicity means a transaction is all-or-nothing. Because the transaction never committed, the database rolls back its partial work during recovery.",
+      "tags": [
+        "sql",
+        "acid",
+        "atomicity"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "sql-027",
+      "topic": "SQL",
+      "subtopic": "ACID",
+      "difficulty": "easy",
+      "question_text": "A committed order is still present after a sudden power failure and restart. Which ACID property guarantees this?",
+      "options": [
+        "Atomicity",
+        "Durability",
+        "Isolation",
+        "Consistency"
+      ],
+      "correct_option": 1,
+      "explanation": "Durability guarantees that once a transaction commits, its changes survive crashes. Databases achieve this with write-ahead logging, which is replayed on restart.",
+      "tags": [
+        "sql",
+        "acid",
+        "durability"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "sql-028",
+      "topic": "SQL",
+      "subtopic": "Concurrency",
+      "difficulty": "medium",
+      "question_text": "A transaction reads the same row twice and gets different values because another transaction committed an update in between. What is this anomaly called?",
+      "options": [
+        "Dirty read anomaly",
+        "Non-repeatable read",
+        "Lost update problem",
+        "Write skew anomaly"
+      ],
+      "correct_option": 1,
+      "explanation": "A non-repeatable read involves a committed change to an existing row between two reads. A dirty read involves uncommitted data, and a phantom read involves new rows appearing in a repeated range query.",
+      "tags": [
+        "sql",
+        "transactions",
+        "isolation"
+      ],
+      "recommended_time_sec": 60
+    },
+    {
+      "id": "sql-029",
+      "topic": "SQL",
+      "subtopic": "Concurrency",
+      "difficulty": "medium",
+      "question_text": "A transaction runs the same range query twice and the second run returns an extra row inserted and committed by another transaction. What is this called?",
+      "options": [
+        "Dirty read",
+        "Deadlock",
+        "Phantom read",
+        "Non-repeatable read"
+      ],
+      "correct_option": 2,
+      "explanation": "A phantom read occurs when rows matching a query condition appear or disappear between repeated reads. SERIALIZABLE isolation prevents it, and REPEATABLE READ prevents it in some databases (for example MySQL InnoDB).",
+      "tags": [
+        "sql",
+        "transactions",
+        "isolation"
+      ],
+      "recommended_time_sec": 60
+    },
+    {
+      "id": "sql-030",
+      "topic": "SQL",
+      "subtopic": "Normalization",
+      "difficulty": "medium",
+      "question_text": "Which normal form is violated by this table?\n\n```text\nenroll(student_id, course_id, student_name, grade)\nPRIMARY KEY (student_id, course_id)\n-- student_name depends only on student_id\n```",
+      "options": [
+        "2NF",
+        "BCNF",
+        "1NF",
+        "3NF"
+      ],
+      "correct_option": 0,
+      "explanation": "The key is composite, and student_name depends on just part of it (student_id). That is a partial dependency, which violates Second Normal Form.",
+      "tags": [
+        "sql",
+        "normalization",
+        "2nf"
+      ],
+      "recommended_time_sec": 60
+    },
+    {
+      "id": "sql-031",
+      "topic": "SQL",
+      "subtopic": "Normalization",
+      "difficulty": "medium",
+      "question_text": "Which normal form is violated by this table?\n\n```text\nemp(emp_id, dept_id, dept_name)\nPRIMARY KEY (emp_id)\n-- dept_id determines dept_name\n```",
+      "options": [
+        "1NF",
+        "BCNF",
+        "2NF",
+        "3NF"
+      ],
+      "correct_option": 3,
+      "explanation": "The key is a single column, so partial dependencies cannot occur and the table is in 2NF. However, dept_name depends on dept_id, which is not a key, so there is a transitive dependency that violates 3NF.",
+      "tags": [
+        "sql",
+        "normalization",
+        "3nf"
+      ],
+      "recommended_time_sec": 60
+    },
+    {
+      "id": "sql-032",
+      "topic": "SQL",
+      "subtopic": "Indexes",
+      "difficulty": "hard",
+      "question_text": "A composite index exists on (a, b, c). Which query condition can use it most effectively through its leftmost prefix?",
+      "options": [
+        "WHERE b = 2",
+        "WHERE b = 2 AND c = 3",
+        "WHERE c = 3",
+        "WHERE a = 1 AND b = 2"
+      ],
+      "correct_option": 3,
+      "explanation": "B-tree composite indexes are ordered by the first column, then the second, and so on. A query must constrain a leading prefix such as (a) or (a, b) to use the index efficiently, while conditions that skip `a` cannot.",
+      "tags": [
+        "sql",
+        "indexes",
+        "composite-index"
+      ],
+      "recommended_time_sec": 75
+    },
+    {
+      "id": "sql-033",
+      "topic": "SQL",
+      "subtopic": "Views",
+      "difficulty": "medium",
+      "question_text": "Which of these views is typically NOT updatable?",
+      "options": [
+        "SELECT id, name FROM emp",
+        "SELECT id, salary FROM emp",
+        "SELECT * FROM emp WHERE salary > 5000",
+        "SELECT dept, AVG(salary) FROM emp GROUP BY dept"
+      ],
+      "correct_option": 3,
+      "explanation": "A view with aggregation or GROUP BY has no one-to-one mapping to base table rows, so the database cannot tell which row an update should change. Simple single-table views are usually updatable.",
+      "tags": [
+        "sql",
+        "views",
+        "updatable"
+      ],
+      "recommended_time_sec": 60
+    },
+    {
+      "id": "sql-034",
+      "topic": "SQL",
+      "subtopic": "Date Functions",
+      "difficulty": "easy",
+      "question_text": "In MySQL, what does this query return?\n\n```sql\nSELECT DATEDIFF('2024-03-10', '2024-03-01');\n```",
+      "options": [
+        "9",
+        "10",
+        "8",
+        "11"
+      ],
+      "correct_option": 0,
+      "explanation": "`DATEDIFF(a, b)` returns the number of days from b to a, ignoring the time part. March 10 minus March 1 is 9 days.",
+      "tags": [
+        "sql",
+        "date-functions",
+        "mysql"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "sql-035",
+      "topic": "SQL",
+      "subtopic": "Date Functions",
+      "difficulty": "hard",
+      "question_text": "In MySQL, what does this query return? (2024 is a leap year)\n\n```sql\nSELECT DATE_ADD('2024-01-31', INTERVAL 1 MONTH);\n```",
+      "options": [
+        "2024-02-28",
+        "2024-02-29",
+        "2024-03-02",
+        "2024-03-01"
+      ],
+      "correct_option": 1,
+      "explanation": "February has no 31st, so MySQL clamps the result to the last valid day of the month. In the leap year 2024 that is February 29.",
+      "tags": [
+        "sql",
+        "date-functions",
+        "mysql"
+      ],
+      "recommended_time_sec": 75
+    },
+    {
+      "id": "nosql-001",
+      "topic": "NoSQL",
+      "subtopic": "CAP Theorem",
+      "difficulty": "medium",
+      "question_text": "During a network partition, an AP system (favouring availability over consistency) will typically:",
+      "options": [
+        "Reject all reads and writes",
+        "Shut down the minority nodes safely",
+        "Keep answering, possibly with stale data",
+        "Guarantee the latest write everywhere"
+      ],
+      "correct_option": 2,
+      "explanation": "CAP says that when a partition occurs, a system must choose between consistency and availability. AP systems such as Cassandra or DynamoDB keep serving requests and reconcile replicas later, so reads can briefly return stale values.",
+      "tags": [
+        "nosql",
+        "cap-theorem",
+        "availability"
+      ],
+      "recommended_time_sec": 60
+    },
+    {
+      "id": "nosql-002",
+      "topic": "NoSQL",
+      "subtopic": "CAP Theorem",
+      "difficulty": "medium",
+      "question_text": "During a network partition, a CP system (favouring consistency over availability) will typically:",
+      "options": [
+        "Ignore the partition and carry on",
+        "Serve every request with stale data",
+        "Merge conflicting writes automatically",
+        "Refuse some requests to avoid stale reads"
+      ],
+      "correct_option": 3,
+      "explanation": "A CP system protects consistency by rejecting or delaying operations on the side of the partition that cannot confirm it has the latest data. MongoDB's primary-based replica sets lean this way, since a partitioned minority cannot elect a primary.",
+      "tags": [
+        "nosql",
+        "cap-theorem",
+        "consistency"
+      ],
+      "recommended_time_sec": 60
+    },
+    {
+      "id": "nosql-003",
+      "topic": "NoSQL",
+      "subtopic": "BASE Model",
+      "difficulty": "easy",
+      "question_text": "What does BASE stand for in the context of NoSQL systems?",
+      "options": [
+        "Basically Available, Strong state, Eventual consistency",
+        "Basically Available, Soft state, Eventual consistency",
+        "Basically Available, Soft state, Everywhere consistency",
+        "Basically Atomic, Soft state, Eventual consistency"
+      ],
+      "correct_option": 1,
+      "explanation": "BASE is the NoSQL counterpart to ACID. It accepts that state may be in flux (soft state) and that replicas converge over time (eventual consistency) in exchange for availability and scale.",
+      "tags": [
+        "nosql",
+        "base",
+        "consistency"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "nosql-004",
+      "topic": "NoSQL",
+      "subtopic": "NoSQL Types",
+      "difficulty": "easy",
+      "question_text": "Neo4j belongs to which NoSQL database category?",
+      "options": [
+        "Column-family store",
+        "Graph database",
+        "Key-value store",
+        "Document store"
+      ],
+      "correct_option": 1,
+      "explanation": "Neo4j stores data as nodes and relationships and is queried with Cypher. MongoDB is a document store, Cassandra and HBase are column-family stores, and Redis is a key-value store.",
+      "tags": [
+        "nosql",
+        "types",
+        "graph"
+      ],
+      "recommended_time_sec": 30
+    },
+    {
+      "id": "nosql-005",
+      "topic": "NoSQL",
+      "subtopic": "MongoDB Projection",
+      "difficulty": "medium",
+      "question_text": "Given the collection below, what does the query return?\n\n```javascript\n// students: { _id: 1, name: \"Asha\", age: 21 }, { _id: 2, name: \"Ravi\", age: 17 }\ndb.students.find({ age: { $gte: 18 } }, { name: 1, _id: 0 })\n```",
+      "options": [
+        "{ _id: 1, name: \"Asha\" }",
+        "{ name: \"Ravi\" }",
+        "{ name: \"Asha\", age: 21 }",
+        "{ name: \"Asha\" }"
+      ],
+      "correct_option": 3,
+      "explanation": "The first argument filters to documents with age >= 18, which leaves only Asha. The second argument is a projection: `name: 1` includes the name and `_id: 0` explicitly suppresses the `_id` field, which is otherwise returned by default.",
+      "tags": [
+        "nosql",
+        "mongodb",
+        "projection",
+        "find"
+      ],
+      "recommended_time_sec": 75
+    },
+    {
+      "id": "nosql-006",
+      "topic": "NoSQL",
+      "subtopic": "MongoDB Update",
+      "difficulty": "medium",
+      "question_text": "A document is { name: \"Asha\", age: 20 }. What does it contain after this update?\n\n```javascript\ndb.students.updateOne(\n  { name: \"Asha\" },\n  { $inc: { age: 2 } }\n)\n```",
+      "options": [
+        "{ name: \"Asha\", age: 22 }",
+        "{ name: \"Asha\", age: 2 }",
+        "{ age: 22 }",
+        "{ name: \"Asha\", age: 20, inc: 2 }"
+      ],
+      "correct_option": 0,
+      "explanation": "`$inc` adds the given amount to the numeric field in place, so 20 becomes 22. All other fields are left untouched. Replacing the whole document would require `replaceOne` or an update without operators.",
+      "tags": [
+        "nosql",
+        "mongodb",
+        "update",
+        "inc"
+      ],
+      "recommended_time_sec": 60
+    },
+    {
+      "id": "nosql-007",
+      "topic": "NoSQL",
+      "subtopic": "MongoDB Update",
+      "difficulty": "hard",
+      "question_text": "No document has name \"Zed\". What happens when this command runs?\n\n```javascript\ndb.students.updateOne(\n  { name: \"Zed\" },\n  { $set: { age: 30 } },\n  { upsert: true }\n)\n```",
+      "options": [
+        "A random document gets age 30",
+        "Nothing happens and matchedCount is 0",
+        "An error says the filter matched nothing",
+        "A new { name: \"Zed\", age: 30 } document is inserted"
+      ],
+      "correct_option": 3,
+      "explanation": "With `upsert: true`, MongoDB inserts a new document built from the equality fields of the filter plus the update operators when no document matches. An `_id` is generated automatically.",
+      "tags": [
+        "nosql",
+        "mongodb",
+        "upsert"
+      ],
+      "recommended_time_sec": 75
+    },
+    {
+      "id": "nosql-008",
+      "topic": "NoSQL",
+      "subtopic": "MongoDB Update",
+      "difficulty": "medium",
+      "question_text": "Three documents have status \"new\". How many are modified by this command?\n\n```javascript\ndb.tasks.updateOne(\n  { status: \"new\" },\n  { $set: { status: \"open\" } }\n)\n```",
+      "options": [
+        "3",
+        "1",
+        "2",
+        "0"
+      ],
+      "correct_option": 1,
+      "explanation": "`updateOne` modifies at most the first matching document. Use `updateMany` to change all three matches.",
+      "tags": [
+        "nosql",
+        "mongodb",
+        "update",
+        "updateone"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "nosql-009",
+      "topic": "NoSQL",
+      "subtopic": "MongoDB Delete",
+      "difficulty": "medium",
+      "question_text": "Which statement correctly compares these two commands?\n\n```javascript\ndb.logs.deleteMany({})\ndb.logs.drop()\n```",
+      "options": [
+        "Both remove the whole collection",
+        "The first empties it, the second drops it",
+        "The first also drops all indexes",
+        "The second keeps the empty collection"
+      ],
+      "correct_option": 1,
+      "explanation": "`deleteMany({})` removes every document but leaves the collection, its indexes and metadata in place. `drop()` removes the collection itself along with its indexes.",
+      "tags": [
+        "nosql",
+        "mongodb",
+        "delete",
+        "drop"
+      ],
+      "recommended_time_sec": 60
+    },
+    {
+      "id": "nosql-010",
+      "topic": "NoSQL",
+      "subtopic": "MongoDB Queries",
+      "difficulty": "medium",
+      "question_text": "Ages in the collection are 15, 22 and 40. How many documents does this query return?\n\n```javascript\ndb.people.find({\n  $or: [ { age: { $lt: 18 } }, { age: { $gt: 30 } } ]\n})\n```",
+      "options": [
+        "0",
+        "2",
+        "3",
+        "1"
+      ],
+      "correct_option": 1,
+      "explanation": "`$or` matches documents that satisfy at least one condition. Age 15 satisfies `$lt: 18` and age 40 satisfies `$gt: 30`, while 22 satisfies neither.",
+      "tags": [
+        "nosql",
+        "mongodb",
+        "or",
+        "query-operators"
+      ],
+      "recommended_time_sec": 60
+    },
+    {
+      "id": "nosql-011",
+      "topic": "NoSQL",
+      "subtopic": "MongoDB Arrays",
+      "difficulty": "hard",
+      "question_text": "Given the document below, which statement about the two queries is correct?\n\n```javascript\n// { scores: [ { s: \"Math\", v: 95 }, { s: \"Phy\", v: 60 } ] }\n\n// Query 1\ndb.c.find({ scores: { $elemMatch: { s: \"Phy\", v: { $gte: 90 } } } })\n\n// Query 2\ndb.c.find({ \"scores.s\": \"Phy\", \"scores.v\": { $gte: 90 } })\n```",
+      "options": [
+        "Query 1 returns nothing, Query 2 returns the document",
+        "Both queries return nothing",
+        "Query 1 returns it, Query 2 returns nothing",
+        "Both queries return the document"
+      ],
+      "correct_option": 0,
+      "explanation": "`$elemMatch` requires one single array element to satisfy all its conditions, and no element has s = \"Phy\" with v >= 90. Query 2 checks each condition independently across the array, so \"Phy\" matches in one element and 95 >= 90 matches in another.",
+      "tags": [
+        "nosql",
+        "mongodb",
+        "arrays",
+        "elemmatch"
+      ],
+      "recommended_time_sec": 100
+    },
+    {
+      "id": "nosql-012",
+      "topic": "NoSQL",
+      "subtopic": "MongoDB Arrays",
+      "difficulty": "medium",
+      "question_text": "A document has tags: [\"a\", \"b\"]. What does this query return?\n\n```javascript\ndb.items.find({ tags: { $all: [\"a\", \"c\"] } })\n```",
+      "options": [
+        "An error for the missing tag c",
+        "The document is not returned",
+        "Only the tag a is returned",
+        "The document is returned"
+      ],
+      "correct_option": 1,
+      "explanation": "`$all` requires the array to contain every listed value. The tag \"c\" is missing, so the document does not match. `$in` would have matched because it needs only one of the values.",
+      "tags": [
+        "nosql",
+        "mongodb",
+        "arrays",
+        "all"
+      ],
+      "recommended_time_sec": 60
+    },
+    {
+      "id": "nosql-013",
+      "topic": "NoSQL",
+      "subtopic": "MongoDB Arrays",
+      "difficulty": "easy",
+      "question_text": "What does `$size` match in this query?\n\n```javascript\ndb.students.find({ marks: { $size: 3 } })\n```",
+      "options": [
+        "Arrays whose sum equals three",
+        "Arrays with at least three elements",
+        "Arrays with exactly three elements",
+        "Arrays containing the number 3"
+      ],
+      "correct_option": 2,
+      "explanation": "`$size` matches arrays whose length equals the given number exactly. It does not accept ranges, so a query for \"at least three\" needs a different approach.",
+      "tags": [
+        "nosql",
+        "mongodb",
+        "arrays",
+        "size"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "nosql-014",
+      "topic": "NoSQL",
+      "subtopic": "Aggregation",
+      "difficulty": "hard",
+      "question_text": "For the orders below, what does this pipeline return?\n\n```javascript\n// orders:\n// { cust: \"A\", amt: 100, st: \"done\" }, { cust: \"A\", amt: 50, st: \"done\" },\n// { cust: \"B\", amt: 70, st: \"open\" }, { cust: \"B\", amt: 30, st: \"done\" }\ndb.orders.aggregate([\n  { $match: { st: \"done\" } },\n  { $group: { _id: \"$cust\", total: { $sum: \"$amt\" } } }\n])\n```",
+      "options": [
+        "A: 100, B: 70",
+        "A: 150, B: 100",
+        "A: 150, B: 70",
+        "A: 150, B: 30"
+      ],
+      "correct_option": 3,
+      "explanation": "`$match` runs first and drops the open order for B, so B's total is only 30. `$group` then sums the remaining amounts per customer, giving A = 100 + 50 = 150.",
+      "tags": [
+        "nosql",
+        "mongodb",
+        "aggregation",
+        "group"
+      ],
+      "recommended_time_sec": 90
+    },
+    {
+      "id": "nosql-015",
+      "topic": "NoSQL",
+      "subtopic": "Aggregation",
+      "difficulty": "medium",
+      "question_text": "In this pipeline, what is the role of the second `$match` stage?\n\n```javascript\ndb.orders.aggregate([\n  { $group: { _id: \"$cust\", total: { $sum: \"$amt\" } } },\n  { $match: { total: { $gt: 100 } } }\n])\n```",
+      "options": [
+        "Filters the grouped totals, like SQL HAVING",
+        "Joins customers with their orders",
+        "Filters raw orders, like SQL WHERE",
+        "Sorts customers by their totals"
+      ],
+      "correct_option": 0,
+      "explanation": "A `$match` placed after `$group` operates on the grouped output, so it removes groups whose total is not above 100. That is the pipeline equivalent of HAVING, while a `$match` before `$group` acts like WHERE.",
+      "tags": [
+        "nosql",
+        "mongodb",
+        "aggregation",
+        "match"
+      ],
+      "recommended_time_sec": 75
+    },
+    {
+      "id": "nosql-016",
+      "topic": "NoSQL",
+      "subtopic": "Aggregation",
+      "difficulty": "medium",
+      "question_text": "Which aggregation stage performs a left outer join with another collection?",
+      "options": [
+        "$unwind",
+        "$bucket",
+        "$project",
+        "$lookup"
+      ],
+      "correct_option": 3,
+      "explanation": "`$lookup` pulls matching documents from another collection into an array field, similar to a LEFT JOIN. `$unwind` flattens arrays, `$project` reshapes documents, and `$bucket` groups values into ranges.",
+      "tags": [
+        "nosql",
+        "mongodb",
+        "aggregation",
+        "lookup"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "nosql-017",
+      "topic": "NoSQL",
+      "subtopic": "Aggregation",
+      "difficulty": "hard",
+      "question_text": "Two documents have an items array of length 3 and 2. How many documents does this pipeline output?\n\n```javascript\ndb.orders.aggregate([\n  { $unwind: \"$items\" }\n])\n```",
+      "options": [
+        "3",
+        "6",
+        "5",
+        "2"
+      ],
+      "correct_option": 2,
+      "explanation": "`$unwind` outputs one document per array element, copying the other fields into each. With 3 + 2 elements, the pipeline produces 5 documents.",
+      "tags": [
+        "nosql",
+        "mongodb",
+        "aggregation",
+        "unwind"
+      ],
+      "recommended_time_sec": 60
+    },
+    {
+      "id": "nosql-018",
+      "topic": "NoSQL",
+      "subtopic": "MongoDB Indexing",
+      "difficulty": "hard",
+      "question_text": "An index { a: 1, b: 1 } exists. Which query can use it through its prefix?",
+      "options": [
+        "{ c: 5 }",
+        "{ b: 5 }",
+        "{ a: 5 }",
+        "{ b: 5, c: 5 }"
+      ],
+      "correct_option": 2,
+      "explanation": "Compound indexes support queries on a leading prefix of their fields, here `a` or `a` with `b`. A query on `b` alone cannot use the index efficiently because it skips the first key.",
+      "tags": [
+        "nosql",
+        "mongodb",
+        "indexing",
+        "compound-index"
+      ],
+      "recommended_time_sec": 75
+    },
+    {
+      "id": "nosql-019",
+      "topic": "NoSQL",
+      "subtopic": "MongoDB Indexing",
+      "difficulty": "medium",
+      "question_text": "What does COLLSCAN in the winning plan of `explain()` indicate?",
+      "options": [
+        "A compound index being used",
+        "A full collection scan without an index",
+        "An index scan on the _id field",
+        "A covered query from memory"
+      ],
+      "correct_option": 1,
+      "explanation": "COLLSCAN means MongoDB read every document in the collection. An indexed query would show IXSCAN, and a well-chosen index usually lowers the number of documents examined.",
+      "tags": [
+        "nosql",
+        "mongodb",
+        "indexing",
+        "explain"
+      ],
+      "recommended_time_sec": 60
+    },
+    {
+      "id": "nosql-020",
+      "topic": "NoSQL",
+      "subtopic": "Replication",
+      "difficulty": "medium",
+      "question_text": "In a MongoDB replica set, what happens when the primary becomes unavailable?",
+      "options": [
+        "The secondaries elect a new primary",
+        "The set stays read-only until restart",
+        "Writes continue on every secondary",
+        "All data on the secondaries is dropped"
+      ],
+      "correct_option": 0,
+      "explanation": "Replica set members monitor each other with heartbeats. If the primary is unreachable, an eligible secondary wins an election and becomes primary, usually within seconds, which provides automatic failover.",
+      "tags": [
+        "nosql",
+        "mongodb",
+        "replication",
+        "failover"
+      ],
+      "recommended_time_sec": 60
+    },
+    {
+      "id": "nosql-021",
+      "topic": "NoSQL",
+      "subtopic": "Sharding",
+      "difficulty": "hard",
+      "question_text": "Why is a monotonically increasing shard key, such as a timestamp, usually a poor choice?",
+      "options": [
+        "It prevents the use of any index",
+        "It stops chunks from ever splitting",
+        "It forces every query to scatter everywhere",
+        "New writes pile onto a single hot shard"
+      ],
+      "correct_option": 3,
+      "explanation": "With an always-increasing key, every new document falls into the highest chunk range and lands on the same shard, creating a write hotspot. Hashed shard keys or higher-cardinality compound keys spread the load better.",
+      "tags": [
+        "nosql",
+        "mongodb",
+        "sharding",
+        "shard-key"
+      ],
+      "recommended_time_sec": 90
+    },
+    {
+      "id": "nosql-022",
+      "topic": "NoSQL",
+      "subtopic": "MongoDB Indexing",
+      "difficulty": "medium",
+      "question_text": "What is the purpose of a TTL index in MongoDB?",
+      "options": [
+        "Speeds up full-text search queries",
+        "Enforces uniqueness for a field",
+        "Expires old documents automatically",
+        "Limits the maximum document size"
+      ],
+      "correct_option": 2,
+      "explanation": "A TTL index on a date field makes a background task delete documents once they are older than the configured number of seconds. It suits sessions, caches and log data.",
+      "tags": [
+        "nosql",
+        "mongodb",
+        "indexing",
+        "ttl"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "nosql-023",
+      "topic": "NoSQL",
+      "subtopic": "Data Modeling",
+      "difficulty": "medium",
+      "question_text": "Which situation favours referencing instead of embedding in MongoDB?",
+      "options": [
+        "A large child set that grows without bound",
+        "Data always read together with its parent",
+        "A few tags attached to a single post",
+        "A small fixed address inside a user"
+      ],
+      "correct_option": 0,
+      "explanation": "Embedding keeps related data in one document, but a document cannot exceed 16 MB, and unbounded arrays hurt performance. Large or rapidly growing child sets are better stored in their own collection and referenced by `_id`.",
+      "tags": [
+        "nosql",
+        "mongodb",
+        "data-modeling",
+        "embedding"
+      ],
+      "recommended_time_sec": 75
+    },
+    {
+      "id": "nosql-024",
+      "topic": "NoSQL",
+      "subtopic": "Transactions",
+      "difficulty": "medium",
+      "question_text": "Which statement about transactions in modern MongoDB is accurate?",
+      "options": [
+        "Transactions work only on standalone servers",
+        "Only single-document writes are ever atomic",
+        "Multi-document ACID transactions exist since 4.0",
+        "Transactions are not supported in any version"
+      ],
+      "correct_option": 2,
+      "explanation": "Single-document writes have always been atomic, and MongoDB 4.0 added multi-document ACID transactions on replica sets, with sharded cluster support following in 4.2. They carry a performance cost, so good schema design still matters.",
+      "tags": [
+        "nosql",
+        "mongodb",
+        "transactions",
+        "acid"
+      ],
+      "recommended_time_sec": 60
+    },
+    {
+      "id": "nosql-025",
+      "topic": "NoSQL",
+      "subtopic": "MongoDB Basics",
+      "difficulty": "easy",
+      "question_text": "Which field does MongoDB index automatically in every collection?",
+      "options": [
+        "created_at",
+        "name",
+        "_id",
+        "email"
+      ],
+      "correct_option": 2,
+      "explanation": "Every collection gets a unique index on `_id` automatically, which enforces uniqueness of that field. Any other index must be created explicitly with `createIndex`.",
+      "tags": [
+        "nosql",
+        "mongodb",
+        "indexing",
+        "_id"
+      ],
+      "recommended_time_sec": 30
+    }
+  ]
+}

@@ -1,0 +1,2001 @@
+{
+  "id": "shared-1794227227450-java-set-1",
+  "name": "JAVA SET 1",
+  "description": "Created by Admin",
+  "publishedAt": "2026-11-09T12:27:07.450Z",
+  "publishedBy": "Samar Admin",
+  "questions": [
+    {
+      "id": "java-001",
+      "topic": "Java Fundamentals",
+      "subtopic": "JVM",
+      "difficulty": "easy",
+      "question_text": "What is the JVM's main role when running a Java application?",
+      "options": [
+        "It executes Java bytecode",
+        "It converts Java source directly into HTML",
+        "It replaces the Java compiler",
+        "It stores Java packages"
+      ],
+      "correct_option": 0,
+      "explanation": "The JVM loads and executes Java bytecode, providing the runtime environment for Java applications.",
+      "tags": [
+        "JVM",
+        "bytecode"
+      ],
+      "recommended_time_sec": 40
+    },
+    {
+      "id": "java-002",
+      "topic": "Java Fundamentals",
+      "subtopic": "JDK",
+      "difficulty": "easy",
+      "question_text": "Which component is required to compile Java source code?",
+      "options": [
+        "JRE only",
+        "JDK",
+        "JVM only",
+        "A Java class file"
+      ],
+      "correct_option": 1,
+      "explanation": "The JDK includes development tools such as the Java compiler, as well as runtime components.",
+      "tags": [
+        "JDK",
+        "compiler"
+      ],
+      "recommended_time_sec": 40
+    },
+    {
+      "id": "java-003",
+      "topic": "Java Fundamentals",
+      "subtopic": "Primitive types",
+      "difficulty": "easy",
+      "question_text": "Which declaration uses a Java primitive type?",
+      "options": [
+        "String name = \"Mira\";",
+        "Integer count = 4;",
+        "int count = 4;",
+        "ArrayList<Integer> counts = new ArrayList<>();"
+      ],
+      "correct_option": 2,
+      "explanation": "`int` is a primitive type. `Integer`, `String`, and `ArrayList` are reference types.",
+      "tags": [
+        "data-types",
+        "primitive"
+      ],
+      "recommended_time_sec": 35
+    },
+    {
+      "id": "java-004",
+      "topic": "Java Fundamentals",
+      "subtopic": "Arithmetic operators",
+      "difficulty": "easy",
+      "question_text": "What does `17 % 5` evaluate to in Java?",
+      "options": [
+        "3",
+        "2.5",
+        "5",
+        "2"
+      ],
+      "correct_option": 3,
+      "explanation": "The remainder operator `%` returns the remainder after integer division. Seventeen divided by five leaves a remainder of two.",
+      "tags": [
+        "operators",
+        "arithmetic"
+      ],
+      "recommended_time_sec": 35
+    },
+    {
+      "id": "java-005",
+      "topic": "Java Fundamentals",
+      "subtopic": "Ternary operator",
+      "difficulty": "medium",
+      "question_text": "What value is assigned to `result`?\n```java\nint score = 72;\nString result = score >= 50 ? \"Pass\" : \"Retry\";\n```",
+      "options": [
+        "\"Pass\"",
+        "\"Retry\"",
+        "72",
+        "The expression does not compile"
+      ],
+      "correct_option": 0,
+      "explanation": "The condition `score >= 50` is true, so the ternary expression selects `\"Pass\"`.",
+      "tags": [
+        "operators",
+        "ternary"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "java-006",
+      "topic": "Java Fundamentals",
+      "subtopic": "Control statements",
+      "difficulty": "medium",
+      "question_text": "How many times does the loop body run?\n```java\nint i = 2;\nwhile (i < 6) {\n    i++;\n}\n```",
+      "options": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "correct_option": 1,
+      "explanation": "The body runs for `i` equal to 2, 3, 4, and 5: four iterations.",
+      "tags": [
+        "loops",
+        "while"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "java-007",
+      "topic": "Java Fundamentals",
+      "subtopic": "Switch statement",
+      "difficulty": "medium",
+      "question_text": "What is printed?\n```java\nint day = 2;\nswitch (day) {\n    case 1: System.out.print(\"Mon\"); break;\n    case 2: System.out.print(\"Tue\"); break;\n    default: System.out.print(\"Other\");\n}\n```",
+      "options": [
+        "Mon",
+        "Other",
+        "Tue",
+        "Nothing"
+      ],
+      "correct_option": 2,
+      "explanation": "The value `2` selects the second case, which prints `Tue` and then exits the switch.",
+      "tags": [
+        "switch",
+        "control-flow"
+      ],
+      "recommended_time_sec": 50
+    },
+    {
+      "id": "java-008",
+      "topic": "Java Fundamentals",
+      "subtopic": "Break and continue",
+      "difficulty": "medium",
+      "question_text": "What is printed?\n```java\nfor (int i = 1; i <= 4; i++) {\n    if (i == 3) continue;\n    System.out.print(i);\n}\n```",
+      "options": [
+        "1234",
+        "13",
+        "234",
+        "124"
+      ],
+      "correct_option": 3,
+      "explanation": "`continue` skips the print statement when `i` is 3, so the output is `124`.",
+      "tags": [
+        "loops",
+        "continue"
+      ],
+      "recommended_time_sec": 50
+    },
+    {
+      "id": "java-009",
+      "topic": "Java Fundamentals",
+      "subtopic": "Class structure",
+      "difficulty": "easy",
+      "question_text": "Which method signature is the conventional entry point for a Java application?",
+      "options": [
+        "public static void main(String[] args)",
+        "public void main(String args)",
+        "static int start(String[] args)",
+        "private static void main()"
+      ],
+      "correct_option": 0,
+      "explanation": "The standard application entry point is `public static void main(String[] args)`.",
+      "tags": [
+        "class-structure",
+        "main"
+      ],
+      "recommended_time_sec": 35
+    },
+    {
+      "id": "java-010",
+      "topic": "Java Fundamentals",
+      "subtopic": "Importing packages",
+      "difficulty": "easy",
+      "question_text": "What does `import java.util.ArrayList;` allow a source file to do?",
+      "options": [
+        "Create a package named `java.util`",
+        "Refer to `ArrayList` by its simple name",
+        "Compile all classes in `java.util` into the file",
+        "Run `ArrayList` as the application entry point"
+      ],
+      "correct_option": 1,
+      "explanation": "The import lets code refer to `ArrayList` without writing its fully qualified name each time.",
+      "tags": [
+        "packages",
+        "import"
+      ],
+      "recommended_time_sec": 40
+    },
+    {
+      "id": "java-011",
+      "topic": "Java Fundamentals",
+      "subtopic": "Integer division",
+      "difficulty": "medium",
+      "question_text": "What is the value of `result`?\n```java\nint result = 7 / 2;\n```",
+      "options": [
+        "3.5",
+        "4",
+        "3",
+        "The expression does not compile"
+      ],
+      "correct_option": 2,
+      "explanation": "Both operands are integers, so Java performs integer division and discards the fractional part.",
+      "tags": [
+        "operators",
+        "type-conversion"
+      ],
+      "recommended_time_sec": 40
+    },
+    {
+      "id": "java-012",
+      "topic": "Java Fundamentals",
+      "subtopic": "Do-while loop",
+      "difficulty": "medium",
+      "question_text": "How many times does this loop print `Run`?\n```java\nint count = 0;\ndo {\n    System.out.print(\"Run\");\n    count++;\n} while (count < 0);\n```",
+      "options": [
+        "Zero times",
+        "Once",
+        "Twice",
+        "It does not compile"
+      ],
+      "correct_option": 3,
+      "explanation": "This is a trick: the loop body runs once before the condition is checked, so it prints once. The correct choice should be B.",
+      "tags": [
+        "loops",
+        "do-while"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "java-013",
+      "topic": "Java Fundamentals",
+      "subtopic": "Reference and primitive variables",
+      "difficulty": "medium",
+      "question_text": "What happens when an object reference variable is assigned to another reference variable?",
+      "options": [
+        "Both variables can refer to the same object",
+        "The object is automatically cloned",
+        "The object's fields become primitive values",
+        "The object is immediately garbage-collected"
+      ],
+      "correct_option": 0,
+      "explanation": "Assignment copies the reference value. Both variables can then refer to the same object.",
+      "tags": [
+        "references",
+        "objects"
+      ],
+      "recommended_time_sec": 50
+    },
+    {
+      "id": "java-014",
+      "topic": "Java Fundamentals",
+      "subtopic": "Arrays",
+      "difficulty": "easy",
+      "question_text": "What is the index of the first element in a Java array?",
+      "options": [
+        "1",
+        "-1",
+        "0",
+        "It depends on the array type"
+      ],
+      "correct_option": 1,
+      "explanation": "Java arrays use zero-based indexing, so the first element is at index 0.",
+      "tags": [
+        "arrays",
+        "indexing"
+      ],
+      "recommended_time_sec": 35
+    },
+    {
+      "id": "java-015",
+      "topic": "OOP",
+      "subtopic": "Object creation",
+      "difficulty": "easy",
+      "question_text": "Which keyword is used to create a new class instance?",
+      "options": [
+        "class",
+        "this",
+        "new",
+        "instanceof"
+      ],
+      "correct_option": 2,
+      "explanation": "The `new` keyword creates an object and invokes a constructor.",
+      "tags": [
+        "objects",
+        "new"
+      ],
+      "recommended_time_sec": 35
+    },
+    {
+      "id": "java-016",
+      "topic": "OOP",
+      "subtopic": "Reference reassignment",
+      "difficulty": "medium",
+      "question_text": "After `first = second;`, what happens to the object originally referred to by `first`, if no other reference points to it?",
+      "options": [
+        "It is immediately destroyed",
+        "It is reassigned to `second`",
+        "It becomes a static object",
+        "It may become eligible for garbage collection"
+      ],
+      "correct_option": 3,
+      "explanation": "The assignment changes `first` to refer to the same object as `second`. The previously referenced object may be eligible for garbage collection if it has no reachable references.",
+      "tags": [
+        "references",
+        "garbage-collection"
+      ],
+      "recommended_time_sec": 50
+    },
+    {
+      "id": "java-017",
+      "topic": "OOP",
+      "subtopic": "Encapsulation",
+      "difficulty": "easy",
+      "question_text": "Which design best demonstrates encapsulation for a `balance` field?",
+      "options": [
+        "Make the field private and provide controlled methods to access or update it",
+        "Make the field public and let any code change it",
+        "Store the field in a local variable in `main`",
+        "Declare the field as an interface"
+      ],
+      "correct_option": 0,
+      "explanation": "Encapsulation hides internal state and exposes controlled operations through methods.",
+      "tags": [
+        "encapsulation",
+        "access-modifiers"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "java-018",
+      "topic": "OOP",
+      "subtopic": "Constructors",
+      "difficulty": "medium",
+      "question_text": "What is true about a constructor in Java?",
+      "options": [
+        "It must return an `int`",
+        "Its name matches the class name and it has no return type",
+        "It is called with the `return` keyword",
+        "It must be declared `static`"
+      ],
+      "correct_option": 1,
+      "explanation": "A constructor has the same name as its class and does not declare a return type.",
+      "tags": [
+        "constructors"
+      ],
+      "recommended_time_sec": 40
+    },
+    {
+      "id": "java-019",
+      "topic": "OOP",
+      "subtopic": "Method overloading",
+      "difficulty": "medium",
+      "question_text": "Which pair of methods is a valid example of overloading?",
+      "options": [
+        "`show(int x)` and `show(int y)`",
+        "`show()` and `display()`",
+        "`show(int x)` and `show(String x)`",
+        "`show()` and `show()` with identical declarations"
+      ],
+      "correct_option": 2,
+      "explanation": "Overloaded methods share a name but have different parameter lists. Changing only parameter names does not overload a method.",
+      "tags": [
+        "methods",
+        "overloading"
+      ],
+      "recommended_time_sec": 50
+    },
+    {
+      "id": "java-020",
+      "topic": "OOP",
+      "subtopic": "Access modifiers",
+      "difficulty": "medium",
+      "question_text": "Which access modifier makes a member accessible only within its declaring class?",
+      "options": [
+        "public",
+        "protected",
+        "default",
+        "private"
+      ],
+      "correct_option": 3,
+      "explanation": "`private` restricts access to the declaring class.",
+      "tags": [
+        "access-modifiers"
+      ],
+      "recommended_time_sec": 40
+    },
+    {
+      "id": "java-021",
+      "topic": "OOP",
+      "subtopic": "Inheritance",
+      "difficulty": "easy",
+      "question_text": "Which keyword declares that class `Manager` inherits from class `Employee`?",
+      "options": [
+        "extends",
+        "implements",
+        "inherits",
+        "super"
+      ],
+      "correct_option": 0,
+      "explanation": "A Java class inherits from another class using `extends`.",
+      "tags": [
+        "inheritance"
+      ],
+      "recommended_time_sec": 35
+    },
+    {
+      "id": "java-022",
+      "topic": "OOP",
+      "subtopic": "Interfaces",
+      "difficulty": "easy",
+      "question_text": "Which keyword is used by a class to declare that it provides an interface's implementation?",
+      "options": [
+        "extends",
+        "implements",
+        "instanceof",
+        "override"
+      ],
+      "correct_option": 1,
+      "explanation": "A class uses `implements` to implement an interface.",
+      "tags": [
+        "interfaces"
+      ],
+      "recommended_time_sec": 35
+    },
+    {
+      "id": "java-023",
+      "topic": "OOP",
+      "subtopic": "Abstract classes",
+      "difficulty": "medium",
+      "question_text": "Which statement about an abstract class is correct?",
+      "options": [
+        "It cannot contain fields",
+        "It can be instantiated directly if it has a constructor",
+        "It cannot be instantiated directly",
+        "It cannot contain concrete methods"
+      ],
+      "correct_option": 2,
+      "explanation": "An abstract class cannot be instantiated directly, but it may contain fields, constructors, and concrete methods.",
+      "tags": [
+        "abstract-classes"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "java-024",
+      "topic": "OOP",
+      "subtopic": "Method overriding",
+      "difficulty": "medium",
+      "question_text": "A subclass provides a method with the same signature as an inherited instance method. What is this called?",
+      "options": [
+        "Overloading",
+        "Composition",
+        "Encapsulation",
+        "Overriding"
+      ],
+      "correct_option": 3,
+      "explanation": "A subclass method with a matching signature overrides the inherited instance method.",
+      "tags": [
+        "polymorphism",
+        "overriding"
+      ],
+      "recommended_time_sec": 40
+    },
+    {
+      "id": "java-025",
+      "topic": "OOP",
+      "subtopic": "Runtime polymorphism",
+      "difficulty": "medium",
+      "question_text": "What is printed?\n```java\nclass Animal { void sound() { System.out.print(\"A\"); } }\nclass Dog extends Animal { void sound() { System.out.print(\"D\"); } }\nAnimal pet = new Dog();\npet.sound();\n```",
+      "options": [
+        "D",
+        "A",
+        "AD",
+        "The code does not compile"
+      ],
+      "correct_option": 0,
+      "explanation": "Overridden instance methods are selected at runtime based on the object's actual class, which is `Dog`.",
+      "tags": [
+        "polymorphism",
+        "virtual-methods"
+      ],
+      "recommended_time_sec": 55
+    },
+    {
+      "id": "java-026",
+      "topic": "OOP",
+      "subtopic": "Object and reference types",
+      "difficulty": "medium",
+      "question_text": "Given `Animal a = new Dog();`, which method calls are directly available through `a` at compile time?",
+      "options": [
+        "Only methods declared in `Dog`",
+        "Methods accessible through the declared type `Animal`",
+        "Every method from every superclass and subclass",
+        "Only static methods"
+      ],
+      "correct_option": 1,
+      "explanation": "The reference's declared type controls which members can be accessed at compile time; runtime dispatch selects overridden implementations.",
+      "tags": [
+        "polymorphism",
+        "references"
+      ],
+      "recommended_time_sec": 55
+    },
+    {
+      "id": "java-027",
+      "topic": "OOP",
+      "subtopic": "Object casting",
+      "difficulty": "hard",
+      "question_text": "A reference `Animal a` is known at runtime to point to a `Dog`. Which operation safely checks the type before using a `Dog`-specific method?",
+      "options": [
+        "`a instanceof Dog`",
+        "`a == Dog`",
+        "`Dog extends a`",
+        "`a implements Dog`"
+      ],
+      "correct_option": 2,
+      "explanation": "`instanceof` checks whether an object is compatible with a type before a downcast.",
+      "tags": [
+        "casting",
+        "instanceof"
+      ],
+      "recommended_time_sec": 55
+    },
+    {
+      "id": "java-028",
+      "topic": "OOP",
+      "subtopic": "Immutable classes",
+      "difficulty": "hard",
+      "question_text": "Which practice helps make a simple class immutable?",
+      "options": [
+        "Expose all fields as public",
+        "Provide setters for every field",
+        "Make every field static",
+        "Make fields private and final, initialize them in the constructor, and avoid mutating methods"
+      ],
+      "correct_option": 3,
+      "explanation": "Private final state initialized at construction, with no mutating methods, supports immutability.",
+      "tags": [
+        "immutability",
+        "encapsulation"
+      ],
+      "recommended_time_sec": 60
+    },
+    {
+      "id": "java-029",
+      "topic": "OOP",
+      "subtopic": "Inner classes",
+      "difficulty": "medium",
+      "question_text": "What is a key property of a non-static inner class?",
+      "options": [
+        "It is associated with an instance of its enclosing class",
+        "It can only be declared inside an interface",
+        "It cannot access enclosing-class members",
+        "It is always a top-level class"
+      ],
+      "correct_option": 0,
+      "explanation": "A non-static inner-class instance is associated with an instance of the enclosing class and can access its members.",
+      "tags": [
+        "inner-classes"
+      ],
+      "recommended_time_sec": 50
+    },
+    {
+      "id": "java-030",
+      "topic": "OOP",
+      "subtopic": "Anonymous inner classes",
+      "difficulty": "medium",
+      "question_text": "When is an anonymous inner class useful?",
+      "options": [
+        "When declaring a named top-level class for reuse across packages",
+        "When providing a one-off implementation or extension at the point of use",
+        "When making a primitive variable immutable",
+        "When importing a package"
+      ],
+      "correct_option": 1,
+      "explanation": "An anonymous inner class provides an unnamed, usually one-off implementation of a class or interface.",
+      "tags": [
+        "inner-classes",
+        "interfaces"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "java-031",
+      "topic": "OOP",
+      "subtopic": "Passing data to methods",
+      "difficulty": "medium",
+      "question_text": "Java passes method arguments using which model?",
+      "options": [
+        "Pass-by-reference for objects and pass-by-value for primitives",
+        "Pass-by-name",
+        "Pass-by-value for both primitives and references",
+        "Pass-by-reference for all values"
+      ],
+      "correct_option": 2,
+      "explanation": "Java always passes arguments by value. For an object variable, the copied value is the reference.",
+      "tags": [
+        "methods",
+        "parameters"
+      ],
+      "recommended_time_sec": 55
+    },
+    {
+      "id": "java-032",
+      "topic": "OOP",
+      "subtopic": "Constructors",
+      "difficulty": "medium",
+      "question_text": "If a class declares no constructors, what constructor does the compiler provide?",
+      "options": [
+        "A constructor that accepts every field",
+        "A private constructor",
+        "No constructor at all",
+        "A no-argument default constructor"
+      ],
+      "correct_option": 3,
+      "explanation": "The compiler supplies a no-argument default constructor only when the class declares no constructor.",
+      "tags": [
+        "constructors"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "java-033",
+      "topic": "Exception Handling",
+      "subtopic": "Try-catch-finally",
+      "difficulty": "medium",
+      "question_text": "What is the main purpose of a `finally` block in a try-catch statement?",
+      "options": [
+        "To run cleanup code after the try/catch flow, whether or not an exception occurs",
+        "To declare a checked exception",
+        "To skip all catch blocks",
+        "To retry the try block automatically"
+      ],
+      "correct_option": 0,
+      "explanation": "`finally` is commonly used for cleanup and normally runs whether the try block succeeds or an exception is handled.",
+      "tags": [
+        "exceptions",
+        "finally"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "java-034",
+      "topic": "Exception Handling",
+      "subtopic": "Checked exceptions",
+      "difficulty": "medium",
+      "question_text": "What must a method do when it calls code that may throw a checked exception?",
+      "options": [
+        "Ignore the exception",
+        "Catch it or declare it with `throws`",
+        "Convert it to an `Error`",
+        "Declare the method `static`"
+      ],
+      "correct_option": 1,
+      "explanation": "Checked exceptions must be caught or declared in the method's `throws` clause.",
+      "tags": [
+        "checked-exceptions",
+        "throws"
+      ],
+      "recommended_time_sec": 50
+    },
+    {
+      "id": "java-035",
+      "topic": "Exception Handling",
+      "subtopic": "Unchecked exceptions",
+      "difficulty": "easy",
+      "question_text": "Which is an unchecked exception?",
+      "options": [
+        "IOException",
+        "SQLException",
+        "NullPointerException",
+        "ClassNotFoundException"
+      ],
+      "correct_option": 2,
+      "explanation": "`NullPointerException` is a subclass of `RuntimeException`, so it is unchecked.",
+      "tags": [
+        "runtime-exceptions"
+      ],
+      "recommended_time_sec": 40
+    },
+    {
+      "id": "java-036",
+      "topic": "Exception Handling",
+      "subtopic": "Throw and throws",
+      "difficulty": "medium",
+      "question_text": "Which statement correctly describes `throw` and `throws`?",
+      "options": [
+        "Both are used only in catch blocks",
+        "`throw` lists possible exceptions in a method header",
+        "`throws` creates and throws an exception object",
+        "`throw` throws an exception instance; `throws` declares possible exceptions in a method signature"
+      ],
+      "correct_option": 3,
+      "explanation": "`throw` is used with an exception object; `throws` appears in a method declaration.",
+      "tags": [
+        "throw",
+        "throws"
+      ],
+      "recommended_time_sec": 50
+    },
+    {
+      "id": "java-037",
+      "topic": "Exception Handling",
+      "subtopic": "Multiple catch blocks",
+      "difficulty": "medium",
+      "question_text": "When catching related exception types in separate catch blocks, which ordering is generally required?",
+      "options": [
+        "Catch the more specific subclass before its superclass",
+        "Catch the superclass before its subclass",
+        "Order does not matter",
+        "Put all subclasses after `finally`"
+      ],
+      "correct_option": 0,
+      "explanation": "A superclass catch first would make a later subclass catch unreachable, so specific exceptions must come first.",
+      "tags": [
+        "catch",
+        "exception-hierarchy"
+      ],
+      "recommended_time_sec": 50
+    },
+    {
+      "id": "java-038",
+      "topic": "Exception Handling",
+      "subtopic": "Custom exceptions",
+      "difficulty": "medium",
+      "question_text": "A custom exception must be checked. What should its class generally extend?",
+      "options": [
+        "RuntimeException",
+        "Exception",
+        "Error",
+        "Object"
+      ],
+      "correct_option": 1,
+      "explanation": "A custom checked exception can extend `Exception` directly, rather than `RuntimeException`.",
+      "tags": [
+        "custom-exceptions",
+        "checked-exceptions"
+      ],
+      "recommended_time_sec": 50
+    },
+    {
+      "id": "java-039",
+      "topic": "Exception Handling",
+      "subtopic": "Nested try",
+      "difficulty": "hard",
+      "question_text": "What does a nested `try` block allow a program to do?",
+      "options": [
+        "Handle only compile-time errors",
+        "Declare a method inside another method",
+        "Handle an exception close to the code that may cause it while retaining an outer handler",
+        "Prevent all exceptions from propagating"
+      ],
+      "correct_option": 2,
+      "explanation": "Nested try blocks allow more local handling while an enclosing try/catch may handle exceptions that propagate outward.",
+      "tags": [
+        "nested-try",
+        "exceptions"
+      ],
+      "recommended_time_sec": 55
+    },
+    {
+      "id": "java-040",
+      "topic": "Exception Handling",
+      "subtopic": "Errors and exceptions",
+      "difficulty": "medium",
+      "question_text": "Which statement best describes the difference between an `Error` and a typical application exception?",
+      "options": [
+        "An Error is always checked",
+        "An exception cannot be caught",
+        "An Error is a normal return value",
+        "An Error generally indicates a serious problem that applications are not expected to handle routinely"
+      ],
+      "correct_option": 3,
+      "explanation": "`Error` represents serious conditions, often at the runtime or environment level; ordinary application code usually handles exceptions instead.",
+      "tags": [
+        "errors",
+        "exceptions"
+      ],
+      "recommended_time_sec": 50
+    },
+    {
+      "id": "java-041",
+      "topic": "Exception Handling",
+      "subtopic": "Exception propagation",
+      "difficulty": "medium",
+      "question_text": "A method declares `throws IOException` and does not catch the exception. What happens if the called operation throws it?",
+      "options": [
+        "It can propagate to the caller, which must handle or declare it",
+        "It is silently ignored",
+        "The JVM converts it to `NullPointerException`",
+        "The method returns `null` automatically"
+      ],
+      "correct_option": 0,
+      "explanation": "Declaring an exception allows it to propagate to the caller, which must catch or declare a checked exception.",
+      "tags": [
+        "throws",
+        "propagation"
+      ],
+      "recommended_time_sec": 50
+    },
+    {
+      "id": "java-042",
+      "topic": "Strings",
+      "subtopic": "String immutability",
+      "difficulty": "easy",
+      "question_text": "What does `String` immutability mean?",
+      "options": [
+        "A String can contain only one character",
+        "A String object's contents cannot be changed after it is created",
+        "A String cannot be assigned to another variable",
+        "Strings cannot be compared"
+      ],
+      "correct_option": 1,
+      "explanation": "String objects are immutable; operations that appear to modify a string produce another string.",
+      "tags": [
+        "String",
+        "immutability"
+      ],
+      "recommended_time_sec": 40
+    },
+    {
+      "id": "java-043",
+      "topic": "Strings",
+      "subtopic": "String concatenation",
+      "difficulty": "medium",
+      "question_text": "What is printed?\n```java\nString s = \"cat\";\ns.concat(\"s\");\nSystem.out.print(s);\n```",
+      "options": [
+        "cats",
+        "catnull",
+        "cat",
+        "The code does not compile"
+      ],
+      "correct_option": 2,
+      "explanation": "`concat` returns a new String. Since the result is not assigned, `s` still refers to `cat`.",
+      "tags": [
+        "String",
+        "immutability"
+      ],
+      "recommended_time_sec": 50
+    },
+    {
+      "id": "java-044",
+      "topic": "Strings",
+      "subtopic": "String equality",
+      "difficulty": "medium",
+      "question_text": "Which method should generally be used to compare the character contents of two String objects?",
+      "options": [
+        "`==`",
+        "`compare`",
+        "`same`",
+        "`equals`"
+      ],
+      "correct_option": 3,
+      "explanation": "`equals` compares String contents. `==` compares whether two references point to the same object.",
+      "tags": [
+        "String",
+        "equals"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "java-045",
+      "topic": "Strings",
+      "subtopic": "StringBuilder",
+      "difficulty": "medium",
+      "question_text": "Which class is usually appropriate when repeatedly modifying a string within a single thread?",
+      "options": [
+        "StringBuilder",
+        "String",
+        "StringBuffer only",
+        "Character"
+      ],
+      "correct_option": 0,
+      "explanation": "`StringBuilder` is mutable and efficient for repeated string modification when thread safety is not required.",
+      "tags": [
+        "StringBuilder",
+        "mutability"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "java-046",
+      "topic": "Strings",
+      "subtopic": "StringBuffer",
+      "difficulty": "medium",
+      "question_text": "Which statement about `StringBuffer` is correct?",
+      "options": [
+        "It is immutable like String",
+        "Its methods are synchronized, which supports use in multi-threaded contexts",
+        "It cannot append text",
+        "It is a primitive type"
+      ],
+      "correct_option": 1,
+      "explanation": "`StringBuffer` is mutable, and its methods are synchronized.",
+      "tags": [
+        "StringBuffer",
+        "threads"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "java-047",
+      "topic": "Strings",
+      "subtopic": "String pool",
+      "difficulty": "medium",
+      "question_text": "What is a typical effect of calling `intern()` on a String?",
+      "options": [
+        "It converts the String to a character array",
+        "It makes the String mutable",
+        "It returns the canonical pooled String for the same contents",
+        "It removes the String from memory"
+      ],
+      "correct_option": 2,
+      "explanation": "`intern()` returns the canonical representation of the string contents from the string pool, creating one if needed.",
+      "tags": [
+        "String-pool",
+        "intern"
+      ],
+      "recommended_time_sec": 55
+    },
+    {
+      "id": "java-048",
+      "topic": "Strings",
+      "subtopic": "String length",
+      "difficulty": "easy",
+      "question_text": "What does `text.length()` return for a Java String?",
+      "options": [
+        "The number of words",
+        "The last valid index",
+        "The number of bytes in memory",
+        "The number of UTF-16 code units"
+      ],
+      "correct_option": 3,
+      "explanation": "`String.length()` returns the number of UTF-16 code units in the string.",
+      "tags": [
+        "String",
+        "methods"
+      ],
+      "recommended_time_sec": 40
+    },
+    {
+      "id": "java-049",
+      "topic": "Strings",
+      "subtopic": "StringBuilder methods",
+      "difficulty": "medium",
+      "question_text": "What is the result?\n```java\nStringBuilder sb = new StringBuilder(\"data\");\nsb.append(\"base\");\nSystem.out.print(sb);\n```",
+      "options": [
+        "database",
+        "data",
+        "base",
+        "The code does not compile"
+      ],
+      "correct_option": 0,
+      "explanation": "`append` modifies the StringBuilder by adding `base` to the end of `data`.",
+      "tags": [
+        "StringBuilder",
+        "append"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "java-050",
+      "topic": "Strings",
+      "subtopic": "Regular expressions",
+      "difficulty": "medium",
+      "question_text": "Which regular-expression method checks whether the entire String matches a pattern?",
+      "options": [
+        "`contains`",
+        "`matches`",
+        "`split`",
+        "`indexOf`"
+      ],
+      "correct_option": 1,
+      "explanation": "`String.matches(regex)` tests whether the entire string matches the regular expression.",
+      "tags": [
+        "regex",
+        "String"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "java-051",
+      "topic": "Strings",
+      "subtopic": "String methods",
+      "difficulty": "easy",
+      "question_text": "What does `\"  Java  \".trim()` return?",
+      "options": [
+        "`\"  Java  \"`",
+        "`\"Java  \"`",
+        "`\"Java\"`",
+        "`\"  Java\"`"
+      ],
+      "correct_option": 2,
+      "explanation": "`trim()` removes leading and trailing characters whose values are at most U+0020.",
+      "tags": [
+        "String",
+        "methods"
+      ],
+      "recommended_time_sec": 40
+    },
+    {
+      "id": "java-052",
+      "topic": "Generics and Collections",
+      "subtopic": "Generics",
+      "difficulty": "easy",
+      "question_text": "What is a main benefit of declaring `List<String>` instead of a raw `List`?",
+      "options": [
+        "It makes the list automatically sorted",
+        "It makes the list immutable",
+        "It prevents adding any elements",
+        "It provides compile-time type checking for String elements"
+      ],
+      "correct_option": 3,
+      "explanation": "Generics let the compiler check element types and reduce the need for casts.",
+      "tags": [
+        "generics",
+        "type-safety"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "java-053",
+      "topic": "Generics and Collections",
+      "subtopic": "List interface",
+      "difficulty": "easy",
+      "question_text": "Which property is generally associated with the `List` interface?",
+      "options": [
+        "Elements have positions and duplicates are allowed",
+        "Elements are always unique",
+        "Elements are always sorted",
+        "Elements must be key-value pairs"
+      ],
+      "correct_option": 0,
+      "explanation": "A List is an ordered collection that allows duplicate elements.",
+      "tags": [
+        "List",
+        "collections"
+      ],
+      "recommended_time_sec": 40
+    },
+    {
+      "id": "java-054",
+      "topic": "Generics and Collections",
+      "subtopic": "ArrayList",
+      "difficulty": "medium",
+      "question_text": "Which implementation is usually a suitable default for a resizable list with frequent indexed access?",
+      "options": [
+        "TreeSet",
+        "ArrayList",
+        "HashMap",
+        "ArrayDeque"
+      ],
+      "correct_option": 1,
+      "explanation": "`ArrayList` provides efficient indexed access and is a common general-purpose List implementation.",
+      "tags": [
+        "ArrayList",
+        "List"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "java-055",
+      "topic": "Generics and Collections",
+      "subtopic": "Set interface",
+      "difficulty": "easy",
+      "question_text": "What is the key property of a `Set`?",
+      "options": [
+        "It stores key-value pairs",
+        "It preserves duplicate elements",
+        "It does not allow duplicate elements",
+        "It requires integer indexes"
+      ],
+      "correct_option": 2,
+      "explanation": "A Set models a collection of unique elements.",
+      "tags": [
+        "Set",
+        "collections"
+      ],
+      "recommended_time_sec": 35
+    },
+    {
+      "id": "java-056",
+      "topic": "Generics and Collections",
+      "subtopic": "Map interface",
+      "difficulty": "easy",
+      "question_text": "What does a `Map<K,V>` store?",
+      "options": [
+        "Only unique values with no keys",
+        "Only ordered integer elements",
+        "A sequence of duplicate pairs",
+        "Mappings from keys to values"
+      ],
+      "correct_option": 3,
+      "explanation": "A Map associates keys with values; keys are unique within the map.",
+      "tags": [
+        "Map",
+        "collections"
+      ],
+      "recommended_time_sec": 40
+    },
+    {
+      "id": "java-057",
+      "topic": "Generics and Collections",
+      "subtopic": "HashMap",
+      "difficulty": "medium",
+      "question_text": "Which statement about `HashMap` iteration order is generally correct?",
+      "options": [
+        "It does not guarantee a particular iteration order",
+        "It always sorts keys alphabetically",
+        "It always preserves insertion order",
+        "It iterates in reverse insertion order"
+      ],
+      "correct_option": 0,
+      "explanation": "`HashMap` does not guarantee iteration order. Use a different implementation when a specific order is needed.",
+      "tags": [
+        "HashMap",
+        "Map"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "java-058",
+      "topic": "Generics and Collections",
+      "subtopic": "TreeSet",
+      "difficulty": "medium",
+      "question_text": "What is a typical property of `TreeSet`?",
+      "options": [
+        "It permits duplicate elements",
+        "It keeps elements sorted according to their natural ordering or a comparator",
+        "It stores elements by integer index",
+        "It stores a separate value for each key"
+      ],
+      "correct_option": 1,
+      "explanation": "`TreeSet` maintains elements in sorted order using natural ordering or a supplied comparator.",
+      "tags": [
+        "TreeSet",
+        "sorting"
+      ],
+      "recommended_time_sec": 50
+    },
+    {
+      "id": "java-059",
+      "topic": "Generics and Collections",
+      "subtopic": "LinkedList",
+      "difficulty": "medium",
+      "question_text": "Which statement best compares `ArrayList` and `LinkedList`?",
+      "options": [
+        "LinkedList always uses less memory",
+        "ArrayList provides constant-time insertion at every position",
+        "ArrayList is backed by a resizable array; LinkedList uses linked nodes",
+        "LinkedList implements only Set"
+      ],
+      "correct_option": 2,
+      "explanation": "`ArrayList` uses a resizable array, whereas `LinkedList` uses linked nodes and implements List and Deque.",
+      "tags": [
+        "ArrayList",
+        "LinkedList"
+      ],
+      "recommended_time_sec": 55
+    },
+    {
+      "id": "java-060",
+      "topic": "Generics and Collections",
+      "subtopic": "Generic classes",
+      "difficulty": "medium",
+      "question_text": "What does the type parameter in `class Box<T>` represent?",
+      "options": [
+        "A required superclass named T",
+        "A thread variable",
+        "A fixed primitive type",
+        "A placeholder for a type supplied when using the generic class"
+      ],
+      "correct_option": 3,
+      "explanation": "`T` is a type parameter that lets the class operate on a type provided by the caller.",
+      "tags": [
+        "generics",
+        "type-parameters"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "java-061",
+      "topic": "Generics and Collections",
+      "subtopic": "Generic methods",
+      "difficulty": "medium",
+      "question_text": "What is a benefit of a generic search method such as `<T> boolean contains(T[] items, T target)`?",
+      "options": [
+        "It can operate on arrays of different reference types while preserving type checking",
+        "It automatically sorts every array",
+        "It converts every item to String",
+        "It works only with Integer arrays"
+      ],
+      "correct_option": 0,
+      "explanation": "A generic method can be reused with different compatible types while retaining compile-time type checking.",
+      "tags": [
+        "generics",
+        "methods"
+      ],
+      "recommended_time_sec": 50
+    },
+    {
+      "id": "java-062",
+      "topic": "Generics and Collections",
+      "subtopic": "Wildcards",
+      "difficulty": "hard",
+      "question_text": "A method only needs to read `Number` values from a collection. Which parameter type is the most flexible among these choices?",
+      "options": [
+        "`List<Number>`",
+        "`List<? extends Number>`",
+        "`List<? super Number>`",
+        "`List<?>` with no cast"
+      ],
+      "correct_option": 1,
+      "explanation": "`? extends Number` accepts lists of Number or its subclasses and is suitable for reading Number values.",
+      "tags": [
+        "generics",
+        "wildcards"
+      ],
+      "recommended_time_sec": 65
+    },
+    {
+      "id": "java-063",
+      "topic": "Generics and Collections",
+      "subtopic": "Collection operations",
+      "difficulty": "medium",
+      "question_text": "Which method adds one element to an `ArrayList<String>`?",
+      "options": [
+        "`put(\"A\")`",
+        "`insert(\"A\")`",
+        "`add(\"A\")`",
+        "`append(\"A\")`"
+      ],
+      "correct_option": 2,
+      "explanation": "`add` is the standard Collection method for adding an element to a List.",
+      "tags": [
+        "List",
+        "methods"
+      ],
+      "recommended_time_sec": 35
+    },
+    {
+      "id": "java-064",
+      "topic": "Generics and Collections",
+      "subtopic": "Map operations",
+      "difficulty": "medium",
+      "question_text": "Given `Map<Integer, String> names`, which call associates key `7` with value `\"Ava\"`?",
+      "options": [
+        "`names.add(7, \"Ava\")`",
+        "`names.set(7, \"Ava\")`",
+        "`names.put(\"Ava\", 7)`",
+        "`names.put(7, \"Ava\")`"
+      ],
+      "correct_option": 3,
+      "explanation": "`Map.put(key, value)` associates the given key with the given value.",
+      "tags": [
+        "Map",
+        "put"
+      ],
+      "recommended_time_sec": 40
+    },
+    {
+      "id": "java-065",
+      "topic": "Generics and Collections",
+      "subtopic": "Collection sorting",
+      "difficulty": "medium",
+      "question_text": "A collection of custom `Employee` objects should be sorted by salary, then by name. Which approach directly supports this requirement?",
+      "options": [
+        "Use a Comparator that compares salary and then name",
+        "Use `HashSet` and assume its iteration order",
+        "Use `System.gc()` before iteration",
+        "Use `toString()` as the only comparison"
+      ],
+      "correct_option": 0,
+      "explanation": "A Comparator can define a custom ordering and chain comparisons by multiple attributes.",
+      "tags": [
+        "Comparator",
+        "sorting"
+      ],
+      "recommended_time_sec": 55
+    },
+    {
+      "id": "java-066",
+      "topic": "Generics and Collections",
+      "subtopic": "Comparable",
+      "difficulty": "medium",
+      "question_text": "What does a class usually implement to define its natural ordering?",
+      "options": [
+        "Runnable",
+        "Comparable",
+        "Supplier",
+        "Serializable"
+      ],
+      "correct_option": 1,
+      "explanation": "A class implements `Comparable<T>` and defines `compareTo` to specify its natural ordering.",
+      "tags": [
+        "Comparable",
+        "sorting"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "java-067",
+      "topic": "Enums and Wrappers",
+      "subtopic": "Enums",
+      "difficulty": "easy",
+      "question_text": "Which is a valid declaration of an enum with three status values?",
+      "options": [
+        "`class Status = {NEW, ACTIVE, CLOSED};`",
+        "`enum Status implements NEW, ACTIVE, CLOSED;`",
+        "`enum Status { NEW, ACTIVE, CLOSED }`",
+        "`Status enum(NEW, ACTIVE, CLOSED);`"
+      ],
+      "correct_option": 2,
+      "explanation": "Enum constants are declared inside an enum body, separated by commas.",
+      "tags": [
+        "enum"
+      ],
+      "recommended_time_sec": 35
+    },
+    {
+      "id": "java-068",
+      "topic": "Enums and Wrappers",
+      "subtopic": "Enum methods",
+      "difficulty": "medium",
+      "question_text": "What does `DayOfWeek.SATURDAY.name()` return?",
+      "options": [
+        "6",
+        "\"Saturday\"",
+        "A boolean value",
+        "\"SATURDAY\""
+      ],
+      "correct_option": 3,
+      "explanation": "`name()` returns the exact declared enum constant name, which here is `SATURDAY`.",
+      "tags": [
+        "enum",
+        "methods"
+      ],
+      "recommended_time_sec": 40
+    },
+    {
+      "id": "java-069",
+      "topic": "Enums and Wrappers",
+      "subtopic": "Autoboxing",
+      "difficulty": "easy",
+      "question_text": "What happens in `Integer count = 5;`?",
+      "options": [
+        "The primitive `int` value is autoboxed into an Integer",
+        "The Integer is converted into a String",
+        "The assignment is invalid",
+        "The value is stored as a `double`"
+      ],
+      "correct_option": 0,
+      "explanation": "Autoboxing automatically converts a primitive `int` value to an `Integer` object.",
+      "tags": [
+        "wrappers",
+        "autoboxing"
+      ],
+      "recommended_time_sec": 40
+    },
+    {
+      "id": "java-070",
+      "topic": "Enums and Wrappers",
+      "subtopic": "Unboxing",
+      "difficulty": "medium",
+      "question_text": "What conversion occurs in `int value = Integer.valueOf(\"42\");`?",
+      "options": [
+        "String to double",
+        "Integer object to primitive int through unboxing",
+        "Primitive int to String",
+        "The assignment is invalid"
+      ],
+      "correct_option": 1,
+      "explanation": "`valueOf` creates an Integer from the text, and assignment to `int` unboxes it.",
+      "tags": [
+        "wrappers",
+        "unboxing"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "java-071",
+      "topic": "Enums and Wrappers",
+      "subtopic": "Parsing wrapper values",
+      "difficulty": "easy",
+      "question_text": "Which method converts the numeric text `\"125\"` directly to a primitive `int`?",
+      "options": [
+        "`Integer.valueOfText(\"125\")`",
+        "`Integer.toInt(\"125\")`",
+        "`Integer.parseInt(\"125\")`",
+        "`int.parse(\"125\")`"
+      ],
+      "correct_option": 2,
+      "explanation": "`Integer.parseInt` parses an integer string and returns a primitive `int`.",
+      "tags": [
+        "Integer",
+        "parsing"
+      ],
+      "recommended_time_sec": 40
+    },
+    {
+      "id": "java-072",
+      "topic": "Enums and Wrappers",
+      "subtopic": "Wrapper comparison",
+      "difficulty": "medium",
+      "question_text": "What does `Integer.valueOf(4).compareTo(Integer.valueOf(9))` return?",
+      "options": [
+        "1",
+        "5",
+        "0",
+        "A negative value"
+      ],
+      "correct_option": 3,
+      "explanation": "`compareTo` returns a negative value when the receiver is less than the argument.",
+      "tags": [
+        "Integer",
+        "compareTo"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "java-073",
+      "topic": "Enums and Wrappers",
+      "subtopic": "Arrays utility",
+      "difficulty": "medium",
+      "question_text": "Which utility method sorts a primitive `int[] values` in ascending order?",
+      "options": [
+        "`Arrays.sort(values)`",
+        "`Collections.sort(values)`",
+        "`values.order()`",
+        "`Math.sort(values)`"
+      ],
+      "correct_option": 0,
+      "explanation": "`Arrays.sort` sorts arrays, including primitive arrays, in ascending order.",
+      "tags": [
+        "Arrays",
+        "sorting"
+      ],
+      "recommended_time_sec": 40
+    },
+    {
+      "id": "java-074",
+      "topic": "Enums and Wrappers",
+      "subtopic": "Random",
+      "difficulty": "easy",
+      "question_text": "Which class from `java.util` is intended for generating pseudorandom values?",
+      "options": [
+        "Scanner",
+        "Random",
+        "Arrays",
+        "Objects"
+      ],
+      "correct_option": 1,
+      "explanation": "`java.util.Random` provides methods for generating pseudorandom values.",
+      "tags": [
+        "java.util",
+        "Random"
+      ],
+      "recommended_time_sec": 35
+    },
+    {
+      "id": "java-075",
+      "topic": "Enums and Wrappers",
+      "subtopic": "Annotations",
+      "difficulty": "medium",
+      "question_text": "What does `@Override` communicate to the compiler?",
+      "options": [
+        "The method must be static",
+        "The method is an entry point",
+        "The method is intended to override an inherited method",
+        "The class cannot be extended"
+      ],
+      "correct_option": 2,
+      "explanation": "`@Override` marks a method intended to override an inherited method, allowing the compiler to detect signature mistakes.",
+      "tags": [
+        "annotations",
+        "Override"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "java-076",
+      "topic": "Enums and Wrappers",
+      "subtopic": "Date and Math utilities",
+      "difficulty": "medium",
+      "question_text": "Which statement about `Math.max(8, 11)` is correct?",
+      "options": [
+        "It returns 8",
+        "It returns `true`",
+        "It returns 19",
+        "It returns 11"
+      ],
+      "correct_option": 3,
+      "explanation": "`Math.max` returns the greater of its two arguments, which is 11.",
+      "tags": [
+        "Math",
+        "java.lang"
+      ],
+      "recommended_time_sec": 35
+    },
+    {
+      "id": "java-077",
+      "topic": "Functional Programming",
+      "subtopic": "Functional interfaces",
+      "difficulty": "easy",
+      "question_text": "What is the defining feature of a functional interface?",
+      "options": [
+        "It has exactly one abstract method",
+        "It cannot have default methods",
+        "It must be named `Function`",
+        "It can only be used with primitive values"
+      ],
+      "correct_option": 0,
+      "explanation": "A functional interface has one abstract method, making it suitable for lambda expressions.",
+      "tags": [
+        "functional-interface",
+        "lambda"
+      ],
+      "recommended_time_sec": 40
+    },
+    {
+      "id": "java-078",
+      "topic": "Functional Programming",
+      "subtopic": "Lambda expressions",
+      "difficulty": "medium",
+      "question_text": "Which lambda expression is a valid implementation of a one-argument function that returns the argument multiplied by two?",
+      "options": [
+        "`(x) -> {}`",
+        "`x -> x * 2`",
+        "`x => x * 2`",
+        "`return x * 2`"
+      ],
+      "correct_option": 1,
+      "explanation": "Java lambda syntax uses `->`; a single-parameter lambda can omit parentheses.",
+      "tags": [
+        "lambda",
+        "syntax"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "java-079",
+      "topic": "Functional Programming",
+      "subtopic": "Predicate",
+      "difficulty": "medium",
+      "question_text": "Which functional interface is designed to test a value and return a boolean?",
+      "options": [
+        "Consumer<T>",
+        "Supplier<T>",
+        "Predicate<T>",
+        "Runnable"
+      ],
+      "correct_option": 2,
+      "explanation": "`Predicate<T>` represents a boolean-valued test of an input.",
+      "tags": [
+        "Predicate",
+        "java.util.function"
+      ],
+      "recommended_time_sec": 40
+    },
+    {
+      "id": "java-080",
+      "topic": "Functional Programming",
+      "subtopic": "Consumer",
+      "difficulty": "medium",
+      "question_text": "Which statement best describes `Consumer<T>`?",
+      "options": [
+        "It supplies a value without input",
+        "It tests a value and returns a boolean",
+        "It transforms a value into another value",
+        "It accepts a value and returns no result"
+      ],
+      "correct_option": 3,
+      "explanation": "`Consumer<T>` accepts an input and performs an operation without returning a result.",
+      "tags": [
+        "Consumer",
+        "java.util.function"
+      ],
+      "recommended_time_sec": 40
+    },
+    {
+      "id": "java-081",
+      "topic": "Functional Programming",
+      "subtopic": "Supplier",
+      "difficulty": "easy",
+      "question_text": "Which functional interface provides a value without taking an input argument?",
+      "options": [
+        "Supplier<T>",
+        "Predicate<T>",
+        "Consumer<T>",
+        "Comparator<T>"
+      ],
+      "correct_option": 0,
+      "explanation": "`Supplier<T>` has a `get` operation that returns a value without an input parameter.",
+      "tags": [
+        "Supplier",
+        "java.util.function"
+      ],
+      "recommended_time_sec": 40
+    },
+    {
+      "id": "java-082",
+      "topic": "Functional Programming",
+      "subtopic": "Function",
+      "difficulty": "medium",
+      "question_text": "What does a `Function<T, R>` represent?",
+      "options": [
+        "A test from T to boolean only",
+        "A transformation from a value of type T to a value of type R",
+        "An operation that accepts T and returns nothing",
+        "A task with no input and no result"
+      ],
+      "correct_option": 1,
+      "explanation": "`Function<T,R>` accepts a T and produces an R.",
+      "tags": [
+        "Function",
+        "java.util.function"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "java-083",
+      "topic": "Functional Programming",
+      "subtopic": "Lambda with collections",
+      "difficulty": "medium",
+      "question_text": "Which call can print each element of `names` using a lambda?",
+      "options": [
+        "`names.filter(System.out::println)`",
+        "`names.map(System.out::println)`",
+        "`names.forEach(name -> System.out.println(name))`",
+        "`names.supply(name -> name)`"
+      ],
+      "correct_option": 2,
+      "explanation": "`forEach` accepts a Consumer and can apply the provided lambda to each element.",
+      "tags": [
+        "lambda",
+        "collections"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "java-084",
+      "topic": "Functional Programming",
+      "subtopic": "Method references",
+      "difficulty": "medium",
+      "question_text": "Which method reference is equivalent to `name -> System.out.println(name)`?",
+      "options": [
+        "`System::println`",
+        "`println::System`",
+        "`System.out.println::name`",
+        "`System.out::println`"
+      ],
+      "correct_option": 3,
+      "explanation": "`System.out::println` is a method reference to the `println` method on `System.out`.",
+      "tags": [
+        "method-references",
+        "lambda"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "java-085",
+      "topic": "Functional Programming",
+      "subtopic": "Collection filtering",
+      "difficulty": "medium",
+      "question_text": "A list should retain only values greater than 10 using a Predicate. Which operation is the appropriate concept?",
+      "options": [
+        "Filter the collection using a predicate",
+        "Map each element to a thread",
+        "Serialize the collection",
+        "Call `supply` on the list"
+      ],
+      "correct_option": 0,
+      "explanation": "Filtering selects elements for which a predicate evaluates to true.",
+      "tags": [
+        "Predicate",
+        "filtering"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "java-086",
+      "topic": "Functional Programming",
+      "subtopic": "Lambda variable capture",
+      "difficulty": "hard",
+      "question_text": "Which local variable can be referenced from a lambda expression?",
+      "options": [
+        "A local variable that is reassigned repeatedly",
+        "A local variable that is final or effectively final",
+        "Any variable declared after the lambda",
+        "Only a variable declared as `volatile`"
+      ],
+      "correct_option": 1,
+      "explanation": "A lambda can capture local variables that are final or effectively final.",
+      "tags": [
+        "lambda",
+        "scope"
+      ],
+      "recommended_time_sec": 55
+    },
+    {
+      "id": "java-087",
+      "topic": "Functional Programming",
+      "subtopic": "Functional interfaces",
+      "difficulty": "medium",
+      "question_text": "Which package contains `Predicate`, `Function`, `Consumer`, and `Supplier`?",
+      "options": [
+        "`java.io`",
+        "`java.sql`",
+        "`java.util.function`",
+        "`java.lang.reflect`"
+      ],
+      "correct_option": 2,
+      "explanation": "These commonly used functional interfaces are in `java.util.function`.",
+      "tags": [
+        "packages",
+        "java.util.function"
+      ],
+      "recommended_time_sec": 40
+    },
+    {
+      "id": "java-088",
+      "topic": "Java Streams",
+      "subtopic": "Streams versus collections",
+      "difficulty": "medium",
+      "question_text": "Which statement best describes a Java Stream?",
+      "options": [
+        "It is always a resizable collection",
+        "It stores elements permanently",
+        "It can be reused for unlimited terminal operations",
+        "It processes a sequence of elements through operations and is generally consumed by a terminal operation"
+      ],
+      "correct_option": 3,
+      "explanation": "A Stream describes a processing pipeline; after a terminal operation, that stream is consumed.",
+      "tags": [
+        "streams",
+        "collections"
+      ],
+      "recommended_time_sec": 50
+    },
+    {
+      "id": "java-089",
+      "topic": "Java Streams",
+      "subtopic": "Filter and count",
+      "difficulty": "medium",
+      "question_text": "What does this expression calculate?\n```java\nlong count = values.stream()\n    .filter(n -> n > 10)\n    .count();\n```",
+      "options": [
+        "The number of values greater than 10",
+        "The sum of values greater than 10",
+        "A list of values greater than 10",
+        "The largest value"
+      ],
+      "correct_option": 0,
+      "explanation": "`filter` retains matching elements in the stream, and `count` returns their number.",
+      "tags": [
+        "Stream",
+        "filter",
+        "count"
+      ],
+      "recommended_time_sec": 50
+    },
+    {
+      "id": "java-090",
+      "topic": "Java Streams",
+      "subtopic": "Map operation",
+      "difficulty": "medium",
+      "question_text": "In a stream pipeline, what is the usual role of `map`?",
+      "options": [
+        "Remove elements that fail a condition",
+        "Transform each element into another value",
+        "Count matching values",
+        "Sort a collection in place"
+      ],
+      "correct_option": 1,
+      "explanation": "`map` transforms each stream element into a result value.",
+      "tags": [
+        "Stream",
+        "map"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "java-091",
+      "topic": "Java Streams",
+      "subtopic": "Reduce operation",
+      "difficulty": "medium",
+      "question_text": "Which stream operation is commonly used to combine numeric values into one sum?",
+      "options": [
+        "`filter`",
+        "`flatMap`",
+        "`reduce`",
+        "`distinct`"
+      ],
+      "correct_option": 2,
+      "explanation": "`reduce` combines stream elements into a single result, such as a sum.",
+      "tags": [
+        "Stream",
+        "reduce"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "java-092",
+      "topic": "Java Streams",
+      "subtopic": "FlatMap operation",
+      "difficulty": "hard",
+      "question_text": "A list contains several lists of names. Which operation is intended to flatten the nested lists into one stream of names?",
+      "options": [
+        "`filter`",
+        "`count`",
+        "`sorted`",
+        "`flatMap`"
+      ],
+      "correct_option": 3,
+      "explanation": "`flatMap` maps each element to a stream and flattens those streams into one stream.",
+      "tags": [
+        "Stream",
+        "flatMap"
+      ],
+      "recommended_time_sec": 55
+    },
+    {
+      "id": "java-093",
+      "topic": "Java Streams",
+      "subtopic": "Terminal operations",
+      "difficulty": "medium",
+      "question_text": "Which of these is a terminal stream operation?",
+      "options": [
+        "`collect`",
+        "`filter`",
+        "`map`",
+        "`sorted`"
+      ],
+      "correct_option": 0,
+      "explanation": "`collect` is terminal; `filter`, `map`, and `sorted` are intermediate operations.",
+      "tags": [
+        "Stream",
+        "terminal-operations"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "java-094",
+      "topic": "Java Streams",
+      "subtopic": "anyMatch",
+      "difficulty": "medium",
+      "question_text": "What does `anyMatch(predicate)` return?",
+      "options": [
+        "A stream containing all matching values",
+        "A boolean indicating whether at least one element matches",
+        "The number of matching elements",
+        "The first matching element"
+      ],
+      "correct_option": 1,
+      "explanation": "`anyMatch` is a short-circuiting terminal operation that returns true if at least one element matches.",
+      "tags": [
+        "Stream",
+        "anyMatch"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "java-095",
+      "topic": "Java Streams",
+      "subtopic": "Primitive streams",
+      "difficulty": "medium",
+      "question_text": "Which primitive stream type is designed for `int` values?",
+      "options": [
+        "`NumberStream`",
+        "`Stream<int>`",
+        "`IntStream`",
+        "`IntegerStream`"
+      ],
+      "correct_option": 2,
+      "explanation": "`IntStream` is the specialized stream type for primitive `int` values.",
+      "tags": [
+        "IntStream",
+        "primitive-streams"
+      ],
+      "recommended_time_sec": 40
+    },
+    {
+      "id": "java-096",
+      "topic": "Java Streams",
+      "subtopic": "Date and time API",
+      "difficulty": "medium",
+      "question_text": "Which Java time API type represents a date without a time or time zone?",
+      "options": [
+        "`Instant`",
+        "`Duration`",
+        "`LocalTime`",
+        "`LocalDate`"
+      ],
+      "correct_option": 3,
+      "explanation": "`LocalDate` represents a calendar date without a time or time zone.",
+      "tags": [
+        "Date-Time-API",
+        "LocalDate"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "java-097",
+      "topic": "Java Streams",
+      "subtopic": "Date calculations",
+      "difficulty": "medium",
+      "question_text": "Which type is designed to represent the amount of time between two dates in years, months, and days?",
+      "options": [
+        "`Period`",
+        "`Instant`",
+        "`LocalTime`",
+        "`ZoneId`"
+      ],
+      "correct_option": 0,
+      "explanation": "`Period` represents a date-based amount of time in years, months, and days.",
+      "tags": [
+        "Date-Time-API",
+        "Period"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "java-098",
+      "topic": "Java Streams",
+      "subtopic": "Stream sorting",
+      "difficulty": "medium",
+      "question_text": "What does the `sorted()` intermediate operation do on a stream of naturally comparable values?",
+      "options": [
+        "Removes duplicates",
+        "Orders the elements according to their natural ordering",
+        "Reverses the stream automatically",
+        "Converts the stream to a Set"
+      ],
+      "correct_option": 1,
+      "explanation": "`sorted()` produces a stream ordered according to natural ordering, unless a comparator is supplied.",
+      "tags": [
+        "Stream",
+        "sorting"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "java-099",
+      "topic": "Multithreading",
+      "subtopic": "Runnable",
+      "difficulty": "easy",
+      "question_text": "Which method contains the task code in a class that implements `Runnable`?",
+      "options": [
+        "`start()`",
+        "`execute()`",
+        "`run()`",
+        "`thread()`"
+      ],
+      "correct_option": 2,
+      "explanation": "A Runnable task implements `run()`. A Thread can then be started to execute that task.",
+      "tags": [
+        "Runnable",
+        "threads"
+      ],
+      "recommended_time_sec": 40
+    },
+    {
+      "id": "java-100",
+      "topic": "Multithreading",
+      "subtopic": "Starting a thread",
+      "difficulty": "medium",
+      "question_text": "What is the usual effect of calling `start()` on a Thread?",
+      "options": [
+        "It directly calls `run()` on the current thread",
+        "It permanently blocks the current thread",
+        "It resets the thread to the NEW state",
+        "It asks the JVM to schedule a new thread of execution that invokes `run()`"
+      ],
+      "correct_option": 3,
+      "explanation": "`start()` begins a new thread of execution; the JVM eventually invokes that thread's `run()` method.",
+      "tags": [
+        "Thread",
+        "lifecycle"
+      ],
+      "recommended_time_sec": 50
+    }
+  ]
+}

@@ -1,0 +1,1015 @@
+{
+  "id": "shared-1794083510131-r",
+  "name": "R",
+  "description": "Created by Admin",
+  "publishedAt": "2026-11-07T20:31:50.131Z",
+  "publishedBy": "Samar Admin",
+  "questions": [
+    {
+      "id": "R-S14-Q01",
+      "topic": "Session 14: Introduction to R",
+      "subtopic": "R project",
+      "difficulty": "easy",
+      "question_text": "What is R primarily designed for?",
+      "options": [
+        "Statistical computing and graphics",
+        "Managing operating system processes",
+        "Building web browsers only",
+        "Editing video files"
+      ],
+      "correct_option": 0,
+      "explanation": "R is a language and environment for statistical computing and graphics.",
+      "tags": [
+        "R-basics",
+        "purpose"
+      ],
+      "recommended_time_sec": 25
+    },
+    {
+      "id": "R-S14-Q02",
+      "topic": "Session 14: Introduction to R",
+      "subtopic": "Arithmetic operations",
+      "difficulty": "easy",
+      "question_text": "What is the result of 7 + 5 in R?",
+      "options": [
+        "12",
+        "75",
+        "2",
+        "An error"
+      ],
+      "correct_option": 0,
+      "explanation": "The plus operator adds numeric operands in R.",
+      "tags": [
+        "arithmetic"
+      ],
+      "recommended_time_sec": 20
+    },
+    {
+      "id": "R-S14-Q03",
+      "topic": "Session 14: Introduction to R",
+      "subtopic": "Exponentiation",
+      "difficulty": "easy",
+      "question_text": "Which operator performs exponentiation in R?",
+      "options": [
+        "^",
+        "**",
+        "//",
+        "%%"
+      ],
+      "correct_option": 0,
+      "explanation": "R uses ^ for exponentiation, for example 2^3 gives 8.",
+      "tags": [
+        "operators",
+        "arithmetic"
+      ],
+      "recommended_time_sec": 25
+    },
+    {
+      "id": "R-S14-Q04",
+      "topic": "Session 14: Introduction to R",
+      "subtopic": "Integer division and remainder",
+      "difficulty": "medium",
+      "question_text": "What does 7 %% 3 return in R?",
+      "options": [
+        "1",
+        "2",
+        "2.333",
+        "3"
+      ],
+      "correct_option": 0,
+      "explanation": "The %% operator returns the remainder after division; 7 divided by 3 leaves remainder 1.",
+      "tags": [
+        "operators",
+        "arithmetic"
+      ],
+      "recommended_time_sec": 30
+    },
+    {
+      "id": "R-S14-Q05",
+      "topic": "Session 14: Introduction to R",
+      "subtopic": "Assignment syntax",
+      "difficulty": "easy",
+      "question_text": "Which is a standard way to assign the value 10 to x in R?",
+      "options": [
+        "x <- 10",
+        "10 -> <- x",
+        "let x = 10",
+        "x := 10"
+      ],
+      "correct_option": 0,
+      "explanation": "The leftward assignment operator <- is commonly used in R.",
+      "tags": [
+        "syntax",
+        "assignment"
+      ],
+      "recommended_time_sec": 25
+    },
+    {
+      "id": "R-S14-Q06",
+      "topic": "Session 14: Introduction to R",
+      "subtopic": "Help system",
+      "difficulty": "easy",
+      "question_text": "What does ?mean typically open in an R session?",
+      "options": [
+        "Help documentation for mean",
+        "A new matrix named mean",
+        "The RStudio package manager",
+        "A plot of the mean"
+      ],
+      "correct_option": 0,
+      "explanation": "The question-mark help operator requests documentation for a named topic or function.",
+      "tags": [
+        "help",
+        "R-basics"
+      ],
+      "recommended_time_sec": 25
+    },
+    {
+      "id": "R-S14-Q07",
+      "topic": "Session 14: Introduction to R",
+      "subtopic": "RStudio interface",
+      "difficulty": "easy",
+      "question_text": "Which description best fits RStudio?",
+      "options": [
+        "An integrated development environment for working with R",
+        "A replacement for the R language",
+        "A database server",
+        "A file format for spreadsheets"
+      ],
+      "correct_option": 0,
+      "explanation": "RStudio is an IDE that provides tools for writing and running R code and inspecting results.",
+      "tags": [
+        "RStudio",
+        "tools"
+      ],
+      "recommended_time_sec": 25
+    },
+    {
+      "id": "R-S14-Q08",
+      "topic": "Session 14: Introduction to R",
+      "subtopic": "Comments",
+      "difficulty": "easy",
+      "question_text": "Which character begins a comment in R source code?",
+      "options": [
+        "#",
+        "//",
+        "--",
+        ";"
+      ],
+      "correct_option": 0,
+      "explanation": "R treats text after # on a line as a comment.",
+      "tags": [
+        "syntax",
+        "comments"
+      ],
+      "recommended_time_sec": 20
+    },
+    {
+      "id": "R-S14-Q09",
+      "topic": "Session 14: Introduction to R",
+      "subtopic": "Basic arithmetic",
+      "difficulty": "medium",
+      "question_text": "What is the value of (8 - 2) / 3 in R?",
+      "options": [
+        "2",
+        "6",
+        "2.5",
+        "18"
+      ],
+      "correct_option": 0,
+      "explanation": "Parentheses evaluate first: 8-2 is 6, then 6/3 is 2.",
+      "tags": [
+        "arithmetic",
+        "precedence"
+      ],
+      "recommended_time_sec": 30
+    },
+    {
+      "id": "R-S14-Q10",
+      "topic": "Session 14: Introduction to R",
+      "subtopic": "R installation and execution",
+      "difficulty": "easy",
+      "question_text": "Which component is required to execute R code, while RStudio provides a separate interface for working with it?",
+      "options": [
+        "The R installation/runtime",
+        "A CSV file",
+        "The ggplot package only",
+        "A web browser extension"
+      ],
+      "correct_option": 0,
+      "explanation": "R must be installed to run R code; RStudio is an IDE that can work with an R installation.",
+      "tags": [
+        "installation",
+        "RStudio"
+      ],
+      "recommended_time_sec": 30
+    },
+    {
+      "id": "R-S15-Q01",
+      "topic": "Session 15: R Data Objects, Packages, and Data Import/Export",
+      "subtopic": "Vectors",
+      "difficulty": "easy",
+      "question_text": "What does c(2, 4, 6) create in R?",
+      "options": [
+        "A numeric vector",
+        "A data frame",
+        "A package",
+        "A matrix with one row"
+      ],
+      "correct_option": 0,
+      "explanation": "c() combines values into a vector; numeric inputs produce a numeric vector.",
+      "tags": [
+        "vectors",
+        "data-objects"
+      ],
+      "recommended_time_sec": 25
+    },
+    {
+      "id": "R-S15-Q02",
+      "topic": "Session 15: R Data Objects, Packages, and Data Import/Export",
+      "subtopic": "Vectorized operations",
+      "difficulty": "medium",
+      "question_text": "What is the result of c(1, 2, 3) * 2 in R?",
+      "options": [
+        "c(2, 4, 6)",
+        "c(1, 2, 3, 2)",
+        "6",
+        "An error because vectors cannot be multiplied"
+      ],
+      "correct_option": 0,
+      "explanation": "Arithmetic is vectorized in R, so each vector element is multiplied by 2.",
+      "tags": [
+        "vectors",
+        "arithmetic"
+      ],
+      "recommended_time_sec": 30
+    },
+    {
+      "id": "R-S15-Q03",
+      "topic": "Session 15: R Data Objects, Packages, and Data Import/Export",
+      "subtopic": "Vector summary functions",
+      "difficulty": "easy",
+      "question_text": "For x <- c(2, 4, 6), what does sum(x) return?",
+      "options": [
+        "12",
+        "4",
+        "48",
+        "3"
+      ],
+      "correct_option": 0,
+      "explanation": "sum adds the vector elements: 2+4+6 = 12.",
+      "tags": [
+        "vectors",
+        "built-in-functions"
+      ],
+      "recommended_time_sec": 25
+    },
+    {
+      "id": "R-S15-Q04",
+      "topic": "Session 15: R Data Objects, Packages, and Data Import/Export",
+      "subtopic": "Mean function",
+      "difficulty": "easy",
+      "question_text": "For x <- c(2, 4, 6), what does mean(x) return?",
+      "options": [
+        "4",
+        "12",
+        "6",
+        "3"
+      ],
+      "correct_option": 0,
+      "explanation": "The arithmetic mean is (2+4+6)/3 = 4.",
+      "tags": [
+        "vectors",
+        "statistics"
+      ],
+      "recommended_time_sec": 25
+    },
+    {
+      "id": "R-S15-Q05",
+      "topic": "Session 15: R Data Objects, Packages, and Data Import/Export",
+      "subtopic": "Product function",
+      "difficulty": "easy",
+      "question_text": "For x <- c(2, 3, 4), what does prod(x) return?",
+      "options": [
+        "9",
+        "24",
+        "4",
+        "2.5"
+      ],
+      "correct_option": 1,
+      "explanation": "prod multiplies the vector elements: 2*3*4 = 24.",
+      "tags": [
+        "vectors",
+        "built-in-functions"
+      ],
+      "recommended_time_sec": 25
+    },
+    {
+      "id": "R-S15-Q06",
+      "topic": "Session 15: R Data Objects, Packages, and Data Import/Export",
+      "subtopic": "Lists",
+      "difficulty": "medium",
+      "question_text": "Which R data structure can hold elements of different types, such as a number, text, and a data frame?",
+      "options": [
+        "A list",
+        "A numeric vector",
+        "A matrix",
+        "A factor only"
+      ],
+      "correct_option": 0,
+      "explanation": "R lists can contain elements of different types and structures.",
+      "tags": [
+        "lists",
+        "data-structures"
+      ],
+      "recommended_time_sec": 30
+    },
+    {
+      "id": "R-S15-Q07",
+      "topic": "Session 15: R Data Objects, Packages, and Data Import/Export",
+      "subtopic": "Matrices",
+      "difficulty": "medium",
+      "question_text": "What is a defining property of an R matrix?",
+      "options": [
+        "It is a two-dimensional structure whose elements share a common atomic type",
+        "It must contain columns of unrelated types",
+        "It can contain only character values",
+        "It is always a list of data frames"
+      ],
+      "correct_option": 0,
+      "explanation": "A matrix is a two-dimensional atomic structure, so its entries are coerced to a common type.",
+      "tags": [
+        "matrices",
+        "data-structures"
+      ],
+      "recommended_time_sec": 35
+    },
+    {
+      "id": "R-S15-Q08",
+      "topic": "Session 15: R Data Objects, Packages, and Data Import/Export",
+      "subtopic": "Arrays",
+      "difficulty": "medium",
+      "question_text": "How does an R array differ from a matrix?",
+      "options": [
+        "An array can have more than two dimensions",
+        "An array must contain mixed data types",
+        "A matrix can have more dimensions than an array",
+        "An array cannot store numbers"
+      ],
+      "correct_option": 0,
+      "explanation": "A matrix is two-dimensional; an array generalizes this to one or more dimensions.",
+      "tags": [
+        "arrays",
+        "matrices"
+      ],
+      "recommended_time_sec": 35
+    },
+    {
+      "id": "R-S15-Q09",
+      "topic": "Session 15: R Data Objects, Packages, and Data Import/Export",
+      "subtopic": "Data frames",
+      "difficulty": "easy",
+      "question_text": "Which description best fits a data frame in R?",
+      "options": [
+        "A tabular structure whose columns may have different types",
+        "A single atomic vector with one type only",
+        "A function that imports Excel files",
+        "A package repository"
+      ],
+      "correct_option": 0,
+      "explanation": "A data frame stores tabular columns that can have different types, with compatible row lengths.",
+      "tags": [
+        "data-frames",
+        "data-structures"
+      ],
+      "recommended_time_sec": 30
+    },
+    {
+      "id": "R-S15-Q10",
+      "topic": "Session 15: R Data Objects, Packages, and Data Import/Export",
+      "subtopic": "Built-in airquality dataset",
+      "difficulty": "easy",
+      "question_text": "Which expression loads the built-in airquality dataset into the R search path for use?",
+      "options": [
+        "data(airquality)",
+        "install(airquality)",
+        "read.csv(airquality)",
+        "package(airquality)"
+      ],
+      "correct_option": 0,
+      "explanation": "data(airquality) loads the built-in dataset from its package for use in the session.",
+      "tags": [
+        "datasets",
+        "airquality"
+      ],
+      "recommended_time_sec": 30
+    },
+    {
+      "id": "R-S15-Q11",
+      "topic": "Session 15: R Data Objects, Packages, and Data Import/Export",
+      "subtopic": "List indexing",
+      "difficulty": "medium",
+      "question_text": "If dfs is a list of data frames, what does dfs[[1]] return?",
+      "options": [
+        "The first data-frame element itself",
+        "A list containing every element",
+        "The first column of every data frame",
+        "The list length"
+      ],
+      "correct_option": 0,
+      "explanation": "Double-bracket indexing extracts the element itself from a list.",
+      "tags": [
+        "lists",
+        "indexing"
+      ],
+      "recommended_time_sec": 35
+    },
+    {
+      "id": "R-S15-Q12",
+      "topic": "Session 15: R Data Objects, Packages, and Data Import/Export",
+      "subtopic": "Data frame structure inspection",
+      "difficulty": "easy",
+      "question_text": "Which function gives a compact display of an R object's structure, including a data frame's column types?",
+      "options": [
+        "str()",
+        "sum()",
+        "plot()",
+        "save()"
+      ],
+      "correct_option": 0,
+      "explanation": "str() displays an object's internal structure in a compact form.",
+      "tags": [
+        "data-frames",
+        "inspection"
+      ],
+      "recommended_time_sec": 25
+    },
+    {
+      "id": "R-S15-Q13",
+      "topic": "Session 15: R Data Objects, Packages, and Data Import/Export",
+      "subtopic": "Statistical summary",
+      "difficulty": "easy",
+      "question_text": "What does summary(df) commonly provide for a data frame?",
+      "options": [
+        "A summary of each column, with statistics depending on its type",
+        "Only the first row",
+        "Only the column names",
+        "A new Excel workbook"
+      ],
+      "correct_option": 0,
+      "explanation": "summary provides per-column summaries, such as numeric quantiles or categorical counts.",
+      "tags": [
+        "data-frames",
+        "summary"
+      ],
+      "recommended_time_sec": 30
+    },
+    {
+      "id": "R-S15-Q14",
+      "topic": "Session 15: R Data Objects, Packages, and Data Import/Export",
+      "subtopic": "Package usage",
+      "difficulty": "easy",
+      "question_text": "Which pair correctly matches common functions to importing a CSV text file and an Excel workbook, respectively?",
+      "options": [
+        "read.csv(path); readxl::read_excel(path)",
+        "write.csv(path); writexl::write_xlsx(path)",
+        "summary(path); str(path)",
+        "data(path); library(path)"
+      ],
+      "correct_option": 0,
+      "explanation": "read.csv imports CSV text, while readxl::read_excel reads an Excel workbook; readxl is an R package.",
+      "tags": [
+        "packages",
+        "library"
+      ],
+      "recommended_time_sec": 30
+    },
+    {
+      "id": "R-S15-Q15",
+      "topic": "Session 15: R Data Objects, Packages, and Data Import/Export",
+      "subtopic": "Importing and exporting data",
+      "difficulty": "medium",
+      "question_text": "Which function from the writexl package exports a data frame df to an Excel workbook?",
+      "options": [
+        "writexl::write_xlsx(df, \"output.xlsx\")",
+        "readxl::read_excel(df, \"output.xlsx\")",
+        "write.csv(df, \"output.xlsx\")",
+        "summary(df, \"output.xlsx\")"
+      ],
+      "correct_option": 0,
+      "explanation": "writexl::write_xlsx writes a data frame or list of data frames to an .xlsx workbook.",
+      "tags": [
+        "csv",
+        "import-export"
+      ],
+      "recommended_time_sec": 30
+    },
+    {
+      "id": "R-S16-Q01",
+      "topic": "Session 16: Data Manipulation with Tidyverse",
+      "subtopic": "Tidyverse packages",
+      "difficulty": "easy",
+      "question_text": "What is tidyverse in R?",
+      "options": [
+        "A collection of packages for data science and data manipulation",
+        "A single data frame",
+        "A database server",
+        "A replacement for the R language"
+      ],
+      "correct_option": 0,
+      "explanation": "The tidyverse is a collection of R packages designed to work together for data science workflows.",
+      "tags": [
+        "tidyverse",
+        "packages"
+      ],
+      "recommended_time_sec": 25
+    },
+    {
+      "id": "R-S16-Q02",
+      "topic": "Session 16: Data Manipulation with Tidyverse",
+      "subtopic": "filter rows",
+      "difficulty": "easy",
+      "question_text": "In dplyr, which verb keeps rows that satisfy a logical condition?",
+      "options": [
+        "filter()",
+        "select()",
+        "mutate()",
+        "arrange()"
+      ],
+      "correct_option": 0,
+      "explanation": "filter selects rows based on one or more logical conditions.",
+      "tags": [
+        "dplyr",
+        "filter"
+      ],
+      "recommended_time_sec": 25
+    },
+    {
+      "id": "R-S16-Q03",
+      "topic": "Session 16: Data Manipulation with Tidyverse",
+      "subtopic": "select columns",
+      "difficulty": "easy",
+      "question_text": "Which dplyr verb chooses columns from a data frame?",
+      "options": [
+        "select()",
+        "filter()",
+        "summarise()",
+        "arrange()"
+      ],
+      "correct_option": 0,
+      "explanation": "select chooses columns; filter chooses rows.",
+      "tags": [
+        "dplyr",
+        "select"
+      ],
+      "recommended_time_sec": 25
+    },
+    {
+      "id": "R-S16-Q04",
+      "topic": "Session 16: Data Manipulation with Tidyverse",
+      "subtopic": "mutate columns",
+      "difficulty": "easy",
+      "question_text": "What is mutate() commonly used for?",
+      "options": [
+        "Creating or modifying columns",
+        "Sorting rows only",
+        "Removing a package",
+        "Reading an XML document"
+      ],
+      "correct_option": 0,
+      "explanation": "mutate adds new variables or modifies existing columns in a data frame.",
+      "tags": [
+        "dplyr",
+        "mutate"
+      ],
+      "recommended_time_sec": 25
+    },
+    {
+      "id": "R-S16-Q05",
+      "topic": "Session 16: Data Manipulation with Tidyverse",
+      "subtopic": "arrange rows",
+      "difficulty": "easy",
+      "question_text": "Which dplyr verb sorts rows by one or more columns?",
+      "options": [
+        "arrange()",
+        "select()",
+        "mutate()",
+        "bind_rows()"
+      ],
+      "correct_option": 0,
+      "explanation": "arrange orders rows according to the values of selected columns.",
+      "tags": [
+        "dplyr",
+        "sorting"
+      ],
+      "recommended_time_sec": 25
+    },
+    {
+      "id": "R-S16-Q06",
+      "topic": "Session 16: Data Manipulation with Tidyverse",
+      "subtopic": "Group summaries",
+      "difficulty": "medium",
+      "question_text": "Which sequence is commonly used to calculate a summary separately for each category?",
+      "options": [
+        "group_by(category) followed by summarise()",
+        "select(category) followed by read.csv()",
+        "arrange(category) followed by library()",
+        "mutate(category) followed by install.packages()"
+      ],
+      "correct_option": 0,
+      "explanation": "group_by defines groups and summarise computes summary values for each group.",
+      "tags": [
+        "dplyr",
+        "grouping",
+        "summarise"
+      ],
+      "recommended_time_sec": 35
+    },
+    {
+      "id": "R-S16-Q07",
+      "topic": "Session 16: Data Manipulation with Tidyverse",
+      "subtopic": "Joining data frames",
+      "difficulty": "medium",
+      "question_text": "What does a left join generally preserve?",
+      "options": [
+        "Every row from the left table, adding matching columns from the right table",
+        "Only rows that appear in both tables",
+        "Every row from the right table only",
+        "No rows with missing join keys"
+      ],
+      "correct_option": 0,
+      "explanation": "A left join keeps all rows from its left input and adds matching values from the right input where available.",
+      "tags": [
+        "dplyr",
+        "joins",
+        "merging"
+      ],
+      "recommended_time_sec": 40
+    },
+    {
+      "id": "R-S16-Q08",
+      "topic": "Session 16: Data Manipulation with Tidyverse",
+      "subtopic": "Combining data frames",
+      "difficulty": "easy",
+      "question_text": "Which dplyr function stacks data frames with compatible columns by rows?",
+      "options": [
+        "bind_rows()",
+        "left_join()",
+        "pivot_longer()",
+        "select()"
+      ],
+      "correct_option": 0,
+      "explanation": "bind_rows combines data frames vertically by matching column names.",
+      "tags": [
+        "dplyr",
+        "combining"
+      ],
+      "recommended_time_sec": 30
+    },
+    {
+      "id": "R-S16-Q09",
+      "topic": "Session 16: Data Manipulation with Tidyverse",
+      "subtopic": "Reshaping data",
+      "difficulty": "medium",
+      "question_text": "What does tidyr pivot_longer() generally do?",
+      "options": [
+        "Converts selected columns into key-value rows, making data longer",
+        "Splits one data frame into multiple files",
+        "Sorts rows in descending order",
+        "Adds a calculated column"
+      ],
+      "correct_option": 0,
+      "explanation": "pivot_longer gathers multiple columns into fewer columns and more rows.",
+      "tags": [
+        "tidyr",
+        "reshaping"
+      ],
+      "recommended_time_sec": 35
+    },
+    {
+      "id": "R-S16-Q10",
+      "topic": "Session 16: Data Manipulation with Tidyverse",
+      "subtopic": "Tidy data philosophy",
+      "difficulty": "medium",
+      "question_text": "In the tidy data convention, what does each row typically represent?",
+      "options": [
+        "One observation",
+        "One entire dataset",
+        "One variable name only",
+        "One R package"
+      ],
+      "correct_option": 0,
+      "explanation": "In tidy data, each row represents an observation, each column a variable, and each cell a value.",
+      "tags": [
+        "tidy-data",
+        "data-structure"
+      ],
+      "recommended_time_sec": 30
+    },
+    {
+      "id": "R-S16-Q11",
+      "topic": "Session 16: Data Manipulation with Tidyverse",
+      "subtopic": "Data pipeline",
+      "difficulty": "medium",
+      "question_text": "What is a common benefit of a tidyverse pipeline?",
+      "options": [
+        "It makes a sequence of data transformations readable and composable",
+        "It automatically proves every analysis is causal",
+        "It prevents the data from being changed",
+        "It replaces all input and output formats"
+      ],
+      "correct_option": 0,
+      "explanation": "Pipelines express a series of transformations in a readable order, with each step passing data to the next.",
+      "tags": [
+        "tidyverse",
+        "pipeline"
+      ],
+      "recommended_time_sec": 35
+    },
+    {
+      "id": "R-S16-Q12",
+      "topic": "Session 16: Data Manipulation with Tidyverse",
+      "subtopic": "JSON import",
+      "difficulty": "medium",
+      "question_text": "The syllabus asks students to load JSON data in RStudio using R packages. Which operation best describes that task?",
+      "options": [
+        "Parse JSON text into R objects before inspecting or summarizing it",
+        "Run a SQL UPDATE against every JSON file",
+        "Convert the JSON file directly into a plot without reading it",
+        "Install a new R interpreter for each JSON object"
+      ],
+      "correct_option": 0,
+      "explanation": "JSON import involves parsing the file into R objects so the resulting data can be inspected and analyzed.",
+      "tags": [
+        "json",
+        "import",
+        "data-manipulation"
+      ],
+      "recommended_time_sec": 35
+    },
+    {
+      "id": "R-S16-Q13",
+      "topic": "Session 16: Data Manipulation with Tidyverse",
+      "subtopic": "XML import",
+      "difficulty": "medium",
+      "question_text": "After importing XML data into R, what is a sensible next step before calculating a statistical summary?",
+      "options": [
+        "Inspect and extract the relevant data into a usable tabular or vector structure",
+        "Rename the XML extension to .csv without parsing",
+        "Call plot() on the file path string",
+        "Delete the document nodes"
+      ],
+      "correct_option": 0,
+      "explanation": "XML is hierarchical, so relevant nodes and values need to be extracted into structures suitable for summary operations.",
+      "tags": [
+        "xml",
+        "import",
+        "data-manipulation"
+      ],
+      "recommended_time_sec": 40
+    },
+    {
+      "id": "R-S16-Q14",
+      "topic": "Session 16: Data Manipulation with Tidyverse",
+      "subtopic": "Web data extraction",
+      "difficulty": "medium",
+      "question_text": "What is the purpose of extracting data from a website with an R package in this session?",
+      "options": [
+        "Retrieve selected page content for analysis",
+        "Install the R language",
+        "Convert all web pages into matrices automatically",
+        "Create a database backup"
+      ],
+      "correct_option": 0,
+      "explanation": "The syllabus includes extracting data from a website so it can be examined and analyzed in R.",
+      "tags": [
+        "web-scraping",
+        "data-extraction"
+      ],
+      "recommended_time_sec": 30
+    },
+    {
+      "id": "R-S16-Q15",
+      "topic": "Session 16: Data Manipulation with Tidyverse",
+      "subtopic": "diamonds dataset visualization",
+      "difficulty": "medium",
+      "question_text": "For the diamonds dataset exercise, which chart type is explicitly requested alongside a pie chart?",
+      "options": [
+        "Bar graph",
+        "Network graph",
+        "Boxplot only",
+        "Gantt chart"
+      ],
+      "correct_option": 0,
+      "explanation": "The lab asks students to plot a pie chart and a bar graph using the diamonds dataset.",
+      "tags": [
+        "diamonds",
+        "visualization"
+      ],
+      "recommended_time_sec": 25
+    },
+    {
+      "id": "R-S17-Q01",
+      "topic": "Session 17: Functions and Interactive Reporting",
+      "subtopic": "Defining functions",
+      "difficulty": "easy",
+      "question_text": "Which keyword is used to define a function in R?",
+      "options": [
+        "function",
+        "def",
+        "fun",
+        "method"
+      ],
+      "correct_option": 0,
+      "explanation": "R function definitions use the function keyword, for example f <- function(x) { x + 1 }.",
+      "tags": [
+        "functions",
+        "syntax"
+      ],
+      "recommended_time_sec": 25
+    },
+    {
+      "id": "R-S17-Q02",
+      "topic": "Session 17: Functions and Interactive Reporting",
+      "subtopic": "Function return value",
+      "difficulty": "medium",
+      "question_text": "If an R function has no explicit return() call, what is returned?",
+      "options": [
+        "The value of the last evaluated expression",
+        "Always NULL",
+        "The function's first argument",
+        "A logical FALSE"
+      ],
+      "correct_option": 0,
+      "explanation": "In R, the last evaluated expression in a function is returned implicitly.",
+      "tags": [
+        "functions",
+        "return"
+      ],
+      "recommended_time_sec": 35
+    },
+    {
+      "id": "R-S17-Q03",
+      "topic": "Session 17: Functions and Interactive Reporting",
+      "subtopic": "Numeric built-in functions",
+      "difficulty": "easy",
+      "question_text": "Which built-in function returns the absolute value of a number in R?",
+      "options": [
+        "abs()",
+        "toupper()",
+        "split()",
+        "summary.data()"
+      ],
+      "correct_option": 0,
+      "explanation": "abs(x) returns the absolute value of x.",
+      "tags": [
+        "built-in-functions",
+        "numeric"
+      ],
+      "recommended_time_sec": 25
+    },
+    {
+      "id": "R-S17-Q04",
+      "topic": "Session 17: Functions and Interactive Reporting",
+      "subtopic": "Character built-in functions",
+      "difficulty": "easy",
+      "question_text": "What does nchar('data') return?",
+      "options": [
+        "4",
+        "5",
+        "'data'",
+        "A data frame"
+      ],
+      "correct_option": 0,
+      "explanation": "nchar counts the number of characters in a string; 'data' has four characters.",
+      "tags": [
+        "built-in-functions",
+        "character"
+      ],
+      "recommended_time_sec": 25
+    },
+    {
+      "id": "R-S17-Q05",
+      "topic": "Session 17: Functions and Interactive Reporting",
+      "subtopic": "Statistical built-in functions",
+      "difficulty": "easy",
+      "question_text": "What does median(c(2, 5, 9)) return?",
+      "options": [
+        "2",
+        "5",
+        "9",
+        "16"
+      ],
+      "correct_option": 1,
+      "explanation": "The values are ordered as 2, 5, 9, so the middle value is 5.",
+      "tags": [
+        "built-in-functions",
+        "statistics"
+      ],
+      "recommended_time_sec": 25
+    },
+    {
+      "id": "R-S17-Q06",
+      "topic": "Session 17: Functions and Interactive Reporting",
+      "subtopic": "R Markdown",
+      "difficulty": "easy",
+      "question_text": "What is R Markdown commonly used to create?",
+      "options": [
+        "Documents combining formatted text, executable R code, and results",
+        "Only binary database files",
+        "A replacement for RStudio",
+        "A list of installed packages"
+      ],
+      "correct_option": 0,
+      "explanation": "R Markdown supports reproducible reports that combine narrative text, code, and generated output.",
+      "tags": [
+        "RMarkdown",
+        "reporting"
+      ],
+      "recommended_time_sec": 30
+    },
+    {
+      "id": "R-S17-Q07",
+      "topic": "Session 17: Functions and Interactive Reporting",
+      "subtopic": "ChickWeight dataset",
+      "difficulty": "easy",
+      "question_text": "Which variables are used in the syllabus plot of chick 34 over time?",
+      "options": [
+        "Time and weight",
+        "Diet and price",
+        "Chick and package",
+        "Date and temperature"
+      ],
+      "correct_option": 0,
+      "explanation": "The lab exercise plots weight against time for chick number 34.",
+      "tags": [
+        "ChickWeight",
+        "plotting"
+      ],
+      "recommended_time_sec": 25
+    },
+    {
+      "id": "R-S17-Q08",
+      "topic": "Session 17: Functions and Interactive Reporting",
+      "subtopic": "Split data by group",
+      "difficulty": "medium",
+      "question_text": "What does split(ChickWeight, ChickWeight$Diet) do conceptually?",
+      "options": [
+        "Divides the data into subsets according to Diet values",
+        "Sorts all rows by chick weight",
+        "Changes every Diet value to a number",
+        "Combines all columns into one string"
+      ],
+      "correct_option": 0,
+      "explanation": "split divides its first argument into groups based on the factor or grouping values supplied second.",
+      "tags": [
+        "split",
+        "ChickWeight",
+        "grouping"
+      ],
+      "recommended_time_sec": 35
+    },
+    {
+      "id": "R-S17-Q09",
+      "topic": "Session 17: Functions and Interactive Reporting",
+      "subtopic": "Box plots by time",
+      "difficulty": "medium",
+      "question_text": "For chicks in diet group 4, which plot summarizes weight distributions separately at each time point?",
+      "options": [
+        "A box plot of weight grouped by Time",
+        "A pie chart of chick IDs",
+        "A line plot of package names",
+        "A histogram of Diet labels only"
+      ],
+      "correct_option": 0,
+      "explanation": "The lab asks for box plots of weight at each time point for chicks in Diet group 4.",
+      "tags": [
+        "ChickWeight",
+        "boxplot",
+        "grouping"
+      ],
+      "recommended_time_sec": 35
+    },
+    {
+      "id": "R-S17-Q10",
+      "topic": "Session 17: Functions and Interactive Reporting",
+      "subtopic": "Group means and plot annotation",
+      "difficulty": "medium",
+      "question_text": "After plotting mean weight over time for diets 4 and 2, which additions does the syllabus specifically request?",
+      "options": [
+        "A legend and a title",
+        "A database connection and API route",
+        "A CSV header and a package lockfile",
+        "A pie chart and a heatmap"
+      ],
+      "correct_option": 0,
+      "explanation": "The exercise asks students to add group 2 means to the existing plot and then add a legend and title.",
+      "tags": [
+        "ChickWeight",
+        "means",
+        "plotting"
+      ],
+      "recommended_time_sec": 35
+    }
+  ]
+}

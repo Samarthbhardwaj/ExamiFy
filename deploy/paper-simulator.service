@@ -1,0 +1,21 @@
+[Unit]
+Description=Paper Simulator & Exam Tester Service
+After=network.target
+
+[Service]
+Type=simple
+User=ubuntu
+WorkingDirectory=/var/www/paper-simulator
+ExecStart=/usr/bin/node /var/www/paper-simulator/server.js
+Restart=always
+RestartSec=5
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=paper-simulator
+Environment=NODE_ENV=production
+Environment=PORT=3000
+Environment=HOST=0.0.0.0
+
+[Install]
+WantedBy=multi-user.target
+

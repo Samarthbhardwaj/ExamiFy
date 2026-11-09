@@ -1,0 +1,14 @@
+{
+  "name": "paper-simulator",
+  "version": "1.0.0",
+  "description": "Multi-agent mock exam generator and performance analyzer",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.0"
+  }
+}

@@ -1,0 +1,3068 @@
+{
+  "id": "shared-1794083534492-python-main-set",
+  "name": "Python main set",
+  "description": "Created by Admin",
+  "publishedAt": "2026-11-07T20:32:14.492Z",
+  "publishedBy": "Samar Admin",
+  "questions": [
+    {
+      "id": "py-115",
+      "topic": "Python",
+      "subtopic": "Python Foundations",
+      "difficulty": "medium",
+      "question_text": "What is the value of `3 + 4 * 2`?",
+      "options": [
+        "14",
+        "11",
+        "20",
+        "SyntaxError"
+      ],
+      "correct_option": 1,
+      "explanation": "Multiplication has higher precedence than addition, so the expression is `3 + 8`. ",
+      "tags": [
+        "operators",
+        "precedence"
+      ],
+      "recommended_time_sec": 40
+    },
+    {
+      "id": "py-116",
+      "topic": "Python",
+      "subtopic": "Python Foundations",
+      "difficulty": "medium",
+      "question_text": "What does `17 // 5` evaluate to?",
+      "options": [
+        "3.4",
+        "3",
+        "4",
+        "2"
+      ],
+      "correct_option": 1,
+      "explanation": "Floor division returns the quotient rounded down; for positive operands, `17 // 5` is `3`.",
+      "tags": [
+        "operators",
+        "floor-division"
+      ],
+      "recommended_time_sec": 40
+    },
+    {
+      "id": "py-117",
+      "topic": "Python",
+      "subtopic": "Python Foundations",
+      "difficulty": "medium",
+      "question_text": "What is the value of `-17 // 5`?",
+      "options": [
+        "-3",
+        "-4",
+        "3",
+        "-3.4"
+      ],
+      "correct_option": 1,
+      "explanation": "Floor division rounds toward negative infinity, so `-3.4` becomes `-4`.",
+      "tags": [
+        "operators",
+        "floor-division",
+        "trap"
+      ],
+      "recommended_time_sec": 40
+    },
+    {
+      "id": "py-118",
+      "topic": "Python",
+      "subtopic": "Python Foundations",
+      "difficulty": "easy",
+      "question_text": "What is the result of `17 % 5`?",
+      "options": [
+        "2",
+        "3",
+        "5",
+        "0"
+      ],
+      "correct_option": 0,
+      "explanation": "The modulo operator returns the remainder; 17 divided by 5 leaves remainder 2.",
+      "tags": [
+        "operators",
+        "modulo"
+      ],
+      "recommended_time_sec": 40
+    },
+    {
+      "id": "py-119",
+      "topic": "Python",
+      "subtopic": "Python Foundations",
+      "difficulty": "medium",
+      "question_text": "What does `2 ** 3 ** 2` evaluate to?",
+      "options": [
+        "64",
+        "512",
+        "36",
+        "256"
+      ],
+      "correct_option": 1,
+      "explanation": "Exponentiation associates from right to left: `2 ** (3 ** 2)` equals 512.",
+      "tags": [
+        "operators",
+        "precedence",
+        "trap"
+      ],
+      "recommended_time_sec": 40
+    },
+    {
+      "id": "py-120",
+      "topic": "Python",
+      "subtopic": "Python Foundations",
+      "difficulty": "easy",
+      "question_text": "What type does `input()` return in Python 3?",
+      "options": [
+        "int",
+        "str",
+        "float",
+        "The type of the typed value"
+      ],
+      "correct_option": 1,
+      "explanation": "`input()` returns the entered line as a string; convert it explicitly if you need a number.",
+      "tags": [
+        "input-output",
+        "types"
+      ],
+      "recommended_time_sec": 40
+    },
+    {
+      "id": "py-121",
+      "topic": "Python",
+      "subtopic": "Python Foundations",
+      "difficulty": "medium",
+      "question_text": "What is the value of `int(-3.8)`?",
+      "options": [
+        "-4",
+        "-3",
+        "3",
+        "ValueError"
+      ],
+      "correct_option": 1,
+      "explanation": "`int()` truncates toward zero; it does not round to the nearest integer.",
+      "tags": [
+        "type-conversion",
+        "trap"
+      ],
+      "recommended_time_sec": 40
+    },
+    {
+      "id": "py-122",
+      "topic": "Python",
+      "subtopic": "Python Foundations",
+      "difficulty": "easy",
+      "question_text": "Which assignment unpacks the tuple `(4, 9)` into variables `a` and `b`?",
+      "options": [
+        "a = (4, 9)",
+        "a, b = (4, 9)",
+        "a:b = (4, 9)",
+        "a, b == (4, 9)"
+      ],
+      "correct_option": 1,
+      "explanation": "Sequence unpacking assigns the first item to `a` and the second to `b`.",
+      "tags": [
+        "unpacking",
+        "variables"
+      ],
+      "recommended_time_sec": 40
+    },
+    {
+      "id": "py-123",
+      "topic": "Python",
+      "subtopic": "Python Foundations",
+      "difficulty": "medium",
+      "question_text": "What is the value of `bool(\"0\")`?",
+      "options": [
+        "False",
+        "True",
+        "0",
+        "TypeError"
+      ],
+      "correct_option": 1,
+      "explanation": "A non-empty string is truthy, even if its characters represent zero.",
+      "tags": [
+        "truthiness",
+        "types",
+        "trap"
+      ],
+      "recommended_time_sec": 40
+    },
+    {
+      "id": "py-124",
+      "topic": "Python",
+      "subtopic": "Control Flow",
+      "difficulty": "easy",
+      "question_text": "What values are produced by `list(range(1, 6, 2))`?",
+      "options": [
+        "[1, 3, 5]",
+        "[1, 3]",
+        "[1, 2, 3, 4, 5]",
+        "[2, 4, 6]"
+      ],
+      "correct_option": 0,
+      "explanation": "The stop value 6 is excluded, and the step is 2.",
+      "tags": [
+        "range",
+        "for-loop"
+      ],
+      "recommended_time_sec": 40
+    },
+    {
+      "id": "py-125",
+      "topic": "Python",
+      "subtopic": "Control Flow",
+      "difficulty": "medium",
+      "question_text": "How many times does the body run in `for i in range(4):`?",
+      "options": [
+        "3",
+        "4",
+        "5",
+        "It depends on the initial value of `i`"
+      ],
+      "correct_option": 1,
+      "explanation": "`range(4)` produces 0, 1, 2, and 3, so the loop body runs four times.",
+      "tags": [
+        "range",
+        "loops"
+      ],
+      "recommended_time_sec": 40
+    },
+    {
+      "id": "py-126",
+      "topic": "Python",
+      "subtopic": "Control Flow",
+      "difficulty": "medium",
+      "question_text": "What does `continue` do inside a loop?",
+      "options": [
+        "Ends the loop immediately",
+        "Skips to the next iteration",
+        "Exits the current function",
+        "Does nothing"
+      ],
+      "correct_option": 1,
+      "explanation": "`continue` skips the remaining statements in the current iteration and proceeds to the next one.",
+      "tags": [
+        "continue",
+        "loops"
+      ],
+      "recommended_time_sec": 40
+    },
+    {
+      "id": "py-127",
+      "topic": "Python",
+      "subtopic": "Control Flow",
+      "difficulty": "medium",
+      "question_text": "What does `break` do inside a loop?",
+      "options": [
+        "Skips one iteration",
+        "Exits the nearest enclosing loop",
+        "Restarts the loop",
+        "Ends the whole program"
+      ],
+      "correct_option": 1,
+      "explanation": "`break` immediately terminates the nearest enclosing loop.",
+      "tags": [
+        "break",
+        "loops"
+      ],
+      "recommended_time_sec": 40
+    },
+    {
+      "id": "py-128",
+      "topic": "Python",
+      "subtopic": "Control Flow",
+      "difficulty": "easy",
+      "question_text": "What does `pass` do when executed?",
+      "options": [
+        "Terminates the loop",
+        "Skips to the next iteration",
+        "Performs no operation",
+        "Raises an exception"
+      ],
+      "correct_option": 2,
+      "explanation": "`pass` is a placeholder statement that performs no operation.",
+      "tags": [
+        "pass",
+        "control-flow"
+      ],
+      "recommended_time_sec": 40
+    },
+    {
+      "id": "py-129",
+      "topic": "Python",
+      "subtopic": "Control Flow",
+      "difficulty": "medium",
+      "question_text": "What is printed by `for i in range(3): print(i, end=' ')`?",
+      "options": [
+        "1 2 3",
+        "0 1 2",
+        "0 1 2 3",
+        "1 2"
+      ],
+      "correct_option": 1,
+      "explanation": "`range(3)` starts at 0 and stops before 3.",
+      "tags": [
+        "range",
+        "output",
+        "trap"
+      ],
+      "recommended_time_sec": 40
+    },
+    {
+      "id": "py-130",
+      "topic": "Python",
+      "subtopic": "Control Flow",
+      "difficulty": "medium",
+      "question_text": "How many times does the inner body execute? `for i in range(3): for j in range(2): count += 1`",
+      "options": [
+        "5",
+        "6",
+        "3",
+        "2"
+      ],
+      "correct_option": 1,
+      "explanation": "The inner loop runs twice for each of three outer iterations, for six executions total.",
+      "tags": [
+        "nested-loops",
+        "code-tracing"
+      ],
+      "recommended_time_sec": 40
+    },
+    {
+      "id": "py-131",
+      "topic": "Python",
+      "subtopic": "Control Flow",
+      "difficulty": "medium",
+      "question_text": "What is printed? `x=0; while x<3: x+=1; print(x, end=' ')`",
+      "options": [
+        "0 1 2",
+        "1 2 3",
+        "1 2",
+        "0 1 2 3"
+      ],
+      "correct_option": 1,
+      "explanation": "The value is incremented before each print; the loop prints 1, 2, then 3.",
+      "tags": [
+        "while-loop",
+        "code-tracing"
+      ],
+      "recommended_time_sec": 40
+    },
+    {
+      "id": "py-132",
+      "topic": "Python",
+      "subtopic": "Control Flow",
+      "difficulty": "hard",
+      "question_text": "What is the final value of `s`? `s=0; for i in range(5): if i==3: break; s+=i`",
+      "options": [
+        "3",
+        "6",
+        "10",
+        "2"
+      ],
+      "correct_option": 0,
+      "explanation": "The loop adds 0, 1, and 2, then breaks when `i` is 3. The sum is 3.",
+      "tags": [
+        "break",
+        "branching",
+        "trap"
+      ],
+      "recommended_time_sec": 40
+    },
+    {
+      "id": "py-133",
+      "topic": "Python",
+      "subtopic": "Control Flow",
+      "difficulty": "medium",
+      "question_text": "Which condition is true when `x` is at least 1 and less than 10?",
+      "options": [
+        "1 <= x < 10",
+        "1 < x < 10",
+        "x <= 1 and x > 10",
+        "x >= 10 or x < 1"
+      ],
+      "correct_option": 0,
+      "explanation": "Python supports chained comparisons, so `1 <= x < 10` includes 1 but excludes 10.",
+      "tags": [
+        "branching",
+        "comparisons"
+      ],
+      "recommended_time_sec": 40
+    },
+    {
+      "id": "py-134",
+      "topic": "Python",
+      "subtopic": "Control Flow",
+      "difficulty": "medium",
+      "question_text": "What is the output? `for i in range(4): if i==2: continue; print(i, end=' ')`",
+      "options": [
+        "0 1 2 3",
+        "0 1 3",
+        "1 3",
+        "0 1"
+      ],
+      "correct_option": 1,
+      "explanation": "When `i` is 2, `continue` skips the print; the other values print.",
+      "tags": [
+        "continue",
+        "code-tracing",
+        "trap"
+      ],
+      "recommended_time_sec": 40
+    },
+    {
+      "id": "py-135",
+      "topic": "Python",
+      "subtopic": "Strings and Tuples",
+      "difficulty": "easy",
+      "question_text": "What is `'Python'[0]`?",
+      "options": [
+        "'P'",
+        "'y'",
+        "'n'",
+        "IndexError"
+      ],
+      "correct_option": 0,
+      "explanation": "String indexing is zero-based, so index 0 refers to the first character.",
+      "tags": [
+        "strings",
+        "indexing"
+      ],
+      "recommended_time_sec": 40
+    },
+    {
+      "id": "py-136",
+      "topic": "Python",
+      "subtopic": "Strings and Tuples",
+      "difficulty": "medium",
+      "question_text": "What is `'Python'[-1]`?",
+      "options": [
+        "'P'",
+        "'o'",
+        "'n'",
+        "IndexError"
+      ],
+      "correct_option": 2,
+      "explanation": "A negative index counts from the end; `-1` selects the last character.",
+      "tags": [
+        "strings",
+        "negative-index"
+      ],
+      "recommended_time_sec": 40
+    },
+    {
+      "id": "py-137",
+      "topic": "Python",
+      "subtopic": "Strings and Tuples",
+      "difficulty": "medium",
+      "question_text": "What is `'Python'[1:4]`?",
+      "options": [
+        "'yth'",
+        "'ytho'",
+        "'Pyth'",
+        "'tho'"
+      ],
+      "correct_option": 0,
+      "explanation": "A slice includes the start index and excludes the stop index: positions 1, 2, and 3.",
+      "tags": [
+        "strings",
+        "slicing",
+        "trap"
+      ],
+      "recommended_time_sec": 40
+    },
+    {
+      "id": "py-138",
+      "topic": "Python",
+      "subtopic": "Strings and Tuples",
+      "difficulty": "medium",
+      "question_text": "What is `'abc' * 2`?",
+      "options": [
+        "'abc2'",
+        "'abcabc'",
+        "'aabbcc'",
+        "TypeError"
+      ],
+      "correct_option": 1,
+      "explanation": "Multiplying a string by an integer repeats the string that many times.",
+      "tags": [
+        "strings",
+        "operators"
+      ],
+      "recommended_time_sec": 40
+    },
+    {
+      "id": "py-139",
+      "topic": "Python",
+      "subtopic": "Strings and Tuples",
+      "difficulty": "medium",
+      "question_text": "What happens when code tries to assign `s[0] = 'A'` after `s = 'cat'`?",
+      "options": [
+        "The first character changes",
+        "A new string is created automatically",
+        "TypeError is raised",
+        "The assignment is ignored"
+      ],
+      "correct_option": 2,
+      "explanation": "Strings are immutable; individual characters cannot be assigned in place.",
+      "tags": [
+        "strings",
+        "immutability",
+        "trap"
+      ],
+      "recommended_time_sec": 40
+    },
+    {
+      "id": "py-140",
+      "topic": "Python",
+      "subtopic": "Strings and Tuples",
+      "difficulty": "easy",
+      "question_text": "Which creates a one-element tuple containing 7?",
+      "options": [
+        "(7)",
+        "[7]",
+        "(7,)",
+        "tuple(7)"
+      ],
+      "correct_option": 2,
+      "explanation": "A comma is what makes the parenthesized value a tuple; `(7)` alone is an integer.",
+      "tags": [
+        "tuples",
+        "syntax",
+        "trap"
+      ],
+      "recommended_time_sec": 40
+    },
+    {
+      "id": "py-141",
+      "topic": "Python",
+      "subtopic": "Strings and Tuples",
+      "difficulty": "medium",
+      "question_text": "What is the result of `a, b = (3, 8); print(a+b)`?",
+      "options": [
+        "11",
+        "38",
+        "(3, 8)",
+        "ValueError"
+      ],
+      "correct_option": 0,
+      "explanation": "Tuple unpacking assigns 3 to `a` and 8 to `b`; their sum is 11.",
+      "tags": [
+        "tuples",
+        "unpacking"
+      ],
+      "recommended_time_sec": 40
+    },
+    {
+      "id": "py-142",
+      "topic": "Python",
+      "subtopic": "Strings and Tuples",
+      "difficulty": "medium",
+      "question_text": "What is `'abcdefgh'[::2]`?",
+      "options": [
+        "'aceg'",
+        "'bdfh'",
+        "'abcdefgh'",
+        "'gcea'"
+      ],
+      "correct_option": 0,
+      "explanation": "A slice step of 2 selects every other character starting at index 0.",
+      "tags": [
+        "strings",
+        "slicing"
+      ],
+      "recommended_time_sec": 40
+    },
+    {
+      "id": "py-143",
+      "topic": "Python",
+      "subtopic": "Strings and Tuples",
+      "difficulty": "medium",
+      "question_text": "Which statement about tuples is correct?",
+      "options": [
+        "A tuple can be changed by assigning to one of its positions",
+        "A tuple is immutable, though it may contain a mutable object",
+        "A tuple must contain values of one type only",
+        "A tuple cannot be indexed"
+      ],
+      "correct_option": 1,
+      "explanation": "Tuple positions cannot be reassigned, but a referenced mutable object inside a tuple can itself be mutated.",
+      "tags": [
+        "tuples",
+        "immutability",
+        "trap"
+      ],
+      "recommended_time_sec": 40
+    },
+    {
+      "id": "py-144",
+      "topic": "Python",
+      "subtopic": "Strings and Tuples",
+      "difficulty": "easy",
+      "question_text": "What does `','.join(['red', 'blue'])` return?",
+      "options": [
+        "'redblue'",
+        "'red,blue'",
+        "'red blue'",
+        "['red', 'blue']"
+      ],
+      "correct_option": 1,
+      "explanation": "`join()` inserts the separator string between the items.",
+      "tags": [
+        "strings",
+        "join"
+      ],
+      "recommended_time_sec": 40
+    },
+    {
+      "id": "py-145",
+      "topic": "Python",
+      "subtopic": "Strings and Tuples",
+      "difficulty": "medium",
+      "question_text": "What does `'  data  '.strip()` return?",
+      "options": [
+        "'data'",
+        "'  data'",
+        "'data  '",
+        "'  data  '"
+      ],
+      "correct_option": 0,
+      "explanation": "`strip()` returns a new string with leading and trailing whitespace removed.",
+      "tags": [
+        "strings",
+        "methods"
+      ],
+      "recommended_time_sec": 40
+    },
+    {
+      "id": "py-146",
+      "topic": "Python",
+      "subtopic": "Strings and Tuples",
+      "difficulty": "medium",
+      "question_text": "For a phrase-palindrome check that ignores spaces and punctuation, which is the most appropriate first step?",
+      "options": [
+        "Reverse the original phrase directly",
+        "Normalize by retaining letters and comparing case-insensitively",
+        "Sort all characters alphabetically",
+        "Convert the phrase to a tuple"
+      ],
+      "correct_option": 1,
+      "explanation": "Removing or normalizing non-letter characters and case allows the comparison to reflect the phrase rather than its punctuation.",
+      "tags": [
+        "strings",
+        "palindrome",
+        "lab-pattern"
+      ],
+      "recommended_time_sec": 40
+    },
+    {
+      "id": "py-147",
+      "topic": "Python",
+      "subtopic": "Strings and Tuples",
+      "difficulty": "medium",
+      "question_text": "A pangram checker should return true for a sentence when:",
+      "options": [
+        "Every word appears twice",
+        "Every English alphabet letter appears at least once",
+        "The sentence has exactly 26 characters",
+        "The sentence reads the same backward"
+      ],
+      "correct_option": 1,
+      "explanation": "A pangram contains every letter of the alphabet at least once; repeated letters are allowed.",
+      "tags": [
+        "strings",
+        "pangram"
+      ],
+      "recommended_time_sec": 40
+    },
+    {
+      "id": "py-148",
+      "topic": "Python",
+      "subtopic": "Dictionaries",
+      "difficulty": "easy",
+      "question_text": "Given `d={'x': 1}`, what does `'x' in d` test?",
+      "options": [
+        "Whether 1 appears as a value",
+        "Whether 'x' is a key",
+        "Whether d has one item",
+        "Whether d is a set"
+      ],
+      "correct_option": 1,
+      "explanation": "Membership testing on a dictionary checks its keys by default.",
+      "tags": [
+        "dictionaries",
+        "membership"
+      ],
+      "recommended_time_sec": 40
+    },
+    {
+      "id": "py-149",
+      "topic": "Python",
+      "subtopic": "Dictionaries",
+      "difficulty": "medium",
+      "question_text": "What is the value of `{'a': 1, 'a': 4}['a']`?",
+      "options": [
+        "1",
+        "4",
+        "[1, 4]",
+        "KeyError"
+      ],
+      "correct_option": 1,
+      "explanation": "A later value for the same key replaces the earlier value when the dictionary is created.",
+      "tags": [
+        "dictionaries",
+        "duplicate-keys",
+        "trap"
+      ],
+      "recommended_time_sec": 40
+    },
+    {
+      "id": "py-150",
+      "topic": "Python",
+      "subtopic": "Dictionaries",
+      "difficulty": "medium",
+      "question_text": "What does `d.get('missing', 0)` return when `d` has no `'missing'` key?",
+      "options": [
+        "KeyError",
+        "None",
+        "0",
+        "False"
+      ],
+      "correct_option": 2,
+      "explanation": "`get()` returns its supplied default when the key is absent, without raising `KeyError`.",
+      "tags": [
+        "dictionaries",
+        "get"
+      ],
+      "recommended_time_sec": 40
+    },
+    {
+      "id": "py-151",
+      "topic": "Python",
+      "subtopic": "Dictionaries",
+      "difficulty": "medium",
+      "question_text": "Which expression returns key-value pairs from dictionary `d` for iteration?",
+      "options": [
+        "d.keys()",
+        "d.values()",
+        "d.items()",
+        "d.pairs()"
+      ],
+      "correct_option": 2,
+      "explanation": "`items()` provides an iterable view of `(key, value)` pairs.",
+      "tags": [
+        "dictionaries",
+        "iteration"
+      ],
+      "recommended_time_sec": 40
+    },
+    {
+      "id": "py-152",
+      "topic": "Python",
+      "subtopic": "Dictionaries",
+      "difficulty": "medium",
+      "question_text": "What happens after `d={'a': 1}; d['b']=2`?",
+      "options": [
+        "A new dictionary is made and d is unchanged",
+        "The key 'b' is added with value 2",
+        "The value under 'a' becomes 2",
+        "A set is created"
+      ],
+      "correct_option": 1,
+      "explanation": "Assigning to a new dictionary key inserts that key-value pair.",
+      "tags": [
+        "dictionaries",
+        "modifying"
+      ],
+      "recommended_time_sec": 40
+    },
+    {
+      "id": "py-153",
+      "topic": "Python",
+      "subtopic": "Dictionaries",
+      "difficulty": "medium",
+      "question_text": "What does `del d['x']` do if `'x'` is absent from `d`?",
+      "options": [
+        "Does nothing",
+        "Raises `KeyError`",
+        "Adds `'x'` with value None",
+        "Returns False"
+      ],
+      "correct_option": 1,
+      "explanation": "Deleting a missing key raises `KeyError`; `pop(key, default)` can be used for a default behavior.",
+      "tags": [
+        "dictionaries",
+        "deleting",
+        "trap"
+      ],
+      "recommended_time_sec": 40
+    },
+    {
+      "id": "py-154",
+      "topic": "Python",
+      "subtopic": "Dictionaries",
+      "difficulty": "hard",
+      "question_text": "What is `squares` after `squares={n:n*n for n in [1,2,3]}`?",
+      "options": [
+        "{1: 1, 2: 4, 3: 9}",
+        "[1, 4, 9]",
+        "{1, 2, 3}",
+        "{1: 1, 4: 2, 9: 3}"
+      ],
+      "correct_option": 0,
+      "explanation": "The comprehension builds a dictionary mapping each `n` to `n*n`.",
+      "tags": [
+        "dictionaries",
+        "comprehension"
+      ],
+      "recommended_time_sec": 40
+    },
+    {
+      "id": "py-155",
+      "topic": "Python",
+      "subtopic": "Dictionaries",
+      "difficulty": "medium",
+      "question_text": "Which statement correctly prints each key and value in dictionary `d`?",
+      "options": [
+        "for k, v in d: print(k, v)",
+        "for k, v in d.items(): print(k, v)",
+        "for k, v in d.values(): print(k, v)",
+        "for k, v in d.keys(): print(k, v)"
+      ],
+      "correct_option": 1,
+      "explanation": "Each item from `d.items()` is a `(key, value)` pair that can be unpacked.",
+      "tags": [
+        "dictionaries",
+        "iteration",
+        "unpacking"
+      ],
+      "recommended_time_sec": 40
+    },
+    {
+      "id": "py-156",
+      "topic": "Python",
+      "subtopic": "Dictionaries",
+      "difficulty": "hard",
+      "question_text": "After `d={'a': 1}; x=d.pop('a')`, which is true?",
+      "options": [
+        "x is 1 and d is empty",
+        "x is None and d keeps 'a'",
+        "A KeyError is raised",
+        "x is {'a': 1}"
+      ],
+      "correct_option": 0,
+      "explanation": "`pop()` returns the removed value and deletes the corresponding key.",
+      "tags": [
+        "dictionaries",
+        "pop",
+        "trap"
+      ],
+      "recommended_time_sec": 40
+    },
+    {
+      "id": "py-157",
+      "topic": "Python",
+      "subtopic": "Lists",
+      "difficulty": "easy",
+      "question_text": "What does `items.append(4)` do to list `items`?",
+      "options": [
+        "Adds 4 as one item at the end",
+        "Adds each digit of 4 separately",
+        "Returns a new list without changing items",
+        "Inserts 4 at the beginning"
+      ],
+      "correct_option": 0,
+      "explanation": "`append()` adds its argument as a single element at the end of the list.",
+      "tags": [
+        "lists",
+        "append"
+      ],
+      "recommended_time_sec": 40
+    },
+    {
+      "id": "py-158",
+      "topic": "Python",
+      "subtopic": "Lists",
+      "difficulty": "medium",
+      "question_text": "Starting with `a=[1,2]`, what is `a` after `a.extend([3,4])`?",
+      "options": [
+        "[1, 2, [3, 4]]",
+        "[1, 2, 3, 4]",
+        "[[1, 2], 3, 4]",
+        "[3, 4]"
+      ],
+      "correct_option": 1,
+      "explanation": "`extend()` adds each element from the iterable to the list.",
+      "tags": [
+        "lists",
+        "extend",
+        "trap"
+      ],
+      "recommended_time_sec": 40
+    },
+    {
+      "id": "py-159",
+      "topic": "Python",
+      "subtopic": "Lists",
+      "difficulty": "medium",
+      "question_text": "What is the value of `a` after `a=[1,2,3]; x=a.pop()`?",
+      "options": [
+        "a=[1,2]; x=3",
+        "a=[1,2,3]; x=3",
+        "a=[2,3]; x=1",
+        "a=[1,2]; x=None"
+      ],
+      "correct_option": 0,
+      "explanation": "With no index argument, `pop()` removes and returns the last element.",
+      "tags": [
+        "lists",
+        "pop"
+      ],
+      "recommended_time_sec": 40
+    },
+    {
+      "id": "py-160",
+      "topic": "Python",
+      "subtopic": "Lists",
+      "difficulty": "medium",
+      "question_text": "What does `a.remove(2)` remove from `a=[1,2,2]`?",
+      "options": [
+        "Both occurrences of 2",
+        "The first matching 2",
+        "The item at index 2",
+        "The last matching 2"
+      ],
+      "correct_option": 1,
+      "explanation": "`remove(value)` removes the first matching value; it does not remove all matches.",
+      "tags": [
+        "lists",
+        "remove",
+        "trap"
+      ],
+      "recommended_time_sec": 40
+    },
+    {
+      "id": "py-161",
+      "topic": "Python",
+      "subtopic": "Lists",
+      "difficulty": "medium",
+      "question_text": "What is `a[-2:]` when `a=[10,20,30,40]`?",
+      "options": [
+        "[10, 20]",
+        "[20, 30]",
+        "[30, 40]",
+        "[40]"
+      ],
+      "correct_option": 2,
+      "explanation": "The slice starts at the second-last item and continues to the end.",
+      "tags": [
+        "lists",
+        "slicing"
+      ],
+      "recommended_time_sec": 40
+    },
+    {
+      "id": "py-162",
+      "topic": "Python",
+      "subtopic": "Lists",
+      "difficulty": "medium",
+      "question_text": "After `a=[1,2]; b=a; b.append(3)`, what is `a`?",
+      "options": [
+        "[1,2]",
+        "[1,2,3]",
+        "[3]",
+        "NameError"
+      ],
+      "correct_option": 1,
+      "explanation": "`a` and `b` refer to the same mutable list, so mutation through either name is visible through both.",
+      "tags": [
+        "lists",
+        "aliasing",
+        "trap"
+      ],
+      "recommended_time_sec": 40
+    },
+    {
+      "id": "py-163",
+      "topic": "Python",
+      "subtopic": "Lists",
+      "difficulty": "medium",
+      "question_text": "What does `a.sort()` return?",
+      "options": [
+        "The sorted list",
+        "A tuple of sorted values",
+        "None",
+        "A Boolean"
+      ],
+      "correct_option": 2,
+      "explanation": "`list.sort()` sorts the list in place and returns `None`.",
+      "tags": [
+        "lists",
+        "sorting",
+        "trap"
+      ],
+      "recommended_time_sec": 40
+    },
+    {
+      "id": "py-164",
+      "topic": "Python",
+      "subtopic": "Lists",
+      "difficulty": "medium",
+      "question_text": "Which expression creates a new list containing only positive values from `nums`?",
+      "options": [
+        "[x for x in nums if x > 0]",
+        "{x for x in nums if x > 0}",
+        "(x in nums if x > 0)",
+        "[if x > 0 for x in nums]"
+      ],
+      "correct_option": 0,
+      "explanation": "A list comprehension places the expression before the `for` clause and an optional filter afterward.",
+      "tags": [
+        "lists",
+        "comprehensions"
+      ],
+      "recommended_time_sec": 40
+    },
+    {
+      "id": "py-165",
+      "topic": "Python",
+      "subtopic": "Lists",
+      "difficulty": "hard",
+      "question_text": "What is the result of `list(map(lambda x: x*2, [1,3]))`?",
+      "options": [
+        "[1, 3, 2, 6]",
+        "[2, 6]",
+        "[2, 3]",
+        "map object"
+      ],
+      "correct_option": 1,
+      "explanation": "`map()` applies the function to each input; wrapping the iterator in `list()` displays the results.",
+      "tags": [
+        "lists",
+        "map",
+        "lambda"
+      ],
+      "recommended_time_sec": 40
+    },
+    {
+      "id": "py-166",
+      "topic": "Python",
+      "subtopic": "Lists",
+      "difficulty": "medium",
+      "question_text": "What is `len([1, [2, 3], 4])`?",
+      "options": [
+        "3",
+        "4",
+        "2",
+        "5"
+      ],
+      "correct_option": 0,
+      "explanation": "The outer list has three elements; the nested list counts as one outer element.",
+      "tags": [
+        "lists",
+        "nested-collections",
+        "trap"
+      ],
+      "recommended_time_sec": 40
+    },
+    {
+      "id": "py-167",
+      "topic": "Python",
+      "subtopic": "Lists",
+      "difficulty": "hard",
+      "question_text": "What is printed? `a=[1,2,3]; b=a[:]; b[0]=9; print(a[0])`",
+      "options": [
+        "9",
+        "1",
+        "[9, 2, 3]",
+        "IndexError"
+      ],
+      "correct_option": 1,
+      "explanation": "A full slice creates a new outer list, so assigning into `b` does not change the first element of `a`.",
+      "tags": [
+        "lists",
+        "slicing",
+        "copying"
+      ],
+      "recommended_time_sec": 40
+    },
+    {
+      "id": "py-168",
+      "topic": "Python",
+      "subtopic": "Lists",
+      "difficulty": "medium",
+      "question_text": "Which expression checks whether value 7 occurs in list `nums`?",
+      "options": [
+        "7 in nums",
+        "nums in 7",
+        "nums.has(7)",
+        "nums[7]"
+      ],
+      "correct_option": 0,
+      "explanation": "The `in` operator tests whether an element is present in the list.",
+      "tags": [
+        "lists",
+        "searching"
+      ],
+      "recommended_time_sec": 40
+    },
+    {
+      "id": "py-169",
+      "topic": "Python",
+      "subtopic": "Lists",
+      "difficulty": "hard",
+      "question_text": "Given `a=[1,2,3]`, what does `a[1:1] = [8,9]` produce?",
+      "options": [
+        "[1,8,9,2,3]",
+        "[1,2,3,8,9]",
+        "[8,9]",
+        "ValueError"
+      ],
+      "correct_option": 0,
+      "explanation": "Assigning a sequence to an empty slice inserts its elements at that position.",
+      "tags": [
+        "lists",
+        "slicing",
+        "trap"
+      ],
+      "recommended_time_sec": 40
+    },
+    {
+      "id": "py-170",
+      "topic": "Python",
+      "subtopic": "Functions",
+      "difficulty": "easy",
+      "question_text": "Which keyword starts a function definition in Python?",
+      "options": [
+        "func",
+        "define",
+        "def",
+        "function"
+      ],
+      "correct_option": 2,
+      "explanation": "Python uses `def` to begin a function definition.",
+      "tags": [
+        "functions",
+        "syntax"
+      ],
+      "recommended_time_sec": 40
+    },
+    {
+      "id": "py-171",
+      "topic": "Python",
+      "subtopic": "Functions",
+      "difficulty": "medium",
+      "question_text": "What does a function return if execution reaches its end without a `return` statement?",
+      "options": [
+        "0",
+        "False",
+        "None",
+        "An empty string"
+      ],
+      "correct_option": 2,
+      "explanation": "A function with no explicit return value returns `None`.",
+      "tags": [
+        "functions",
+        "return",
+        "trap"
+      ],
+      "recommended_time_sec": 40
+    },
+    {
+      "id": "py-172",
+      "topic": "Python",
+      "subtopic": "Functions",
+      "difficulty": "medium",
+      "question_text": "What is printed? `def f(x): x += 1; print(x); f(4)`",
+      "options": [
+        "4",
+        "5",
+        "None",
+        "NameError"
+      ],
+      "correct_option": 1,
+      "explanation": "The function receives 4, increments its local parameter, and prints 5.",
+      "tags": [
+        "functions",
+        "parameters",
+        "code-tracing"
+      ],
+      "recommended_time_sec": 40
+    },
+    {
+      "id": "py-173",
+      "topic": "Python",
+      "subtopic": "Functions",
+      "difficulty": "medium",
+      "question_text": "In `def greet(name, punctuation='!')`, which call uses the default punctuation?",
+      "options": [
+        "greet('Ada', '?')",
+        "greet('Ada')",
+        "greet()",
+        "greet(punctuation)"
+      ],
+      "correct_option": 1,
+      "explanation": "The second parameter has a default, so it may be omitted when the required `name` is supplied.",
+      "tags": [
+        "functions",
+        "default-arguments"
+      ],
+      "recommended_time_sec": 40
+    },
+    {
+      "id": "py-174",
+      "topic": "Python",
+      "subtopic": "Functions",
+      "difficulty": "medium",
+      "question_text": "What does a named argument allow in a call such as `power(exponent=3, base=2)`?",
+      "options": [
+        "Passing arguments by parameter name",
+        "Changing the function's definition",
+        "Skipping every required parameter",
+        "Returning multiple values"
+      ],
+      "correct_option": 0,
+      "explanation": "Keyword arguments identify parameters by name; they can be given in a different order when all required values are supplied.",
+      "tags": [
+        "functions",
+        "named-arguments"
+      ],
+      "recommended_time_sec": 40
+    },
+    {
+      "id": "py-175",
+      "topic": "Python",
+      "subtopic": "Functions",
+      "difficulty": "hard",
+      "question_text": "What is the common issue with `def add_item(x, items=[]): items.append(x); return items`?",
+      "options": [
+        "The default list is recreated on every call",
+        "The same default list is reused across calls",
+        "The function cannot return a list",
+        "The parameter `x` becomes global"
+      ],
+      "correct_option": 1,
+      "explanation": "Default argument expressions are evaluated once when the function is defined, so the mutable list is shared across calls.",
+      "tags": [
+        "functions",
+        "default-arguments",
+        "mutable-default",
+        "trap"
+      ],
+      "recommended_time_sec": 40
+    },
+    {
+      "id": "py-176",
+      "topic": "Python",
+      "subtopic": "Functions",
+      "difficulty": "medium",
+      "question_text": "What does `lambda x: x + 1` create?",
+      "options": [
+        "A named module",
+        "A small anonymous function",
+        "A generator",
+        "A list"
+      ],
+      "correct_option": 1,
+      "explanation": "A `lambda` expression creates an anonymous function object.",
+      "tags": [
+        "lambda",
+        "functions"
+      ],
+      "recommended_time_sec": 40
+    },
+    {
+      "id": "py-177",
+      "topic": "Python",
+      "subtopic": "Functions",
+      "difficulty": "hard",
+      "question_text": "What is `list(map(str, [2, 5]))`?",
+      "options": [
+        "[2, 5]",
+        "['2', '5']",
+        "['25']",
+        "TypeError"
+      ],
+      "correct_option": 1,
+      "explanation": "`map()` applies `str` to each item and the `list()` call collects the resulting strings.",
+      "tags": [
+        "map",
+        "built-ins"
+      ],
+      "recommended_time_sec": 40
+    },
+    {
+      "id": "py-178",
+      "topic": "Python",
+      "subtopic": "Functions",
+      "difficulty": "medium",
+      "question_text": "Which list comprehension is equivalent to `list(map(lambda x: x*x, nums))`?",
+      "options": [
+        "[x*x for x in nums]",
+        "[x for x*x in nums]",
+        "{x*x: nums}",
+        "(x*x in nums)"
+      ],
+      "correct_option": 0,
+      "explanation": "The comprehension applies `x*x` once for each `x` in `nums`.",
+      "tags": [
+        "comprehensions",
+        "map"
+      ],
+      "recommended_time_sec": 40
+    },
+    {
+      "id": "py-179",
+      "topic": "Python",
+      "subtopic": "Functions",
+      "difficulty": "medium",
+      "question_text": "A variable assigned inside a function is local by default when:",
+      "options": [
+        "It has the same name as a global variable",
+        "It is assigned within the function body",
+        "It is a number",
+        "It is used in a print call"
+      ],
+      "correct_option": 1,
+      "explanation": "Assignment inside a function makes that name local to the function unless declared `global` or `nonlocal`.",
+      "tags": [
+        "scope",
+        "local-variables"
+      ],
+      "recommended_time_sec": 40
+    },
+    {
+      "id": "py-180",
+      "topic": "Python",
+      "subtopic": "Functions",
+      "difficulty": "hard",
+      "question_text": "What happens in `x=10; def f(): print(x); x=3; f()`?",
+      "options": [
+        "It prints 10",
+        "It prints 3",
+        "It raises `UnboundLocalError`",
+        "It raises `NameError`"
+      ],
+      "correct_option": 2,
+      "explanation": "Because `x` is assigned in `f`, Python treats it as local throughout that function; the read occurs before the local assignment.",
+      "tags": [
+        "scope",
+        "local-variables",
+        "trap"
+      ],
+      "recommended_time_sec": 40
+    },
+    {
+      "id": "py-181",
+      "topic": "Python",
+      "subtopic": "Functions",
+      "difficulty": "easy",
+      "question_text": "What does `str(25)` return?",
+      "options": [
+        "The integer 25",
+        "The string `'25'`",
+        "The float 25.0",
+        "None"
+      ],
+      "correct_option": 1,
+      "explanation": "`str()` converts the integer into its textual representation.",
+      "tags": [
+        "built-ins",
+        "type-conversion"
+      ],
+      "recommended_time_sec": 40
+    },
+    {
+      "id": "py-182",
+      "topic": "Python",
+      "subtopic": "Functions",
+      "difficulty": "medium",
+      "question_text": "What is the purpose of `dir(object)`?",
+      "options": [
+        "To delete the object",
+        "To list names available on or associated with the object",
+        "To return the object's memory size",
+        "To serialize the object"
+      ],
+      "correct_option": 1,
+      "explanation": "`dir()` provides a list of names, including attributes and methods, associated with an object.",
+      "tags": [
+        "built-ins",
+        "introspection"
+      ],
+      "recommended_time_sec": 40
+    },
+    {
+      "id": "py-183",
+      "topic": "Python",
+      "subtopic": "Functions",
+      "difficulty": "medium",
+      "question_text": "Which statement imports only `sqrt` from the `math` module?",
+      "options": [
+        "`import sqrt from math`",
+        "`from math import sqrt`",
+        "`include math.sqrt`",
+        "`using math.sqrt`"
+      ],
+      "correct_option": 1,
+      "explanation": "The `from module import name` form imports a selected name directly.",
+      "tags": [
+        "modules",
+        "import"
+      ],
+      "recommended_time_sec": 40
+    },
+    {
+      "id": "py-184",
+      "topic": "Python",
+      "subtopic": "Functions",
+      "difficulty": "medium",
+      "question_text": "If a module is named `tools.py`, which statement imports the module using its filename stem?",
+      "options": [
+        "`import tools.py`",
+        "`import tools`",
+        "`from .py import tools`",
+        "`load tools`"
+      ],
+      "correct_option": 1,
+      "explanation": "Python imports a module by its module name, not by adding the `.py` extension.",
+      "tags": [
+        "modules",
+        "import",
+        "trap"
+      ],
+      "recommended_time_sec": 40
+    },
+    {
+      "id": "py-185",
+      "topic": "Python",
+      "subtopic": "Functions",
+      "difficulty": "hard",
+      "question_text": "What is returned by `def f(): return 2, 3`?",
+      "options": [
+        "Two separate return operations",
+        "A tuple containing 2 and 3",
+        "A list containing 2 and 3",
+        "A generator"
+      ],
+      "correct_option": 1,
+      "explanation": "Comma-separated return values are packed into a tuple.",
+      "tags": [
+        "functions",
+        "tuples",
+        "return"
+      ],
+      "recommended_time_sec": 40
+    },
+    {
+      "id": "py-186",
+      "topic": "Python",
+      "subtopic": "Functions",
+      "difficulty": "medium",
+      "question_text": "What does a recursive function need to avoid continuing forever?",
+      "options": [
+        "A global variable",
+        "A base case",
+        "A lambda expression",
+        "A `pass` statement"
+      ],
+      "correct_option": 1,
+      "explanation": "A base case stops recursion when the problem has reached a condition that needs no further recursive call.",
+      "tags": [
+        "recursion",
+        "functions"
+      ],
+      "recommended_time_sec": 40
+    },
+    {
+      "id": "py-187",
+      "topic": "Python",
+      "subtopic": "Functions",
+      "difficulty": "medium",
+      "question_text": "If `fact(n)` correctly returns `n!`, what should `fact(0)` return?",
+      "options": [
+        "0",
+        "1",
+        "-1",
+        "It must raise an error"
+      ],
+      "correct_option": 1,
+      "explanation": "By definition, zero factorial is 1; this is also the natural base case for the recursive factorial.",
+      "tags": [
+        "recursion",
+        "factorial",
+        "trap"
+      ],
+      "recommended_time_sec": 40
+    },
+    {
+      "id": "py-188",
+      "topic": "Python",
+      "subtopic": "Functions",
+      "difficulty": "hard",
+      "question_text": "What is printed? `def f(x): return x*2; g=f; print(g(3))`",
+      "options": [
+        "3",
+        "6",
+        "None",
+        "NameError"
+      ],
+      "correct_option": 1,
+      "explanation": "Functions are objects and may be assigned to another name; calling `g` calls the same function.",
+      "tags": [
+        "functions",
+        "objects"
+      ],
+      "recommended_time_sec": 40
+    },
+    {
+      "id": "py-189",
+      "topic": "Python",
+      "subtopic": "Functions",
+      "difficulty": "medium",
+      "question_text": "What is the role of `pickle.dump(obj, file)`?",
+      "options": [
+        "Load an object from a file",
+        "Serialize an object to a file",
+        "Convert an object to JSON text",
+        "Delete a file"
+      ],
+      "correct_option": 1,
+      "explanation": "`pickle.dump()` serializes a Python object and writes the serialized representation to a file-like object.",
+      "tags": [
+        "pickling",
+        "serialization"
+      ],
+      "recommended_time_sec": 40
+    },
+    {
+      "id": "py-190",
+      "topic": "Python",
+      "subtopic": "Functions",
+      "difficulty": "hard",
+      "question_text": "Which is the safest statement about unpickling data from an unknown source?",
+      "options": [
+        "It is always safe if the file ends in `.pkl`",
+        "It may execute malicious code, so only trusted data should be unpickled",
+        "It only works for integers",
+        "It automatically validates the data"
+      ],
+      "correct_option": 1,
+      "explanation": "Pickle is Python-specific and loading untrusted pickle data can execute arbitrary code.",
+      "tags": [
+        "pickling",
+        "security",
+        "trap"
+      ],
+      "recommended_time_sec": 40
+    },
+    {
+      "id": "py-191",
+      "topic": "Python",
+      "subtopic": "Functions",
+      "difficulty": "medium",
+      "question_text": "What does `map(function, iterable)` provide in Python 3?",
+      "options": [
+        "A list immediately",
+        "An iterator applying the function to each item",
+        "A dictionary of results",
+        "A function definition"
+      ],
+      "correct_option": 1,
+      "explanation": "In Python 3, `map()` returns an iterator; convert it to a list if you need an eager list of results.",
+      "tags": [
+        "map",
+        "iterators"
+      ],
+      "recommended_time_sec": 40
+    },
+    {
+      "id": "py-192",
+      "topic": "Python",
+      "subtopic": "Functions",
+      "difficulty": "medium",
+      "question_text": "Which statement about `filter(predicate, items)` is correct?",
+      "options": [
+        "It returns items for which the predicate is true",
+        "It modifies `items` in place",
+        "It sorts the items",
+        "It applies the predicate only to the first item"
+      ],
+      "correct_option": 0,
+      "explanation": "`filter()` yields each input item whose predicate evaluates as true.",
+      "tags": [
+        "filter",
+        "functions"
+      ],
+      "recommended_time_sec": 40
+    },
+    {
+      "id": "py-193",
+      "topic": "Python",
+      "subtopic": "Functions",
+      "difficulty": "hard",
+      "question_text": "What does `sum([1,2,3])` return?",
+      "options": [
+        "'123'",
+        "6",
+        "[6]",
+        "None"
+      ],
+      "correct_option": 1,
+      "explanation": "The built-in `sum()` adds the numeric items and returns 6.",
+      "tags": [
+        "built-ins",
+        "sum"
+      ],
+      "recommended_time_sec": 40
+    },
+    {
+      "id": "py-194",
+      "topic": "Python",
+      "subtopic": "Object-Oriented Python",
+      "difficulty": "easy",
+      "question_text": "What does `self` refer to in a typical instance method?",
+      "options": [
+        "The class's parent",
+        "The current instance",
+        "The module",
+        "A global object"
+      ],
+      "correct_option": 1,
+      "explanation": "By convention, the first parameter of an instance method refers to the instance on which the method was called.",
+      "tags": [
+        "oop",
+        "self"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "py-195",
+      "topic": "Python",
+      "subtopic": "Object-Oriented Python",
+      "difficulty": "medium",
+      "question_text": "When is `__init__()` normally called?",
+      "options": [
+        "When a class is imported",
+        "When a new instance is initialized",
+        "Every time any method is called",
+        "When an instance is deleted"
+      ],
+      "correct_option": 1,
+      "explanation": "Python calls `__init__()` to initialize a newly created instance.",
+      "tags": [
+        "oop",
+        "initializer"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "py-196",
+      "topic": "Python",
+      "subtopic": "Object-Oriented Python",
+      "difficulty": "medium",
+      "question_text": "What does `__str__()` provide?",
+      "options": [
+        "A human-readable string representation of an object",
+        "The object's class definition",
+        "The object's hash only",
+        "A serialized binary representation"
+      ],
+      "correct_option": 0,
+      "explanation": "`__str__()` is used to provide a readable text representation, including when `str(obj)` is called.",
+      "tags": [
+        "oop",
+        "magic-methods"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "py-197",
+      "topic": "Python",
+      "subtopic": "Object-Oriented Python",
+      "difficulty": "medium",
+      "question_text": "If `class B(A):`, which class is the base class?",
+      "options": [
+        "B",
+        "A",
+        "Both are base classes",
+        "Neither"
+      ],
+      "correct_option": 1,
+      "explanation": "The class in parentheses is the base class; `B` inherits from `A`.",
+      "tags": [
+        "oop",
+        "inheritance"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "py-198",
+      "topic": "Python",
+      "subtopic": "Object-Oriented Python",
+      "difficulty": "medium",
+      "question_text": "What is method overriding?",
+      "options": [
+        "Defining a subclass method with the same name as an inherited method",
+        "Calling a method twice",
+        "Adding a new module",
+        "Changing a local variable"
+      ],
+      "correct_option": 0,
+      "explanation": "A subclass can provide its own implementation of an inherited method using the same method name.",
+      "tags": [
+        "oop",
+        "overriding"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "py-199",
+      "topic": "Python",
+      "subtopic": "Object-Oriented Python",
+      "difficulty": "medium",
+      "question_text": "Which statement best describes data hiding in Python?",
+      "options": [
+        "Private members are enforced by the runtime",
+        "A leading underscore convention signals internal use; name mangling is limited",
+        "All instance attributes are inaccessible outside the class",
+        "Python automatically encrypts attributes"
+      ],
+      "correct_option": 1,
+      "explanation": "Python relies largely on conventions; a double-leading underscore triggers name mangling but is not strict access control.",
+      "tags": [
+        "oop",
+        "data-hiding",
+        "trap"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "py-200",
+      "topic": "Python",
+      "subtopic": "Object-Oriented Python",
+      "difficulty": "hard",
+      "question_text": "A subclass overrides `__init__()` but does not call the base class initializer. What may happen?",
+      "options": [
+        "The base class initializer is called automatically after the subclass initializer",
+        "Base-class initialization work may be skipped",
+        "The subclass cannot be instantiated",
+        "Python inserts `super()` automatically"
+      ],
+      "correct_option": 1,
+      "explanation": "Overriding `__init__()` replaces the inherited initializer; call `super().__init__(...)` when base initialization is needed.",
+      "tags": [
+        "oop",
+        "inheritance",
+        "initializer",
+        "trap"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "py-201",
+      "topic": "Python",
+      "subtopic": "Object-Oriented Python",
+      "difficulty": "medium",
+      "question_text": "What does `super()` commonly provide inside a subclass method?",
+      "options": [
+        "Access to the next method implementation in the method resolution order",
+        "A new instance of the base class",
+        "A copy of all class attributes",
+        "An automatic decorator"
+      ],
+      "correct_option": 0,
+      "explanation": "`super()` lets a subclass call the next implementation in the method resolution order, often a base-class method.",
+      "tags": [
+        "oop",
+        "inheritance"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "py-202",
+      "topic": "Python",
+      "subtopic": "Object-Oriented Python",
+      "difficulty": "hard",
+      "question_text": "What is the main difference between overriding and overloading?",
+      "options": [
+        "Overriding replaces an inherited method implementation; overloading uses the same name for multiple signatures",
+        "They mean exactly the same thing",
+        "Overloading is only for variables",
+        "Overriding happens only in modules"
+      ],
+      "correct_option": 0,
+      "explanation": "Overriding is a subclass feature. Python does not provide traditional compile-time method overloading by signature in the same way some languages do.",
+      "tags": [
+        "oop",
+        "overloading",
+        "overriding",
+        "trap"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "py-203",
+      "topic": "Python",
+      "subtopic": "Object-Oriented Python",
+      "difficulty": "medium",
+      "question_text": "If `self.name = name` is executed in `__init__`, `name` is usually stored as:",
+      "options": [
+        "A local variable that disappears immediately",
+        "An instance attribute",
+        "A module attribute",
+        "A base class"
+      ],
+      "correct_option": 1,
+      "explanation": "Assigning through `self` creates or updates an attribute on that instance.",
+      "tags": [
+        "oop",
+        "attributes"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "py-204",
+      "topic": "Python",
+      "subtopic": "Object-Oriented Python",
+      "difficulty": "medium",
+      "question_text": "What is true of a class attribute declared directly in a class body?",
+      "options": [
+        "It is stored separately on every instance by default",
+        "It belongs to the class and may be shared through instances",
+        "It is always private",
+        "It can only hold strings"
+      ],
+      "correct_option": 1,
+      "explanation": "A class attribute is associated with the class; instances can access it unless an instance attribute shadows it.",
+      "tags": [
+        "oop",
+        "class-attributes"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "py-205",
+      "topic": "Python",
+      "subtopic": "Object-Oriented Python",
+      "difficulty": "hard",
+      "question_text": "Given `class C: items=[]; a=C(); b=C(); a.items.append(1)`, what does `b.items` show?",
+      "options": [
+        "[]",
+        "[1]",
+        "None",
+        "AttributeError"
+      ],
+      "correct_option": 1,
+      "explanation": "Both instances find the same mutable class attribute unless an instance attribute shadows it.",
+      "tags": [
+        "oop",
+        "class-attributes",
+        "mutability",
+        "trap"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "py-206",
+      "topic": "Python",
+      "subtopic": "Object-Oriented Python",
+      "difficulty": "medium",
+      "question_text": "What does a decorator generally do to a function or method?",
+      "options": [
+        "Wraps or transforms the callable using another callable",
+        "Runs the function only once",
+        "Converts it to a class",
+        "Makes all parameters global"
+      ],
+      "correct_option": 0,
+      "explanation": "A decorator receives a callable and typically returns a wrapped or modified callable.",
+      "tags": [
+        "decorators",
+        "oop"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "py-207",
+      "topic": "Python",
+      "subtopic": "Object-Oriented Python",
+      "difficulty": "hard",
+      "question_text": "In `@log_method_call` above a method definition, what happens conceptually?",
+      "options": [
+        "The method is passed to `log_method_call`, and its returned callable is bound as the method",
+        "The decorator is called only when the class is deleted",
+        "The method body is converted to a comment",
+        "The method is moved into a module"
+      ],
+      "correct_option": 0,
+      "explanation": "Decorator syntax is equivalent to assigning the result of `log_method_call(method)` to the method name.",
+      "tags": [
+        "decorators",
+        "oop",
+        "trap"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "py-208",
+      "topic": "Python",
+      "subtopic": "Generators and Regular Expressions",
+      "difficulty": "medium",
+      "question_text": "What does `yield` do inside a generator function?",
+      "options": [
+        "Returns a value and suspends execution so it can resume later",
+        "Ends the entire Python process",
+        "Creates a class attribute",
+        "Writes a value to a file"
+      ],
+      "correct_option": 0,
+      "explanation": "`yield` produces a value while preserving the generator's state for a later iteration.",
+      "tags": [
+        "generators",
+        "yield"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "py-209",
+      "topic": "Python",
+      "subtopic": "Generators and Regular Expressions",
+      "difficulty": "medium",
+      "question_text": "What does `next(g)` do when `g` is a generator with another value available?",
+      "options": [
+        "Returns its next yielded value",
+        "Restarts it from the beginning",
+        "Returns every remaining value as a list",
+        "Deletes the generator"
+      ],
+      "correct_option": 0,
+      "explanation": "`next()` advances the iterator and returns the next value, raising `StopIteration` when exhausted.",
+      "tags": [
+        "generators",
+        "iterators"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "py-210",
+      "topic": "Python",
+      "subtopic": "Generators and Regular Expressions",
+      "difficulty": "hard",
+      "question_text": "What exception is raised by calling `next()` on an exhausted generator?",
+      "options": [
+        "IndexError",
+        "StopIteration",
+        "KeyError",
+        "GeneratorError"
+      ],
+      "correct_option": 1,
+      "explanation": "An exhausted iterator signals completion by raising `StopIteration`.",
+      "tags": [
+        "generators",
+        "iterators",
+        "trap"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "py-211",
+      "topic": "Python",
+      "subtopic": "Generators and Regular Expressions",
+      "difficulty": "medium",
+      "question_text": "What is the result of `list(x for x in range(5) if x % 2 == 0)`?",
+      "options": [
+        "[0, 2, 4]",
+        "[1, 3, 5]",
+        "[0, 1, 2, 3, 4]",
+        "A generator object"
+      ],
+      "correct_option": 0,
+      "explanation": "The generator expression yields values from 0 through 4 that are divisible by 2.",
+      "tags": [
+        "generators",
+        "comprehensions"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "py-212",
+      "topic": "Python",
+      "subtopic": "Generators and Regular Expressions",
+      "difficulty": "medium",
+      "question_text": "In a regular expression, what does `\\d` commonly match?",
+      "options": [
+        "A digit",
+        "A whitespace character",
+        "A word boundary",
+        "A literal backslash only"
+      ],
+      "correct_option": 0,
+      "explanation": "In Python regular-expression patterns, `\\d` matches a digit.",
+      "tags": [
+        "regular-expressions",
+        "regex"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "py-213",
+      "topic": "Python",
+      "subtopic": "Generators and Regular Expressions",
+      "difficulty": "medium",
+      "question_text": "What does the pattern `^cat$` match?",
+      "options": [
+        "Any string containing `cat` anywhere",
+        "A string whose whole content is `cat`",
+        "A string starting with any character and ending in `cat`",
+        "Only the three individual letters in any order"
+      ],
+      "correct_option": 1,
+      "explanation": "`^` anchors the start and `$` anchors the end, so the whole string must match `cat`.",
+      "tags": [
+        "regular-expressions",
+        "anchors"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "py-214",
+      "topic": "Python",
+      "subtopic": "Generators and Regular Expressions",
+      "difficulty": "hard",
+      "question_text": "Why are raw strings such as `r'\\d+'` commonly used for regex patterns?",
+      "options": [
+        "They prevent backslashes from being interpreted as ordinary Python string escapes first",
+        "They make matching case-insensitive",
+        "They force the regex to match from the end",
+        "They convert the pattern to bytes"
+      ],
+      "correct_option": 0,
+      "explanation": "A raw string preserves backslashes for the regular-expression engine, avoiding an extra layer of escape processing.",
+      "tags": [
+        "regular-expressions",
+        "strings",
+        "trap"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "py-215",
+      "topic": "Python",
+      "subtopic": "Generators and Regular Expressions",
+      "difficulty": "medium",
+      "question_text": "Which regex method is suited to test whether a pattern occurs anywhere in a string?",
+      "options": [
+        "`re.search()`",
+        "`re.compile()` only",
+        "`re.escape()`",
+        "`re.sub()`"
+      ],
+      "correct_option": 0,
+      "explanation": "`re.search()` scans the string for a match at any position.",
+      "tags": [
+        "regular-expressions",
+        "regex"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "py-216",
+      "topic": "Python",
+      "subtopic": "Exception Handling and Logging",
+      "difficulty": "easy",
+      "question_text": "Which block contains code that may raise an exception?",
+      "options": [
+        "try",
+        "except",
+        "else",
+        "finally"
+      ],
+      "correct_option": 0,
+      "explanation": "The `try` block surrounds statements whose exceptions are to be handled.",
+      "tags": [
+        "exceptions",
+        "try"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "py-217",
+      "topic": "Python",
+      "subtopic": "Exception Handling and Logging",
+      "difficulty": "medium",
+      "question_text": "When does an `else` block in `try/except/else` execute?",
+      "options": [
+        "Whenever the `try` block raises an exception",
+        "Only if the `try` block completes without an exception",
+        "Only after `finally` is skipped",
+        "Only if there is no `except` block"
+      ],
+      "correct_option": 1,
+      "explanation": "The `else` suite runs when no exception was raised in the `try` suite.",
+      "tags": [
+        "exceptions",
+        "else",
+        "trap"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "py-218",
+      "topic": "Python",
+      "subtopic": "Exception Handling and Logging",
+      "difficulty": "medium",
+      "question_text": "What is the purpose of a `finally` block?",
+      "options": [
+        "Run cleanup code whether or not an exception occurred",
+        "Handle only `ValueError`",
+        "Run only when an exception occurs",
+        "Repeat the `try` block"
+      ],
+      "correct_option": 0,
+      "explanation": "`finally` is used for cleanup that should run regardless of normal completion or an exception.",
+      "tags": [
+        "exceptions",
+        "finally"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "py-219",
+      "topic": "Python",
+      "subtopic": "Exception Handling and Logging",
+      "difficulty": "hard",
+      "question_text": "If a `return` statement runs inside `try`, does `finally` normally still run?",
+      "options": [
+        "No, return skips finally",
+        "Yes, finally runs before the function returns",
+        "Only if finally has an except clause",
+        "Only when the return value is None"
+      ],
+      "correct_option": 1,
+      "explanation": "A `finally` suite runs during control-flow cleanup before the pending return completes.",
+      "tags": [
+        "exceptions",
+        "finally",
+        "trap"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "py-220",
+      "topic": "Python",
+      "subtopic": "Exception Handling and Logging",
+      "difficulty": "medium",
+      "question_text": "Which exception is most directly raised by `int('hello')`?",
+      "options": [
+        "TypeError",
+        "ValueError",
+        "KeyError",
+        "IndexError"
+      ],
+      "correct_option": 1,
+      "explanation": "The argument is a string of the wrong value format for integer conversion, so `ValueError` is raised.",
+      "tags": [
+        "exceptions",
+        "type-conversion"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "py-221",
+      "topic": "Python",
+      "subtopic": "Exception Handling and Logging",
+      "difficulty": "medium",
+      "question_text": "Which syntax raises a user-defined exception instance `InvalidScore('bad')`?",
+      "options": [
+        "`except InvalidScore('bad')`",
+        "`raise InvalidScore('bad')`",
+        "`throw InvalidScore('bad')`",
+        "`error InvalidScore('bad')`"
+      ],
+      "correct_option": 1,
+      "explanation": "Use `raise` followed by an instance of the exception class to signal the error.",
+      "tags": [
+        "exceptions",
+        "user-defined"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "py-222",
+      "topic": "Python",
+      "subtopic": "Exception Handling and Logging",
+      "difficulty": "medium",
+      "question_text": "A custom exception class is commonly defined by inheriting from:",
+      "options": [
+        "`object` only",
+        "`Exception`",
+        "`str`",
+        "`BaseModel`"
+      ],
+      "correct_option": 1,
+      "explanation": "Application-specific exceptions are commonly subclasses of `Exception`.",
+      "tags": [
+        "exceptions",
+        "user-defined"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "py-223",
+      "topic": "Python",
+      "subtopic": "Exception Handling and Logging",
+      "difficulty": "hard",
+      "question_text": "Why should a broad `except Exception:` often come after more specific handlers?",
+      "options": [
+        "Specific handlers must be checked first so they can handle their intended exceptions",
+        "Python requires alphabetical order",
+        "A broad handler cannot appear in Python",
+        "The broad handler runs first otherwise"
+      ],
+      "correct_option": 0,
+      "explanation": "Exception handlers are tested in order; a broad earlier handler could catch exceptions intended for narrower handlers.",
+      "tags": [
+        "exceptions",
+        "except-order",
+        "trap"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "py-224",
+      "topic": "Python",
+      "subtopic": "Exception Handling and Logging",
+      "difficulty": "medium",
+      "question_text": "Which logging level is typically more severe: `WARNING` or `ERROR`?",
+      "options": [
+        "WARNING",
+        "ERROR",
+        "They are always equal",
+        "The level depends only on the message length"
+      ],
+      "correct_option": 1,
+      "explanation": "The standard logging severity order places `ERROR` above `WARNING`.",
+      "tags": [
+        "logging",
+        "levels"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "py-225",
+      "topic": "Python",
+      "subtopic": "Exception Handling and Logging",
+      "difficulty": "medium",
+      "question_text": "Which call records an informational event using Python's logging module?",
+      "options": [
+        "`logging.info('loaded')`",
+        "`logging.read('loaded')`",
+        "`logging.print('loaded')`",
+        "`logging.open('loaded')`"
+      ],
+      "correct_option": 0,
+      "explanation": "`logging.info()` writes a record at the INFO severity level.",
+      "tags": [
+        "logging",
+        "logging-module"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "py-226",
+      "topic": "Python",
+      "subtopic": "NumPy, Pandas, and Data Cleaning",
+      "difficulty": "easy",
+      "question_text": "What does `np.array([1,2,3]).shape` return?",
+      "options": [
+        "3",
+        "(3,)",
+        "(1,3)",
+        "[1,2,3]"
+      ],
+      "correct_option": 1,
+      "explanation": "A one-dimensional array with three elements has shape `(3,)`.",
+      "tags": [
+        "numpy",
+        "shape"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "py-227",
+      "topic": "Python",
+      "subtopic": "NumPy, Pandas, and Data Cleaning",
+      "difficulty": "medium",
+      "question_text": "What is `np.array([1,2,3]) + 10`?",
+      "options": [
+        "[1, 2, 3, 10]",
+        "[11, 12, 13]",
+        "[10, 10, 10]",
+        "TypeError"
+      ],
+      "correct_option": 1,
+      "explanation": "NumPy broadcasts the scalar addition across each array element.",
+      "tags": [
+        "numpy",
+        "broadcasting"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "py-228",
+      "topic": "Python",
+      "subtopic": "NumPy, Pandas, and Data Cleaning",
+      "difficulty": "medium",
+      "question_text": "What does `arr.ndim` report for a NumPy array?",
+      "options": [
+        "Number of elements",
+        "Number of dimensions",
+        "The largest value",
+        "The data type"
+      ],
+      "correct_option": 1,
+      "explanation": "`ndim` is the number of array axes or dimensions.",
+      "tags": [
+        "numpy",
+        "attributes"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "py-229",
+      "topic": "Python",
+      "subtopic": "NumPy, Pandas, and Data Cleaning",
+      "difficulty": "medium",
+      "question_text": "What is the usual result of `np.mean(np.array([2,4,6]))`?",
+      "options": [
+        "4.0",
+        "12",
+        "3.0",
+        "[2,4,6]"
+      ],
+      "correct_option": 0,
+      "explanation": "The arithmetic mean is `(2 + 4 + 6) / 3 = 4`.",
+      "tags": [
+        "numpy",
+        "statistics"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "py-230",
+      "topic": "Python",
+      "subtopic": "NumPy, Pandas, and Data Cleaning",
+      "difficulty": "hard",
+      "question_text": "For a 2-D array `a`, what does `a[:, 1]` select?",
+      "options": [
+        "The second row",
+        "The second column",
+        "The first column",
+        "The diagonal"
+      ],
+      "correct_option": 1,
+      "explanation": "The slice before the comma selects all rows; index 1 after it selects the second column.",
+      "tags": [
+        "numpy",
+        "indexing",
+        "trap"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "py-231",
+      "topic": "Python",
+      "subtopic": "NumPy, Pandas, and Data Cleaning",
+      "difficulty": "easy",
+      "question_text": "In Pandas, a DataFrame is best described as:",
+      "options": [
+        "A one-dimensional labeled array",
+        "A two-dimensional labeled tabular structure",
+        "An immutable tuple",
+        "A plotting function"
+      ],
+      "correct_option": 1,
+      "explanation": "A DataFrame stores tabular data with labeled rows and columns.",
+      "tags": [
+        "pandas",
+        "dataframe"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "py-232",
+      "topic": "Python",
+      "subtopic": "NumPy, Pandas, and Data Cleaning",
+      "difficulty": "medium",
+      "question_text": "What does `df.head(3)` return?",
+      "options": [
+        "The last three rows",
+        "The first three rows",
+        "The first three columns",
+        "A summary of every column"
+      ],
+      "correct_option": 1,
+      "explanation": "`head(n)` displays the first `n` rows by default.",
+      "tags": [
+        "pandas",
+        "inspection"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "py-233",
+      "topic": "Python",
+      "subtopic": "NumPy, Pandas, and Data Cleaning",
+      "difficulty": "medium",
+      "question_text": "What is the difference between `df.loc[2]` and `df.iloc[2]`?",
+      "options": [
+        "Both always mean the third row",
+        "`loc` selects by label; `iloc` selects by integer position",
+        "`loc` selects columns; `iloc` selects rows",
+        "`iloc` uses column names"
+      ],
+      "correct_option": 1,
+      "explanation": "`.loc` is label-based, while `.iloc` uses zero-based integer positions.",
+      "tags": [
+        "pandas",
+        "indexing",
+        "trap"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "py-234",
+      "topic": "Python",
+      "subtopic": "NumPy, Pandas, and Data Cleaning",
+      "difficulty": "medium",
+      "question_text": "What does `df['price'].mean()` calculate?",
+      "options": [
+        "The mean of every column in df",
+        "The mean of values in the `price` column",
+        "The median price",
+        "The number of rows"
+      ],
+      "correct_option": 1,
+      "explanation": "Selecting one column returns a Series; its `mean()` computes the mean of that Series' numeric values.",
+      "tags": [
+        "pandas",
+        "aggregation"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "py-235",
+      "topic": "Python",
+      "subtopic": "NumPy, Pandas, and Data Cleaning",
+      "difficulty": "medium",
+      "question_text": "Which Pandas operation is intended to summarize values by category?",
+      "options": [
+        "`groupby()`",
+        "`explode()`",
+        "`rename()`",
+        "`astype()`"
+      ],
+      "correct_option": 0,
+      "explanation": "`groupby()` splits data into groups so aggregations can be calculated for each group.",
+      "tags": [
+        "pandas",
+        "groupby"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "py-236",
+      "topic": "Python",
+      "subtopic": "NumPy, Pandas, and Data Cleaning",
+      "difficulty": "medium",
+      "question_text": "Which call counts duplicate rows in DataFrame `df`?",
+      "options": [
+        "`df.duplicated().sum()`",
+        "`df.count_duplicates()`",
+        "`df.unique().count()`",
+        "`df.dropna().sum()`"
+      ],
+      "correct_option": 0,
+      "explanation": "`duplicated()` returns a Boolean Series identifying duplicate rows; summing it counts the `True` values.",
+      "tags": [
+        "pandas",
+        "duplicates",
+        "data-cleaning"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "py-237",
+      "topic": "Python",
+      "subtopic": "NumPy, Pandas, and Data Cleaning",
+      "difficulty": "hard",
+      "question_text": "What does `df.dropna()` do by default?",
+      "options": [
+        "Fills missing values with zero",
+        "Returns rows with missing values removed",
+        "Removes duplicate columns",
+        "Sorts rows by null count"
+      ],
+      "correct_option": 1,
+      "explanation": "By default, `dropna()` removes rows containing missing values and returns the result.",
+      "tags": [
+        "pandas",
+        "missing-values",
+        "trap"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "py-238",
+      "topic": "Python",
+      "subtopic": "NumPy, Pandas, and Data Cleaning",
+      "difficulty": "medium",
+      "question_text": "Which expression converts a DataFrame's values to a NumPy array?",
+      "options": [
+        "`df.to_numpy()`",
+        "`df.to_list()`",
+        "`np.from_dataframe(df)`",
+        "`df.array()`"
+      ],
+      "correct_option": 0,
+      "explanation": "Pandas provides `DataFrame.to_numpy()` to obtain an array of the tabular values.",
+      "tags": [
+        "pandas",
+        "numpy",
+        "conversion"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "py-239",
+      "topic": "Python",
+      "subtopic": "Web Scraping and Visualization",
+      "difficulty": "easy",
+      "question_text": "In Beautiful Soup, what does `soup.find_all('a')` return?",
+      "options": [
+        "The first anchor tag only",
+        "A collection of matching anchor tags",
+        "The page title as a string",
+        "All links as a dictionary"
+      ],
+      "correct_option": 1,
+      "explanation": "`find_all()` returns a result collection containing all matching `<a>` elements.",
+      "tags": [
+        "beautiful-soup",
+        "web-scraping"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "py-240",
+      "topic": "Python",
+      "subtopic": "Web Scraping and Visualization",
+      "difficulty": "medium",
+      "question_text": "What does Beautiful Soup's `tag.get_text()` typically return?",
+      "options": [
+        "The tag's text content without its markup",
+        "The tag's HTML attributes only",
+        "A list of all URLs on the page",
+        "The original response object"
+      ],
+      "correct_option": 0,
+      "explanation": "`get_text()` extracts the text contained within a tag, optionally combining descendant text.",
+      "tags": [
+        "beautiful-soup",
+        "parsing"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "py-241",
+      "topic": "Python",
+      "subtopic": "Web Scraping and Visualization",
+      "difficulty": "easy",
+      "question_text": "Which Matplotlib call is intended to draw points using x and y values?",
+      "options": [
+        "`plt.scatter(x, y)`",
+        "`plt.read(x, y)`",
+        "`plt.table(x, y)`",
+        "`plt.array(x, y)`"
+      ],
+      "correct_option": 0,
+      "explanation": "`scatter()` creates a scatter plot from corresponding x and y values.",
+      "tags": [
+        "matplotlib",
+        "scatter"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "py-242",
+      "topic": "Python",
+      "subtopic": "Web Scraping and Visualization",
+      "difficulty": "medium",
+      "question_text": "Which Seaborn function is commonly used to visualize a correlation matrix?",
+      "options": [
+        "`sns.heatmap()`",
+        "`sns.read_csv()`",
+        "`sns.groupby()`",
+        "`sns.json()`"
+      ],
+      "correct_option": 0,
+      "explanation": "`heatmap()` encodes values in a matrix as colors and is commonly used for correlations.",
+      "tags": [
+        "seaborn",
+        "heatmap"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "py-243",
+      "topic": "Python",
+      "subtopic": "Web Scraping and Visualization",
+      "difficulty": "hard",
+      "question_text": "A correlation coefficient near 1 between two columns establishes that:",
+      "options": [
+        "One column causes the other",
+        "The columns have a strong positive linear association, but causation is not established",
+        "The columns are identical",
+        "The data contains no missing values"
+      ],
+      "correct_option": 1,
+      "explanation": "Correlation describes association; by itself it does not show that one variable causes the other.",
+      "tags": [
+        "data-visualization",
+        "correlation",
+        "trap"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "py-244",
+      "topic": "Python",
+      "subtopic": "Web Scraping and Visualization",
+      "difficulty": "medium",
+      "question_text": "Which description best fits Plotly compared with a basic static Matplotlib export?",
+      "options": [
+        "Plotly commonly supports interactive charts",
+        "Plotly only reads JSON files",
+        "Plotly cannot create scatter plots",
+        "Plotly is a database driver"
+      ],
+      "correct_option": 0,
+      "explanation": "Plotly is commonly used to create interactive visualizations, including interactive scatter plots.",
+      "tags": [
+        "plotly",
+        "visualization"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "py-245",
+      "topic": "Python",
+      "subtopic": "File Handling and Data Formats",
+      "difficulty": "easy",
+      "question_text": "Which file mode opens a text file for reading?",
+      "options": [
+        "`'r'`",
+        "`'w'`",
+        "`'a'`",
+        "`'x'`"
+      ],
+      "correct_option": 0,
+      "explanation": "Mode `'r'` opens a file for reading.",
+      "tags": [
+        "files",
+        "modes"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "py-246",
+      "topic": "Python",
+      "subtopic": "File Handling and Data Formats",
+      "difficulty": "medium",
+      "question_text": "What is a key effect of opening an existing file with mode `'w'`?",
+      "options": [
+        "It appends to the end",
+        "It truncates the file before writing",
+        "It opens the file read-only",
+        "It creates a JSON object"
+      ],
+      "correct_option": 1,
+      "explanation": "Write mode creates the file if needed and truncates an existing file.",
+      "tags": [
+        "files",
+        "modes",
+        "trap"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "py-247",
+      "topic": "Python",
+      "subtopic": "File Handling and Data Formats",
+      "difficulty": "medium",
+      "question_text": "What is the purpose of mode `'a'`?",
+      "options": [
+        "Read from the beginning only",
+        "Append writes to the end of the file",
+        "Overwrite the file with new content",
+        "Open only a directory"
+      ],
+      "correct_option": 1,
+      "explanation": "Append mode writes new data at the end while preserving existing content.",
+      "tags": [
+        "files",
+        "modes"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "py-248",
+      "topic": "Python",
+      "subtopic": "File Handling and Data Formats",
+      "difficulty": "medium",
+      "question_text": "Why use `with open(path) as f:`?",
+      "options": [
+        "It automatically closes the file when the block exits",
+        "It converts the file to JSON",
+        "It prevents all read errors",
+        "It keeps the file open for the whole program"
+      ],
+      "correct_option": 0,
+      "explanation": "A context manager handles cleanup, including closing the file when the `with` block exits.",
+      "tags": [
+        "files",
+        "context-manager"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "py-249",
+      "topic": "Python",
+      "subtopic": "File Handling and Data Formats",
+      "difficulty": "medium",
+      "question_text": "Which module is commonly used to read and write CSV files?",
+      "options": [
+        "`csv`",
+        "`pickle`",
+        "`re`",
+        "`logging`"
+      ],
+      "correct_option": 0,
+      "explanation": "Python's standard-library `csv` module provides readers and writers for CSV data.",
+      "tags": [
+        "csv",
+        "files"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "py-250",
+      "topic": "Python",
+      "subtopic": "File Handling and Data Formats",
+      "difficulty": "medium",
+      "question_text": "Which call parses a JSON string already stored in variable `text`?",
+      "options": [
+        "`json.loads(text)`",
+        "`json.load(text)`",
+        "`json.dump(text)`",
+        "`json.dumps(text)`"
+      ],
+      "correct_option": 0,
+      "explanation": "`loads()` parses JSON from a string; `load()` reads JSON from a file-like object.",
+      "tags": [
+        "json",
+        "parsing",
+        "trap"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "py-251",
+      "topic": "Python",
+      "subtopic": "File Handling and Data Formats",
+      "difficulty": "medium",
+      "question_text": "Which call writes a Python object as JSON text to an already-open file object `f`?",
+      "options": [
+        "`json.dumps(obj, f)`",
+        "`json.dump(obj, f)`",
+        "`json.loads(obj, f)`",
+        "`json.load(obj, f)`"
+      ],
+      "correct_option": 1,
+      "explanation": "`json.dump()` serializes an object directly into a file-like object; `dumps()` returns a string.",
+      "tags": [
+        "json",
+        "serialization"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "py-252",
+      "topic": "Python",
+      "subtopic": "Virtual Environments, Databases, and FastAPI",
+      "difficulty": "easy",
+      "question_text": "What is the main purpose of a Python virtual environment?",
+      "options": [
+        "To isolate a project's Python packages from other environments",
+        "To convert Python files to databases",
+        "To make all packages global",
+        "To replace the Python interpreter"
+      ],
+      "correct_option": 0,
+      "explanation": "A virtual environment gives a project an isolated package environment, reducing dependency conflicts.",
+      "tags": [
+        "virtual-environments",
+        "packages"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "py-253",
+      "topic": "Python",
+      "subtopic": "Virtual Environments, Databases, and FastAPI",
+      "difficulty": "medium",
+      "question_text": "Which command is used to install a package with pip?",
+      "options": [
+        "`pip install package_name`",
+        "`python package_name`",
+        "`install pip package_name`",
+        "`pip run package_name`"
+      ],
+      "correct_option": 0,
+      "explanation": "`pip install` installs a package into the currently selected Python environment.",
+      "tags": [
+        "pip",
+        "virtual-environments"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "py-254",
+      "topic": "Python",
+      "subtopic": "Virtual Environments, Databases, and FastAPI",
+      "difficulty": "medium",
+      "question_text": "Which sequence correctly matches CRUD operations?",
+      "options": [
+        "Create, Read, Update, Delete",
+        "Connect, Run, Use, Disconnect",
+        "Compile, Return, Update, Debug",
+        "Create, Rename, Undo, Deploy"
+      ],
+      "correct_option": 0,
+      "explanation": "CRUD is the common acronym for Create, Read, Update, and Delete database operations.",
+      "tags": [
+        "databases",
+        "crud"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "py-255",
+      "topic": "Python",
+      "subtopic": "Virtual Environments, Databases, and FastAPI",
+      "difficulty": "medium",
+      "question_text": "In a FastAPI route such as `/items/{item_id}`, `item_id` is a:",
+      "options": [
+        "Path parameter",
+        "Query parameter",
+        "Response model",
+        "Database table"
+      ],
+      "correct_option": 0,
+      "explanation": "A value included in the route path template is a path parameter.",
+      "tags": [
+        "fastapi",
+        "path-parameters"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "py-256",
+      "topic": "Python",
+      "subtopic": "Virtual Environments, Databases, and FastAPI",
+      "difficulty": "hard",
+      "question_text": "In FastAPI, what is a request model commonly used for?",
+      "options": [
+        "Declaring and validating the shape of incoming request data",
+        "Choosing the network port only",
+        "Creating the virtual environment",
+        "Rendering Matplotlib charts"
+      ],
+      "correct_option": 0,
+      "explanation": "A request model defines expected fields and types so incoming data can be parsed and validated.",
+      "tags": [
+        "fastapi",
+        "request-models"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "py-257",
+      "topic": "Python",
+      "subtopic": "Virtual Environments, Databases, and FastAPI",
+      "difficulty": "medium",
+      "question_text": "Which interface is commonly provided by FastAPI for interactive API documentation and testing?",
+      "options": [
+        "Swagger UI",
+        "Python REPL only",
+        "CSV Reader",
+        "Pandas Styler"
+      ],
+      "correct_option": 0,
+      "explanation": "FastAPI commonly exposes an interactive Swagger UI documentation page for exploring endpoints.",
+      "tags": [
+        "fastapi",
+        "swagger-ui"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "py-258",
+      "topic": "Python",
+      "subtopic": "Strings and Tuples",
+      "difficulty": "medium",
+      "question_text": "What is the result of `name='Mina'; f'Hi, {name}!'`?",
+      "options": [
+        "'Hi, Mina!'",
+        "'Hi, {name}!'",
+        "'Hi, name!'",
+        "SyntaxError"
+      ],
+      "correct_option": 0,
+      "explanation": "An f-string evaluates expressions inside braces and inserts their values into the resulting string.",
+      "tags": [
+        "strings",
+        "formatting"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "py-259",
+      "topic": "Python",
+      "subtopic": "Tuples",
+      "difficulty": "hard",
+      "question_text": "What is the element-wise sum returned by `tuple(map(sum, zip((1,2,3),(4,5,6))))`?",
+      "options": [
+        "(5, 7, 9)",
+        "(1, 2, 3, 4, 5, 6)",
+        "(4, 10, 18)",
+        "TypeError"
+      ],
+      "correct_option": 0,
+      "explanation": "`zip()` pairs values by position; summing the three pairs gives 5, 7, and 9.",
+      "tags": [
+        "tuples",
+        "zip",
+        "lab-pattern"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "py-260",
+      "topic": "Python",
+      "subtopic": "Dictionaries",
+      "difficulty": "medium",
+      "question_text": "A dictionary-based ROT-13 translation maps each English letter to:",
+      "options": [
+        "The letter 13 positions ahead, wrapping around the alphabet",
+        "The letter's ASCII code as a string",
+        "The next key in insertion order",
+        "A random alphabet letter"
+      ],
+      "correct_option": 0,
+      "explanation": "ROT-13 shifts alphabetic characters by 13 positions, wrapping at the end; applying it twice restores the original letters.",
+      "tags": [
+        "dictionaries",
+        "caesar-cipher",
+        "lab-pattern"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "py-261",
+      "topic": "Python",
+      "subtopic": "Virtual Environments, Databases, and FastAPI",
+      "difficulty": "medium",
+      "question_text": "In a FastAPI endpoint `/items`, what is a value supplied as `/items?limit=5`?",
+      "options": [
+        "A query parameter",
+        "A path parameter",
+        "A response model",
+        "A database name"
+      ],
+      "correct_option": 0,
+      "explanation": "A value supplied after `?` in the URL is a query parameter; a path parameter is part of the route path.",
+      "tags": [
+        "fastapi",
+        "query-parameters",
+        "trap"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "py-262",
+      "topic": "Python",
+      "subtopic": "Virtual Environments, Databases, and FastAPI",
+      "difficulty": "medium",
+      "question_text": "What does a FastAPI response model primarily describe?",
+      "options": [
+        "The expected structure of response data",
+        "The SQL password",
+        "The route's path only",
+        "The installed Python version"
+      ],
+      "correct_option": 0,
+      "explanation": "A response model documents and validates the structure of data returned by an endpoint.",
+      "tags": [
+        "fastapi",
+        "response-models"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "py-263",
+      "topic": "Python",
+      "subtopic": "Virtual Environments, Databases, and FastAPI",
+      "difficulty": "medium",
+      "question_text": "Which tool named in the syllabus can be used to send requests to and inspect a REST API?",
+      "options": [
+        "Postman",
+        "Matplotlib",
+        "Beautiful Soup",
+        "Pickle"
+      ],
+      "correct_option": 0,
+      "explanation": "Postman is an API client used to send requests and inspect responses; Swagger UI is another listed option.",
+      "tags": [
+        "fastapi",
+        "postman",
+        "api-testing"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "py-264",
+      "topic": "Python",
+      "subtopic": "NumPy, Pandas, and Data Cleaning",
+      "difficulty": "medium",
+      "question_text": "What is a common use of `df.fillna(0)`?",
+      "options": [
+        "Replace missing values with 0 in the returned DataFrame or Series",
+        "Delete every duplicate row",
+        "Convert all values to strings",
+        "Sort rows by their index"
+      ],
+      "correct_option": 0,
+      "explanation": "`fillna(0)` replaces missing values with zero; by default it returns a filled object rather than modifying the original in place.",
+      "tags": [
+        "pandas",
+        "missing-values",
+        "data-cleaning",
+        "trap"
+      ],
+      "recommended_time_sec": 45
+    }
+  ]
+}

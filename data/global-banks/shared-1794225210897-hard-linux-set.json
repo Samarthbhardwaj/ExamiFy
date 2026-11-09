@@ -1,0 +1,837 @@
+{
+  "id": "shared-1794225210897-hard-linux-set",
+  "name": "hard linux set",
+  "description": "Created by Admin",
+  "publishedAt": "2026-11-09T11:53:30.897Z",
+  "publishedBy": "Samar Admin",
+  "questions": [
+    {
+      "id": "linux-001",
+      "topic": "Linux",
+      "subtopic": "Finding and deleting files",
+      "difficulty": "medium",
+      "question_text": "A support engineer needs to delete regular `.log` files under `/var/log` that were modified within the last 48 hours. Which command best matches the requirement?",
+      "options": [
+        "find /var/log -type f -name '*.log' -mmin -2880 -delete",
+        "find /var/log -type f -name '*.log' -mtime +2 -delete",
+        "ls /var/log/*.log | rm",
+        "locate '*.log' -mtime -2 -delete"
+      ],
+      "correct_option": 0,
+      "explanation": "`-mmin -2880` selects files modified within 2,880 minutes. `-type f` limits matches to regular files.",
+      "tags": [
+        "find",
+        "files",
+        "time"
+      ],
+      "recommended_time_sec": 60
+    },
+    {
+      "id": "linux-002",
+      "topic": "Linux",
+      "subtopic": "File permissions",
+      "difficulty": "easy",
+      "question_text": "A configuration file should be readable and writable by its owner, readable by its group, and inaccessible to others. Which permission mode should be used?",
+      "options": [
+        "chmod 664 config.conf",
+        "chmod 640 config.conf",
+        "chmod 604 config.conf",
+        "chmod 750 config.conf"
+      ],
+      "correct_option": 1,
+      "explanation": "`640` gives the owner read/write, the group read, and others no permissions.",
+      "tags": [
+        "chmod",
+        "permissions"
+      ],
+      "recommended_time_sec": 40
+    },
+    {
+      "id": "linux-003",
+      "topic": "Linux",
+      "subtopic": "Output redirection",
+      "difficulty": "medium",
+      "question_text": "A script's standard output should go to `run.log`, while errors should be appended to `errors.log`. Which command does that?",
+      "options": [
+        "command 2>run.log 1>>errors.log",
+        "command >run.log 2>errors.log",
+        "command >run.log 2>>errors.log",
+        "command >>run.log 2>&1"
+      ],
+      "correct_option": 2,
+      "explanation": "`>` redirects standard output, and `2>>` appends standard error to the separate error log.",
+      "tags": [
+        "shell",
+        "redirection",
+        "logs"
+      ],
+      "recommended_time_sec": 50
+    },
+    {
+      "id": "linux-004",
+      "topic": "Linux",
+      "subtopic": "Reading files safely in shell",
+      "difficulty": "hard",
+      "question_text": "A file contains paths that may include spaces. Which loop reads each line as one complete path?",
+      "options": [
+        "for path in $(cat paths.txt); do process \"$path\"; done",
+        "cat paths.txt | xargs process",
+        "while read path; do process $path; done < paths.txt",
+        "while IFS= read -r path; do process \"$path\"; done < paths.txt"
+      ],
+      "correct_option": 3,
+      "explanation": "`IFS=` prevents trimming whitespace, `-r` preserves backslashes, and quoting keeps each path intact.",
+      "tags": [
+        "bash",
+        "files",
+        "quoting"
+      ],
+      "recommended_time_sec": 75
+    },
+    {
+      "id": "linux-005",
+      "topic": "Linux",
+      "subtopic": "Disk usage",
+      "difficulty": "medium",
+      "question_text": "Which command summarizes the sizes of the immediate entries in `/home` in human-readable units and sorts them largest first?",
+      "options": [
+        "du -sh /home/* | sort -hr",
+        "df -h /home | sort -r",
+        "ls -lh /home | sort -k5",
+        "du -ah /home | sort -n"
+      ],
+      "correct_option": 0,
+      "explanation": "`du -sh /home/*` summarizes each immediate entry; `sort -hr` sorts human-readable sizes in descending order.",
+      "tags": [
+        "du",
+        "sort",
+        "storage"
+      ],
+      "recommended_time_sec": 50
+    },
+    {
+      "id": "linux-006",
+      "topic": "Linux",
+      "subtopic": "Searching file contents",
+      "difficulty": "easy",
+      "question_text": "Which command searches recursively in `/etc` for the word `timeout`, ignoring letter case and showing matching line numbers?",
+      "options": [
+        "grep -n timeout /etc",
+        "grep -Rin 'timeout' /etc",
+        "find /etc -name timeout",
+        "locate -i timeout /etc"
+      ],
+      "correct_option": 1,
+      "explanation": "`-R` searches recursively, `-i` ignores case, and `-n` displays line numbers.",
+      "tags": [
+        "grep",
+        "search"
+      ],
+      "recommended_time_sec": 40
+    },
+    {
+      "id": "linux-007",
+      "topic": "Linux",
+      "subtopic": "Systemd services",
+      "difficulty": "medium",
+      "question_text": "A service named `worker.service` is failing. Which command displays its recent systemd journal entries?",
+      "options": [
+        "systemctl list-unit-files worker.service",
+        "journalctl --disk-usage",
+        "journalctl -u worker.service -n 50 --no-pager",
+        "systemctl daemon-reload worker.service"
+      ],
+      "correct_option": 2,
+      "explanation": "`journalctl -u` filters logs by unit; `-n 50` limits output to the latest 50 entries.",
+      "tags": [
+        "systemd",
+        "journalctl",
+        "troubleshooting"
+      ],
+      "recommended_time_sec": 50
+    },
+    {
+      "id": "linux-008",
+      "topic": "Linux",
+      "subtopic": "Archiving",
+      "difficulty": "medium",
+      "question_text": "Which command creates a gzip-compressed archive named `backup.tar.gz` containing `/etc/app`?",
+      "options": [
+        "gzip -c /etc/app > backup.tar.gz",
+        "tar -xzf backup.tar.gz /etc/app",
+        "zip -r backup.tar.gz /etc/app",
+        "tar -czf backup.tar.gz /etc/app"
+      ],
+      "correct_option": 3,
+      "explanation": "`tar -c` creates an archive, `-z` compresses it with gzip, and `-f` specifies the archive file.",
+      "tags": [
+        "tar",
+        "gzip",
+        "backup"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "linux-009",
+      "topic": "Linux",
+      "subtopic": "Process inspection",
+      "difficulty": "easy",
+      "question_text": "Which command lists processes and filters the output for entries containing `nginx`?",
+      "options": [
+        "ps aux | grep nginx",
+        "df -h | grep nginx",
+        "free -m | grep nginx",
+        "chmod nginx"
+      ],
+      "correct_option": 0,
+      "explanation": "`ps aux` lists processes, and `grep` filters that output for the requested text.",
+      "tags": [
+        "processes",
+        "ps",
+        "grep"
+      ],
+      "recommended_time_sec": 35
+    },
+    {
+      "id": "linux-010",
+      "topic": "Linux",
+      "subtopic": "SSH",
+      "difficulty": "medium",
+      "question_text": "A private SSH key is stored at `~/.ssh/support_key`. Which command connects to `admin@192.168.1.20` using that key on port 2222?",
+      "options": [
+        "ssh -p 2222 -key ~/.ssh/support_key admin@192.168.1.20",
+        "ssh -i ~/.ssh/support_key -p 2222 admin@192.168.1.20",
+        "ssh admin@192.168.1.20:2222 -key ~/.ssh/support_key",
+        "ssh --port 2222 --identity admin@192.168.1.20"
+      ],
+      "correct_option": 1,
+      "explanation": "`-i` specifies the identity file, and `-p` sets the SSH port.",
+      "tags": [
+        "ssh",
+        "remote-access"
+      ],
+      "recommended_time_sec": 50
+    },
+    {
+      "id": "linux-011",
+      "topic": "Linux",
+      "subtopic": "File permissions",
+      "difficulty": "hard",
+      "question_text": "A script should be executable by its owner and group, but not by others. Which symbolic command adds those execute permissions without changing other bits?",
+      "options": [
+        "chmod 755 deploy.sh",
+        "chmod a+x deploy.sh",
+        "chmod ug+x,o-x deploy.sh",
+        "chmod ugo=rx deploy.sh"
+      ],
+      "correct_option": 2,
+      "explanation": "`ug+x` adds execute permission for owner and group; `o-x` removes it for others.",
+      "tags": [
+        "chmod",
+        "symbolic-permissions"
+      ],
+      "recommended_time_sec": 55
+    },
+    {
+      "id": "linux-012",
+      "topic": "Linux",
+      "subtopic": "Cron scheduling",
+      "difficulty": "medium",
+      "question_text": "A maintenance script must run every day at 02:30. Which cron schedule expresses that time?",
+      "options": [
+        "30 2 * * *",
+        "2 30 * * *",
+        "30 * 2 * *",
+        "*/30 2 * * *"
+      ],
+      "correct_option": 3,
+      "explanation": "Cron fields are minute, hour, day of month, month, and day of week. The correct expression is `30 2 * * *`; this is option A.",
+      "tags": [
+        "cron",
+        "scheduling"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "linux-013",
+      "topic": "Linux",
+      "subtopic": "Finding large files",
+      "difficulty": "medium",
+      "question_text": "Which command finds regular files larger than 100 MB under `/var`?",
+      "options": [
+        "find /var -type f -size +100M",
+        "find /var -type d -size 100M",
+        "du /var -size +100M",
+        "ls -Rlh /var | grep 100M"
+      ],
+      "correct_option": 0,
+      "explanation": "`find` supports file-type and size filters; `+100M` means greater than 100 MiB in GNU find.",
+      "tags": [
+        "find",
+        "storage"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "linux-014",
+      "topic": "Linux",
+      "subtopic": "User and group management",
+      "difficulty": "medium",
+      "question_text": "Which command adds user `sam` to supplementary group `docker` while preserving their other supplementary group memberships?",
+      "options": [
+        "usermod -g docker sam",
+        "groupadd sam docker",
+        "usermod -aG docker sam",
+        "adduser --remove-groups sam docker"
+      ],
+      "correct_option": 1,
+      "explanation": "The `-aG` combination appends the user to a supplementary group. Using `-G` without `-a` can replace the existing supplementary group list.",
+      "tags": [
+        "users",
+        "groups",
+        "usermod"
+      ],
+      "recommended_time_sec": 50
+    },
+    {
+      "id": "linux-015",
+      "topic": "Linux",
+      "subtopic": "Checking network ports",
+      "difficulty": "hard",
+      "question_text": "Which command uses `ss` to display listening TCP sockets along with the process using each socket?",
+      "options": [
+        "ss -u -a",
+        "ss -lntp",
+        "ip route show",
+        "ping -p tcp"
+      ],
+      "correct_option": 2,
+      "explanation": "`-l` shows listening sockets, `-n` avoids name resolution, `-t` selects TCP, and `-p` shows process information.",
+      "tags": [
+        "networking",
+        "ss",
+        "troubleshooting"
+      ],
+      "recommended_time_sec": 55
+    },
+    {
+      "id": "linux-016",
+      "topic": "Linux",
+      "subtopic": "Shell conditionals",
+      "difficulty": "medium",
+      "question_text": "A script should print `missing` only when `/srv/data` does not exist as a directory. Which test is correct?",
+      "options": [
+        "if [ -f /srv/data ]; then echo missing; fi",
+        "if [ -e /srv/data ]; then echo missing; fi",
+        "if [ -d /srv/data ]; then echo missing; fi",
+        "if [ ! -d /srv/data ]; then echo missing; fi"
+      ],
+      "correct_option": 3,
+      "explanation": "`-d` tests for a directory, and `!` negates the test.",
+      "tags": [
+        "bash",
+        "conditionals"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "linux-017",
+      "topic": "Linux",
+      "subtopic": "File comparison",
+      "difficulty": "easy",
+      "question_text": "Which command compares two text files line by line and displays their differences?",
+      "options": [
+        "diff file1.txt file2.txt",
+        "cmp --lines file1.txt file2.txt",
+        "cut file1.txt file2.txt",
+        "sort --compare file1.txt file2.txt"
+      ],
+      "correct_option": 0,
+      "explanation": "`diff` reports line-oriented differences between text files.",
+      "tags": [
+        "files",
+        "diff"
+      ],
+      "recommended_time_sec": 35
+    },
+    {
+      "id": "linux-018",
+      "topic": "Linux",
+      "subtopic": "Symbolic links",
+      "difficulty": "medium",
+      "question_text": "Create a symbolic link `/usr/local/bin/tool` that points to `/opt/tools/tool`. Which command is correct?",
+      "options": [
+        "ln /opt/tools/tool /usr/local/bin/tool",
+        "ln -s /opt/tools/tool /usr/local/bin/tool",
+        "link -h /usr/local/bin/tool /opt/tools/tool",
+        "cp -s /usr/local/bin/tool /opt/tools/tool"
+      ],
+      "correct_option": 1,
+      "explanation": "`ln -s TARGET LINK_NAME` creates a symbolic link at the specified link path.",
+      "tags": [
+        "ln",
+        "filesystems"
+      ],
+      "recommended_time_sec": 40
+    },
+    {
+      "id": "linux-019",
+      "topic": "Linux",
+      "subtopic": "Package management",
+      "difficulty": "medium",
+      "question_text": "On a Debian-based system, which command refreshes package metadata before installing `curl`?",
+      "options": [
+        "apt install --refresh curl",
+        "dpkg --update curl",
+        "apt update && apt install curl",
+        "apt-cache clean curl"
+      ],
+      "correct_option": 2,
+      "explanation": "`apt update` refreshes repository metadata; `apt install` then installs the package.",
+      "tags": [
+        "apt",
+        "packages"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "linux-020",
+      "topic": "Linux",
+      "subtopic": "Safe shell scripts",
+      "difficulty": "hard",
+      "question_text": "What is the main effect of the following Bash setting?\n```bash\nset -euo pipefail\n```",
+      "options": [
+        "It runs every command as root and enables debugging.",
+        "It ignores failed commands and empty variables.",
+        "It redirects all output to standard error.",
+        "It makes many command failures, unset-variable references, and pipeline failures cause the script to stop."
+      ],
+      "correct_option": 3,
+      "explanation": "`-e` exits on many unhandled command failures, `-u` treats unset variables as errors, and `pipefail` propagates failures from pipeline components.",
+      "tags": [
+        "bash",
+        "scripting",
+        "errors"
+      ],
+      "recommended_time_sec": 65
+    },
+    {
+      "id": "cloud-021",
+      "topic": "Cloud Computing",
+      "subtopic": "Compute pricing",
+      "difficulty": "medium",
+      "question_text": "A batch job can be interrupted and restarted, and the team wants the lowest-cost EC2 capacity. Which option is usually the best fit?",
+      "options": [
+        "Dedicated Hosts",
+        "On-Demand Instances",
+        "Spot Instances",
+        "Reserved Instances"
+      ],
+      "correct_option": 2,
+      "explanation": "Spot Instances use spare AWS capacity at reduced prices, but AWS can reclaim that capacity, so they suit fault-tolerant jobs.",
+      "tags": [
+        "AWS",
+        "EC2",
+        "cost"
+      ],
+      "recommended_time_sec": 50
+    },
+    {
+      "id": "cloud-022",
+      "topic": "Cloud Computing",
+      "subtopic": "Autoscaling",
+      "difficulty": "hard",
+      "question_text": "An application behind a load balancer scales out, but new instances sometimes receive traffic before the application is ready. What should the team configure?",
+      "options": [
+        "A health check that reports healthy only after the application is ready",
+        "A larger root disk for every instance",
+        "A static public IP for the load balancer",
+        "A longer retention period for access logs"
+      ],
+      "correct_option": 0,
+      "explanation": "Load balancer health checks should reflect application readiness so traffic is sent only to healthy instances.",
+      "tags": [
+        "AWS",
+        "autoscaling",
+        "load-balancing"
+      ],
+      "recommended_time_sec": 60
+    },
+    {
+      "id": "cloud-023",
+      "topic": "Cloud Computing",
+      "subtopic": "Object storage lifecycle",
+      "difficulty": "medium",
+      "question_text": "A company stores reports in S3. After 90 days they are rarely accessed, but must be retained for years. What is an appropriate way to reduce storage cost automatically?",
+      "options": [
+        "Move the reports to an EC2 instance",
+        "Create an S3 lifecycle rule to transition objects to a lower-cost storage class",
+        "Enable public access on the bucket",
+        "Delete the objects after 90 days"
+      ],
+      "correct_option": 1,
+      "explanation": "S3 lifecycle rules can transition objects to lower-cost storage classes according to age or other filters.",
+      "tags": [
+        "AWS",
+        "S3",
+        "lifecycle"
+      ],
+      "recommended_time_sec": 50
+    },
+    {
+      "id": "cloud-024",
+      "topic": "Cloud Computing",
+      "subtopic": "Identity and access management",
+      "difficulty": "hard",
+      "question_text": "An application running on an EC2 instance needs read access to one S3 bucket. Which approach best follows least privilege?",
+      "options": [
+        "Store the account root user's access keys on the instance",
+        "Attach a policy granting administrator access",
+        "Make the bucket public and remove credentials",
+        "Attach an instance role with read permissions limited to that bucket"
+      ],
+      "correct_option": 3,
+      "explanation": "An instance role provides temporary credentials, and a narrowly scoped policy limits access to the required bucket.",
+      "tags": [
+        "AWS",
+        "IAM",
+        "least-privilege"
+      ],
+      "recommended_time_sec": 60
+    },
+    {
+      "id": "cloud-025",
+      "topic": "Cloud Computing",
+      "subtopic": "VPC networking",
+      "difficulty": "medium",
+      "question_text": "Instances in a private subnet need outbound internet access for updates but must not accept unsolicited inbound internet connections. Which design is appropriate?",
+      "options": [
+        "Route outbound traffic through a NAT Gateway in a public subnet",
+        "Assign each instance a public IP and allow all inbound traffic",
+        "Remove the subnet route table",
+        "Place the instances in a subnet with no network routes"
+      ],
+      "correct_option": 0,
+      "explanation": "A NAT Gateway allows instances in private subnets to initiate outbound connections without exposing them to unsolicited inbound connections.",
+      "tags": [
+        "AWS",
+        "VPC",
+        "NAT"
+      ],
+      "recommended_time_sec": 60
+    },
+    {
+      "id": "cloud-026",
+      "topic": "Cloud Computing",
+      "subtopic": "Network security",
+      "difficulty": "hard",
+      "question_text": "Which statement correctly distinguishes an AWS security group from a network ACL?",
+      "options": [
+        "Security groups are stateless; network ACLs are stateful.",
+        "Both are stateful and apply only to individual files.",
+        "Security groups are stateful and attach to network interfaces; network ACLs are stateless and apply at subnet level.",
+        "Network ACLs replace route tables."
+      ],
+      "correct_option": 2,
+      "explanation": "Security groups are stateful controls associated with network interfaces; network ACLs are stateless controls applied at the subnet boundary.",
+      "tags": [
+        "AWS",
+        "VPC",
+        "security"
+      ],
+      "recommended_time_sec": 60
+    },
+    {
+      "id": "cloud-027",
+      "topic": "Cloud Computing",
+      "subtopic": "Serverless functions",
+      "difficulty": "medium",
+      "question_text": "A Lambda function consistently times out after three seconds, while the external service it calls usually responds in four seconds. What is the most direct fix?",
+      "options": [
+        "Increase the Lambda timeout to allow for the call and overhead",
+        "Create a CloudWatch dashboard",
+        "Increase the S3 bucket size",
+        "Change the function's log retention period"
+      ],
+      "correct_option": 0,
+      "explanation": "The configured function timeout must exceed the expected downstream response time and allow for processing overhead.",
+      "tags": [
+        "AWS",
+        "Lambda",
+        "timeouts"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "cloud-028",
+      "topic": "Cloud Computing",
+      "subtopic": "Managed containers",
+      "difficulty": "hard",
+      "question_text": "A team wants to run containers without managing the underlying virtual machines or Kubernetes control plane. Which option is the closest fit on AWS?",
+      "options": [
+        "Install Docker manually on an EC2 instance",
+        "Amazon ECS with AWS Fargate",
+        "Amazon EKS on self-managed nodes",
+        "Use an S3 bucket as a container host"
+      ],
+      "correct_option": 1,
+      "explanation": "ECS with Fargate runs containers without requiring the team to provision or manage the underlying servers.",
+      "tags": [
+        "AWS",
+        "containers",
+        "Fargate"
+      ],
+      "recommended_time_sec": 60
+    },
+    {
+      "id": "cloud-029",
+      "topic": "Cloud Computing",
+      "subtopic": "Database availability",
+      "difficulty": "medium",
+      "question_text": "An RDS database must automatically fail over to a standby in another Availability Zone if the primary has an infrastructure failure. Which feature should be enabled?",
+      "options": [
+        "Read replica only",
+        "Automated backups only",
+        "Multi-AZ deployment",
+        "A larger database instance class"
+      ],
+      "correct_option": 2,
+      "explanation": "An RDS Multi-AZ deployment maintains a standby in another Availability Zone for high availability and failover.",
+      "tags": [
+        "AWS",
+        "RDS",
+        "availability"
+      ],
+      "recommended_time_sec": 50
+    },
+    {
+      "id": "cloud-030",
+      "topic": "Cloud Computing",
+      "subtopic": "Secure file sharing",
+      "difficulty": "medium",
+      "question_text": "A customer must download one private S3 object for the next 15 minutes without receiving AWS credentials. What should the application generate?",
+      "options": [
+        "A public bucket policy",
+        "A permanent IAM access key",
+        "An EC2 instance profile",
+        "A presigned URL with a short expiration"
+      ],
+      "correct_option": 3,
+      "explanation": "A presigned URL grants time-limited access to a specific object without making the object public.",
+      "tags": [
+        "AWS",
+        "S3",
+        "security"
+      ],
+      "recommended_time_sec": 50
+    },
+    {
+      "id": "cloud-031",
+      "topic": "Cloud Computing",
+      "subtopic": "Monitoring and audit",
+      "difficulty": "hard",
+      "question_text": "A security team needs a record of who made API calls and changes to resources in an AWS account. Which service is designed for this?",
+      "options": [
+        "AWS CloudTrail",
+        "Amazon CloudWatch Metrics",
+        "AWS Auto Scaling",
+        "Amazon Route 53"
+      ],
+      "correct_option": 0,
+      "explanation": "CloudTrail records account activity and API events. CloudWatch is primarily used for metrics, logs, and alarms.",
+      "tags": [
+        "AWS",
+        "CloudTrail",
+        "audit"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "cloud-032",
+      "topic": "Cloud Computing",
+      "subtopic": "Azure Data Factory connectivity",
+      "difficulty": "medium",
+      "question_text": "An Azure Data Factory pipeline must connect to a database hosted inside a company's on-premises network. Which component commonly enables that connection?",
+      "options": [
+        "Azure Blob Storage",
+        "Self-hosted Integration Runtime",
+        "Azure Load Balancer",
+        "Azure Virtual Network Gateway alone"
+      ],
+      "correct_option": 1,
+      "explanation": "A Self-hosted Integration Runtime runs within or near the on-premises environment and enables Data Factory to reach local data sources.",
+      "tags": [
+        "Azure",
+        "Data-Factory",
+        "integration-runtime"
+      ],
+      "recommended_time_sec": 55
+    },
+    {
+      "id": "cloud-033",
+      "topic": "Cloud Computing",
+      "subtopic": "Cloud service models",
+      "difficulty": "easy",
+      "question_text": "A customer wants virtual machines and control over the guest operating system, while the provider manages the physical servers. Which service model is this?",
+      "options": [
+        "SaaS",
+        "FaaS",
+        "IaaS",
+        "On-premises hosting"
+      ],
+      "correct_option": 2,
+      "explanation": "IaaS provides virtualized infrastructure; customers typically manage the guest OS and applications.",
+      "tags": [
+        "cloud-models",
+        "IaaS"
+      ],
+      "recommended_time_sec": 40
+    },
+    {
+      "id": "cloud-034",
+      "topic": "Cloud Computing",
+      "subtopic": "Object storage security",
+      "difficulty": "medium",
+      "question_text": "A team discovers that an S3 bucket containing internal files is publicly accessible. What should they do first?",
+      "options": [
+        "Enable versioning and leave public access unchanged",
+        "Increase the bucket's storage class",
+        "Create a CloudWatch dashboard",
+        "Block public access and review bucket policies and access settings"
+      ],
+      "correct_option": 3,
+      "explanation": "Blocking public access and inspecting the policies addresses the immediate exposure and helps identify how it was introduced.",
+      "tags": [
+        "AWS",
+        "S3",
+        "security"
+      ],
+      "recommended_time_sec": 50
+    },
+    {
+      "id": "cloud-035",
+      "topic": "Cloud Computing",
+      "subtopic": "Streaming data ingestion",
+      "difficulty": "hard",
+      "question_text": "A data team wants to ingest streaming events into S3 with minimal server management, then catalog and transform the data for analytics. Which AWS service sequence best fits?",
+      "options": [
+        "Kinesis Data Firehose to S3, then AWS Glue for cataloging and transformations",
+        "Route 53 to EC2, then CloudTrail to S3",
+        "EBS to Lambda, then IAM to Redshift",
+        "CloudWatch to NAT Gateway, then Auto Scaling"
+      ],
+      "correct_option": 0,
+      "explanation": "Kinesis Data Firehose can deliver streams to S3, and AWS Glue can catalog and transform data for downstream analytics.",
+      "tags": [
+        "AWS",
+        "streaming",
+        "S3",
+        "Glue"
+      ],
+      "recommended_time_sec": 65
+    },
+    {
+      "id": "cloud-036",
+      "topic": "Cloud Computing",
+      "subtopic": "Shared responsibility",
+      "difficulty": "medium",
+      "question_text": "For an application running on an Amazon EC2 instance, which task is generally the customer's responsibility under the shared responsibility model?",
+      "options": [
+        "Maintaining the physical data-center building",
+        "Patching the guest operating system",
+        "Replacing failed physical disks in the host",
+        "Maintaining the provider's global network backbone"
+      ],
+      "correct_option": 1,
+      "explanation": "For EC2, AWS manages the underlying cloud infrastructure; customers generally manage the guest OS and their software configuration.",
+      "tags": [
+        "AWS",
+        "shared-responsibility"
+      ],
+      "recommended_time_sec": 50
+    },
+    {
+      "id": "cloud-037",
+      "topic": "Cloud Computing",
+      "subtopic": "Data lake storage",
+      "difficulty": "easy",
+      "question_text": "Which description best fits a data lake built on object storage?",
+      "options": [
+        "It stores only cleaned relational tables.",
+        "It is limited to real-time transactional records.",
+        "It can store raw structured, semi-structured, and unstructured data in native formats.",
+        "It replaces all compute services."
+      ],
+      "correct_option": 2,
+      "explanation": "A data lake commonly retains data in raw or native formats and can contain many data types.",
+      "tags": [
+        "data-lake",
+        "object-storage"
+      ],
+      "recommended_time_sec": 40
+    },
+    {
+      "id": "cloud-038",
+      "topic": "Cloud Computing",
+      "subtopic": "Infrastructure as code",
+      "difficulty": "hard",
+      "question_text": "A Terraform configuration describes an environment, but someone changed a resource manually in the cloud console. What should the team do to review the difference before applying changes?",
+      "options": [
+        "Run `terraform destroy` immediately",
+        "Delete the state file",
+        "Run `terraform init` repeatedly",
+        "Run `terraform plan` and review the proposed changes"
+      ],
+      "correct_option": 3,
+      "explanation": "`terraform plan` compares the configuration and state with observed infrastructure and shows proposed actions before they are applied.",
+      "tags": [
+        "Terraform",
+        "IaC",
+        "drift"
+      ],
+      "recommended_time_sec": 60
+    },
+    {
+      "id": "cloud-039",
+      "topic": "Cloud Computing",
+      "subtopic": "Azure compute",
+      "difficulty": "easy",
+      "question_text": "Which Azure service provides virtual machines comparable to Amazon EC2 instances?",
+      "options": [
+        "Azure Virtual Machines",
+        "Azure Data Factory",
+        "Azure Blob Storage",
+        "Azure Monitor"
+      ],
+      "correct_option": 0,
+      "explanation": "Azure Virtual Machines provide infrastructure-as-a-service compute instances.",
+      "tags": [
+        "Azure",
+        "compute"
+      ],
+      "recommended_time_sec": 35
+    },
+    {
+      "id": "cloud-040",
+      "topic": "Cloud Computing",
+      "subtopic": "Serverless architecture",
+      "difficulty": "medium",
+      "question_text": "A small HTTP endpoint has unpredictable traffic, spends long periods idle, and should scale without managing servers. Which architecture is a strong fit on AWS?",
+      "options": [
+        "A permanently running EC2 instance with fixed capacity",
+        "AWS Lambda behind Amazon API Gateway",
+        "An EBS volume with a public IP address",
+        "A dedicated host running a single process"
+      ],
+      "correct_option": 1,
+      "explanation": "Lambda with API Gateway is a serverless pattern that can scale with requests and avoids maintaining an always-on server.",
+      "tags": [
+        "AWS",
+        "Lambda",
+        "API-Gateway",
+        "serverless"
+      ],
+      "recommended_time_sec": 50
+    }
+  ]
+}
