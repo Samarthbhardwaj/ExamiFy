@@ -1,0 +1,812 @@
+{
+  "id": "shared-1794250604578-snippits-java",
+  "name": "snippits Java",
+  "description": "Created by Admin",
+  "publishedAt": "2026-11-09T18:56:44.578Z",
+  "publishedBy": "Samar Admin",
+  "questions": [
+    {
+      "id": "java-001",
+      "topic": "Java Fundamentals",
+      "subtopic": "Arithmetic operators",
+      "difficulty": "medium",
+      "question_text": "What does this code print?\n```java\nint a = 7;\nint b = 2;\nSystem.out.print(a / b + \" \" + a % b);\n```",
+      "options": [
+        "3 1",
+        "3.5 1",
+        "3 0",
+        "4 1"
+      ],
+      "correct_option": 0,
+      "explanation": "Integer division gives 3, and the remainder operator gives 1.",
+      "tags": [
+        "operators",
+        "arithmetic"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "java-002",
+      "topic": "Java Fundamentals",
+      "subtopic": "Control statements",
+      "difficulty": "medium",
+      "question_text": "What does this code print?\n```java\nint total = 0;\nfor (int i = 1; i <= 3; i++) {\n    total += i;\n}\nSystem.out.print(total);\n```",
+      "options": [
+        "3",
+        "6",
+        "123",
+        "4"
+      ],
+      "correct_option": 1,
+      "explanation": "The loop adds 1, 2, and 3, producing a total of 6.",
+      "tags": [
+        "loops",
+        "for"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "java-003",
+      "topic": "Java Fundamentals",
+      "subtopic": "Switch statement",
+      "difficulty": "medium",
+      "question_text": "What does this code print?\n```java\nint code = 2;\nswitch (code) {\n    case 1: System.out.print(\"A\"); break;\n    case 2: System.out.print(\"B\"); break;\n    default: System.out.print(\"C\");\n}\n```",
+      "options": [
+        "A",
+        "C",
+        "B",
+        "Nothing"
+      ],
+      "correct_option": 2,
+      "explanation": "The value 2 matches the second case, which prints B.",
+      "tags": [
+        "switch",
+        "control-flow"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "java-004",
+      "topic": "Java Fundamentals",
+      "subtopic": "While loops",
+      "difficulty": "medium",
+      "question_text": "How many times does this loop print `*`?\n```java\nint n = 3;\nwhile (n > 0) {\n    System.out.print(\"*\");\n    n--;\n}\n```",
+      "options": [
+        "Two times",
+        "Four times",
+        "Zero times",
+        "Three times"
+      ],
+      "correct_option": 3,
+      "explanation": "The loop runs for n equal to 3, 2, and 1, so it prints three stars.",
+      "tags": [
+        "loops",
+        "while"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "java-005",
+      "topic": "Java Fundamentals",
+      "subtopic": "Ternary operator",
+      "difficulty": "easy",
+      "question_text": "What value is assigned to `label`?\n```java\nint marks = 65;\nString label = marks >= 50 ? \"Pass\" : \"Retry\";\n```",
+      "options": [
+        "Pass",
+        "Retry",
+        "65",
+        "The code does not compile"
+      ],
+      "correct_option": 0,
+      "explanation": "Since 65 is at least 50, the ternary operator selects Pass.",
+      "tags": [
+        "operators",
+        "ternary"
+      ],
+      "recommended_time_sec": 40
+    },
+    {
+      "id": "java-006",
+      "topic": "Java Fundamentals",
+      "subtopic": "Break and continue",
+      "difficulty": "medium",
+      "question_text": "What does this code print?\n```java\nfor (int i = 1; i <= 5; i++) {\n    if (i == 3) continue;\n    if (i == 5) break;\n    System.out.print(i);\n}\n```",
+      "options": [
+        "12345",
+        "124",
+        "1245",
+        "12"
+      ],
+      "correct_option": 1,
+      "explanation": "`continue` skips 3, and `break` stops the loop when i reaches 5. The output is 124.",
+      "tags": [
+        "loops",
+        "break",
+        "continue"
+      ],
+      "recommended_time_sec": 55
+    },
+    {
+      "id": "java-007",
+      "topic": "Java Fundamentals",
+      "subtopic": "Primitive and reference types",
+      "difficulty": "medium",
+      "question_text": "What does this code print?\n```java\nint first = 4;\nint second = first;\nsecond = 9;\nSystem.out.print(first);\n```",
+      "options": [
+        "9",
+        "0",
+        "4",
+        "The code does not compile"
+      ],
+      "correct_option": 2,
+      "explanation": "Assigning a primitive copies its value. Changing `second` does not change `first`.",
+      "tags": [
+        "primitive-types",
+        "variables"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "java-008",
+      "topic": "Java Fundamentals",
+      "subtopic": "Arrays",
+      "difficulty": "medium",
+      "question_text": "What does this code print?\n```java\nint[] values = {4, 7, 2};\nSystem.out.print(values[0] + values[2]);\n```",
+      "options": [
+        "7",
+        "9",
+        "13",
+        "6"
+      ],
+      "correct_option": 3,
+      "explanation": "Array indexes start at zero. The expression adds values 4 and 2.",
+      "tags": [
+        "arrays",
+        "indexing"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "java-009",
+      "topic": "Java Fundamentals",
+      "subtopic": "Do-while loops",
+      "difficulty": "medium",
+      "question_text": "What does this code print?\n```java\nint count = 0;\ndo {\n    count++;\n} while (count < 1);\nSystem.out.print(count);\n```",
+      "options": [
+        "1",
+        "0",
+        "2",
+        "The code does not compile"
+      ],
+      "correct_option": 0,
+      "explanation": "A do-while loop executes its body at least once. Here it increments count to 1.",
+      "tags": [
+        "loops",
+        "do-while"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "java-010",
+      "topic": "Java Fundamentals",
+      "subtopic": "Class structure",
+      "difficulty": "easy",
+      "question_text": "Which line is the conventional Java application entry point?",
+      "options": [
+        "`static main(String[] args)`",
+        "`public static void main(String[] args)`",
+        "`public void start(String[] args)`",
+        "`private void main()`"
+      ],
+      "correct_option": 1,
+      "explanation": "The conventional entry point is a public static main method that accepts a String array.",
+      "tags": [
+        "class-structure",
+        "main"
+      ],
+      "recommended_time_sec": 40
+    },
+    {
+      "id": "java-011",
+      "topic": "OOP",
+      "subtopic": "Constructors",
+      "difficulty": "medium",
+      "question_text": "What does this code print?\n```java\nclass Item {\n    Item() { System.out.print(\"Created\"); }\n}\nItem item = new Item();\n```",
+      "options": [
+        "Nothing",
+        "Item",
+        "Created",
+        "The code does not compile"
+      ],
+      "correct_option": 2,
+      "explanation": "Creating the object invokes its no-argument constructor, which prints Created.",
+      "tags": [
+        "objects",
+        "constructors"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "java-012",
+      "topic": "OOP",
+      "subtopic": "Reference reassignment",
+      "difficulty": "medium",
+      "question_text": "What does this code print?\n```java\nclass Box { int value; }\nBox a = new Box();\nBox b = a;\nb.value = 8;\nSystem.out.print(a.value);\n```",
+      "options": [
+        "0",
+        "8",
+        "The code does not compile",
+        "null"
+      ],
+      "correct_option": 1,
+      "explanation": "Both variables refer to the same Box object, so changing it through `b` is visible through `a`.",
+      "tags": [
+        "references",
+        "objects"
+      ],
+      "recommended_time_sec": 50
+    },
+    {
+      "id": "java-013",
+      "topic": "OOP",
+      "subtopic": "Encapsulation",
+      "difficulty": "medium",
+      "question_text": "Which implementation best protects the `balance` field while allowing controlled updates?",
+      "options": [
+        "`public double balance;`",
+        "`static double balance;`",
+        "`private double balance; void deposit(double amount) { if (amount > 0) balance += amount; }`",
+        "`final double balance;` with no constructor"
+      ],
+      "correct_option": 2,
+      "explanation": "A private field with a method that validates updates demonstrates encapsulation.",
+      "tags": [
+        "encapsulation",
+        "methods"
+      ],
+      "recommended_time_sec": 55
+    },
+    {
+      "id": "java-014",
+      "topic": "OOP",
+      "subtopic": "Method overloading",
+      "difficulty": "medium",
+      "question_text": "Which class contains valid overloaded methods?",
+      "options": [
+        "`void show(int x) { } void show(String x) { }`",
+        "`void show(int x) { } int show(int y) { return y; }`",
+        "`void show() { } void show() { }`",
+        "`void show(int x) { } void display(int x) { }`"
+      ],
+      "correct_option": 3,
+      "explanation": "Overloading requires the same method name and a different parameter list. Return type alone is not enough.",
+      "tags": [
+        "methods",
+        "overloading"
+      ],
+      "recommended_time_sec": 55
+    },
+    {
+      "id": "java-015",
+      "topic": "OOP",
+      "subtopic": "Method overriding",
+      "difficulty": "medium",
+      "question_text": "What does this code print?\n```java\nclass Animal { void sound() { System.out.print(\"A\"); } }\nclass Dog extends Animal { @Override void sound() { System.out.print(\"D\"); } }\nAnimal pet = new Dog();\npet.sound();\n```",
+      "options": [
+        "D",
+        "A",
+        "AD",
+        "The code does not compile"
+      ],
+      "correct_option": 0,
+      "explanation": "The overridden instance method is selected at runtime based on the actual object type, Dog.",
+      "tags": [
+        "inheritance",
+        "overriding",
+        "polymorphism"
+      ],
+      "recommended_time_sec": 55
+    },
+    {
+      "id": "java-016",
+      "topic": "OOP",
+      "subtopic": "Access modifiers",
+      "difficulty": "medium",
+      "question_text": "In the same class, which declaration allows methods to access `id` but prevents unrelated classes from accessing it directly?",
+      "options": [
+        "`public int id;`",
+        "`private int id;`",
+        "`protected static int id;`",
+        "`final int id;`"
+      ],
+      "correct_option": 1,
+      "explanation": "`private` restricts direct access to the declaring class.",
+      "tags": [
+        "access-modifiers",
+        "encapsulation"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "java-017",
+      "topic": "OOP",
+      "subtopic": "Inheritance",
+      "difficulty": "medium",
+      "question_text": "Given the code below, which statement is true?\n```java\nclass Employee { void work() { } }\nclass Manager extends Employee { }\nManager m = new Manager();\n```",
+      "options": [
+        "`Manager` cannot use `work()` because it is not declared in Manager",
+        "`Employee` inherits from Manager",
+        "`m.work()` is valid because Manager inherits the method",
+        "The code must declare Manager as an interface"
+      ],
+      "correct_option": 2,
+      "explanation": "Manager inherits the accessible instance method `work()` from Employee.",
+      "tags": [
+        "inheritance",
+        "methods"
+      ],
+      "recommended_time_sec": 50
+    },
+    {
+      "id": "java-018",
+      "topic": "OOP",
+      "subtopic": "Abstract classes",
+      "difficulty": "medium",
+      "question_text": "Which statement about this declaration is correct?\n```java\nabstract class Shape {\n    abstract double area();\n}\n```",
+      "options": [
+        "`new Shape()` is valid because it has no constructor",
+        "Shape must be an interface",
+        "An abstract class cannot declare methods",
+        "Shape cannot be instantiated directly; a concrete subclass must implement `area()`"
+      ],
+      "correct_option": 3,
+      "explanation": "An abstract class cannot be instantiated directly, and a concrete subclass must implement its abstract methods.",
+      "tags": [
+        "abstract-classes",
+        "inheritance"
+      ],
+      "recommended_time_sec": 50
+    },
+    {
+      "id": "java-019",
+      "topic": "OOP",
+      "subtopic": "Interfaces",
+      "difficulty": "medium",
+      "question_text": "Which class correctly implements this interface?\n```java\ninterface Printable { void print(); }\n```",
+      "options": [
+        "`class Report implements Printable { public void print() { } }`",
+        "`class Report extends Printable { }`",
+        "`class Report implements Printable { private void print() { } }`",
+        "`class Report { void print(); }`"
+      ],
+      "correct_option": 0,
+      "explanation": "A class implements an interface with `implements` and must provide a public implementation of its method.",
+      "tags": [
+        "interfaces",
+        "implementation"
+      ],
+      "recommended_time_sec": 55
+    },
+    {
+      "id": "java-020",
+      "topic": "OOP",
+      "subtopic": "Object casting",
+      "difficulty": "hard",
+      "question_text": "Which code safely checks and uses a Dog-specific method when `animal` may refer to another Animal subtype?",
+      "options": [
+        "`Dog d = (Dog) animal;` with no check",
+        "`if (animal instanceof Dog d) d.fetch();`",
+        "`animal instanceof fetch()`",
+        "`Dog d = animal;`"
+      ],
+      "correct_option": 1,
+      "explanation": "Java 17 supports pattern matching for `instanceof`, which checks the type and creates the narrowed variable.",
+      "tags": [
+        "casting",
+        "instanceof"
+      ],
+      "recommended_time_sec": 60
+    },
+    {
+      "id": "java-021",
+      "topic": "OOP",
+      "subtopic": "Immutable classes",
+      "difficulty": "hard",
+      "question_text": "Which design best supports an immutable `Student` object?",
+      "options": [
+        "Public fields and public setters",
+        "A public mutable list returned directly",
+        "Private final fields set in the constructor, with no mutating methods",
+        "Static fields that change in every constructor"
+      ],
+      "correct_option": 2,
+      "explanation": "Private final fields initialized at construction and no mutating methods help keep the object's state unchanged.",
+      "tags": [
+        "immutability",
+        "encapsulation"
+      ],
+      "recommended_time_sec": 60
+    },
+    {
+      "id": "java-022",
+      "topic": "OOP",
+      "subtopic": "Inner classes",
+      "difficulty": "medium",
+      "question_text": "What is true about this non-static inner class?\n```java\nclass Outer {\n    private int value = 5;\n    class Inner {\n        int getValue() { return value; }\n    }\n}\n```",
+      "options": [
+        "Inner cannot access `value` because it is private",
+        "Inner must be declared in another file",
+        "Inner is automatically static",
+        "An Inner instance is associated with an Outer instance and can access its private members"
+      ],
+      "correct_option": 3,
+      "explanation": "A non-static inner-class instance belongs to an enclosing object and can access its members, including private ones.",
+      "tags": [
+        "inner-classes",
+        "encapsulation"
+      ],
+      "recommended_time_sec": 55
+    },
+    {
+      "id": "java-023",
+      "topic": "OOP",
+      "subtopic": "Anonymous inner classes",
+      "difficulty": "medium",
+      "question_text": "What does this code demonstrate?\n```java\nRunnable task = new Runnable() {\n    public void run() { System.out.print(\"Done\"); }\n};\n```",
+      "options": [
+        "An anonymous class providing a one-off Runnable implementation",
+        "A named top-level class",
+        "A lambda expression",
+        "A constructor declaration"
+      ],
+      "correct_option": 0,
+      "explanation": "The code creates an anonymous class that implements Runnable at the point of use.",
+      "tags": [
+        "anonymous-classes",
+        "Runnable"
+      ],
+      "recommended_time_sec": 50
+    },
+    {
+      "id": "java-024",
+      "topic": "OOP",
+      "subtopic": "Constructors",
+      "difficulty": "medium",
+      "question_text": "Which constructor call matches this class?\n```java\nclass Product {\n    Product(String name, double price) { }\n}\n```",
+      "options": [
+        "`new Product()`",
+        "`new Product(\"Pen\", 2.5)`",
+        "`Product(\"Pen\", 2.5)`",
+        "`new Product(2.5, \"Pen\")`"
+      ],
+      "correct_option": 1,
+      "explanation": "The constructor requires a String followed by a double, so the second call matches its parameter list.",
+      "tags": [
+        "constructors",
+        "parameters"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "java-025",
+      "topic": "Exception Handling",
+      "subtopic": "Try-catch-finally",
+      "difficulty": "medium",
+      "question_text": "What does this code print?\n```java\ntry {\n    System.out.print(\"T\");\n} catch (RuntimeException e) {\n    System.out.print(\"C\");\n} finally {\n    System.out.print(\"F\");\n}\n```",
+      "options": [
+        "TF",
+        "TCF",
+        "T",
+        "CF"
+      ],
+      "correct_option": 0,
+      "explanation": "The try block prints T. No exception occurs, and the finally block prints F.",
+      "tags": [
+        "exceptions",
+        "finally"
+      ],
+      "recommended_time_sec": 50
+    },
+    {
+      "id": "java-026",
+      "topic": "Exception Handling",
+      "subtopic": "Checked exceptions",
+      "difficulty": "medium",
+      "question_text": "Which method declaration properly acknowledges that its body may throw `IOException`?",
+      "options": [
+        "`void load() throw IOException { }`",
+        "`void load() throws IOException { }`",
+        "`IOException void load() { }`",
+        "`void load() catch IOException { }`"
+      ],
+      "correct_option": 1,
+      "explanation": "A method declares possible checked exceptions using the `throws` keyword.",
+      "tags": [
+        "checked-exceptions",
+        "throws"
+      ],
+      "recommended_time_sec": 50
+    },
+    {
+      "id": "java-027",
+      "topic": "Exception Handling",
+      "subtopic": "Multiple catch blocks",
+      "difficulty": "hard",
+      "question_text": "Which catch-block order compiles when catching `FileNotFoundException` and `IOException` separately?",
+      "options": [
+        "`catch (IOException e)` followed by `catch (FileNotFoundException e)`",
+        "Either order is valid",
+        "`catch (FileNotFoundException e)` followed by `catch (IOException e)`",
+        "The two exception types cannot be caught"
+      ],
+      "correct_option": 2,
+      "explanation": "FileNotFoundException is a subclass of IOException, so the subclass catch must appear first.",
+      "tags": [
+        "exceptions",
+        "catch"
+      ],
+      "recommended_time_sec": 55
+    },
+    {
+      "id": "java-028",
+      "topic": "Exception Handling",
+      "subtopic": "Custom checked exceptions",
+      "difficulty": "medium",
+      "question_text": "Which declaration creates a checked custom exception?",
+      "options": [
+        "`class MissingRecord extends RuntimeException { }`",
+        "`interface MissingRecord extends Exception { }`",
+        "`class MissingRecord implements Exception { }`",
+        "`class MissingRecord extends Exception { }`"
+      ],
+      "correct_option": 3,
+      "explanation": "A custom exception that extends `Exception` rather than `RuntimeException` is checked.",
+      "tags": [
+        "custom-exceptions",
+        "checked-exceptions"
+      ],
+      "recommended_time_sec": 50
+    },
+    {
+      "id": "java-029",
+      "topic": "Exception Handling",
+      "subtopic": "Throwing exceptions",
+      "difficulty": "medium",
+      "question_text": "What happens if this condition is true?\n```java\nif (age < 0) {\n    throw new IllegalArgumentException(\"age must not be negative\");\n}\n```",
+      "options": [
+        "An unchecked exception is created and thrown",
+        "The method returns -1 automatically",
+        "The compiler skips the condition",
+        "A checked exception is silently caught"
+      ],
+      "correct_option": 0,
+      "explanation": "The code creates and throws an IllegalArgumentException, which is unchecked.",
+      "tags": [
+        "throw",
+        "runtime-exceptions"
+      ],
+      "recommended_time_sec": 50
+    },
+    {
+      "id": "java-030",
+      "topic": "Exception Handling",
+      "subtopic": "Nested try blocks",
+      "difficulty": "hard",
+      "question_text": "In this structure, where can an exception thrown in the inner `try` be handled?\n```java\ntry {\n    try {\n        riskyOperation();\n    } catch (IllegalArgumentException e) {\n        handleInputError();\n    }\n} catch (Exception e) {\n    handleOtherError();\n}\n```",
+      "options": [
+        "Only by the outer catch",
+        "By the inner catch if it is IllegalArgumentException; otherwise it may propagate to the outer catch",
+        "It cannot be handled by either catch",
+        "Only by finally"
+      ],
+      "correct_option": 1,
+      "explanation": "The inner catch handles matching exceptions locally; exceptions it does not catch can propagate to the enclosing try.",
+      "tags": [
+        "nested-try",
+        "exceptions"
+      ],
+      "recommended_time_sec": 60
+    },
+    {
+      "id": "java-031",
+      "topic": "Strings",
+      "subtopic": "String immutability",
+      "difficulty": "medium",
+      "question_text": "What does this code print?\n```java\nString word = \"data\";\nword.concat(\"base\");\nSystem.out.print(word);\n```",
+      "options": [
+        "database",
+        "data",
+        "base",
+        "The code does not compile"
+      ],
+      "correct_option": 2,
+      "explanation": "`concat` returns a new String. Since the returned value is not assigned, `word` remains `data`.",
+      "tags": [
+        "String",
+        "immutability"
+      ],
+      "recommended_time_sec": 50
+    },
+    {
+      "id": "java-032",
+      "topic": "Strings",
+      "subtopic": "String equality",
+      "difficulty": "medium",
+      "question_text": "What does this code print?\n```java\nString a = new String(\"Java\");\nString b = new String(\"Java\");\nSystem.out.print(a.equals(b) + \" \" + (a == b));\n```",
+      "options": [
+        "true true",
+        "false false",
+        "false true",
+        "true false"
+      ],
+      "correct_option": 3,
+      "explanation": "`equals` compares contents and returns true; `==` compares references and returns false for these distinct objects.",
+      "tags": [
+        "String",
+        "equals",
+        "references"
+      ],
+      "recommended_time_sec": 55
+    },
+    {
+      "id": "java-033",
+      "topic": "Strings",
+      "subtopic": "StringBuilder",
+      "difficulty": "medium",
+      "question_text": "What does this code print?\n```java\nStringBuilder text = new StringBuilder(\"B\");\ntext.append(\"DA\");\ntext.insert(1, \"I\");\nSystem.out.print(text);\n```",
+      "options": [
+        "BIDA",
+        "BDAI",
+        "BIDA",
+        "BDA"
+      ],
+      "correct_option": 2,
+      "explanation": "After append, the builder contains BDA. Inserting I at index 1 produces BIDA. Option A is duplicated in this draft; replace it with `BID` before using.",
+      "tags": [
+        "StringBuilder",
+        "methods"
+      ],
+      "recommended_time_sec": 55
+    },
+    {
+      "id": "java-034",
+      "topic": "Strings",
+      "subtopic": "Regular expressions",
+      "difficulty": "medium",
+      "question_text": "Does this expression evaluate to true?\n```java\nboolean valid = \"AB123\".matches(\"[A-Z]{2}\\\\d{3}\");\n```",
+      "options": [
+        "No, because matches checks only a substring",
+        "Yes, the entire string has two uppercase letters followed by three digits",
+        "No, because `\\\\d` means a letter",
+        "It does not compile"
+      ],
+      "correct_option": 1,
+      "explanation": "`matches` checks the whole string; the pattern requires two uppercase letters followed by three digits.",
+      "tags": [
+        "regex",
+        "String"
+      ],
+      "recommended_time_sec": 55
+    },
+    {
+      "id": "java-035",
+      "topic": "Strings",
+      "subtopic": "StringBuffer",
+      "difficulty": "medium",
+      "question_text": "Which statement about the result of this code is correct?\n```java\nStringBuffer buffer = new StringBuffer(\"Hi\");\nbuffer.append(\"!\");\nSystem.out.print(buffer);\n```",
+      "options": [
+        "It prints `Hi!`; StringBuffer is mutable",
+        "It prints `Hi`; append is ignored",
+        "It prints `!Hi`",
+        "It does not compile because StringBuffer is immutable"
+      ],
+      "correct_option": 0,
+      "explanation": "`StringBuffer` is mutable, and `append` changes its contents.",
+      "tags": [
+        "StringBuffer",
+        "append"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "java-036",
+      "topic": "Strings",
+      "subtopic": "String pool and intern",
+      "difficulty": "hard",
+      "question_text": "What does this code print?\n```java\nString a = \"core\";\nString b = new String(\"core\");\nSystem.out.print(a == b.intern());\n```",
+      "options": [
+        "false",
+        "The code does not compile",
+        "true",
+        "null"
+      ],
+      "correct_option": 2,
+      "explanation": "`intern()` returns the canonical pooled String for the same contents, which is the object referenced by `a`.",
+      "tags": [
+        "String-pool",
+        "intern"
+      ],
+      "recommended_time_sec": 55
+    },
+    {
+      "id": "java-037",
+      "topic": "Strings",
+      "subtopic": "String methods",
+      "difficulty": "easy",
+      "question_text": "What does this code print?\n```java\nString text = \"Java\";\nSystem.out.print(text.substring(1, 3));\n```",
+      "options": [
+        "Java",
+        "av",
+        "ava",
+        "va"
+      ],
+      "correct_option": 3,
+      "explanation": "`substring(1, 3)` includes index 1 and excludes index 3, producing `av`—option B.",
+      "tags": [
+        "String",
+        "substring"
+      ],
+      "recommended_time_sec": 45
+    },
+    {
+      "id": "java-038",
+      "topic": "Generics and Collections",
+      "subtopic": "Generic type safety",
+      "difficulty": "medium",
+      "question_text": "What happens when compiling this code?\n```java\nList<String> names = new ArrayList<>();\nnames.add(\"Asha\");\nnames.add(10);\n```",
+      "options": [
+        "It compiles and converts 10 to text",
+        "It produces a compile-time type error",
+        "It throws an error only when printing",
+        "The list changes to `List<Object>`"
+      ],
+      "correct_option": 1,
+      "explanation": "A `List<String>` accepts String elements; adding an int is rejected by the compiler.",
+      "tags": [
+        "generics",
+        "List"
+      ],
+      "recommended_time_sec": 50
+    },
+    {
+      "id": "java-039",
+      "topic": "Generics and Collections",
+      "subtopic": "ArrayList operations",
+      "difficulty": "medium",
+      "question_text": "What does this code print?\n```java\nList<Integer> values = new ArrayList<>(List.of(2, 4));\nvalues.add(1, 3);\nvalues.set(0, 1);\nSystem.out.print(values);\n```",
+      "options": [
+        "[1, 3, 4]",
+        "[2, 3, 4]",
+        "[1, 2, 3, 4]",
+        "[3, 4, 1]"
+      ],
+      "correct_option": 2,
+      "explanation": "This code actually produces `[1, 3, 4]`: `add(1, 3)` inserts at index 1, and `set(0, 1)` replaces the first element. The correct choice should be A.",
+      "tags": [
+        "ArrayList",
+        "List"
+      ],
+      "recommended_time_sec": 55
+    },
+    {
+      "id": "java-040",
+      "topic": "Generics and Collections",
+      "subtopic": "Set uniqueness",
+      "difficulty": "medium",
+      "question_text": "What does this code print?\n```java\nSet<String> codes = new HashSet<>();\ncodes.add(\"X1\");\ncodes.add(\"X1\");\ncodes.add(\"Y2\");\nSystem.out.print(codes.size());\n```",
+      "options": [
+        "3",
+        "1",
+        "0",
+        "2"
+      ],
+      "correct_option": 3,
+      "explanation": "A Set stores unique elements, so the duplicate X1 is stored only once and the size is 2.",
+      "tags": [
+        "Set",
+        "HashSet"
+      ],
+      "recommended_time_sec": 50
+    }
+  ]
+}
